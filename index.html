@@ -6,10 +6,8 @@
   <link rel="icon" href="academia.ico" type="image/x-icon">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <meta name="description" content="个人学术知识库">
-  <!-- 确保移动端视口完美缩放 -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
   
-  <!-- 核心主题与插件 CSS -->
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/sidebar.min.css" />
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/prism-themes@1.9.0/themes/prism-vsc-dark-plus.min.css">
@@ -17,20 +15,22 @@
 
   <style>
     :root {
-      /* 主题色：现代翠绿 */
+      /* 主操作色：依然保留翠绿，但更沉稳 */
       --theme-color: #10b981; 
-      --theme-color-light: rgba(16, 185, 129, 0.1);
-      /* 背景色体系：Slate 深岩灰 */
-      --bg-body: #0f172a;
-      --bg-sidebar: #1e293b;
-      --bg-card: rgba(30, 41, 59, 0.7);
-      /* 文本色体系 */
-      --text-main: #f8fafc; 
-      --text-muted: #94a3b8; 
-      --border-color: rgba(255, 255, 255, 0.08);
+      
+      /* 全球主流极客暗色体系 (Zinc - 无蓝调的纯粹黑灰) */
+      --bg-body: #09090b;       /* 极深底色 */
+      --bg-sidebar: #121214;    /* 侧边栏稍亮 */
+      --bg-card: #18181b;       /* 内容卡片底色 */
+      --border-color: #27272a;  /* 柔和边界线 */
+      
+      /* 柔和护眼文本体系 */
+      --text-title: #f4f4f5;    /* 标题亮白 */
+      --text-main: #d4d4d8;     /* 正文星光灰，非纯白 */
+      --text-muted: #a1a1aa;    /* 弱化文本 */
     }
 
-    /* ====== 1. 全局极简背景 ====== */
+    /* ====== 1. 全局极致暗黑背景 ====== */
     body {
       background-color: var(--bg-body) !important; 
       color: var(--text-main) !important;
@@ -39,7 +39,7 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* ====== 2. 侧边栏：毛玻璃与极简排版 ====== */
+    /* ====== 2. 侧边栏：去蓝调，纯粹极简 ====== */
     .sidebar {
       background: var(--bg-sidebar) !important;
       border-right: 1px solid var(--border-color) !important;
@@ -47,7 +47,7 @@
     }
     .sidebar h1 {
       font-family: 'Noto Serif SC', serif !important;
-      color: var(--text-main) !important;
+      color: var(--text-title) !important;
       font-size: 22px;
       font-weight: 900;
       letter-spacing: 1px;
@@ -58,7 +58,7 @@
       color: var(--theme-color);
     }
     .sidebar-nav > ul > li > p {
-        color: var(--text-main) !important; 
+        color: var(--text-title) !important; 
         font-weight: 600;
         font-size: 13px;
         text-transform: uppercase;
@@ -76,20 +76,18 @@
       cursor: pointer !important;
     }
     .sidebar-nav ul li a:hover {
-      background: var(--theme-color-light) !important;
-      color: var(--theme-color) !important; 
+      background: rgba(255, 255, 255, 0.05) !important;
+      color: var(--text-title) !important; 
     }
     .sidebar-nav ul li.active > a {
       color: var(--theme-color) !important;
       font-weight: 600;
       border-right: 3px solid var(--theme-color) !important;
-      background: linear-gradient(90deg, transparent, var(--theme-color-light)) !important;
+      background: rgba(16, 185, 129, 0.08) !important;
     }
 
-    /* ====== 3. 主内容区：高级卡片质感 ====== */
-    main {
-      padding-bottom: 80px !important; 
-    }
+    /* ====== 3. 主内容区 ====== */
+    main { padding-bottom: 80px !important; }
     .content {
       padding-top: 60px;
       display: flex;
@@ -100,11 +98,10 @@
 
     .markdown-section {
       background: var(--bg-card) !important;
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
       border: 1px solid var(--border-color);
-      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-      border-radius: 20px !important; 
+      /* 取消了大面积弥散阴影，改用干净利落的硬阴影，更具极简感 */
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+      border-radius: 16px !important; 
       padding: 60px 80px;
       max-width: 900px;
       width: 100%;
@@ -112,35 +109,70 @@
       margin-bottom: 60px !important; 
     }
 
-    /* 标题层级美化 */
+    /* ========================================= */
+    /* ====== 4. MD语法多色彩语义化系统 ====== */
+    /* ========================================= */
+
+    /* 标题层级 */
     .markdown-section h1, .markdown-section h2, .markdown-section h3,
     .markdown-section h4, .markdown-section h5, .markdown-section h6 {
       font-family: 'Noto Serif SC', serif !important;
-      color: var(--text-main) !important; 
       font-weight: 600;
       margin-top: 2em;
       margin-bottom: 1em;
     }
+    
+    /* H1: 渐变主标题 */
     .markdown-section h1:first-of-type {
       font-size: 40px !important;
       font-weight: 900;
       text-align: center;
       margin-bottom: 50px;
       margin-top: 0;
-      background: linear-gradient(to right, #10b981, #34d399);
+      background: linear-gradient(135deg, #10b981, #3b82f6); /* 翠绿过渡到天蓝 */
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       border-bottom: none !important;
     }
+    
+    /* H2: 纯净白，带底边框 */
     .markdown-section h2 {
+      color: #f4f4f5 !important; 
       border-bottom: 1px solid var(--border-color) !important;
       padding-bottom: 12px;
     }
-    .markdown-section p, .markdown-section li {
+    
+    /* H3: 专属翠绿色，代表重要模块 */
+    .markdown-section h3 { color: #10b981 !important; }
+    
+    /* H4: 专属紫色，代表次级分支 */
+    .markdown-section h4 { color: #a78bfa !important; }
+
+    /* 正文基础 */
+    .markdown-section p {
       font-size: 16px;
       line-height: 1.8;
-      color: #e2e8f0; 
+      color: var(--text-main); 
     }
+
+    /* 粗体：高亮琥珀橘色 (Amber)，非常抓眼球 */
+    .markdown-section strong {
+      color: #fb923c !important;
+      font-weight: 700;
+    }
+
+    /* 斜体：柔和的樱花粉，代表注解或次要强调 */
+    .markdown-section em {
+      color: #f472b6 !important;
+      font-style: italic;
+    }
+
+    /* 删除线：弱化为深灰色 */
+    .markdown-section del {
+      color: #71717a !important;
+    }
+
+    /* 超链接 */
     .markdown-section a {
       color: var(--theme-color);
       text-decoration: none;
@@ -149,10 +181,57 @@
     }
     .markdown-section a:hover {
       border-bottom-color: var(--theme-color);
-      text-decoration: none;
     }
 
-    /* ====== 4. 表格 ====== */
+    /* 列表符变色 */
+    .markdown-section ul { padding-left: 1.5rem; }
+    .markdown-section ul > li { line-height: 1.8; margin-bottom: 8px; }
+    .markdown-section ul > li::marker { color: #10b981; font-weight: bold; } /* 无序列表符翠绿 */
+    .markdown-section ol > li::marker { color: #fb923c; font-weight: bold; } /* 有序列表符琥珀色 */
+
+    /* 引用块 (Blockquote)：深邃紫水晶风格 */
+    .markdown-section blockquote {
+      border-left: 4px solid #8b5cf6;
+      background: rgba(139, 92, 246, 0.08); /* 极淡的紫色背景 */
+      color: #c4b5fd; /* 柔和的浅紫色文字 */
+      padding: 16px 24px;
+      border-radius: 0 8px 8px 0;
+      margin: 2em 0;
+    }
+    .markdown-section blockquote p {
+      color: inherit; /* 继承紫水晶色 */
+      margin: 0;
+    }
+
+    /* 行内代码：柔和的珊瑚红 + 深灰底，类似 Github */
+    .markdown-section code {
+      background-color: #27272a !important;
+      color: #fca5a5 !important; 
+      padding: 4px 6px;
+      border-radius: 6px;
+      font-size: 0.9em;
+      font-family: 'JetBrains Mono', Consolas, 'Courier New', monospace !important;
+      border: 1px solid rgba(255,255,255,0.05) !important;
+    }
+
+    /* 代码块底板 */
+    .markdown-section pre {
+      background-color: #0d0d0f !important; /* 比主背景更黑，凸显代码 */
+      border: 1px solid var(--border-color) !important;
+      border-radius: 12px !important;
+      padding: 20px !important;
+      margin: 24px 0;
+    }
+    .markdown-section pre code {
+      background-color: transparent !important; 
+      border: none !important;
+      padding: 0 !important;
+      color: #d4d4d8 !important; /* 代码块内重置为普通颜色，交给Prism上色 */
+    }
+
+    /* ========================================= */
+    /* ====== 5. 表格：非纯白护眼与暗色斑马纹 ====== */
+    /* ========================================= */
     .markdown-section table {
       width: 100%;
       border-collapse: separate;
@@ -162,76 +241,62 @@
       overflow: hidden;
       border: 1px solid var(--border-color);
     }
+    
+    /* 单元格统一颜色偏灰，去纯白 */
     .markdown-section table th, .markdown-section table td {
-      border-bottom: 1px solid var(--border-color);
       padding: 14px 20px;
-      color: var(--text-main) !important; 
+      color: #d4d4d8 !important; /* 星光灰 */
+      border-bottom: 1px solid var(--border-color);
+      border-right: 1px solid var(--border-color); /* 增加竖向网格感 */
     }
+    .markdown-section table th:last-child, 
+    .markdown-section table td:last-child {
+      border-right: none;
+    }
+
+    /* 表头更深的底色，稍微亮一点的文本 */
     .markdown-section table th {
-      background-color: rgba(255, 255, 255, 0.03); 
+      background-color: #27272a; 
+      color: #f4f4f5 !important; 
       font-weight: 600;
       text-align: left;
     }
+    
+    /* 偶数行斑马纹 */
+    .markdown-section table tr:nth-child(even) td {
+      background-color: #1f1f22; 
+    }
+    /* 奇数行跟随卡片底色 */
+    .markdown-section table tr:nth-child(odd) td {
+      background-color: transparent;
+    }
+    
+    /* 悬停高亮当前行 */
+    .markdown-section table tr:hover td {
+      background-color: rgba(255, 255, 255, 0.05);
+    }
+    
     .markdown-section table tr:last-child td {
       border-bottom: none;
-    }
-    .markdown-section table tr:hover td {
-      background-color: rgba(255, 255, 255, 0.02);
-    }
-
-    /* ====== 5. 代码块深度接管 (类似 VSCode 体验) ====== */
-    .markdown-section code {
-      background-color: rgba(0, 0, 0, 0.3) !important;
-      color: #e2e8f0 !important; 
-      padding: 4px 6px;
-      border-radius: 6px;
-      font-size: 0.9em;
-      font-family: 'JetBrains Mono', Consolas, 'Courier New', monospace !important;
-    }
-    .markdown-section pre {
-      background-color: #1e1e1e !important; 
-      border: 1px solid var(--border-color) !important;
-      border-radius: 12px !important;
-      padding: 20px !important;
-      margin: 24px 0;
-    }
-    .markdown-section pre code {
-      background-color: transparent !important; 
-      border: none !important;
-      padding: 0 !important;       
-    }
-    .markdown-section blockquote {
-      border-left: 4px solid var(--theme-color);
-      background: rgba(16, 185, 129, 0.05);
-      color: var(--text-muted);
-      padding: 16px 24px;
-      border-radius: 0 12px 12px 0;
-      margin: 2em 0;
     }
 
     /* ========================================= */
     /* ====== 6. 移动端(手机)深度完美适配 ====== */
     /* ========================================= */
     @media screen and (max-width: 768px) {
-      .sidebar {
-        padding-top: 20px;
-      }
-      .content {
-        padding-top: 20px;
-      }
+      .sidebar { padding-top: 20px; }
+      .content { padding-top: 20px; }
       .markdown-section {
         padding: 30px 24px !important; 
-        border-radius: 16px !important; 
-        box-shadow: none; /* 移动端减弱阴影提升性能 */
+        border-radius: 0 !important; /* 手机端完全铺满更现代 */
+        box-shadow: none; 
         border: none;
         border-top: 1px solid var(--border-color);
         background: transparent !important;
-        backdrop-filter: none;
       }
       
-      /* 重塑移动端菜单按钮：克制、扁平、现代 */
       .sidebar-toggle {
-        background: var(--bg-sidebar) !important; 
+        background: #18181b !important; 
         border: 1px solid var(--border-color) !important;
         border-radius: 12px !important; 
         width: 44px !important;
@@ -239,7 +304,7 @@
         bottom: 24px !important; 
         left: 20px !important;
         padding: 10px !important;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.3) !important; 
+        box-shadow: 0 4px 12px rgba(0,0,0,0.5) !important; 
         display: flex !important;
         flex-direction: column !important;
         justify-content: space-evenly !important;
@@ -253,7 +318,7 @@
       }
 
       .sidebar-toggle span {
-        background-color: var(--text-main) !important; 
+        background-color: var(--text-title) !important; 
         width: 20px !important;
         height: 2px !important;
         border-radius: 2px !important;
