@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <title>土块的学术库</title>
-  <!-- 设置 ico 图标 -->
   <link rel="icon" href="academia.ico">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <meta name="description" content="个人学术知识库">
@@ -12,21 +11,19 @@
   <!-- 引入默认的主题样式 -->
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
   
-  <!-- 引入侧边栏折叠插件样式 (实现下拉框必须) -->
+  <!-- 引入侧边栏折叠插件样式 -->
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/sidebar.min.css" />
   
-  <!-- 引入 IDEA (Darcula) 风格的代码高亮主题，恢复彩色代码风格 -->
+  <!-- 引入 IDEA (Darcula) 风格的代码高亮主题 -->
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/prism-themes@1.9.0/themes/prism-darcula.min.css">
 
-  <!-- 引入专业学术字体：Inter (正文) + Noto Serif SC (标题) -->
+  <!-- 引入专业学术字体 -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Noto+Serif+SC:wght@600;900&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      /* 学术沉稳的翡翠绿 */
       --theme-color: #10b981; 
       --theme-color-light: rgba(16, 185, 129, 0.15);
-      /* 提亮正文主体，但去除了纯白(#ffffff)，使用柔和的雪白(#f1f5f9)防止刺眼 */
       --text-main: #f1f5f9; 
       --text-muted: #cbd5e1; 
       --bg-dark: #0f172a;
@@ -35,13 +32,17 @@
     /* ====== 1. 全局背景：带有北冰蓝氛围的深邃渐变 ====== */
     body {
       background-color: var(--bg-dark) !important;
-      background-image: radial-gradient(circle at top right, #0f2b4a, #020617);
+      background-image: radial-gradient(circle at top right, #0f2b4a, #020617) !important;
+      /* 核心修复：固定背景，解决页面过长时出现的背景断层问题 */
+      background-attachment: fixed !important; 
+      background-size: cover !important;
+      background-repeat: no-repeat !important;
       color: var(--text-main) !important;
       font-family: 'Inter', -apple-system, sans-serif !important;
       font-size: 16px; 
     }
 
-    /* ====== 2. 侧边栏修复与强化 ====== */
+    /* ====== 2. 侧边栏样式 ====== */
     .sidebar {
       background: rgba(15, 23, 42, 0.85) !important;
       border-right: 1px solid rgba(255, 255, 255, 0.1) !important;
@@ -58,12 +59,10 @@
       text-align: center;
       margin-bottom: 30px;
     }
-
     .sidebar h1 a { color: inherit; }
 
-    /* 侧边栏层级标题 */
     .sidebar-nav > ul > li > p {
-        color: #f1f5f9 !important; /* 柔和白 */
+        color: #f1f5f9 !important; 
         font-weight: 600;
         font-size: 14px;
         margin-top: 15px;
@@ -72,7 +71,6 @@
         border-left: 3px solid var(--theme-color);
     }
 
-    /* 侧边栏可点击的链接 */
     .sidebar-nav ul li a {
       color: var(--text-muted) !important;
       font-size: 13px;
@@ -87,7 +85,7 @@
 
     .sidebar-nav ul li a:hover {
       background: rgba(255, 255, 255, 0.1) !important;
-      color: #f8fafc !important; /* 悬浮时稍亮，但不是死白 */
+      color: #f8fafc !important; 
     }
 
     .sidebar-nav ul li.active > a {
@@ -97,9 +95,11 @@
       border-right: 3px solid var(--theme-color) !important;
     }
 
-    /* ====== 3. 主内容区：足够长，预留底部滚动空间 ====== */
+    /* ====== 3. 主内容区：底部留白与面板圆角 ====== */
     .content {
       padding-top: 40px;
+      /* 核心修复：在容器底部强制留出足够空间，确保面板圆角露出且拉到底不局促 */
+      padding-bottom: 120px !important; 
       display: flex;
       justify-content: center;
       align-items: flex-start;
@@ -110,18 +110,15 @@
       background: rgba(15, 23, 42, 0.9);
       border: 1px solid rgba(255, 255, 255, 0.15);
       box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
-      border-radius: 16px;
+      border-radius: 16px !important; /* 确保圆弧形在底部能够被明确看到 */
       padding: 50px 70px;
       max-width: 900px;
       width: 100%;
       color: var(--text-main);
       position: relative;
       z-index: 10; 
-      min-height: calc(100vh - 120px);
-      margin-bottom: 80px; 
     }
 
-    /* 核心修复：强制接管所有层级标题 (h1-h6)，解决 ## 和 ### 等标题灰度太大的问题 */
     .markdown-section h1,
     .markdown-section h2,
     .markdown-section h3,
@@ -129,11 +126,10 @@
     .markdown-section h5,
     .markdown-section h6 {
       font-family: 'Noto Serif SC', serif !important;
-      color: #f1f5f9 !important; /* 统一提亮，不让副标题变暗灰 */
+      color: #f1f5f9 !important; 
       font-weight: 600;
     }
 
-    /* 首页 README 特大标题，保持主题色 */
     .markdown-section h1:first-of-type {
       color: var(--theme-color) !important;
       font-size: 38px !important;
@@ -143,7 +139,6 @@
       border-bottom: none !important;
     }
 
-    /* 正文标题底边框 */
     .markdown-section h2, 
     .markdown-section h3 {
       border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
@@ -151,12 +146,11 @@
       margin-top: 35px;
     }
 
-    /* 正文内容 */
     .markdown-section p, 
     .markdown-section li {
       font-size: 16px;
       line-height: 1.8;
-      color: #e2e8f0; /* 正文比标题稍微低一个亮度，形成层次感 */
+      color: #e2e8f0; 
     }
 
     .markdown-section a {
@@ -167,7 +161,6 @@
       text-decoration: underline;
     }
 
-    /* ====== 4. 表格修复 ====== */
     .markdown-section table {
       width: 100%;
       border-collapse: collapse;
@@ -179,7 +172,7 @@
     .markdown-section table td {
       border: 1px solid rgba(255, 255, 255, 0.2);
       padding: 12px 15px;
-      color: #f1f5f9 !important; /* 柔和白字，确保斑马纹上都能看清 */
+      color: #f1f5f9 !important; 
     }
     
     .markdown-section table th {
@@ -196,22 +189,27 @@
       background-color: rgba(0, 0, 0, 0.4); 
     }
 
-    /* ====== 5. IDEA 风格代码块 ====== */
-    /* 移除了强行指定代码颜色的代码，将着色权交还给 Prism.js */
-    .markdown-section pre {
-      background: #2b2b2b !important; /* 经典的 IDEA Darcula 深灰背景色 */
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3); /* 增加代码块立体感 */
-    }
-    
-    .markdown-section pre,
+    /* ====== 4. 彻底镇压 Vue.css 的瞎搞代码样式 ====== */
+    /* 修复图1中的行内小段代码（去白底，换成 IDEA 橙黄色，不刺眼） */
     .markdown-section code {
-      /* 加入 JetBrains 字体，更有写 Java 的感觉 */
+      background-color: rgba(255, 255, 255, 0.1) !important;
+      color: #ffc66d !important; 
+      padding: 3px 6px;
+      border-radius: 4px;
+      border: none !important;
       font-family: 'JetBrains Mono', Consolas, 'Courier New', monospace !important;
     }
 
-    /* 引用块 */
+    /* 修复图2中的整块多行代码（强行接管背景，还给 Prism 渲染高亮彩色字体的权利） */
+    .markdown-section pre,
+    .markdown-section pre code {
+      background-color: #2b2b2b !important; /* 强制覆盖成 IDEA Darcula 纯正深色底 */
+      color: #a9b7c6 !important; /* 默认浅灰色，其它关键词由下方的 prism 插件自动上色 */
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 8px !important;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3); 
+    }
+
     .markdown-section blockquote {
       border-left: 4px solid var(--theme-color);
       background: rgba(255, 255, 255, 0.05);
@@ -238,7 +236,6 @@
   <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/docsify-sidebar-collapse.min.js"></script>
   
-  <!-- 引入常用语言高亮支持 (如果你的笔记里有 Java 代码，加上这个会让高亮更精准) -->
   <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-java.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
 </body>
