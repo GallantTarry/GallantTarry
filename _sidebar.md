@@ -2,5 +2,8 @@
   * [README](README.md)
 * Geek空间
     * [emoji表情包](research/Geek%E7%A9%BA%E9%97%B4/emoji%E8%A1%A8%E6%83%85%E5%8C%85.md)
+    * [MarkDown格式使用](research/Geek%E7%A9%BA%E9%97%B4/MarkDown%E6%A0%BC%E5%BC%8F%E4%BD%BF%E7%94%A8.md)
+    * [RAR自解压技术处理javajar包](research/Geek%E7%A9%BA%E9%97%B4/RAR%E8%87%AA%E8%A7%A3%E5%8E%8B%E6%8A%80%E6%9C%AF%E5%A4%84%E7%90%86javajar%E5%8C%85.md)
+    * [windows将文件拖入文件夹](research/Geek%E7%A9%BA%E9%97%B4/windows%E5%B0%86%E6%96%87%E4%BB%B6%E6%8B%96%E5%85%A5%E6%96%87%E4%BB%B6%E5%A4%B9.md)
 * 文字空间
     * [语言和艺术](research/%E6%96%87%E5%AD%97%E7%A9%BA%E9%97%B4/%E8%AF%AD%E8%A8%80%E5%92%8C%E8%89%BA%E6%9C%AF.md)
