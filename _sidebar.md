@@ -12,5 +12,5 @@
     * [终端是什么？](research/Geek%E7%A9%BA%E9%97%B4/%E7%BB%88%E7%AB%AF%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F.md)
     * [难道世界上只有二进制的操作系统吗？](research/Geek%E7%A9%BA%E9%97%B4/%E9%9A%BE%E9%81%93%E4%B8%96%E7%95%8C%E4%B8%8A%E5%8F%AA%E6%9C%89%E4%BA%8C%E8%BF%9B%E5%88%B6%E7%9A%84%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%90%97%EF%BC%9F.md)
 * 文字空间
-    * [做一个浪漫的](research/%E6%96%87%E5%AD%97%E7%A9%BA%E9%97%B4/%E5%81%9A%E4%B8%80%E4%B8%AA%E6%B5%AA%E6%BC%AB%E7%9A%84.md)
+    * [做一个浪漫的人](research/%E6%96%87%E5%AD%97%E7%A9%BA%E9%97%B4/%E5%81%9A%E4%B8%80%E4%B8%AA%E6%B5%AA%E6%BC%AB%E7%9A%84%E4%BA%BA.md)
     * [语言和艺术](research/%E6%96%87%E5%AD%97%E7%A9%BA%E9%97%B4/%E8%AF%AD%E8%A8%80%E5%92%8C%E8%89%BA%E6%9C%AF.md)
