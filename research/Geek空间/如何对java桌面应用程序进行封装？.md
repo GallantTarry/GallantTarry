@@ -1,4 +1,4 @@
-# Java 桌面应用程序封装与 JRE 运行环境优化指南
+# 如何对java桌面应用程序进行封装？
 
 针对个人开发者在分发 Java 桌面应用程序时面临的数字签发成本高昂、且使用 `jpackage` 配合 Wix 工具链生成的 `.exe` 安装程序易触发 Windows 11 SmartScreen 安全机制（如“未知发布者”拦截）等痛点，本文提出一种基于 WinRAR 自解压（SFX, Self-Extracting Archive）技术的封装方案。
 
