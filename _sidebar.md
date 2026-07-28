@@ -21,3 +21,8 @@
     * [做一个浪漫的人](research/%E6%96%87%E5%AD%97%E7%A9%BA%E9%97%B4/%E5%81%9A%E4%B8%80%E4%B8%AA%E6%B5%AA%E6%BC%AB%E7%9A%84%E4%BA%BA.md)
     * [客观真理、公理、共识、公约](research/%E6%96%87%E5%AD%97%E7%A9%BA%E9%97%B4/%E5%AE%A2%E8%A7%82%E7%9C%9F%E7%90%86%E3%80%81%E5%85%AC%E7%90%86%E3%80%81%E5%85%B1%E8%AF%86%E3%80%81%E5%85%AC%E7%BA%A6.md)
     * [语言和艺术](research/%E6%96%87%E5%AD%97%E7%A9%BA%E9%97%B4/%E8%AF%AD%E8%A8%80%E5%92%8C%E8%89%BA%E6%9C%AF.md)
+* 英文空间
+    * [chill 是什么意思？](research/%E8%8B%B1%E6%96%87%E7%A9%BA%E9%97%B4/chill%20%E6%98%AF%E4%BB%80%E4%B9%88%E6%84%8F%E6%80%9D%EF%BC%9F.md)
+    * [Damn son 是什么意思？](research/%E8%8B%B1%E6%96%87%E7%A9%BA%E9%97%B4/Damn%20son%20%E6%98%AF%E4%BB%80%E4%B9%88%E6%84%8F%E6%80%9D%EF%BC%9F.md)
+    * [Gotcha是什么意思？](research/%E8%8B%B1%E6%96%87%E7%A9%BA%E9%97%B4/Gotcha%E6%98%AF%E4%BB%80%E4%B9%88%E6%84%8F%E6%80%9D%EF%BC%9F.md)
+    * [满分十分给九分怎么用英文表达？](research/%E8%8B%B1%E6%96%87%E7%A9%BA%E9%97%B4/%E6%BB%A1%E5%88%86%E5%8D%81%E5%88%86%E7%BB%99%E4%B9%9D%E5%88%86%E6%80%8E%E4%B9%88%E7%94%A8%E8%8B%B1%E6%96%87%E8%A1%A8%E8%BE%BE%EF%BC%9F.md)
