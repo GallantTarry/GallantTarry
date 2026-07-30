@@ -337,6 +337,54 @@
         height: 20px !important;
       }
     }
+	
+	/* ========================================= */
+    /* ====== 8. 代码块复制按钮深度美化 ====== */
+    /* ========================================= */
+    
+    /* 调整代码块外层容器，确保按钮定位准确 */
+    .docsify-copy-code-button {
+      background: rgba(39, 39, 42, 0.8) !important; /* 半透明暗灰底色 */
+      color: #a1a1aa !important; /* 柔和的灰色文字 */
+      border: 1px solid rgba(255, 255, 255, 0.1) !important; /* 极细的边框 */
+      border-radius: 8px !important; /* 圆角美化 */
+      padding: 4px 10px !important; /* 缩小按钮体积，使其更精致 */
+      font-size: 12px !important; /* 缩小字体 */
+      font-family: 'Inter', sans-serif !important;
+      font-weight: 500 !important;
+      backdrop-filter: blur(4px) !important; /* 毛玻璃效果 */
+      right: 10px !important; /* 稍微往里缩一点 */
+      top: 10px !important; /* 稍微往下移一点，不要贴死边缘 */
+      transition: all 0.3s ease !important; /* 平滑动画 */
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2) !important; /* 微弱阴影 */
+    }
+
+    /* 鼠标悬停时的状态 */
+    .docsify-copy-code-button:hover {
+      background: rgba(63, 63, 70, 0.9) !important; /* 悬停时稍微亮一点 */
+      color: #f4f4f5 !important; /* 文字变白 */
+      border-color: rgba(255, 255, 255, 0.2) !important;
+    }
+
+    /* 复制成功后的状态 (Docsify 默认会把文字改成 "Copied" 并且加一个 success 类) */
+    .docsify-copy-code-button.success {
+      background: rgba(16, 185, 129, 0.2) !important; /* 成功时变成你的主题色(淡绿底) */
+      color: #10b981 !important; /* 成功时文字变亮绿 */
+      border-color: rgba(16, 185, 129, 0.5) !important;
+    }
+
+    /* (可选) 隐藏原本丑陋的 "Copy to clipboard" 长文本，直接改成 "Copy" */
+    /* Docsify 默认生成的是带 span 的结构，我们可以用伪元素替换文字 */
+    .docsify-copy-code-button span {
+      display: none !important; /* 隐藏原生文字 */
+    }
+    .docsify-copy-code-button::before {
+      content: "Copy"; /* 默认显示简短的 Copy */
+    }
+    .docsify-copy-code-button.success::before {
+      content: "Copied!"; /* 成功时显示 Copied! */
+    }
+	
   </style>
 </head>
 <body>
@@ -363,5 +411,37 @@
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
   <!-- 👇 新增这一行 👇 -->
   <script src="//cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
+  
+  <!-- 👇 新增：移动端侧边栏强制保持展开拦截脚本 👇 -->
+  <script>
+    (function() {
+      // 在捕获阶段监听全局点击事件，确保比 Docsify 的内部逻辑先执行
+      document.addEventListener('click', function(e) {
+        // 仅在移动端尺寸 (屏幕宽度 <= 768px) 生效
+        if (window.innerWidth > 768) return;
+
+        // 判断用户点击的是否是那个悬浮辅助小圆圈
+        const isToggleBtn = e.target.closest('.sidebar-toggle');
+        
+        // 如果点击的是小圆圈，什么都不干预，直接放行让其正常展开/收起
+        if (isToggleBtn) return;
+
+        // 如果点击的不是小圆圈（比如点击了文章链接或空白处）
+        // 我们需要先检查侧边栏在点击前【是否处于展开状态】
+        // 注：Docsify 手机端展开侧边栏的原理是给 body 加上 'close' 类名
+        const isSidebarOpen = document.body.classList.contains('close');
+
+        // 如果是展开状态，Docsify 原本会自动移除 'close' 类把侧边栏藏起来。
+        // 我们利用微小延迟 (setTimeout)，在它移除后立刻强制加回来，抵消它的隐藏动作。
+        if (isSidebarOpen) {
+          setTimeout(function() {
+            document.body.classList.add('close');
+          }, 10);
+        }
+      }, true); 
+    })();
+  </script>
+</body>
+</html>
 </body>
 </html>
