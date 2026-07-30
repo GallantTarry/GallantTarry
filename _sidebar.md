@@ -25,9 +25,13 @@
 * 后端空间
     * [什么是三层架构？](research/%E5%90%8E%E7%AB%AF%E7%A9%BA%E9%97%B4/%E4%BB%80%E4%B9%88%E6%98%AF%E4%B8%89%E5%B1%82%E6%9E%B6%E6%9E%84%EF%BC%9F.md)
     * [如何用Idea初建springboot项目？](research/%E5%90%8E%E7%AB%AF%E7%A9%BA%E9%97%B4/%E5%A6%82%E4%BD%95%E7%94%A8Idea%E5%88%9D%E5%BB%BAspringboot%E9%A1%B9%E7%9B%AE%EF%BC%9F.md)
+* 文字空间
+    * [客观真理、公理、共识、公约](research/%E6%96%87%E5%AD%97%E7%A9%BA%E9%97%B4/%E5%AE%A2%E8%A7%82%E7%9C%9F%E7%90%86%E3%80%81%E5%85%AC%E7%90%86%E3%80%81%E5%85%B1%E8%AF%86%E3%80%81%E5%85%AC%E7%BA%A6.md)
 * 艺术空间
 * 英文空间
     * [chill 是什么意思？](research/%E8%8B%B1%E6%96%87%E7%A9%BA%E9%97%B4/chill%20%E6%98%AF%E4%BB%80%E4%B9%88%E6%84%8F%E6%80%9D%EF%BC%9F.md)
     * [Damn son 是什么意思？](research/%E8%8B%B1%E6%96%87%E7%A9%BA%E9%97%B4/Damn%20son%20%E6%98%AF%E4%BB%80%E4%B9%88%E6%84%8F%E6%80%9D%EF%BC%9F.md)
     * [Gotcha是什么意思？](research/%E8%8B%B1%E6%96%87%E7%A9%BA%E9%97%B4/Gotcha%E6%98%AF%E4%BB%80%E4%B9%88%E6%84%8F%E6%80%9D%EF%BC%9F.md)
     * [满分十分给九分怎么用英文表达？](research/%E8%8B%B1%E6%96%87%E7%A9%BA%E9%97%B4/%E6%BB%A1%E5%88%86%E5%8D%81%E5%88%86%E7%BB%99%E4%B9%9D%E5%88%86%E6%80%8E%E4%B9%88%E7%94%A8%E8%8B%B1%E6%96%87%E8%A1%A8%E8%BE%BE%EF%BC%9F.md)
+    * [热门编程语言英文单词汇总](research/%E8%8B%B1%E6%96%87%E7%A9%BA%E9%97%B4/%E7%83%AD%E9%97%A8%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E8%8B%B1%E6%96%87%E5%8D%95%E8%AF%8D%E6%B1%87%E6%80%BB.md)
+    * [编程世界 200 个高频与硬核核心英文单词汇总](research/%E8%8B%B1%E6%96%87%E7%A9%BA%E9%97%B4/%E7%BC%96%E7%A8%8B%E4%B8%96%E7%95%8C%20200%20%E4%B8%AA%E9%AB%98%E9%A2%91%E4%B8%8E%E7%A1%AC%E6%A0%B8%E6%A0%B8%E5%BF%83%E8%8B%B1%E6%96%87%E5%8D%95%E8%AF%8D%E6%B1%87%E6%80%BB.md)
