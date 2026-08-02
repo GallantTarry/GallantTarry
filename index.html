@@ -214,49 +214,63 @@
     }
 
     /* ========================================= */
-    /* ====== 5. 表格：非纯白护眼与暗色斑马纹 ====== */
+    /* ====== 5. 表格：完美包裹适配移动端 ====== */
     /* ========================================= */
+
+    /* 1. 新增的外层包裹器：负责移动端横向滚动和整体外边距 */
+    .table-wrapper {
+      width: 100%;
+      overflow-x: auto; /* 屏幕不够宽时，允许在此容器内横向滚动 */
+      margin: 30px 0;   /* 原本在 table 上的 margin 转移到这里 */
+      border-radius: 8px;
+    }
+
+    /* 2. 表格本身样式 */
     .markdown-section table {
       width: 100%;
+      display: table !important; /* 强制覆盖 vue.css 的 block 属性，解决电脑端占不满的问题 */
       border-collapse: separate;
       border-spacing: 0;
-      margin: 30px 0;
+      margin: 0; /* 边距已交由 wrapper 处理，此处清零 */
       border-radius: 8px;
       overflow: hidden;
       border: 1px solid var(--border-color);
+      min-width: 600px; /* 关键：给表格设一个最小宽度，保证在手机端文字不会被挤成一柱擎天，而是优雅地触发横向滚动 */
     }
-    
+
     .markdown-section table th, .markdown-section table td {
       padding: 14px 20px;
-      color: #d4d4d8 !important; 
+      color: #d4d4d8 !important;
       border-bottom: 1px solid var(--border-color);
-      border-right: 1px solid var(--border-color); 
-      transition: background-color 0.2s ease, color 0.2s ease; 
+      border-right: 1px solid var(--border-color);
+      transition: background-color 0.2s ease, color 0.2s ease;
+      word-break: break-word; /* 允许长单词或长链接自动换行，防止撑破单元格 */
     }
-    .markdown-section table th:last-child, 
+
+    .markdown-section table th:last-child,
     .markdown-section table td:last-child {
       border-right: none;
     }
 
     .markdown-section table th {
-      background-color: #27272a; 
-      color: #f4f4f5 !important; 
+      background-color: #27272a;
+      color: #f4f4f5 !important;
       font-weight: 600;
       text-align: left;
     }
-    
+
     .markdown-section table tr:nth-child(even) td {
-      background-color: #1f1f22; 
+      background-color: #1f1f22;
     }
     .markdown-section table tr:nth-child(odd) td {
       background-color: transparent;
     }
-    
+
     .markdown-section table tr:hover td {
-      background-color: #27272a !important; 
-      color: #e4e4e7 !important; 
+      background-color: #27272a !important;
+      color: #e4e4e7 !important;
     }
-    
+
     .markdown-section table tr:last-child td {
       border-bottom: none;
     }
@@ -400,7 +414,28 @@
 	    <!-- 平时全部折叠，点开哪个文件夹，就只有当前文件夹展开，其他毫不相干的文件夹保持原样（折叠） -->
       sidebarDisplayLevel: 0, 
       auto2top: true,
-      routerMode: 'hash'
+      routerMode: 'hash',
+
+      // 👇 新增这个插件数组 👇
+      plugins: [
+        function(hook, vm) {
+          hook.doneEach(function() {
+            // 每次路由切换渲染完成后，找到页面里所有的 table
+            var tables = document.querySelectorAll('.markdown-section table');
+            tables.forEach(function(table) {
+              // 检查是否已经被包裹过，防止重复包裹
+              if (!table.parentNode.classList.contains('table-wrapper')) {
+                var wrapper = document.createElement('div');
+                wrapper.className = 'table-wrapper'; // 赋予一个包裹类名
+
+                // 将 wrapper 插入到 table 之前，然后把 table 移动到 wrapper 内部
+                table.parentNode.insertBefore(wrapper, table);
+                wrapper.appendChild(table);
+              }
+            });
+          });
+        }
+      ]
     }
   </script>
   <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
