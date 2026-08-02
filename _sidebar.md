@@ -2,18 +2,14 @@
   * [README](README.md)
 * Geek空间
     * [AVIF文件格式是什么？](research/Geek%E7%A9%BA%E9%97%B4/AVIF%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F.md)
-    * [cookie是存在本地的吗？他是什么文件？](research/Geek%E7%A9%BA%E9%97%B4/cookie%E6%98%AF%E5%AD%98%E5%9C%A8%E6%9C%AC%E5%9C%B0%E7%9A%84%E5%90%97%EF%BC%9F%E4%BB%96%E6%98%AF%E4%BB%80%E4%B9%88%E6%96%87%E4%BB%B6%EF%BC%9F.md)
     * [emoji表情包是什么？](research/Geek%E7%A9%BA%E9%97%B4/emoji%E8%A1%A8%E6%83%85%E5%8C%85%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F.md)
     * [GitHub 网页版的工作流如何使用？](research/Geek%E7%A9%BA%E9%97%B4/GitHub%20%E7%BD%91%E9%A1%B5%E7%89%88%E7%9A%84%E5%B7%A5%E4%BD%9C%E6%B5%81%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%EF%BC%9F.md)
     * [什么是字节码文件？](research/Geek%E7%A9%BA%E9%97%B4/%E4%BB%80%E4%B9%88%E6%98%AF%E5%AD%97%E8%8A%82%E7%A0%81%E6%96%87%E4%BB%B6%EF%BC%9F.md)
-    * [什么是网络？](research/Geek%E7%A9%BA%E9%97%B4/%E4%BB%80%E4%B9%88%E6%98%AF%E7%BD%91%E7%BB%9C%EF%BC%9F.md)
     * [什么是计算机的前后端技术？](research/Geek%E7%A9%BA%E9%97%B4/%E4%BB%80%E4%B9%88%E6%98%AF%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E5%89%8D%E5%90%8E%E7%AB%AF%E6%8A%80%E6%9C%AF%EF%BC%9F.md)
-    * [位bit和字节Byte是什么？](research/Geek%E7%A9%BA%E9%97%B4/%E4%BD%8Dbit%E5%92%8C%E5%AD%97%E8%8A%82Byte%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F.md)
     * [前后端文件命名都要遵守什么样的规范？](research/Geek%E7%A9%BA%E9%97%B4/%E5%89%8D%E5%90%8E%E7%AB%AF%E6%96%87%E4%BB%B6%E5%91%BD%E5%90%8D%E9%83%BD%E8%A6%81%E9%81%B5%E5%AE%88%E4%BB%80%E4%B9%88%E6%A0%B7%E7%9A%84%E8%A7%84%E8%8C%83%EF%BC%9F.md)
+    * [如何从临时启动器到原生桌面应用体验的封装？](research/Geek%E7%A9%BA%E9%97%B4/%E5%A6%82%E4%BD%95%E4%BB%8E%E4%B8%B4%E6%97%B6%E5%90%AF%E5%8A%A8%E5%99%A8%E5%88%B0%E5%8E%9F%E7%94%9F%E6%A1%8C%E9%9D%A2%E5%BA%94%E7%94%A8%E4%BD%93%E9%AA%8C%E7%9A%84%E5%B0%81%E8%A3%85%EF%BC%9F.md)
     * [如何使用MarkDown基本语法？](research/Geek%E7%A9%BA%E9%97%B4/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8MarkDown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95%EF%BC%9F.md)
-    * [如何对java桌面应用程序进行封装？](research/Geek%E7%A9%BA%E9%97%B4/%E5%A6%82%E4%BD%95%E5%AF%B9java%E6%A1%8C%E9%9D%A2%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E8%BF%9B%E8%A1%8C%E5%B0%81%E8%A3%85%EF%BC%9F.md)
     * [如何快速将文件拖入windows文件夹？](research/Geek%E7%A9%BA%E9%97%B4/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E5%B0%86%E6%96%87%E4%BB%B6%E6%8B%96%E5%85%A5windows%E6%96%87%E4%BB%B6%E5%A4%B9%EF%BC%9F.md)
-    * [如何绑定新建Markdwon](research/Geek%E7%A9%BA%E9%97%B4/%E5%A6%82%E4%BD%95%E7%BB%91%E5%AE%9A%E6%96%B0%E5%BB%BAMarkdwon.md)
     * [终端是什么？](research/Geek%E7%A9%BA%E9%97%B4/%E7%BB%88%E7%AB%AF%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F.md)
     * [编程和内存的关系是什么？](research/Geek%E7%A9%BA%E9%97%B4/%E7%BC%96%E7%A8%8B%E5%92%8C%E5%86%85%E5%AD%98%E7%9A%84%E5%85%B3%E7%B3%BB%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F.md)
     * [计算机中的bit,Byte,KB, MB, GB, TB 等单位是怎么换算的？](research/Geek%E7%A9%BA%E9%97%B4/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%AD%E7%9A%84bit%2CByte%2CKB%2C%20MB%2C%20GB%2C%20TB%20%E7%AD%89%E5%8D%95%E4%BD%8D%E6%98%AF%E6%80%8E%E4%B9%88%E6%8D%A2%E7%AE%97%E7%9A%84%EF%BC%9F.md)
@@ -23,12 +19,18 @@
     * [物质、习惯、内核](research/%E4%B8%AA%E4%BA%BA%E5%88%9B%E4%BD%9C/%E7%89%A9%E8%B4%A8%E3%80%81%E4%B9%A0%E6%83%AF%E3%80%81%E5%86%85%E6%A0%B8.md)
     * [语言和艺术](research/%E4%B8%AA%E4%BA%BA%E5%88%9B%E4%BD%9C/%E8%AF%AD%E8%A8%80%E5%92%8C%E8%89%BA%E6%9C%AF.md)
 * 前端空间
+    * [cookie是存在本地的吗？他是什么文件？](research/%E5%89%8D%E7%AB%AF%E7%A9%BA%E9%97%B4/cookie%E6%98%AF%E5%AD%98%E5%9C%A8%E6%9C%AC%E5%9C%B0%E7%9A%84%E5%90%97%EF%BC%9F%E4%BB%96%E6%98%AF%E4%BB%80%E4%B9%88%E6%96%87%E4%BB%B6%EF%BC%9F.md)
 * 后端空间
     * [什么是三层架构？](research/%E5%90%8E%E7%AB%AF%E7%A9%BA%E9%97%B4/%E4%BB%80%E4%B9%88%E6%98%AF%E4%B8%89%E5%B1%82%E6%9E%B6%E6%9E%84%EF%BC%9F.md)
     * [如何用Idea初建springboot项目？](research/%E5%90%8E%E7%AB%AF%E7%A9%BA%E9%97%B4/%E5%A6%82%E4%BD%95%E7%94%A8Idea%E5%88%9D%E5%BB%BAspringboot%E9%A1%B9%E7%9B%AE%EF%BC%9F.md)
+* 图层空间
+    * [Ps提取阿尔法通道，并边缘柔化。](research/%E5%9B%BE%E5%B1%82%E7%A9%BA%E9%97%B4/Ps%E6%8F%90%E5%8F%96%E9%98%BF%E5%B0%94%E6%B3%95%E9%80%9A%E9%81%93%EF%BC%8C%E5%B9%B6%E8%BE%B9%E7%BC%98%E6%9F%94%E5%8C%96%E3%80%82.md)
 * 文字空间
     * [客观真理、公理、共识、公约](research/%E6%96%87%E5%AD%97%E7%A9%BA%E9%97%B4/%E5%AE%A2%E8%A7%82%E7%9C%9F%E7%90%86%E3%80%81%E5%85%AC%E7%90%86%E3%80%81%E5%85%B1%E8%AF%86%E3%80%81%E5%85%AC%E7%BA%A6.md)
+* 网络空间
+    * [什么是网络？](research/%E7%BD%91%E7%BB%9C%E7%A9%BA%E9%97%B4/%E4%BB%80%E4%B9%88%E6%98%AF%E7%BD%91%E7%BB%9C%EF%BC%9F.md)
 * 艺术空间
+    * [莫奈和卡米尔](research/%E8%89%BA%E6%9C%AF%E7%A9%BA%E9%97%B4/%E8%8E%AB%E5%A5%88%E5%92%8C%E5%8D%A1%E7%B1%B3%E5%B0%94.md)
 * 英文空间
     * [chill 是什么意思？](research/%E8%8B%B1%E6%96%87%E7%A9%BA%E9%97%B4/chill%20%E6%98%AF%E4%BB%80%E4%B9%88%E6%84%8F%E6%80%9D%EF%BC%9F.md)
     * [Damn son 是什么意思？](research/%E8%8B%B1%E6%96%87%E7%A9%BA%E9%97%B4/Damn%20son%20%E6%98%AF%E4%BB%80%E4%B9%88%E6%84%8F%E6%80%9D%EF%BC%9F.md)
