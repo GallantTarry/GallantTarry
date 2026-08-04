@@ -33,6 +33,7 @@
 ### 🔋 技能树与能量池 (Tech Stack Energy)
 
 目前处于持续“充能”与学习的状态。我不只希望在应用层创造，更渴望在计算机底层进行交互。
+
 | Tech Stack | Energy Level | Description |
 | :--- | :--- | :--- |
 | <span style="white-space: nowrap;">**C Language**</span> | <span style="white-space: nowrap;">`██▓░░░░░░░`&nbsp;**23%**</span> | 越过抽象层，与内存和指针直接对话。这是理解操作系统、数据结构与系统级交互的钥匙，保持对底层的敬畏，探索深水区的基石。 |
@@ -41,6 +42,7 @@
 | <span style="white-space: nowrap;">**Python**</span> | <span style="white-space: nowrap;">`█░░░░░░░░░`&nbsp;**11%**</span> | 破壁与连接的自动化尖刃。以极简语法进行降维打击，精准剥离并重组繁杂数据，在复杂规则匹配与高效办公流中实现真正的“数据自由”。 |
 | <span style="white-space: nowrap;">**Spring Boot / MySQL**</span>| <span style="white-space: nowrap;">`█░░░░░░░░░`&nbsp;**9%**</span> | 数据流转与业务调度的中枢神经。以约定大于配置的优雅，打通从RESTful接口到关系型数据落地的完整任督二脉，构建全栈生态的必经之路。 |
 | <span style="white-space: nowrap;">**Electron / Node.js**</span>| <span style="white-space: nowrap;">`▓░░░░░░░░░`&nbsp;**6%**</span> | 突破浏览器沙盒的越狱利器。将Web生态降维注入系统级操作，赋予前端技术原生的灵魂，是拓宽跨平台桌面端边界的前沿阵地。 |
+
 ---
 ### 🚀 正在推进的副本 (Current Quests)
 
