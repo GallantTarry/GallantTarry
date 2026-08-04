@@ -26,9 +26,9 @@
 
 *   🚶‍♂️ **流浪者**： 喜欢流浪。
 *   🎮 **第九艺术**：喜欢打电子游戏。
-*   🎻 **音符与画布**：没事乱看书，没文化，乱弹琴。
-*   🏊‍♂️ **水下放空**：这个确实是高手。
-*   🚬 **极客时刻**：确实是找个借口抽烟。
+*   🎻 **音符与画布**：没事乱执笔，没文化，乱弹琴。
+*   🏊‍♂️ **水下放空**：这个确实是个高手。
+*   🚬 **极客时刻**：找个借口抽烟。
 
 ---
 ### 🛠️ 核心技术栈 (Core Tech Stack)
@@ -57,6 +57,6 @@
 *   👾 **创造自己的独立游戏(Indie Game Dev)**
 *   🌍 **学习英文(Mastering English)**
 *   ⚓ **船长之梦 (Captain's Dream)**
-*   💡 **Life Quality Upgrades(Life Quality Upgrades)**
+*   💡 **提高生活质量(Life Quality Upgrades)**
 *   📚 **知识体系构建(Knowledge Architecture)**
 
