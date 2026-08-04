@@ -32,7 +32,7 @@
 * 网络空间
     * [什么是网络？](research/%E7%BD%91%E7%BB%9C%E7%A9%BA%E9%97%B4/%E4%BB%80%E4%B9%88%E6%98%AF%E7%BD%91%E7%BB%9C%EF%BC%9F.md)
 * 艺术空间
-    * [燃烧的灵魂：文森特·梵高与他的麦田、星空与人间](research/%E8%89%BA%E6%9C%AF%E7%A9%BA%E9%97%B4/%E7%87%83%E7%83%A7%E7%9A%84%E7%81%B5%E9%AD%82%EF%BC%9A%E6%96%87%E6%A3%AE%E7%89%B9%C2%B7%E6%A2%B5%E9%AB%98%E4%B8%8E%E4%BB%96%E7%9A%84%E9%BA%A6%E7%94%B0%E3%80%81%E6%98%9F%E7%A9%BA%E4%B8%8E%E4%BA%BA%E9%97%B4.md)
+    * [文森特·梵高](research/%E8%89%BA%E6%9C%AF%E7%A9%BA%E9%97%B4/%E6%96%87%E6%A3%AE%E7%89%B9%C2%B7%E6%A2%B5%E9%AB%98.md)
     * [莫奈和卡米尔](research/%E8%89%BA%E6%9C%AF%E7%A9%BA%E9%97%B4/%E8%8E%AB%E5%A5%88%E5%92%8C%E5%8D%A1%E7%B1%B3%E5%B0%94.md)
     * [马克·夏加尔](research/%E8%89%BA%E6%9C%AF%E7%A9%BA%E9%97%B4/%E9%A9%AC%E5%85%8B%C2%B7%E5%A4%8F%E5%8A%A0%E5%B0%94.md)
 * 英文空间
