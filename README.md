@@ -57,6 +57,6 @@
 *   👾 **创造自己的独立游戏(Indie Game Dev)**
 *   🌍 **学习英文(Mastering English)**
 *   ⚓ **船长之梦 (Captain's Dream)**
-*   💡 **Life Quality Upgrades(Life Quality Upgrades)**
+*   💡 **提高生活质量(Life Quality Upgrades)**
 *   📚 **知识体系构建(Knowledge Architecture)**
 
