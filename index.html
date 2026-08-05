@@ -416,9 +416,17 @@
       auto2top: true,
       routerMode: 'hash',
 
-      // 👇 新增这个插件数组 👇
+      // 👇 新增这个插件数组 👇   
       plugins: [
         function(hook, vm) {
+          
+          // === 新增：全局自动修复加粗与代码块嵌套的 Bug ===
+          hook.beforeEach(function(content) {
+            // 利用正则表达式，全局查找 **`内容`** 格式，并自动替换为 <strong><code>内容</code></strong>
+            return content.replace(/\*\*\`(.*?)\`\*\*/g, '<strong><code>$1</code></strong>');
+          });
+          // ===========================================
+
           hook.doneEach(function() {
             // 每次路由切换渲染完成后，找到页面里所有的 table
             var tables = document.querySelectorAll('.markdown-section table');
