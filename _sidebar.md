@@ -30,6 +30,7 @@
 * 文字空间
     * [客观真理、公理、共识、公约](research/%E6%96%87%E5%AD%97%E7%A9%BA%E9%97%B4/%E5%AE%A2%E8%A7%82%E7%9C%9F%E7%90%86%E3%80%81%E5%85%AC%E7%90%86%E3%80%81%E5%85%B1%E8%AF%86%E3%80%81%E5%85%AC%E7%BA%A6.md)
 * 网络空间
+    * [HTTP文本传输协议是什么？](research/%E7%BD%91%E7%BB%9C%E7%A9%BA%E9%97%B4/HTTP%E6%96%87%E6%9C%AC%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F.md)
     * [什么是网络？](research/%E7%BD%91%E7%BB%9C%E7%A9%BA%E9%97%B4/%E4%BB%80%E4%B9%88%E6%98%AF%E7%BD%91%E7%BB%9C%EF%BC%9F.md)
 * 艺术空间
     * [文森特·梵高](research/%E8%89%BA%E6%9C%AF%E7%A9%BA%E9%97%B4/%E6%96%87%E6%A3%AE%E7%89%B9%C2%B7%E6%A2%B5%E9%AB%98.md)
