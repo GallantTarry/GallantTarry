@@ -27,6 +27,7 @@
     * [做一个浪漫的人](research/%E4%B8%AA%E4%BA%BA%E5%88%9B%E4%BD%9C/%E5%81%9A%E4%B8%80%E4%B8%AA%E6%B5%AA%E6%BC%AB%E7%9A%84%E4%BA%BA.md)
     * [物质、习惯、内核](research/%E4%B8%AA%E4%BA%BA%E5%88%9B%E4%BD%9C/%E7%89%A9%E8%B4%A8%E3%80%81%E4%B9%A0%E6%83%AF%E3%80%81%E5%86%85%E6%A0%B8.md)
     * [语言和艺术](research/%E4%B8%AA%E4%BA%BA%E5%88%9B%E4%BD%9C/%E8%AF%AD%E8%A8%80%E5%92%8C%E8%89%BA%E6%9C%AF.md)
+* 乐理空间
 * 前端空间
     * [cookie是存在本地的吗？他是什么文件？](research/%E5%89%8D%E7%AB%AF%E7%A9%BA%E9%97%B4/cookie%E6%98%AF%E5%AD%98%E5%9C%A8%E6%9C%AC%E5%9C%B0%E7%9A%84%E5%90%97%EF%BC%9F%E4%BB%96%E6%98%AF%E4%BB%80%E4%B9%88%E6%96%87%E4%BB%B6%EF%BC%9F.md)
     * [前端请求的发展史是什么？](research/%E5%89%8D%E7%AB%AF%E7%A9%BA%E9%97%B4/%E5%89%8D%E7%AB%AF%E8%AF%B7%E6%B1%82%E7%9A%84%E5%8F%91%E5%B1%95%E5%8F%B2%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F.md)
@@ -44,14 +45,15 @@
     * [Ps提取阿尔法通道，并边缘柔化](research/%E5%9B%BE%E5%B1%82%E7%A9%BA%E9%97%B4/Ps%E6%8F%90%E5%8F%96%E9%98%BF%E5%B0%94%E6%B3%95%E9%80%9A%E9%81%93%EF%BC%8C%E5%B9%B6%E8%BE%B9%E7%BC%98%E6%9F%94%E5%8C%96.md)
 * 文字空间
     * [客观真理、公理、共识、公约](research/%E6%96%87%E5%AD%97%E7%A9%BA%E9%97%B4/%E5%AE%A2%E8%A7%82%E7%9C%9F%E7%90%86%E3%80%81%E5%85%AC%E7%90%86%E3%80%81%E5%85%B1%E8%AF%86%E3%80%81%E5%85%AC%E7%BA%A6.md)
+* 电影空间
+* 画作空间
+    * [文森特·梵高](research/%E7%94%BB%E4%BD%9C%E7%A9%BA%E9%97%B4/%E6%96%87%E6%A3%AE%E7%89%B9%C2%B7%E6%A2%B5%E9%AB%98.md)
+    * [莫奈和卡米尔](research/%E7%94%BB%E4%BD%9C%E7%A9%BA%E9%97%B4/%E8%8E%AB%E5%A5%88%E5%92%8C%E5%8D%A1%E7%B1%B3%E5%B0%94.md)
+    * [莱昂纳多·达·芬奇](research/%E7%94%BB%E4%BD%9C%E7%A9%BA%E9%97%B4/%E8%8E%B1%E6%98%82%E7%BA%B3%E5%A4%9A%C2%B7%E8%BE%BE%C2%B7%E8%8A%AC%E5%A5%87.md)
+    * [马克·夏加尔](research/%E7%94%BB%E4%BD%9C%E7%A9%BA%E9%97%B4/%E9%A9%AC%E5%85%8B%C2%B7%E5%A4%8F%E5%8A%A0%E5%B0%94.md)
 * 网络空间
     * [HTTP文本传输协议是什么？](research/%E7%BD%91%E7%BB%9C%E7%A9%BA%E9%97%B4/HTTP%E6%96%87%E6%9C%AC%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F.md)
     * [什么是网络？](research/%E7%BD%91%E7%BB%9C%E7%A9%BA%E9%97%B4/%E4%BB%80%E4%B9%88%E6%98%AF%E7%BD%91%E7%BB%9C%EF%BC%9F.md)
-* 艺术空间
-    * [文森特·梵高](research/%E8%89%BA%E6%9C%AF%E7%A9%BA%E9%97%B4/%E6%96%87%E6%A3%AE%E7%89%B9%C2%B7%E6%A2%B5%E9%AB%98.md)
-    * [莫奈和卡米尔](research/%E8%89%BA%E6%9C%AF%E7%A9%BA%E9%97%B4/%E8%8E%AB%E5%A5%88%E5%92%8C%E5%8D%A1%E7%B1%B3%E5%B0%94.md)
-    * [莱昂纳多·达·芬奇](research/%E8%89%BA%E6%9C%AF%E7%A9%BA%E9%97%B4/%E8%8E%B1%E6%98%82%E7%BA%B3%E5%A4%9A%C2%B7%E8%BE%BE%C2%B7%E8%8A%AC%E5%A5%87.md)
-    * [马克·夏加尔](research/%E8%89%BA%E6%9C%AF%E7%A9%BA%E9%97%B4/%E9%A9%AC%E5%85%8B%C2%B7%E5%A4%8F%E5%8A%A0%E5%B0%94.md)
 * 英文空间
     * [chill 是什么意思？](research/%E8%8B%B1%E6%96%87%E7%A9%BA%E9%97%B4/chill%20%E6%98%AF%E4%BB%80%E4%B9%88%E6%84%8F%E6%80%9D%EF%BC%9F.md)
     * [Damn son 是什么意思？](research/%E8%8B%B1%E6%96%87%E7%A9%BA%E9%97%B4/Damn%20son%20%E6%98%AF%E4%BB%80%E4%B9%88%E6%84%8F%E6%80%9D%EF%BC%9F.md)
@@ -59,3 +61,4 @@
     * [满分十分给九分怎么用英文表达？](research/%E8%8B%B1%E6%96%87%E7%A9%BA%E9%97%B4/%E6%BB%A1%E5%88%86%E5%8D%81%E5%88%86%E7%BB%99%E4%B9%9D%E5%88%86%E6%80%8E%E4%B9%88%E7%94%A8%E8%8B%B1%E6%96%87%E8%A1%A8%E8%BE%BE%EF%BC%9F.md)
     * [热门编程语言英文单词汇总](research/%E8%8B%B1%E6%96%87%E7%A9%BA%E9%97%B4/%E7%83%AD%E9%97%A8%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E8%8B%B1%E6%96%87%E5%8D%95%E8%AF%8D%E6%B1%87%E6%80%BB.md)
     * [编程世界 200 个高频与硬核核心英文单词汇总](research/%E8%8B%B1%E6%96%87%E7%A9%BA%E9%97%B4/%E7%BC%96%E7%A8%8B%E4%B8%96%E7%95%8C%20200%20%E4%B8%AA%E9%AB%98%E9%A2%91%E4%B8%8E%E7%A1%AC%E6%A0%B8%E6%A0%B8%E5%BF%83%E8%8B%B1%E6%96%87%E5%8D%95%E8%AF%8D%E6%B1%87%E6%80%BB.md)
+* 音乐空间
