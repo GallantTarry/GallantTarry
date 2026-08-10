@@ -50,6 +50,9 @@
 * 电影空间
     * [七武士](research/%E7%94%B5%E5%BD%B1%E7%A9%BA%E9%97%B4/%E4%B8%83%E6%AD%A6%E5%A3%AB.md)
     * [十二怒汉](research/%E7%94%B5%E5%BD%B1%E7%A9%BA%E9%97%B4/%E5%8D%81%E4%BA%8C%E6%80%92%E6%B1%89.md)
+    * [处女泉](research/%E7%94%B5%E5%BD%B1%E7%A9%BA%E9%97%B4/%E5%A4%84%E5%A5%B3%E6%B3%89.md)
+    * [影武者](research/%E7%94%B5%E5%BD%B1%E7%A9%BA%E9%97%B4/%E5%BD%B1%E6%AD%A6%E8%80%85.md)
+    * [都灵之马](research/%E7%94%B5%E5%BD%B1%E7%A9%BA%E9%97%B4/%E9%83%BD%E7%81%B5%E4%B9%8B%E9%A9%AC.md)
 * 画作空间
     * [文森特·梵高](research/%E7%94%BB%E4%BD%9C%E7%A9%BA%E9%97%B4/%E6%96%87%E6%A3%AE%E7%89%B9%C2%B7%E6%A2%B5%E9%AB%98.md)
     * [莫奈和卡米尔](research/%E7%94%BB%E4%BD%9C%E7%A9%BA%E9%97%B4/%E8%8E%AB%E5%A5%88%E5%92%8C%E5%8D%A1%E7%B1%B3%E5%B0%94.md)
