@@ -3,7 +3,7 @@
 
 HTTP 和 HTTPS 的核心区别可以用四个字概括：**安全加密**。
 
-  
+  ![http和https的区别.jpg](../../media/http和https的区别.jpg)
 
 简单来说，HTTP 是互联网上应用最为广泛的一种网络协议，用于在 Web 浏览器和网站服务器之间传递信息；而 HTTPS 则是 HTTP 的“安全升级版”，它在 HTTP 的基础之上加入了 SSL/TLS 协议，为数据传输建立了一条加密隧道。
 
