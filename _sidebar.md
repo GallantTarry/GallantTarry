@@ -5,6 +5,7 @@
     * [emoji表情包是什么？](research/Geek%E7%A9%BA%E9%97%B4/emoji%E8%A1%A8%E6%83%85%E5%8C%85%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F.md)
     * [GitHub 网页版的工作流如何使用？](research/Geek%E7%A9%BA%E9%97%B4/GitHub%20%E7%BD%91%E9%A1%B5%E7%89%88%E7%9A%84%E5%B7%A5%E4%BD%9C%E6%B5%81%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%EF%BC%9F.md)
     * [idea为什么是最强利器？](research/Geek%E7%A9%BA%E9%97%B4/idea%E4%B8%BA%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%80%E5%BC%BA%E5%88%A9%E5%99%A8%EF%BC%9F.md)
+    * [int 和 Integer有什么区别？](research/Geek%E7%A9%BA%E9%97%B4/int%20%E5%92%8C%20Integer%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F.md)
     * [static 修饰的静态变量运行后在jvm哪里？](research/Geek%E7%A9%BA%E9%97%B4/static%20%E4%BF%AE%E9%A5%B0%E7%9A%84%E9%9D%99%E6%80%81%E5%8F%98%E9%87%8F%E8%BF%90%E8%A1%8C%E5%90%8E%E5%9C%A8jvm%E5%93%AA%E9%87%8C%EF%BC%9F.md)
     * [WebStorm 在前端开发领域的核心优势是什么？](research/Geek%E7%A9%BA%E9%97%B4/WebStorm%20%E5%9C%A8%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E9%A2%86%E5%9F%9F%E7%9A%84%E6%A0%B8%E5%BF%83%E4%BC%98%E5%8A%BF%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F.md)
     * [windows怎么用终端使用SSH服务链接WSL服务器？](research/Geek%E7%A9%BA%E9%97%B4/windows%E6%80%8E%E4%B9%88%E7%94%A8%E7%BB%88%E7%AB%AF%E4%BD%BF%E7%94%A8SSH%E6%9C%8D%E5%8A%A1%E9%93%BE%E6%8E%A5WSL%E6%9C%8D%E5%8A%A1%E5%99%A8%EF%BC%9F.md)
@@ -29,6 +30,7 @@
     * [语言和艺术](research/%E4%B8%AA%E4%BA%BA%E5%88%9B%E4%BD%9C/%E8%AF%AD%E8%A8%80%E5%92%8C%E8%89%BA%E6%9C%AF.md)
 * 前端空间
     * [cookie是存在本地的吗？他是什么文件？](research/%E5%89%8D%E7%AB%AF%E7%A9%BA%E9%97%B4/cookie%E6%98%AF%E5%AD%98%E5%9C%A8%E6%9C%AC%E5%9C%B0%E7%9A%84%E5%90%97%EF%BC%9F%E4%BB%96%E6%98%AF%E4%BB%80%E4%B9%88%E6%96%87%E4%BB%B6%EF%BC%9F.md)
+    * [http 和 https有什么区别？](research/%E5%89%8D%E7%AB%AF%E7%A9%BA%E9%97%B4/http%20%E5%92%8C%20https%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F.md)
     * [前端请求的发展史是什么？](research/%E5%89%8D%E7%AB%AF%E7%A9%BA%E9%97%B4/%E5%89%8D%E7%AB%AF%E8%AF%B7%E6%B1%82%E7%9A%84%E5%8F%91%E5%B1%95%E5%8F%B2%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F.md)
 * 后端空间
     * [@RequestBody在Springboot中到底干了什么？](research/%E5%90%8E%E7%AB%AF%E7%A9%BA%E9%97%B4/%40RequestBody%E5%9C%A8Springboot%E4%B8%AD%E5%88%B0%E5%BA%95%E5%B9%B2%E4%BA%86%E4%BB%80%E4%B9%88%EF%BC%9F.md)
@@ -50,6 +52,7 @@
     * [莫奈和卡米尔](research/%E7%94%BB%E4%BD%9C%E7%A9%BA%E9%97%B4/%E8%8E%AB%E5%A5%88%E5%92%8C%E5%8D%A1%E7%B1%B3%E5%B0%94.md)
     * [莱昂纳多·达·芬奇](research/%E7%94%BB%E4%BD%9C%E7%A9%BA%E9%97%B4/%E8%8E%B1%E6%98%82%E7%BA%B3%E5%A4%9A%C2%B7%E8%BE%BE%C2%B7%E8%8A%AC%E5%A5%87.md)
     * [马克·夏加尔](research/%E7%94%BB%E4%BD%9C%E7%A9%BA%E9%97%B4/%E9%A9%AC%E5%85%8B%C2%B7%E5%A4%8F%E5%8A%A0%E5%B0%94.md)
+* 算法空间
 * 网络空间
     * [HTTP文本传输协议是什么？](research/%E7%BD%91%E7%BB%9C%E7%A9%BA%E9%97%B4/HTTP%E6%96%87%E6%9C%AC%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F.md)
     * [什么是网络？](research/%E7%BD%91%E7%BB%9C%E7%A9%BA%E9%97%B4/%E4%BB%80%E4%B9%88%E6%98%AF%E7%BD%91%E7%BB%9C%EF%BC%9F.md)
