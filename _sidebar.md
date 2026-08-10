@@ -27,7 +27,6 @@
     * [做一个浪漫的人](research/%E4%B8%AA%E4%BA%BA%E5%88%9B%E4%BD%9C/%E5%81%9A%E4%B8%80%E4%B8%AA%E6%B5%AA%E6%BC%AB%E7%9A%84%E4%BA%BA.md)
     * [物质、习惯、内核](research/%E4%B8%AA%E4%BA%BA%E5%88%9B%E4%BD%9C/%E7%89%A9%E8%B4%A8%E3%80%81%E4%B9%A0%E6%83%AF%E3%80%81%E5%86%85%E6%A0%B8.md)
     * [语言和艺术](research/%E4%B8%AA%E4%BA%BA%E5%88%9B%E4%BD%9C/%E8%AF%AD%E8%A8%80%E5%92%8C%E8%89%BA%E6%9C%AF.md)
-* 乐理空间
 * 前端空间
     * [cookie是存在本地的吗？他是什么文件？](research/%E5%89%8D%E7%AB%AF%E7%A9%BA%E9%97%B4/cookie%E6%98%AF%E5%AD%98%E5%9C%A8%E6%9C%AC%E5%9C%B0%E7%9A%84%E5%90%97%EF%BC%9F%E4%BB%96%E6%98%AF%E4%BB%80%E4%B9%88%E6%96%87%E4%BB%B6%EF%BC%9F.md)
     * [前端请求的发展史是什么？](research/%E5%89%8D%E7%AB%AF%E7%A9%BA%E9%97%B4/%E5%89%8D%E7%AB%AF%E8%AF%B7%E6%B1%82%E7%9A%84%E5%8F%91%E5%B1%95%E5%8F%B2%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F.md)
