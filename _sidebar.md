@@ -64,6 +64,7 @@
     * [马克·夏加尔](research/%E7%94%BB%E4%BD%9C%E7%A9%BA%E9%97%B4/%E9%A9%AC%E5%85%8B%C2%B7%E5%A4%8F%E5%8A%A0%E5%B0%94.md)
 * 程序空间
     * [什么是程序？](research/%E7%A8%8B%E5%BA%8F%E7%A9%BA%E9%97%B4/%E4%BB%80%E4%B9%88%E6%98%AF%E7%A8%8B%E5%BA%8F%EF%BC%9F.md)
+    * [简要集合结构图](research/%E7%A8%8B%E5%BA%8F%E7%A9%BA%E9%97%B4/%E7%AE%80%E8%A6%81%E9%9B%86%E5%90%88%E7%BB%93%E6%9E%84%E5%9B%BE.md)
 * 网络空间
     * [http 和 https有什么区别？](research/%E7%BD%91%E7%BB%9C%E7%A9%BA%E9%97%B4/http%20%E5%92%8C%20https%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F.md)
     * [HTTP文本传输协议是什么？](research/%E7%BD%91%E7%BB%9C%E7%A9%BA%E9%97%B4/HTTP%E6%96%87%E6%9C%AC%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F.md)
