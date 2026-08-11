@@ -22,7 +22,6 @@
     * [如何借用代码？](research/Geek%E7%A9%BA%E9%97%B4/%E5%A6%82%E4%BD%95%E5%80%9F%E7%94%A8%E4%BB%A3%E7%A0%81%EF%BC%9F.md)
     * [如何快速将文件拖入windows文件夹？](research/Geek%E7%A9%BA%E9%97%B4/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E5%B0%86%E6%96%87%E4%BB%B6%E6%8B%96%E5%85%A5windows%E6%96%87%E4%BB%B6%E5%A4%B9%EF%BC%9F.md)
     * [接口引用、多态、变量声明是什么？](research/Geek%E7%A9%BA%E9%97%B4/%E6%8E%A5%E5%8F%A3%E5%BC%95%E7%94%A8%E3%80%81%E5%A4%9A%E6%80%81%E3%80%81%E5%8F%98%E9%87%8F%E5%A3%B0%E6%98%8E%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F.md)
-    * [接口引用即多态是什么意思？](research/Geek%E7%A9%BA%E9%97%B4/%E6%8E%A5%E5%8F%A3%E5%BC%95%E7%94%A8%E5%8D%B3%E5%A4%9A%E6%80%81%E6%98%AF%E4%BB%80%E4%B9%88%E6%84%8F%E6%80%9D%EF%BC%9F.md)
     * [栈、堆、元空间是什么？](research/Geek%E7%A9%BA%E9%97%B4/%E6%A0%88%E3%80%81%E5%A0%86%E3%80%81%E5%85%83%E7%A9%BA%E9%97%B4%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F.md)
     * [终端是什么？](research/Geek%E7%A9%BA%E9%97%B4/%E7%BB%88%E7%AB%AF%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F.md)
     * [编程和内存的关系是什么？](research/Geek%E7%A9%BA%E9%97%B4/%E7%BC%96%E7%A8%8B%E5%92%8C%E5%86%85%E5%AD%98%E7%9A%84%E5%85%B3%E7%B3%BB%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F.md)
