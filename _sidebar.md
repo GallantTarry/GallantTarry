@@ -13,6 +13,7 @@
     * [WSL 2如何一键安装？](research/Geek%E7%A9%BA%E9%97%B4/WSL%202%E5%A6%82%E4%BD%95%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85%EF%BC%9F.md)
     * [WSL Ubuntu是什么？](research/Geek%E7%A9%BA%E9%97%B4/WSL%20Ubuntu%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F.md)
     * [什么是字节码文件？](research/Geek%E7%A9%BA%E9%97%B4/%E4%BB%80%E4%B9%88%E6%98%AF%E5%AD%97%E8%8A%82%E7%A0%81%E6%96%87%E4%BB%B6%EF%BC%9F.md)
+    * [什么是服务器？](research/Geek%E7%A9%BA%E9%97%B4/%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%8D%E5%8A%A1%E5%99%A8%EF%BC%9F.md)
     * [什么是计算机的前后端技术？](research/Geek%E7%A9%BA%E9%97%B4/%E4%BB%80%E4%B9%88%E6%98%AF%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E5%89%8D%E5%90%8E%E7%AB%AF%E6%8A%80%E6%9C%AF%EF%BC%9F.md)
     * [什么是路径、环境变量、正则表达式？](research/Geek%E7%A9%BA%E9%97%B4/%E4%BB%80%E4%B9%88%E6%98%AF%E8%B7%AF%E5%BE%84%E3%80%81%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E3%80%81%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%EF%BC%9F.md)
     * [前后端文件命名都要遵守什么样的规范？](research/Geek%E7%A9%BA%E9%97%B4/%E5%89%8D%E5%90%8E%E7%AB%AF%E6%96%87%E4%BB%B6%E5%91%BD%E5%90%8D%E9%83%BD%E8%A6%81%E9%81%B5%E5%AE%88%E4%BB%80%E4%B9%88%E6%A0%B7%E7%9A%84%E8%A7%84%E8%8C%83%EF%BC%9F.md)
@@ -20,6 +21,7 @@
     * [如何使用MarkDown基本语法？](research/Geek%E7%A9%BA%E9%97%B4/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8MarkDown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95%EF%BC%9F.md)
     * [如何借用代码？](research/Geek%E7%A9%BA%E9%97%B4/%E5%A6%82%E4%BD%95%E5%80%9F%E7%94%A8%E4%BB%A3%E7%A0%81%EF%BC%9F.md)
     * [如何快速将文件拖入windows文件夹？](research/Geek%E7%A9%BA%E9%97%B4/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E5%B0%86%E6%96%87%E4%BB%B6%E6%8B%96%E5%85%A5windows%E6%96%87%E4%BB%B6%E5%A4%B9%EF%BC%9F.md)
+    * [接口引用即多态是什么意思？](research/Geek%E7%A9%BA%E9%97%B4/%E6%8E%A5%E5%8F%A3%E5%BC%95%E7%94%A8%E5%8D%B3%E5%A4%9A%E6%80%81%E6%98%AF%E4%BB%80%E4%B9%88%E6%84%8F%E6%80%9D%EF%BC%9F.md)
     * [栈、堆、元空间是什么？](research/Geek%E7%A9%BA%E9%97%B4/%E6%A0%88%E3%80%81%E5%A0%86%E3%80%81%E5%85%83%E7%A9%BA%E9%97%B4%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F.md)
     * [终端是什么？](research/Geek%E7%A9%BA%E9%97%B4/%E7%BB%88%E7%AB%AF%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F.md)
     * [编程和内存的关系是什么？](research/Geek%E7%A9%BA%E9%97%B4/%E7%BC%96%E7%A8%8B%E5%92%8C%E5%86%85%E5%AD%98%E7%9A%84%E5%85%B3%E7%B3%BB%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F.md)
@@ -63,6 +65,7 @@
 * 网络空间
     * [http 和 https有什么区别？](research/%E7%BD%91%E7%BB%9C%E7%A9%BA%E9%97%B4/http%20%E5%92%8C%20https%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F.md)
     * [HTTP文本传输协议是什么？](research/%E7%BD%91%E7%BB%9C%E7%A9%BA%E9%97%B4/HTTP%E6%96%87%E6%9C%AC%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F.md)
+    * [ping 和 telnet是干什么的？](research/%E7%BD%91%E7%BB%9C%E7%A9%BA%E9%97%B4/ping%20%E5%92%8C%20telnet%E6%98%AF%E5%B9%B2%E4%BB%80%E4%B9%88%E7%9A%84%EF%BC%9F.md)
     * [什么是网络？](research/%E7%BD%91%E7%BB%9C%E7%A9%BA%E9%97%B4/%E4%BB%80%E4%B9%88%E6%98%AF%E7%BD%91%E7%BB%9C%EF%BC%9F.md)
     * [网络带宽是什么？](research/%E7%BD%91%E7%BB%9C%E7%A9%BA%E9%97%B4/%E7%BD%91%E7%BB%9C%E5%B8%A6%E5%AE%BD%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F.md)
 * 英文空间
