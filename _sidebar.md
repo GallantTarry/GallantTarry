@@ -4,6 +4,7 @@
     * [AVIF文件格式是什么？](research/Geek%E7%A9%BA%E9%97%B4/AVIF%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F.md)
     * [emoji表情包是什么？](research/Geek%E7%A9%BA%E9%97%B4/emoji%E8%A1%A8%E6%83%85%E5%8C%85%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F.md)
     * [GitHub 网页版的工作流如何使用？](research/Geek%E7%A9%BA%E9%97%B4/GitHub%20%E7%BD%91%E9%A1%B5%E7%89%88%E7%9A%84%E5%B7%A5%E4%BD%9C%E6%B5%81%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%EF%BC%9F.md)
+    * [ico是什么格式？ 为什么Java原生标准库不支持？](research/Geek%E7%A9%BA%E9%97%B4/ico%E6%98%AF%E4%BB%80%E4%B9%88%E6%A0%BC%E5%BC%8F%EF%BC%9F%20%E4%B8%BA%E4%BB%80%E4%B9%88Java%E5%8E%9F%E7%94%9F%E6%A0%87%E5%87%86%E5%BA%93%E4%B8%8D%E6%94%AF%E6%8C%81%EF%BC%9F.md)
     * [idea为什么是最强利器？](research/Geek%E7%A9%BA%E9%97%B4/idea%E4%B8%BA%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%80%E5%BC%BA%E5%88%A9%E5%99%A8%EF%BC%9F.md)
     * [int 和 Integer有什么区别？](research/Geek%E7%A9%BA%E9%97%B4/int%20%E5%92%8C%20Integer%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F.md)
     * [json是什么？](research/Geek%E7%A9%BA%E9%97%B4/json%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F.md)
@@ -50,6 +51,7 @@
     * [Ps提取阿尔法通道，并边缘柔化](research/%E5%9B%BE%E5%B1%82%E7%A9%BA%E9%97%B4/Ps%E6%8F%90%E5%8F%96%E9%98%BF%E5%B0%94%E6%B3%95%E9%80%9A%E9%81%93%EF%BC%8C%E5%B9%B6%E8%BE%B9%E7%BC%98%E6%9F%94%E5%8C%96.md)
 * 文字空间
     * [客观真理、公理、共识、公约](research/%E6%96%87%E5%AD%97%E7%A9%BA%E9%97%B4/%E5%AE%A2%E8%A7%82%E7%9C%9F%E7%90%86%E3%80%81%E5%85%AC%E7%90%86%E3%80%81%E5%85%B1%E8%AF%86%E3%80%81%E5%85%AC%E7%BA%A6.md)
+* 更多空间
 * 画作空间
     * [文森特·梵高](research/%E7%94%BB%E4%BD%9C%E7%A9%BA%E9%97%B4/%E6%96%87%E6%A3%AE%E7%89%B9%C2%B7%E6%A2%B5%E9%AB%98.md)
     * [莫奈和卡米尔](research/%E7%94%BB%E4%BD%9C%E7%A9%BA%E9%97%B4/%E8%8E%AB%E5%A5%88%E5%92%8C%E5%8D%A1%E7%B1%B3%E5%B0%94.md)
