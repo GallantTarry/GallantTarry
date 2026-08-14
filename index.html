@@ -39,53 +39,126 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* ====== 2. 侧边栏：去蓝调，纯粹极简 ====== */
+    /* ========================================================= */
+    /* ====== 2. 侧边栏：世界级 UI - 深空毛玻璃与磁吸悬浮胶囊 ====== */
+    /* ========================================================= */
+
+    /* --- A. 极致通透的毛玻璃面板 --- */
     .sidebar {
-      background: var(--bg-sidebar) !important;
-      border-right: 1px solid var(--border-color) !important;
+      background: rgba(18, 18, 20, 0.65) !important; /* 降低透明度，透出底层黑度 */
+      backdrop-filter: blur(24px) saturate(150%) !important; /* 极强的高斯模糊与色彩增强 */
+      -webkit-backdrop-filter: blur(24px) saturate(150%) !important;
+      border-right: 1px solid rgba(255, 255, 255, 0.06) !important; /* 极细的高光边缘 */
+      box-shadow: 4px 0 30px rgba(0, 0, 0, 0.5) !important; /* 右侧投下深邃阴影 */
       padding-top: 40px;
     }
+
+    /* --- B. 顶部标题发光微距 --- */
     .sidebar h1 {
       font-family: 'Noto Serif SC', serif !important;
       color: var(--text-title) !important;
-      font-size: 22px;
+      font-size: 26px;
       font-weight: 900;
-      letter-spacing: 1px;
+      letter-spacing: 2px;
       text-align: center;
-      margin-bottom: 30px;
+      margin-bottom: 40px;
+      text-shadow: 0 4px 20px rgba(255, 255, 255, 0.15); /* 标题自带微弱神圣光晕 */
     }
     .sidebar h1 strong {
       color: var(--theme-color);
-    }
-    .sidebar-nav > ul > li > p {
-        color: var(--text-title) !important; 
-        font-weight: 600;
-        font-size: 13px;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-        margin-top: 20px;
-        margin-bottom: 8px;
-        padding-left: 20px;
-    }
-    .sidebar-nav ul li a {
-      color: var(--text-muted) !important;
-      font-size: 14px;
-      padding: 8px 20px;
-      margin: 2px 0;
-      transition: all 0.2s ease;
-      cursor: pointer !important;
-    }
-    .sidebar-nav ul li a:hover {
-      background: rgba(255, 255, 255, 0.05) !important;
-      color: var(--text-title) !important; 
-    }
-    .sidebar-nav ul li.active > a {
-      color: var(--theme-color) !important;
-      font-weight: 600;
-      border-right: 3px solid var(--theme-color) !important;
-      background: rgba(16, 185, 129, 0.08) !important;
+      text-shadow: 0 2px 15px rgba(16, 185, 129, 0.4); /* 主题色文字光晕更强 */
     }
 
+    /* --- C. 优雅隐匿的滚动条 --- */
+    .sidebar::-webkit-scrollbar { width: 4px; }
+    .sidebar::-webkit-scrollbar-track { background: transparent; }
+    .sidebar::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+    }
+    .sidebar:hover::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.2); }
+
+    /* --- D. 一级目录：无边框悬浮感 --- */
+    .sidebar-nav > ul > li {
+      font-size: 17px !important;
+      font-weight: 700 !important;
+      color: rgba(255, 255, 255, 0.95) !important;
+      margin: 20px 16px 8px 16px !important; /* 两侧留白，为后续胶囊态做准备 */
+      padding-left: 8px !important;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+    .sidebar-nav > ul > li:hover {
+      color: #ffffff !important;
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.3); /* 悬停时文字发光 */
+      transform: translateX(4px);
+    }
+
+    /* 兼容性兜底（清空内部包裹标签的影响） */
+    .sidebar-nav > ul > li > p {
+      font-size: inherit !important;
+      font-weight: inherit !important;
+      color: inherit !important;
+      margin: 0 !important;
+    }
+
+    /* --- E. 子级文件：极致丝滑的圆角胶囊悬停态 --- */
+    .sidebar-nav ul li a {
+      color: #a1a1aa !important;
+      font-size: 14.5px !important;
+      font-weight: 500 !important;
+      padding: 10px 16px 10px 36px !important; /* 文字缩进 */
+      margin: 4px 16px !important; /* 关键：左右留出外边距，让背景变成胶囊而不是通栏 */
+      border-radius: 12px !important; /* 苹果风圆角 */
+      display: block;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important; /* 引入回弹阻尼曲线 */
+    }
+
+    /* 鼠标悬停子文件：浮出毛玻璃胶囊 */
+    .sidebar-nav ul li a:hover {
+      background: rgba(255, 255, 255, 0.08) !important; /* 悬停背景微微发亮 */
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important; /* 胶囊投下阴影 */
+      color: #ffffff !important;
+      transform: translateX(6px) scale(1.02); /* 右移并微微放大，具有磁吸感 */
+    }
+
+    /* --- F. 当前激活文章：光剑霓虹特效 --- */
+    .sidebar-nav ul li.active > a {
+      color: var(--theme-color) !important;
+      font-weight: 700 !important;
+      background: linear-gradient(90deg, rgba(16, 185, 129, 0.12) 0%, transparent 100%) !important; /* 渐变底光 */
+      border-right: none !important; /* 抛弃老旧的右侧边框 */
+    }
+
+    /* 使用绝对定位伪元素打造左侧霓虹光剑 */
+    .sidebar-nav ul li.active > a::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 15%;
+      height: 70%;
+      width: 4px;
+      background: var(--theme-color);
+      border-radius: 0 4px 4px 0;
+      box-shadow: 0 0 14px var(--theme-color); /* 强烈的翠绿光晕 */
+    }
+
+    /* --- G. 科技感折叠小箭头 --- */
+    .sidebar-nav li.collapse > a::before,
+    .sidebar-nav li.collapse > a::after,
+    .sidebar-nav li.collapse::before,
+    .sidebar-nav li.collapse::after {
+      transform: scale(1.2) !important;
+      margin-right: 14px !important;
+      color: rgba(255, 255, 255, 0.5) !important;
+      transition: all 0.3s ease !important;
+    }
+    .sidebar-nav li.collapse:hover::before,
+    .sidebar-nav li.collapse:hover::after {
+      color: rgba(255, 255, 255, 0.9) !important; /* 鼠标靠近时箭头提亮 */
+    }
     /* ====== 3. 主内容区 ====== */
     main { padding-bottom: 80px !important; }
     .content {
