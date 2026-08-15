@@ -1,11 +1,8 @@
 <div align="center">
 
-<a href="https://gallanttarry.github.io/TuKuai/" target="_blank">
+  <a href="https://gallanttarry.github.io/TuKuai/">
   <img src="https://img.shields.io/badge/Profile-TuKuai-000000?style=for-the-badge&logo=github&logoColor=white" alt="TuKuai"/>
 </a>
-  
-<p><i>“在画布与音符中寻找生活的质感，在底层逻辑与像素世界里保持学徒之心。”</i></p>
-
   <a href="https://steamcommunity.com/id/ImShaoXiaBieZou/" target="_blank">
     <img src="https://img.shields.io/badge/Steam-疯狂游玩中-171a21?style=for-the-badge&logo=steam&logoColor=white" alt="Steam"/>
   </a>
@@ -15,6 +12,8 @@
   <a href="https://space.bilibili.com/396312441" target="_blank">
     <img src="https://img.shields.io/badge/Bilibili-叫我烤地瓜-00A1D6?style=for-the-badge&logo=bilibili&logoColor=white" alt="Bilibili"/>
   </a>
+
+  <p><i>“在画布与音符中寻找生活的质感，在底层逻辑与像素世界里保持学徒之心。”</i></p>
 
 </div>
 
