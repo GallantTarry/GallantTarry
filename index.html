@@ -196,6 +196,56 @@
     /* ====== 4. MD语法多色彩语义化系统 ====== */
     /* ========================================= */
 
+    /* --- 引用块：内发光微亚克力质感 --- */
+    .markdown-section blockquote {
+      /* 左侧边带一点荧光感 */
+      border-left: 4px solid var(--theme-color) !important;
+      /* 极其微妙的渐变背景 */
+      background: linear-gradient(120deg, rgba(16, 185, 129, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%) !important;
+      color: #e4e4e7 !important;
+      padding: 20px 24px !important;
+      border-radius: 6px 16px 16px 6px !important; /* 右侧圆润，左侧平直 */
+      /* 顶部和左侧增加 1px 的内侧微光，营造 3D 立体切割感 */
+      box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.05), 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+      margin: 2.5em 0 !important;
+    }
+
+    .markdown-section blockquote p {
+      margin-bottom: 0 !important; /* 消除内部段落底部多余的间距 */
+      color: #a1a1aa !important;   /* 文字稍微调暗，与正文产生层次 */
+    }
+
+
+
+
+
+    /* --- 全局：定制高光选中颜色 --- */
+    ::selection {
+      background: rgba(16, 185, 129, 0.3) !important; /* 翠绿半透明 */
+      color: #ffffff !important;
+      text-shadow: none !important;
+    }
+    ::-moz-selection {
+      background: rgba(16, 185, 129, 0.3) !important;
+      color: #ffffff !important;
+    }
+
+    /* --- 图片：圆角画廊与磁吸悬浮 --- */
+    .markdown-section img {
+      border-radius: 12px;     /* 与外层卡片呼应的圆角 */
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4); /* 赋予图片独立的空间感 */
+      display: block;
+      margin: 2.5em auto;      /* 图片上下留白，强制居中 */
+      max-width: 100%;
+      transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+    }
+
+    .markdown-section img:hover {
+      transform: translateY(-4px) scale(1.01); /* 鼠标悬停时微微上浮并放大 */
+      box-shadow: 0 16px 32px rgba(0, 0, 0, 0.6); /* 阴影加深扩散 */
+    }
+
+
     .markdown-section h1, .markdown-section h2, .markdown-section h3,
     .markdown-section h4, .markdown-section h5, .markdown-section h6 {
       font-family: 'Noto Serif SC', serif !important;
@@ -245,14 +295,17 @@
       color: #71717a !important;
     }
 
+    /* --- 修复双下划线冲突 --- */
     .markdown-section a {
-      color: var(--theme-color);
-      text-decoration: none;
+      color: var(--theme-color) !important;
+      text-decoration: none !important; /* 彻底屏蔽原生默认下划线 */
       border-bottom: 1px solid transparent;
-      transition: border-color 0.2s;
+      transition: border-color 0.2s ease;
     }
+
     .markdown-section a:hover {
-      border-bottom-color: var(--theme-color);
+      text-decoration: none !important; /* 悬停时依然强制屏蔽原生下划线 */
+      border-bottom-color: var(--theme-color) !important; /* 只显现我们定制的边框线 */
     }
 
     .markdown-section ul { padding-left: 1.5rem; }
