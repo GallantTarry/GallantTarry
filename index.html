@@ -102,26 +102,33 @@
       margin: 0 !important;
     }
 
+    /* --- 新增：强制清空 Docsify 默认的嵌套列表缩进，由我们统一精准控制 --- */
+    .sidebar-nav ul ul {
+      padding-left: 0 !important;
+      margin: 0 !important;
+    }
+
     /* --- E. 子级文件：极致丝滑的圆角胶囊悬停态 --- */
     .sidebar-nav ul li a {
       color: #a1a1aa !important;
       font-size: 14.5px !important;
       font-weight: 500 !important;
-      padding: 10px 16px 10px 36px !important; /* 文字缩进 */
-      margin: 4px 16px !important; /* 关键：左右留出外边距，让背景变成胶囊而不是通栏 */
-      border-radius: 12px !important; /* 苹果风圆角 */
+      /* 👇 关键修复：把原先的 36px 缩减到 28px，让胶囊向左靠拢，与父级文字完美对齐 👇 */
+      padding: 10px 16px 10px 28px !important;
+      margin: 4px 16px !important;
+      border-radius: 12px !important;
       display: block;
       position: relative;
       overflow: hidden;
-      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important; /* 引入回弹阻尼曲线 */
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
     }
 
     /* 鼠标悬停子文件：浮出毛玻璃胶囊 */
     .sidebar-nav ul li a:hover {
-      background: rgba(255, 255, 255, 0.08) !important; /* 悬停背景微微发亮 */
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important; /* 胶囊投下阴影 */
+      background: rgba(255, 255, 255, 0.08) !important;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
       color: #ffffff !important;
-      transform: translateX(6px) scale(1.02); /* 右移并微微放大，具有磁吸感 */
+      transform: translateX(6px) scale(1.02);
     }
 
     /* --- F. 当前激活文章：光剑霓虹特效 --- */
