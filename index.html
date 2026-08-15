@@ -102,8 +102,12 @@
       margin: 0 !important;
     }
 
-    /* --- 新增：强制清空 Docsify 默认的嵌套列表缩进，由我们统一精准控制 --- */
+    /* --- 新增：彻底清空 Docsify 及折叠插件的默认深层缩进 --- */
     .sidebar-nav ul ul {
+      padding-left: 0 !important;
+      margin: 0 !important;
+    }
+    .sidebar-nav ul ul li {
       padding-left: 0 !important;
       margin: 0 !important;
     }
@@ -113,8 +117,8 @@
       color: #a1a1aa !important;
       font-size: 14.5px !important;
       font-weight: 500 !important;
-      /* 👇 关键修复：把原先的 36px 缩减到 28px，让胶囊向左靠拢，与父级文字完美对齐 👇 */
-      padding: 10px 16px 10px 28px !important;
+      /* 👇 核心修复：把 28px 大幅削减到 8px。由于胶囊自带 16px 左外边距，只需 8px 即可与上方文字完美对齐 👇 */
+      padding: 10px 16px 10px 8px !important;
       margin: 4px 16px !important;
       border-radius: 12px !important;
       display: block;
