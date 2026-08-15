@@ -473,30 +473,30 @@
     }
 	
 	
-	/* ========================================= */
+/* ========================================= */
     /* ====== 9. 侧边栏加宽与丝滑动画补全 ====== */
     /* ========================================= */
     
     /* --- A. 侧边栏加宽 (仅在电脑端生效，绝不破坏手机端布局) --- */
     @media screen and (min-width: 769px) {
       .sidebar {
-        width: 350px !important; /* 从默认的 300px 加宽到 350px，少侠可自由微调数值 */
+        width: 350px !important; 
       }
       
-      /* 👇 关键修复：将原本针对 main 的修改替换为对 .content 的修改 👇 */
       .content {
-        left: 350px !important; /* 偏移量需与侧边栏宽度保持一致 */
-        transition: left 0.3s ease !important; /* 让侧边栏切换时也有动画 */
+        left: 350px !important; 
+        transition: left 0.3s ease !important; 
       }
-    }
-    
-    /* 👇 补全 Docsify 收起侧边栏时的原位适配（防止左下角折叠后左侧空出大块白边） 👇 */
-    body.close .sidebar {
-      transform: translateX(-350px) !important;
-    }
-    body.close .content {
-      left: 0 !important;
-    }
+      
+      /* 👇 必须把收起侧边栏的适配放在 @media 内部，只让它在电脑端生效 👇 */
+      body.close .sidebar {
+        transform: translateX(-350px) !important;
+      }
+      body.close .content {
+        left: 0 !important;
+      }
+    } /* 👈 媒体查询的结束大括号在这里！ */
+
     /* --- B. 链接悬停的“呼吸感”位移动画 --- */
     .sidebar-nav ul li a {
       /* 把原本简单的过渡升级为高级的贝塞尔曲线，增加阻尼感 */
