@@ -1,1 +1,7 @@
+
+
+图片插入
 ![网络设备图](../../media/the_birthday.jpg)
+
+网址插入
+[访问维基百科](https://zh.wikipedia.org)
