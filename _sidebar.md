@@ -116,4 +116,5 @@
     * [英文金句](research/%E8%8B%B1%E6%96%87%E7%A9%BA%E9%97%B4/%E8%8B%B1%E6%96%87%E9%87%91%E5%8F%A5.md)
 * 音乐空间
     * [Blowin' in the Wind 鲍勃·迪伦（Bob Dylan）](research/%E9%9F%B3%E4%B9%90%E7%A9%BA%E9%97%B4/Blowin'%20in%20the%20Wind%20%E9%B2%8D%E5%8B%83%C2%B7%E8%BF%AA%E4%BC%A6%EF%BC%88Bob%20Dylan%EF%BC%89.md)
+    * [太阳花](research/%E9%9F%B3%E4%B9%90%E7%A9%BA%E9%97%B4/%E5%A4%AA%E9%98%B3%E8%8A%B1.md)
     * [风之诗](research/%E9%9F%B3%E4%B9%90%E7%A9%BA%E9%97%B4/%E9%A3%8E%E4%B9%8B%E8%AF%97.md)
