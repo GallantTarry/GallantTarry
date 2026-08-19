@@ -10,6 +10,7 @@
     * [IntelliJ IDEA导出偏好](research/Geek%E7%A9%BA%E9%97%B4/IntelliJ%20IDEA%E5%AF%BC%E5%87%BA%E5%81%8F%E5%A5%BD.md)
     * [json是什么？](research/Geek%E7%A9%BA%E9%97%B4/json%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F.md)
     * [Markdown 语法如何使用？](research/Geek%E7%A9%BA%E9%97%B4/Markdown%20%E8%AF%AD%E6%B3%95%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%EF%BC%9F.md)
+    * [PySide6基础打包缺少依赖怎么办？](research/Geek%E7%A9%BA%E9%97%B4/PySide6%E5%9F%BA%E7%A1%80%E6%89%93%E5%8C%85%E7%BC%BA%E5%B0%91%E4%BE%9D%E8%B5%96%E6%80%8E%E4%B9%88%E5%8A%9E%EF%BC%9F.md)
     * [static 修饰的静态变量运行后在jvm哪里？](research/Geek%E7%A9%BA%E9%97%B4/static%20%E4%BF%AE%E9%A5%B0%E7%9A%84%E9%9D%99%E6%80%81%E5%8F%98%E9%87%8F%E8%BF%90%E8%A1%8C%E5%90%8E%E5%9C%A8jvm%E5%93%AA%E9%87%8C%EF%BC%9F.md)
     * [WebStorm 在前端开发领域的核心优势是什么？](research/Geek%E7%A9%BA%E9%97%B4/WebStorm%20%E5%9C%A8%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E9%A2%86%E5%9F%9F%E7%9A%84%E6%A0%B8%E5%BF%83%E4%BC%98%E5%8A%BF%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F.md)
     * [windows怎么用终端使用SSH服务链接WSL服务器？](research/Geek%E7%A9%BA%E9%97%B4/windows%E6%80%8E%E4%B9%88%E7%94%A8%E7%BB%88%E7%AB%AF%E4%BD%BF%E7%94%A8SSH%E6%9C%8D%E5%8A%A1%E9%93%BE%E6%8E%A5WSL%E6%9C%8D%E5%8A%A1%E5%99%A8%EF%BC%9F.md)
