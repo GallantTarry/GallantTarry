@@ -13,6 +13,7 @@
     * [PySide6基础打包缺少依赖怎么办？](research/Geek%E7%A9%BA%E9%97%B4/PySide6%E5%9F%BA%E7%A1%80%E6%89%93%E5%8C%85%E7%BC%BA%E5%B0%91%E4%BE%9D%E8%B5%96%E6%80%8E%E4%B9%88%E5%8A%9E%EF%BC%9F.md)
     * [static 修饰的静态变量运行后在jvm哪里？](research/Geek%E7%A9%BA%E9%97%B4/static%20%E4%BF%AE%E9%A5%B0%E7%9A%84%E9%9D%99%E6%80%81%E5%8F%98%E9%87%8F%E8%BF%90%E8%A1%8C%E5%90%8E%E5%9C%A8jvm%E5%93%AA%E9%87%8C%EF%BC%9F.md)
     * [WebStorm 在前端开发领域的核心优势是什么？](research/Geek%E7%A9%BA%E9%97%B4/WebStorm%20%E5%9C%A8%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E9%A2%86%E5%9F%9F%E7%9A%84%E6%A0%B8%E5%BF%83%E4%BC%98%E5%8A%BF%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F.md)
+    * [Windows 视窗系统快捷操作有哪些？](research/Geek%E7%A9%BA%E9%97%B4/Windows%20%E8%A7%86%E7%AA%97%E7%B3%BB%E7%BB%9F%E5%BF%AB%E6%8D%B7%E6%93%8D%E4%BD%9C%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F.md)
     * [windows怎么用终端使用SSH服务链接WSL服务器？](research/Geek%E7%A9%BA%E9%97%B4/windows%E6%80%8E%E4%B9%88%E7%94%A8%E7%BB%88%E7%AB%AF%E4%BD%BF%E7%94%A8SSH%E6%9C%8D%E5%8A%A1%E9%93%BE%E6%8E%A5WSL%E6%9C%8D%E5%8A%A1%E5%99%A8%EF%BC%9F.md)
     * [WSL 2如何一键安装？](research/Geek%E7%A9%BA%E9%97%B4/WSL%202%E5%A6%82%E4%BD%95%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85%EF%BC%9F.md)
     * [WSL Ubuntu是什么？](research/Geek%E7%A9%BA%E9%97%B4/WSL%20Ubuntu%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F.md)
