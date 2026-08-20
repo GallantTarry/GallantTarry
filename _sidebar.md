@@ -104,6 +104,7 @@
     * [ping 和 telnet是干什么的？](research/%E7%BD%91%E7%BB%9C%E7%A9%BA%E9%97%B4/ping%20%E5%92%8C%20telnet%E6%98%AF%E5%B9%B2%E4%BB%80%E4%B9%88%E7%9A%84%EF%BC%9F.md)
     * [TCP和UDP是什么？](research/%E7%BD%91%E7%BB%9C%E7%A9%BA%E9%97%B4/TCP%E5%92%8CUDP%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F.md)
     * [什么是网络？](research/%E7%BD%91%E7%BB%9C%E7%A9%BA%E9%97%B4/%E4%BB%80%E4%B9%88%E6%98%AF%E7%BD%91%E7%BB%9C%EF%BC%9F.md)
+    * [更换网线会更换IP吗？](research/%E7%BD%91%E7%BB%9C%E7%A9%BA%E9%97%B4/%E6%9B%B4%E6%8D%A2%E7%BD%91%E7%BA%BF%E4%BC%9A%E6%9B%B4%E6%8D%A2IP%E5%90%97%EF%BC%9F.md)
     * [网络带宽是什么？](research/%E7%BD%91%E7%BB%9C%E7%A9%BA%E9%97%B4/%E7%BD%91%E7%BB%9C%E5%B8%A6%E5%AE%BD%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F.md)
 * 英文空间
     * [chill 是什么意思？](research/%E8%8B%B1%E6%96%87%E7%A9%BA%E9%97%B4/chill%20%E6%98%AF%E4%BB%80%E4%B9%88%E6%84%8F%E6%80%9D%EF%BC%9F.md)
