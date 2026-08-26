@@ -68,8 +68,8 @@
         audio: [{
             name: "Blowin' in the Wind", 
             artist: "Bob Dylan", 
-            url: "/media/音乐/Blowin' in the Wind.mp3", 
-            cover: "/media/音乐/Blowin' in the Wind.jpg" // 建议放一张同名封面图
+            url: "/media/音乐/答案在风中飘.mp3", 
+            cover: "/media/音乐/答案在风中飘.jpg" // 建议放一张同名封面图
         }]
     });
   }, 500);
