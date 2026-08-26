@@ -69,8 +69,8 @@
             name: "Blowin' in the Wind", 
             artist: "Bob Dylan", 
             // 👇 注意这里：去掉了最前面的斜杠，并全部改为了英文
-            url: "media/music/blowin.mp3", 
-            cover: "media/music/blowin.jpg" 
+            url: "media/music/Blowin' in the Wind.mp3", 
+            cover: "media/music/Blowin' in the Wind.jpg" 
         }]
     });
   }, 500);
