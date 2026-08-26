@@ -96,6 +96,7 @@
     * [科学划界与知识增长的理想标准是什么？](research/%E6%9C%AA%E7%9F%A5%E7%A9%BA%E9%97%B4/%E7%A7%91%E5%AD%A6%E5%88%92%E7%95%8C%E4%B8%8E%E7%9F%A5%E8%AF%86%E5%A2%9E%E9%95%BF%E7%9A%84%E7%90%86%E6%83%B3%E6%A0%87%E5%87%86%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F.md)
     * [阴囊湿疹真菌感染用什么？](research/%E6%9C%AA%E7%9F%A5%E7%A9%BA%E9%97%B4/%E9%98%B4%E5%9B%8A%E6%B9%BF%E7%96%B9%E7%9C%9F%E8%8F%8C%E6%84%9F%E6%9F%93%E7%94%A8%E4%BB%80%E4%B9%88%EF%BC%9F.md)
 * 游戏空间
+* 生活空间
 * 画作空间
     * [文森特·梵高](research/%E7%94%BB%E4%BD%9C%E7%A9%BA%E9%97%B4/%E6%96%87%E6%A3%AE%E7%89%B9%C2%B7%E6%A2%B5%E9%AB%98.md)
     * [莫奈和卡米尔](research/%E7%94%BB%E4%BD%9C%E7%A9%BA%E9%97%B4/%E8%8E%AB%E5%A5%88%E5%92%8C%E5%8D%A1%E7%B1%B3%E5%B0%94.md)
@@ -125,5 +126,6 @@
     * [Blowin' in the Wind 鲍勃·迪伦（Bob Dylan）](research/%E9%9F%B3%E4%B9%90%E7%A9%BA%E9%97%B4/Blowin'%20in%20the%20Wind%20%E9%B2%8D%E5%8B%83%C2%B7%E8%BF%AA%E4%BC%A6%EF%BC%88Bob%20Dylan%EF%BC%89.md)
     * [TABS六线谱](research/%E9%9F%B3%E4%B9%90%E7%A9%BA%E9%97%B4/TABS%E5%85%AD%E7%BA%BF%E8%B0%B1.md)
     * [太阳花](research/%E9%9F%B3%E4%B9%90%E7%A9%BA%E9%97%B4/%E5%A4%AA%E9%98%B3%E8%8A%B1.md)
+    * [波西米亚狂想曲](research/%E9%9F%B3%E4%B9%90%E7%A9%BA%E9%97%B4/%E6%B3%A2%E8%A5%BF%E7%B1%B3%E4%BA%9A%E7%8B%82%E6%83%B3%E6%9B%B2.md)
     * [花](research/%E9%9F%B3%E4%B9%90%E7%A9%BA%E9%97%B4/%E8%8A%B1.md)
     * [风之诗](research/%E9%9F%B3%E4%B9%90%E7%A9%BA%E9%97%B4/%E9%A3%8E%E4%B9%8B%E8%AF%97.md)

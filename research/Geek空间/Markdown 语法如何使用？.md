@@ -366,3 +366,5 @@ public class Test {
     
 
 所以，在编写技术文档、做学习笔记或者跟别人交流代码时，养成在 ` ``` ` 后面加上对应语言名称的习惯，会让你的文档看起来极其专业且美观。
+当然这只是Markdown冰山一角，我在使用DIYgod的dplayer时，看到了他的一篇文章，为膜拜大佬，您可以点击下方的链接跳转到他的技术文章。
+[Markdown 探索与实践 - DIYgod](https://diygod.cc/unified-markdown/)
