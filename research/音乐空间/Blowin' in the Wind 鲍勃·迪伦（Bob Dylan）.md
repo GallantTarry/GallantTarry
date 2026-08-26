@@ -68,14 +68,13 @@
         audio: [{
             name: "Blowin' in the Wind", 
             artist: "Bob Dylan", 
-            url: "/media/音乐/答案在风中飘.mp3", 
-            cover: "/media/音乐/答案在风中飘.jpg" // 建议放一张同名封面图
+            // 👇 注意这里：去掉了最前面的斜杠，并全部改为了英文
+            url: "media/music/blowin.mp3", 
+            cover: "media/music/blowin.jpg" 
         }]
     });
   }, 500);
 </script>
-
-
 
 
 How many roads must a man walk down
