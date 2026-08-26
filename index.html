@@ -19,6 +19,8 @@
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/sidebar.min.css" />
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/prism-themes@1.9.0/themes/prism-vsc-dark-plus.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Serif+SC:wght@600;900&display=swap" rel="stylesheet">
+  <!-- 👇 新增：APlayer 核心样式 👇 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
 
   <style>
     :root {
@@ -617,6 +619,10 @@
       auto2top: true,
       routerMode: 'hash',
 
+      // 👇 新增：允许执行 Markdown 内部的 <script> 标签 👇
+      executeScript: true,
+
+
       // 👇 新增这个插件数组 👇   
       plugins: [
         function(hook, vm) {
@@ -655,7 +661,10 @@
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
   <!-- 👇 新增这一行 👇 -->
   <script src="//cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
-  
+
+  <!-- 👇 新增：APlayer 核心脚本 👇 -->
+  <script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+
   <!-- 👇 新增：移动端侧边栏强制保持展开拦截脚本 👇 -->
   <script>
     (function() {
