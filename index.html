@@ -605,6 +605,38 @@
         transform: translateY(0);
       }
     }
+    /* ========================================= */
+    /* ====== 10. 页面内容滚动渐显特效 (Scroll Reveal) ====== */
+    /* ========================================= */
+
+    /* A. 定义需要渐显的元素的初始状态：透明度为0，向下偏移 30px */
+    .markdown-section > p,
+    .markdown-section > h2,
+    .markdown-section > h3,
+    .markdown-section > h4,
+    .markdown-section > pre,
+    .markdown-section > blockquote,
+    .markdown-section > ul,
+    .markdown-section > ol,
+    .markdown-section > img,
+    .markdown-section > .table-wrapper {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s cubic-bezier(0.25, 0.8, 0.25, 1), transform 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+      will-change: opacity, transform; /* 开启硬件加速，保证丝滑 */
+    }
+
+    /* B. 定义元素进入视口后的状态：恢复不透明度和原始位置 */
+    .markdown-section > .reveal-visible {
+      opacity: 1 !important;
+      transform: translateY(0) !important;
+    }
+
+    /* 排除第一个大标题(h1)，让它一进页面就直接显示，不需要等滚动 */
+    .markdown-section h1:first-of-type {
+      opacity: 1;
+      transform: translateY(0);
+    }
   </style>
 </head>
 <body>
@@ -651,6 +683,31 @@
                 wrapper.appendChild(table);
               }
             });
+            // 👇👇👇 新增：Intersection Observer 滚动渐显逻辑 👇👇👇
+            // 创建一个观察器，用于检测元素是否进入视口
+            var observer = new IntersectionObserver(function(entries, obs) {
+              entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                  // 当元素进入视口，加上显示类名
+                  entry.target.classList.add('reveal-visible');
+                  // 触发一次后就不再监听，保证性能
+                  obs.unobserve(entry.target);
+                }
+              });
+            }, {
+              // rootMargin 设为负值，意思是元素往上滑动进入屏幕 30px 后再触发动画，效果更自然
+              rootMargin: "0px 0px -30px 0px",
+              threshold: 0.1
+            });
+
+            // 选中 Markdown 解析后所有需要施加动画的块级元素
+            var elements = document.querySelectorAll('.markdown-section > p, .markdown-section > h2, .markdown-section > h3, .markdown-section > h4, .markdown-section > pre, .markdown-section > blockquote, .markdown-section > ul, .markdown-section > ol, .markdown-section > img, .markdown-section > .table-wrapper');
+
+            // 将它们全部加入观察队列
+            elements.forEach(function(el) {
+              observer.observe(el);
+            });
+            // 👆👆👆 新增逻辑结束 👆👆👆
           });
         }
       ]
