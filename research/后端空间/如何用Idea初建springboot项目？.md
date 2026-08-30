@@ -9,9 +9,8 @@
 5.MP3.5.5
 6.application.yaml
 7.MySQL Server 8.4
-[点击下载 MySQL 8.4.11 可视化版](https://github.com/GallantTarry/Obsidian-Vault/releases/download/v1.0.0/mysql-8.4.11-winx64.rar)
-密码574185一路点到底，默认用户名为root，设置密码即可  默认路径cd C:\Program Files\MySQL\MySQL Server 8.4\bin
-mysql -uroot -p 输入密码即可继续操作
+
+[点击下载 MySQL 8.4.11 可视化版](https://github.com/GallantTarry/Obsidian-Vault/releases/download/v1.0.0/mysql-8.4.11-winx64.rar)密码574185一路点到底，默认用户名为root，设置密码即可 默认路径cd C:\Program Files\MySQL\MySQL Server 8.4\binmysql -uroot -p 输入密码即可继续操作
 
 拓展插件
 - 1.lombok
