@@ -124,17 +124,27 @@
       margin: 0 !important;
     }
 
-
-
-    /* --- 新增：专门调整次级目录（文件夹）的大小和间距 --- */
+    /* 👇👇👇 新增：二级文件夹（如古希腊神话），样式和一级完全一样，只是字号变小 👇👇👇 */
     .sidebar-nav ul ul li > p {
-      font-size: 14px !important;         /* 把次级文件夹的字体改小，可根据喜好微调 */
-      font-weight: 600 !important;        /* 保留一点加粗以区分普通文件 */
-      color: rgba(255, 255, 255, 0.75) !important; /* 颜色略微调暗，增加视觉层级感 */
-      padding: 6px 16px 6px 8px !important; /* 缩小上下内边距，让文件夹显得更紧凑 */
-      margin: 2px 16px !important;        /* 减小外边距，拉近和下方文件的距离 */
+      font-size: 15px !important;         /* 👈 比一级目录的 17px 小一点 */
+      font-weight: 700 !important;        /* 👈 保持和一级一样的粗体 */
+      color: rgba(255, 255, 255, 0.95) !important; /* 👈 保持和一级一样的亮白色 */
+      margin: 12px 16px 4px 16px !important; /* 间距比一级略微紧凑一点 */
+      padding-left: 8px !important;
       cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* 保持丝滑动画 */
     }
+
+    /* 👈 保持和一级完全一样的悬停发光+位移特效 */
+    .sidebar-nav ul ul li > p:hover {
+      color: #ffffff !important;
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+      transform: translateX(4px);
+    }
+    /* 👆👆👆 替换结束 👆👆👆 */
+
+
+
     /* --- E. 子级文件：极致丝滑的圆角胶囊悬停态 --- */
     .sidebar-nav ul li a {
       color: #a1a1aa !important;
