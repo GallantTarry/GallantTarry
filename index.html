@@ -124,6 +124,17 @@
       margin: 0 !important;
     }
 
+
+
+    /* --- 新增：专门调整次级目录（文件夹）的大小和间距 --- */
+    .sidebar-nav ul ul li > p {
+      font-size: 14px !important;         /* 把次级文件夹的字体改小，可根据喜好微调 */
+      font-weight: 600 !important;        /* 保留一点加粗以区分普通文件 */
+      color: rgba(255, 255, 255, 0.75) !important; /* 颜色略微调暗，增加视觉层级感 */
+      padding: 6px 16px 6px 8px !important; /* 缩小上下内边距，让文件夹显得更紧凑 */
+      margin: 2px 16px !important;        /* 减小外边距，拉近和下方文件的距离 */
+      cursor: pointer;
+    }
     /* --- E. 子级文件：极致丝滑的圆角胶囊悬停态 --- */
     .sidebar-nav ul li a {
       color: #a1a1aa !important;
