@@ -9,6 +9,7 @@
     * [idea为什么是最强利器？](research/Geek%E7%A9%BA%E9%97%B4/idea%E4%B8%BA%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%80%E5%BC%BA%E5%88%A9%E5%99%A8%EF%BC%9F.md)
     * [int 和 Integer有什么区别？](research/Geek%E7%A9%BA%E9%97%B4/int%20%E5%92%8C%20Integer%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F.md)
     * [IntelliJ IDEA导出偏好](research/Geek%E7%A9%BA%E9%97%B4/IntelliJ%20IDEA%E5%AF%BC%E5%87%BA%E5%81%8F%E5%A5%BD.md)
+    * [IntelliJ全家桶激活](research/Geek%E7%A9%BA%E9%97%B4/IntelliJ%E5%85%A8%E5%AE%B6%E6%A1%B6%E6%BF%80%E6%B4%BB.md)
     * [json是什么？](research/Geek%E7%A9%BA%E9%97%B4/json%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F.md)
     * [Markdown 语法如何使用？](research/Geek%E7%A9%BA%E9%97%B4/Markdown%20%E8%AF%AD%E6%B3%95%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%EF%BC%9F.md)
     * [PySide6基础打包缺少依赖怎么办？](research/Geek%E7%A9%BA%E9%97%B4/PySide6%E5%9F%BA%E7%A1%80%E6%89%93%E5%8C%85%E7%BC%BA%E5%B0%91%E4%BE%9D%E8%B5%96%E6%80%8E%E4%B9%88%E5%8A%9E%EF%BC%9F.md)
