@@ -109,6 +109,7 @@ dism /online /Enable-Feature /FeatureName:TelnetClient
 ```
 
 
-
+```
 > **测试命令：** 重新打开命令行窗口，输入 `telnet` 并回车。如果界面跳转到 `欢迎使用 Microsoft Telnet Client`，说明开启成功。输入 `quit` 即可退回普通终端。
+```
 
