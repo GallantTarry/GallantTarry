@@ -93,6 +93,10 @@
 等待系统自动应用更改（通常需要几秒钟）。完成后，**必须关闭并重新打开**你的 CMD 或 PowerShell 窗口，命令才会生效。
 
 
+
+![Windows功能](../../media/Windows功能.png)
+
+
 ### 方法二：命令行一键开启
 
 如果你习惯纯命令行操作，可以通过管理员权限运行指令：
@@ -107,3 +111,4 @@ dism /online /Enable-Feature /FeatureName:TelnetClient
 
 
 > **测试命令：** 重新打开命令行窗口，输入 `telnet` 并回车。如果界面跳转到 `欢迎使用 Microsoft Telnet Client`，说明开启成功。输入 `quit` 即可退回普通终端。
+
