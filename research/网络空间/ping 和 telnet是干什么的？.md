@@ -103,13 +103,9 @@
 
 1. 右键点击任务栏的 Windows 开始图标，选择 **终端 (管理员)** 或 **Windows PowerShell (管理员)**。
 2. 粘贴并运行以下命令：
-```powershell
+```
 dism /online /Enable-Feature /FeatureName:TelnetClient
-
 ```
+> **测试命令：** 重新打开命令行窗口，输入 **telnet** 并回车。如果界面跳转到 欢迎使用 Microsoft Telnet Client，说明开启成功。输入 **quit** 即可退回普通终端。
 
-
-```
-> **测试命令：** 重新打开命令行窗口，输入 `telnet` 并回车。如果界面跳转到 `欢迎使用 Microsoft Telnet Client`，说明开启成功。输入 `quit` 即可退回普通终端。
-```
 

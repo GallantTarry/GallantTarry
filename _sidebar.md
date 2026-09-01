@@ -7,6 +7,7 @@
     * [GitHub 网页版的工作流如何使用？](research/Geek%E7%A9%BA%E9%97%B4/GitHub%20%E7%BD%91%E9%A1%B5%E7%89%88%E7%9A%84%E5%B7%A5%E4%BD%9C%E6%B5%81%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%EF%BC%9F.md)
     * [ico是什么格式？ 为什么Java原生标准库不支持？](research/Geek%E7%A9%BA%E9%97%B4/ico%E6%98%AF%E4%BB%80%E4%B9%88%E6%A0%BC%E5%BC%8F%EF%BC%9F%20%E4%B8%BA%E4%BB%80%E4%B9%88Java%E5%8E%9F%E7%94%9F%E6%A0%87%E5%87%86%E5%BA%93%E4%B8%8D%E6%94%AF%E6%8C%81%EF%BC%9F.md)
     * [idea为什么是最强利器？](research/Geek%E7%A9%BA%E9%97%B4/idea%E4%B8%BA%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%80%E5%BC%BA%E5%88%A9%E5%99%A8%EF%BC%9F.md)
+    * [idea如何打断点进行调试？](research/Geek%E7%A9%BA%E9%97%B4/idea%E5%A6%82%E4%BD%95%E6%89%93%E6%96%AD%E7%82%B9%E8%BF%9B%E8%A1%8C%E8%B0%83%E8%AF%95%EF%BC%9F.md)
     * [int 和 Integer有什么区别？](research/Geek%E7%A9%BA%E9%97%B4/int%20%E5%92%8C%20Integer%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F.md)
     * [IntelliJ IDEA导出偏好](research/Geek%E7%A9%BA%E9%97%B4/IntelliJ%20IDEA%E5%AF%BC%E5%87%BA%E5%81%8F%E5%A5%BD.md)
     * [IntelliJ全家桶激活](research/Geek%E7%A9%BA%E9%97%B4/IntelliJ%E5%85%A8%E5%AE%B6%E6%A1%B6%E6%BF%80%E6%B4%BB.md)
