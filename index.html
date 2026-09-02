@@ -42,12 +42,31 @@
       --text-muted: #a1a1aa;    /* 弱化文本 */
     }
 
-    /* ====== 1. 全局极致暗黑背景 ====== */
+    /* ========================================= */
+    /* ====== 新增：页面全局载入渐显动画 ====== */
+    /* ========================================= */
+
+    /* 1. 定义从暗到明的关键帧 */
+    @keyframes globalFadeIn {
+      0% {
+        opacity: 0;
+        /* 可选：加一点微妙的下沉效果，让浮现更有质感 */
+        transform: translateY(10px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* 2. 将动画绑定到 body 上 */
     body {
-      background-color: var(--bg-body) !important; 
+      /* 动画名称 持续时间 缓动函数 延迟时间 停留在最后一帧 */
+      animation: globalFadeIn 1.2s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+      background-color: var(--bg-body) !important;
       color: var(--text-main) !important;
       font-family: 'Inter', -apple-system, sans-serif !important;
-      font-size: 16px; 
+      font-size: 16px;
       -webkit-font-smoothing: antialiased;
     }
 
