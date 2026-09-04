@@ -139,6 +139,7 @@
     * [花](research/%E9%9F%B3%E4%B9%90%E7%A9%BA%E9%97%B4/%E8%8A%B1.md)
     * [风之诗](research/%E9%9F%B3%E4%B9%90%E7%A9%BA%E9%97%B4/%E9%A3%8E%E4%B9%8B%E8%AF%97.md)
 * 音频空间
+    * [Steve Jobs Secrets of Life](research/%E9%9F%B3%E9%A2%91%E7%A9%BA%E9%97%B4/Steve%20Jobs%20Secrets%20of%20Life.md)
     * [三毛](research/%E9%9F%B3%E9%A2%91%E7%A9%BA%E9%97%B4/%E4%B8%89%E6%AF%9B.md)
     * [可恶的蜥蜴](research/%E9%9F%B3%E9%A2%91%E7%A9%BA%E9%97%B4/%E5%8F%AF%E6%81%B6%E7%9A%84%E8%9C%A5%E8%9C%B4.md)
     * [波西米亚狂想曲](research/%E9%9F%B3%E9%A2%91%E7%A9%BA%E9%97%B4/%E6%B3%A2%E8%A5%BF%E7%B1%B3%E4%BA%9A%E7%8B%82%E6%83%B3%E6%9B%B2.md)
