@@ -48,7 +48,6 @@
 * 前端空间
     * [CDN是什么？怎么下载到本地？](research/%E5%89%8D%E7%AB%AF%E7%A9%BA%E9%97%B4/CDN%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F%E6%80%8E%E4%B9%88%E4%B8%8B%E8%BD%BD%E5%88%B0%E6%9C%AC%E5%9C%B0%EF%BC%9F.md)
     * [cookie是存在本地的吗？他是什么文件？](research/%E5%89%8D%E7%AB%AF%E7%A9%BA%E9%97%B4/cookie%E6%98%AF%E5%AD%98%E5%9C%A8%E6%9C%AC%E5%9C%B0%E7%9A%84%E5%90%97%EF%BC%9F%E4%BB%96%E6%98%AF%E4%BB%80%E4%B9%88%E6%96%87%E4%BB%B6%EF%BC%9F.md)
-    * [DNS 解析技术怎么用于更改域名？](research/%E5%89%8D%E7%AB%AF%E7%A9%BA%E9%97%B4/DNS%20%E8%A7%A3%E6%9E%90%E6%8A%80%E6%9C%AF%E6%80%8E%E4%B9%88%E7%94%A8%E4%BA%8E%E6%9B%B4%E6%94%B9%E5%9F%9F%E5%90%8D%EF%BC%9F.md)
     * [Service Worker (服务工作线程) 脚本](research/%E5%89%8D%E7%AB%AF%E7%A9%BA%E9%97%B4/Service%20Worker%20(%E6%9C%8D%E5%8A%A1%E5%B7%A5%E4%BD%9C%E7%BA%BF%E7%A8%8B)%20%E8%84%9A%E6%9C%AC.md)
     * [setup()、return、onMounted()是什么？](research/%E5%89%8D%E7%AB%AF%E7%A9%BA%E9%97%B4/setup()%E3%80%81return%E3%80%81onMounted()%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F.md)
     * [youtube链接如何在前端使用？](research/%E5%89%8D%E7%AB%AF%E7%A9%BA%E9%97%B4/youtube%E9%93%BE%E6%8E%A5%E5%A6%82%E4%BD%95%E5%9C%A8%E5%89%8D%E7%AB%AF%E4%BD%BF%E7%94%A8%EF%BC%9F.md)
