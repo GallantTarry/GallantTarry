@@ -109,6 +109,7 @@
     * [安娜](research/%E6%B8%B8%E6%88%8F%E7%A9%BA%E9%97%B4/%E5%AE%89%E5%A8%9C.md)
     * [朱诺](research/%E6%B8%B8%E6%88%8F%E7%A9%BA%E9%97%B4/%E6%9C%B1%E8%AF%BA.md)
 * 画作空间
+    * [巴勃罗·毕加索](research/%E7%94%BB%E4%BD%9C%E7%A9%BA%E9%97%B4/%E5%B7%B4%E5%8B%83%E7%BD%97%C2%B7%E6%AF%95%E5%8A%A0%E7%B4%A2.md)
     * [文森特·梵高](research/%E7%94%BB%E4%BD%9C%E7%A9%BA%E9%97%B4/%E6%96%87%E6%A3%AE%E7%89%B9%C2%B7%E6%A2%B5%E9%AB%98.md)
     * [莫奈和卡米尔](research/%E7%94%BB%E4%BD%9C%E7%A9%BA%E9%97%B4/%E8%8E%AB%E5%A5%88%E5%92%8C%E5%8D%A1%E7%B1%B3%E5%B0%94.md)
     * [莱昂纳多·达·芬奇](research/%E7%94%BB%E4%BD%9C%E7%A9%BA%E9%97%B4/%E8%8E%B1%E6%98%82%E7%BA%B3%E5%A4%9A%C2%B7%E8%BE%BE%C2%B7%E8%8A%AC%E5%A5%87.md)
