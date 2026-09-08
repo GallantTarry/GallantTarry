@@ -21,7 +21,7 @@ pip install pyinstaller
 ```cmd
 pyinstaller -F -w -i "imgs/script.ico" --add-data "Scripts;Scripts" --add-data "tools;tools" --add-data "imgs;imgs" PyKuai.py
 ```
-
+一定要现在终端cd到根目录，且主启动比如我的类PyKuai.py启动类在根本录下。
 ### ⚙️ 参数原理解析：
 
 - **`-F` (或 `--onefile`)**：**单文件模式**。将所有依赖库、环境和主程序死死压缩成一个独立纯净的 `.exe` 可执行文件，方便你在任何电脑上直接运行。
