@@ -23,7 +23,31 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
   <!-- 👇 新增：DPlayer 核心样式 👇 -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/dplayer/dist/DPlayer.min.css">
+  <!-- 👇 新增：Viewer.js 核心样式 👇 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/viewerjs@1.11.6/dist/viewer.min.css">
 
+  <style>
+    /* （这里保留你原本的其他样式...） */
+
+    /* ========================================= */
+    /* ====== 11. Viewer.js 高级图片查看器美化 ====== */
+    /* ========================================= */
+    .viewer-backdrop {
+      /* 继承你侧边栏的极致深色与强毛玻璃特效 */
+      background-color: rgba(9, 9, 11, 0.85) !important;
+      backdrop-filter: blur(12px) !important;
+      -webkit-backdrop-filter: blur(12px) !important;
+    }
+
+    /* 弱化底部工具栏的背景，突出悬浮感 */
+    .viewer-toolbar > li {
+      background-color: rgba(39, 39, 42, 0.7) !important;
+      transition: background-color 0.3s ease;
+    }
+    .viewer-toolbar > li:hover {
+      background-color: var(--theme-color) !important; /* 悬停时点亮为你的翠绿色 */
+    }
+  </style>
 
   <style>
     :root {
@@ -683,7 +707,8 @@
                 wrapper.appendChild(table);
               }
             });
-            // 👇👇👇 新增：Intersection Observer 滚动渐显逻辑 👇👇👇
+
+            // 👇👇👇 原有逻辑：Intersection Observer 滚动渐显 👇👇👇
             // 创建一个观察器，用于检测元素是否进入视口
             var observer = new IntersectionObserver(function(entries, obs) {
               entries.forEach(function(entry) {
@@ -708,7 +733,68 @@
             elements.forEach(function(el) {
               observer.observe(el);
             });
-            // 👆👆👆 新增逻辑结束 👆👆👆
+            // 👆👆👆 原有渐显逻辑结束 👆👆👆
+
+
+            // 👇👇👇 修复版：图片异步加载完毕后再初始化 Viewer.js 👇👇👇
+            var markdownSection = document.querySelector('.markdown-section');
+            if (markdownSection) {
+              var images = markdownSection.querySelectorAll('img');
+              if (images.length > 0) {
+                var loadedCount = 0;
+                // 监听当前页面所有图片加载
+                images.forEach(function(img) {
+                  // 如果图片已经加载完毕（比如是从缓存里读取的）
+                  if (img.complete) {
+                    loadedCount++;
+                    if (loadedCount === images.length) {
+                      initViewer();
+                    }
+                  } else {
+                    // 如果图片还在加载中，等待 load 事件
+                    img.addEventListener('load', function() {
+                      loadedCount++;
+                      if (loadedCount === images.length) {
+                        initViewer();
+                      }
+                    });
+                    // 如果图片加载失败（比如网络错误），也算作处理完毕，避免死等
+                    img.addEventListener('error', function() {
+                      loadedCount++;
+                      if (loadedCount === images.length) {
+                        initViewer();
+                      }
+                    });
+                  }
+                });
+
+                // 将初始化的核心逻辑封装成函数，确保在图片就绪后只执行一次
+                function initViewer() {
+                  // 为了防止路由重复切换时，多次给同一个元素绑定 Viewer，先清理旧实例（如果有的话）
+                  if (markdownSection.viewer) {
+                    markdownSection.viewer.destroy();
+                  }
+
+                  new Viewer(markdownSection, {
+                    zoomable: true,     // 开启支持手机端双指捏合缩放
+                    movable: true,      // 开启支持放大后的鼠标拖拽平移
+                    wheel: true,        // 开启电脑端鼠标滚轮无极缩放
+                    navbar: false,      // 隐藏底部略显冗余的缩略图导航条
+                    button: false,      // 隐藏右上角的关闭按钮（点击背景直接退出）
+                    toolbar: {
+                      zoomIn: 1,      // 放大
+                      zoomOut: 1,     // 缩小
+                      oneToOne: 1,    // 1:1 原始物理分辨率（看清每一个像素）
+                      reset: 1,       // 恢复适应屏幕
+                      // 以下功能隐藏（设为 0）
+                      prev: 0, play: 0, next: 0, rotateLeft: 0, rotateRight: 0, flipHorizontal: 0, flipVertical: 0
+                    }
+                  });
+                }
+              }
+            }
+            // 👆👆👆 修复版逻辑结束 👆👆👆
+
           });
         }
       ]
@@ -720,8 +806,11 @@
   <script src="./js/docsify-sidebar-collapse.min.js"></script>
   <script src="./js/prism-java.min.js"></script>
   <script src="./js/prism-bash.min.js"></script>
-  <!-- 引入图片缩放插件，实现点击图片放大功能 -->
-  <script src="./js/zoom-image.min.js"></script>
+  <!-- ❌ 删掉或者注释掉这行原生插件 ❌ -->
+  <!-- <script src="./js/zoom-image.min.js"></script> -->
+
+  <!-- 👇 新增：引入专业的 Viewer.js 核心脚本 👇 -->
+  <script src="https://cdn.jsdelivr.net/npm/viewerjs@1.11.6/dist/viewer.min.js"></script>
   <!-- 👇 新增这一行 👇 -->
   <script src="./js/docsify-copy-code.min.js"></script>
 
