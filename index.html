@@ -759,22 +759,36 @@
 </div>
 
 <script>
-  // 监听回车键快捷提交
-  document.getElementById('auth-input').addEventListener('keypress', function(e) {
-    if (e.key === 'Enter') checkPassword();
-  });
+  // 1. 获取当前小时数 (24小时制)
+  const currentHour = new Date().getHours();
+  const authScreen = document.getElementById('auth-screen');
+  const authInput = document.getElementById('auth-input');
+
+  // 2. 如果时间在 18:00 到 19:00 之间 (小时数为 18)，直接免密移除拦截层
+  if (currentHour === 18) {
+    if (authScreen) authScreen.remove();
+  } else {
+    // 3. 不在免密时间段，正常挂载回车快捷提交监听
+    if (authInput) {
+      authInput.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') checkPassword();
+      });
+    }
+  }
 
   function checkPassword() {
-    const input = document.getElementById('auth-input').value;
+    if (!authInput) return;
+    const input = authInput.value;
     const errorMsg = document.getElementById('auth-error');
 
     // 在这里修改你的专属密码 👇
     if (input === '574185') {
       // 密码正确，淡出并移除拦截层
-      const screen = document.getElementById('auth-screen');
-      screen.style.transition = 'opacity 0.5s ease';
-      screen.style.opacity = '0';
-      setTimeout(() => screen.remove(), 500);
+      if (authScreen) {
+        authScreen.style.transition = 'opacity 0.5s ease';
+        authScreen.style.opacity = '0';
+        setTimeout(() => authScreen.remove(), 500);
+      }
     } else {
       // 密码错误，显示提示
       errorMsg.style.opacity = '1';
