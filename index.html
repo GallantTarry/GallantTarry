@@ -664,18 +664,98 @@
   </style>
 </head>
 <body>
-<!-- 👇 新增：全屏密码拦截层 👇 -->
-<div id="auth-screen" style="position:fixed; top:0; left:0; width:100vw; height:100vh; background-color: var(--bg-body); z-index:999999; display:flex; flex-direction:column; justify-content:center; align-items:center; backdrop-filter: blur(20px);">
-  <h2 style="color:var(--theme-color); font-family:'Noto Serif SC', serif; letter-spacing: 2px;">加密文档库</h2>
-  <p style="color:var(--text-muted); font-size:14px; margin-bottom: 24px;">请输入访问凭证以解锁内容</p>
+<!-- 👇 新增：全屏密码拦截层（完美适配多端版） 👇 -->
+<style>
+  /* 使用拦截层专属样式，避免与 Docsify 原有样式冲突 */
+  #auth-screen {
+    position: fixed;
+    inset: 0; /* 完美替代 top:0;left:0;width:100vw;height:100vh，解决手机端地址栏导致的高度溢出 */
+    background-color: var(--bg-body);
+    z-index: 999999;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    padding: 24px;
+    box-sizing: border-box;
+  }
+  .auth-title {
+    color: var(--theme-color);
+    font-family: 'Noto Serif SC', serif;
+    letter-spacing: 2px;
+    margin-top: 0;
+    margin-bottom: 8px;
+    text-align: center;
+  }
+  .auth-desc {
+    color: var(--text-muted);
+    font-size: 14px;
+    margin-bottom: 32px;
+    text-align: center;
+  }
+  .auth-form {
+    display: flex;
+    gap: 12px;
+    width: 100%;
+    max-width: 320px; /* 电脑端不过宽，手机端自适应撑满 */
+    box-sizing: border-box;
+  }
+  .auth-input {
+    flex: 1; /* 输入框占据所有剩余弹性空间 */
+    min-width: 0; /* 阻止 flex 子项溢出 */
+    padding: 12px 16px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    background: var(--bg-card);
+    color: var(--text-main);
+    outline: none;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    /* 👇 核心修复：苹果手机严格要求输入框字体必须 >=16px，否则点击瞬间屏幕会强制放大破坏排版 */
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+  }
+  .auth-input:focus {
+    border-color: var(--theme-color);
+  }
+  .auth-btn {
+    padding: 12px 24px;
+    border-radius: 12px;
+    border: none;
+    background: var(--theme-color);
+    color: #fff;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 16px;
+    white-space: nowrap; /* 强制按钮文字不换行 */
+    transition: transform 0.2s, background 0.2s;
+  }
+  .auth-btn:active {
+    transform: scale(0.95);
+    background: #059669; /* 按下时颜色加深 */
+  }
+  #auth-error {
+    color: #ef4444;
+    font-size: 13px;
+    margin-top: 16px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    height: 20px; /* 占位，防止出现提示文案时页面元素抖动 */
+  }
+</style>
 
-  <div style="display:flex; gap:12px;">
-    <input type="password" id="auth-input" placeholder="Password" style="padding:10px 16px; border-radius:12px; border:1px solid var(--border-color); background:var(--bg-card); color:var(--text-main); outline:none; width: 200px; text-align:center; font-family: 'Inter', sans-serif;">
-    <button onclick="checkPassword()" style="padding:10px 24px; border-radius:12px; border:none; background:var(--theme-color); color:#fff; cursor:pointer; font-weight:600; transition: transform 0.2s;">
-      解锁
-    </button>
+<div id="auth-screen">
+  <h2 class="auth-title">土块的宝藏库</h2>
+  <p class="auth-desc">请输入访问凭证以解锁内容</p>
+
+  <div class="auth-form">
+    <input type="password" id="auth-input" class="auth-input" placeholder="Password">
+    <button class="auth-btn" onclick="checkPassword()">解锁</button>
   </div>
-  <p id="auth-error" style="color:#ef4444; font-size:13px; margin-top:16px; opacity:0; transition:opacity 0.3s;">密码错误，请重试</p>
+  <p id="auth-error">密码错误，请重试</p>
 </div>
 
 <script>
@@ -689,7 +769,7 @@
     const errorMsg = document.getElementById('auth-error');
 
     // 在这里修改你的专属密码 👇
-    if (input === '574185') {
+    if (input === '123456') {
       // 密码正确，淡出并移除拦截层
       const screen = document.getElementById('auth-screen');
       screen.style.transition = 'opacity 0.5s ease';
