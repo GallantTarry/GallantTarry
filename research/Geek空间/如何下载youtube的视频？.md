@@ -132,7 +132,10 @@ Deleting original file 二毛 中国得奖纪录片 从一个男转换成女在�
 ```cmd
 yt-dlp -x --audio-format mp3 "视频链接"
 ```
-
+不过要注意下载音频的时候最好加上表单限制参数--no-playlist: 核心指令！ 告诉程序：“看到链接里有歌单标志也别管，只给我下载当前这单独的一首！”
+```
+yt-dlp -x --audio-format mp3 --no-playlist "https://www.youtube.com/watch?v=z34enKCqRGk&list=RDz34enKCqRGk&start_radio=1"
+```
 
 
 * **下载整个播放列表:**
