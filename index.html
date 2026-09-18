@@ -664,15 +664,14 @@
   </style>
 </head>
 <body>
-<!-- 👇 新增：全屏密码拦截层（完美适配多端版） 👇 -->
+<!-- 👇 局部密码拦截层（专属个人创作，默认隐藏） 👇 -->
 <style>
-  /* 使用拦截层专属样式，避免与 Docsify 原有样式冲突 */
   #auth-screen {
+    display: none;
     position: fixed;
-    inset: 0; /* 完美替代 top:0;left:0;width:100vw;height:100vh，解决手机端地址栏导致的高度溢出 */
+    inset: 0;
     background-color: var(--bg-body);
     z-index: 999999;
-    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -681,76 +680,19 @@
     padding: 24px;
     box-sizing: border-box;
   }
-  .auth-title {
-    color: var(--theme-color);
-    font-family: 'Noto Serif SC', serif;
-    letter-spacing: 2px;
-    margin-top: 0;
-    margin-bottom: 8px;
-    text-align: center;
-  }
-  .auth-desc {
-    color: var(--text-muted);
-    font-size: 14px;
-    margin-bottom: 32px;
-    text-align: center;
-  }
-  .auth-form {
-    display: flex;
-    gap: 12px;
-    width: 100%;
-    max-width: 320px; /* 电脑端不过宽，手机端自适应撑满 */
-    box-sizing: border-box;
-  }
-  .auth-input {
-    flex: 1; /* 输入框占据所有剩余弹性空间 */
-    min-width: 0; /* 阻止 flex 子项溢出 */
-    padding: 12px 16px;
-    border-radius: 12px;
-    border: 1px solid var(--border-color);
-    background: var(--bg-card);
-    color: var(--text-main);
-    outline: none;
-    text-align: center;
-    font-family: 'Inter', sans-serif;
-    /* 👇 核心修复：苹果手机严格要求输入框字体必须 >=16px，否则点击瞬间屏幕会强制放大破坏排版 */
-    font-size: 16px;
-    box-sizing: border-box;
-    transition: border-color 0.3s;
-  }
-  .auth-input:focus {
-    border-color: var(--theme-color);
-  }
-  .auth-btn {
-    padding: 12px 24px;
-    border-radius: 12px;
-    border: none;
-    background: var(--theme-color);
-    color: #fff;
-    cursor: pointer;
-    font-weight: 600;
-    font-size: 16px;
-    white-space: nowrap; /* 强制按钮文字不换行 */
-    transition: transform 0.2s, background 0.2s;
-  }
-  .auth-btn:active {
-    transform: scale(0.95);
-    background: #059669; /* 按下时颜色加深 */
-  }
-  #auth-error {
-    color: #ef4444;
-    font-size: 13px;
-    margin-top: 16px;
-    opacity: 0;
-    transition: opacity 0.3s;
-    height: 20px; /* 占位，防止出现提示文案时页面元素抖动 */
-  }
+  .auth-title { color: var(--theme-color); font-family: 'Noto Serif SC', serif; letter-spacing: 2px; margin-top: 0; margin-bottom: 8px; text-align: center; }
+  .auth-desc { color: var(--text-muted); font-size: 14px; margin-bottom: 32px; text-align: center; }
+  .auth-form { display: flex; gap: 12px; width: 100%; max-width: 320px; box-sizing: border-box; }
+  .auth-input { flex: 1; min-width: 0; padding: 12px 16px; border-radius: 12px; border: 1px solid var(--border-color); background: var(--bg-card); color: var(--text-main); outline: none; text-align: center; font-family: 'Inter', sans-serif; font-size: 16px; box-sizing: border-box; transition: border-color 0.3s; }
+  .auth-input:focus { border-color: var(--theme-color); }
+  .auth-btn { padding: 12px 24px; border-radius: 12px; border: none; background: var(--theme-color); color: #fff; cursor: pointer; font-weight: 600; font-size: 16px; white-space: nowrap; transition: transform 0.2s, background 0.2s; }
+  .auth-btn:active { transform: scale(0.95); background: #059669; }
+  #auth-error { color: #ef4444; font-size: 13px; margin-top: 16px; opacity: 0; transition: opacity 0.3s; height: 20px; }
 </style>
 
 <div id="auth-screen">
-  <h2 class="auth-title">土块的宝藏库</h2>
-  <p class="auth-desc">请输入访问凭证以解锁内容</p>
-
+  <h2 class="auth-title">私密创作空间</h2>
+  <p class="auth-desc">请输入访问凭证以解锁此区域的内容</p>
   <div class="auth-form">
     <input type="password" id="auth-input" class="auth-input" placeholder="Password">
     <button class="auth-btn" onclick="checkPassword()">解锁</button>
@@ -759,173 +701,145 @@
 </div>
 
 <script>
-  // 1. 获取当前小时数 (24小时制)
-  const currentHour = new Date().getHours();
-  const authScreen = document.getElementById('auth-screen');
-  const authInput = document.getElementById('auth-input');
-
-  // 2. 如果时间在 18:00 到 19:00 之间 (小时数为 18)，直接免密移除拦截层
-  if (currentHour === 18) {
-    if (authScreen) authScreen.remove();
-  } else {
-    // 3. 不在免密时间段，正常挂载回车快捷提交监听
-    if (authInput) {
-      authInput.addEventListener('keypress', function(e) {
-        if (e.key === 'Enter') checkPassword();
-      });
-    }
-  }
+  // 挂载回车键快捷提交
+  document.getElementById('auth-input')?.addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') checkPassword();
+  });
 
   function checkPassword() {
-    if (!authInput) return;
-    const input = authInput.value;
+    const input = document.getElementById('auth-input').value;
     const errorMsg = document.getElementById('auth-error');
+    const authScreen = document.getElementById('auth-screen');
+    const mainContent = document.querySelector('.markdown-section');
 
-    // 在这里修改你的专属密码 👇
     if (input === '574185') {
-      // 密码正确，淡出并移除拦截层
-      if (authScreen) {
-        authScreen.style.transition = 'opacity 0.5s ease';
-        authScreen.style.opacity = '0';
-        setTimeout(() => authScreen.remove(), 500);
-      }
+      // 密码正确：存入解锁状态
+      sessionStorage.setItem('personal_unlocked', 'true');
+
+      authScreen.style.transition = 'opacity 0.4s ease';
+      authScreen.style.opacity = '0';
+      setTimeout(() => {
+        authScreen.style.display = 'none';
+        if (mainContent) {
+          mainContent.style.display = 'block';
+          mainContent.style.animation = 'fadeSlideDown 0.5s ease forwards';
+        }
+        // 解锁成功后，立刻触发侧边栏的图标刷新，把 🔒 变成 🔓
+        if(typeof window.updateSidebarLock === 'function') window.updateSidebarLock();
+      }, 400);
     } else {
-      // 密码错误，显示提示
+      // 密码错误
       errorMsg.style.opacity = '1';
       setTimeout(() => { errorMsg.style.opacity = '0'; }, 2000);
     }
   }
+
 </script>
-<!-- 👆 密码拦截层结束 👆 -->
+<!-- 👆 局部密码拦截层结束 👆 -->
   <div id="app">kale...</div>
   
   <script>
     window.$docsify = {
-      name: 'Experience more.', 
-      repo: '', 
+      name: 'Experience more.',
+      repo: '',
       loadSidebar: true,
       subMaxLevel: 0,
-      sidebarDisplayLevel: 0, 
+      sidebarDisplayLevel: 0,
       auto2top: true,
       routerMode: 'hash',
-
-      // 👇 新增：允许执行 Markdown 内部的 <script> 标签 👇
       executeScript: true,
-
-
-      // 👇 新增这个插件数组 👇   
       plugins: [
         function(hook, vm) {
-          
-          // === 新增：全局自动修复加粗与代码块嵌套的 Bug ===
+
+          // === 1. 全局自动修复加粗与代码块嵌套的 Bug ===
           hook.beforeEach(function(content) {
-            // 利用正则表达式，全局查找 **`内容`** 格式，并自动替换为 <strong><code>内容</code></strong>
             return content.replace(/\*\*\`(.*?)\`\*\*/g, '<strong><code>$1</code></strong>');
           });
-          // ===========================================
 
           hook.doneEach(function() {
-            // 每次路由切换渲染完成后，找到页面里所有的 table
+
+            // === 2. 路由判定与锁图标动态刷新 ===
+            if(typeof window.updateSidebarLock === 'function') window.updateSidebarLock();
+
+            const authScreen = document.getElementById('auth-screen');
+            const authContentBox = document.querySelector('.markdown-section'); // 专属命名，防止冲突
+
+
+            // 同时兼容匹配 '个人创作' 和你可能存在的英文文件夹名 'research'
+            // 👇 核心修复：删掉害人的 '/research'，只认准“个人创作”这四个字！
+            const currentPath = decodeURIComponent(vm.route.path || '');
+
+            if (currentPath.includes('个人创作')) {
+              if (sessionStorage.getItem('personal_unlocked') === 'true') {
+                if (authContentBox) authContentBox.style.display = 'block';
+                if (authScreen) authScreen.style.display = 'none';
+              } else {
+                if (authContentBox) authContentBox.style.display = 'none';
+                if (authScreen) {
+                  authScreen.style.display = 'flex';
+                  authScreen.style.opacity = '1';
+                  const pwdInput = document.getElementById('auth-input');
+                  if (pwdInput) pwdInput.value = '';
+                }
+              }
+            } else {
+              if (authContentBox) authContentBox.style.display = 'block';
+              if (authScreen) authScreen.style.display = 'none';
+            }
+
+            // === 3. 表格：完美包裹适配移动端 ===
             var tables = document.querySelectorAll('.markdown-section table');
             tables.forEach(function(table) {
-              // 检查是否已经被包裹过，防止重复包裹
               if (!table.parentNode.classList.contains('table-wrapper')) {
                 var wrapper = document.createElement('div');
-                wrapper.className = 'table-wrapper'; // 赋予一个包裹类名
-
-                // 将 wrapper 插入到 table 之前，然后把 table 移动到 wrapper 内部
+                wrapper.className = 'table-wrapper';
                 table.parentNode.insertBefore(wrapper, table);
                 wrapper.appendChild(table);
               }
             });
 
-            // 👇👇👇 原有逻辑：Intersection Observer 滚动渐显 👇👇👇
-            // 创建一个观察器，用于检测元素是否进入视口
+            // === 4. 页面内容滚动渐显特效 ===
             var observer = new IntersectionObserver(function(entries, obs) {
               entries.forEach(function(entry) {
                 if (entry.isIntersecting) {
-                  // 当元素进入视口，加上显示类名
                   entry.target.classList.add('reveal-visible');
-                  // 触发一次后就不再监听，保证性能
                   obs.unobserve(entry.target);
                 }
               });
             }, {
-              // 建议将底部的判定线下移（比如改成正数 50px），只要元素快要碰到屏幕底部就提前触发
               rootMargin: "0px 0px 50px 0px",
-              // 将阈值降为 0：只要有哪怕 1px 进入视野就触发，彻底避免大图片在底部卡死
               threshold: 0
             });
 
-            // 选中 Markdown 解析后所有需要施加动画的块级元素
             var elements = document.querySelectorAll('.markdown-section > p, .markdown-section > h2, .markdown-section > h3, .markdown-section > h4, .markdown-section > pre, .markdown-section > blockquote, .markdown-section > ul, .markdown-section > ol, .markdown-section > img, .markdown-section > .table-wrapper');
+            elements.forEach(function(el) { observer.observe(el); });
 
-            // 将它们全部加入观察队列
-            elements.forEach(function(el) {
-              observer.observe(el);
-            });
-            // 👆👆👆 原有渐显逻辑结束 👆👆👆
-
-
-            // 👇👇👇 修复版：图片异步加载完毕后再初始化 Viewer.js 👇👇👇
-            var markdownSection = document.querySelector('.markdown-section');
-            if (markdownSection) {
-              var images = markdownSection.querySelectorAll('img');
+            // === 5. 图片异步加载与 Viewer.js 初始化 ===
+            var viewerContentBox = document.querySelector('.markdown-section'); // 专属命名，彻底隔离
+            if (viewerContentBox) {
+              var images = viewerContentBox.querySelectorAll('img');
               if (images.length > 0) {
                 var loadedCount = 0;
-                // 监听当前页面所有图片加载
-                images.forEach(function(img) {
-                  // 如果图片已经加载完毕（比如是从缓存里读取的）
-                  if (img.complete) {
-                    loadedCount++;
-                    if (loadedCount === images.length) {
-                      initViewer();
-                    }
-                  } else {
-                    // 如果图片还在加载中，等待 load 事件
-                    img.addEventListener('load', function() {
-                      loadedCount++;
-                      if (loadedCount === images.length) {
-                        initViewer();
-                      }
-                    });
-                    // 如果图片加载失败（比如网络错误），也算作处理完毕，避免死等
-                    img.addEventListener('error', function() {
-                      loadedCount++;
-                      if (loadedCount === images.length) {
-                        initViewer();
-                      }
-                    });
-                  }
-                });
 
-                // 将初始化的核心逻辑封装成函数，确保在图片就绪后只执行一次
                 function initViewer() {
-                  // 为了防止路由重复切换时，多次给同一个元素绑定 Viewer，先清理旧实例（如果有的话）
-                  if (markdownSection.viewer) {
-                    markdownSection.viewer.destroy();
-                  }
-
-                  new Viewer(markdownSection, {
-                    zoomable: true,     // 开启支持手机端双指捏合缩放
-                    movable: true,      // 开启支持放大后的鼠标拖拽平移
-                    wheel: true,        // 开启电脑端鼠标滚轮无极缩放
-                    navbar: false,      // 隐藏底部略显冗余的缩略图导航条
-                    button: false,      // 隐藏右上角的关闭按钮（点击背景直接退出）
-                    toolbar: {
-                      zoomIn: 1,      // 放大
-                      zoomOut: 1,     // 缩小
-                      oneToOne: 1,    // 1:1 原始物理分辨率（看清每一个像素）
-                      reset: 1,       // 恢复适应屏幕
-                      // 以下功能隐藏（设为 0）
-                      prev: 0, play: 0, next: 0, rotateLeft: 0, rotateRight: 0, flipHorizontal: 0, flipVertical: 0
-                    }
+                  if (viewerContentBox.viewer) viewerContentBox.viewer.destroy();
+                  new Viewer(viewerContentBox, {
+                    zoomable: true, movable: true, wheel: true, navbar: false, button: false,
+                    toolbar: { zoomIn: 1, zoomOut: 1, oneToOne: 1, reset: 1, prev: 0, play: 0, next: 0, rotateLeft: 0, rotateRight: 0, flipHorizontal: 0, flipVertical: 0 }
                   });
                 }
+
+                images.forEach(function(img) {
+                  if (img.complete) {
+                    loadedCount++;
+                    if (loadedCount === images.length) initViewer();
+                  } else {
+                    img.addEventListener('load', function() { loadedCount++; if (loadedCount === images.length) initViewer(); });
+                    img.addEventListener('error', function() { loadedCount++; if (loadedCount === images.length) initViewer(); });
+                  }
+                });
               }
             }
-            // 👆👆👆 修复版逻辑结束 👆👆👆
-
           });
         }
       ]
