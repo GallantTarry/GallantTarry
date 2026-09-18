@@ -169,6 +169,8 @@
     * [可恶的蜥蜴](research/%E9%9F%B3%E9%A2%91%E7%A9%BA%E9%97%B4/%E5%8F%AF%E6%81%B6%E7%9A%84%E8%9C%A5%E8%9C%B4.md)
     * [周哥传奇](research/%E9%9F%B3%E9%A2%91%E7%A9%BA%E9%97%B4/%E5%91%A8%E5%93%A5%E4%BC%A0%E5%A5%87.md)
     * [波西米亚狂想曲](research/%E9%9F%B3%E9%A2%91%E7%A9%BA%E9%97%B4/%E6%B3%A2%E8%A5%BF%E7%B1%B3%E4%BA%9A%E7%8B%82%E6%83%B3%E6%9B%B2.md)
+    * [王小波](research/%E9%9F%B3%E9%A2%91%E7%A9%BA%E9%97%B4/%E7%8E%8B%E5%B0%8F%E6%B3%A2.md)
+    * [王立群强势人格](research/%E9%9F%B3%E9%A2%91%E7%A9%BA%E9%97%B4/%E7%8E%8B%E7%AB%8B%E7%BE%A4%E5%BC%BA%E5%8A%BF%E4%BA%BA%E6%A0%BC.md)
     * [答案在风中飘](research/%E9%9F%B3%E9%A2%91%E7%A9%BA%E9%97%B4/%E7%AD%94%E6%A1%88%E5%9C%A8%E9%A3%8E%E4%B8%AD%E9%A3%98.md)
     * [罗素给世界的留言](research/%E9%9F%B3%E9%A2%91%E7%A9%BA%E9%97%B4/%E7%BD%97%E7%B4%A0%E7%BB%99%E4%B8%96%E7%95%8C%E7%9A%84%E7%95%99%E8%A8%80.md)
     * [肉蛾天](research/%E9%9F%B3%E9%A2%91%E7%A9%BA%E9%97%B4/%E8%82%89%E8%9B%BE%E5%A4%A9.md)
