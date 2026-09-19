@@ -125,6 +125,7 @@
     * [古斯塔夫·克里姆特](research/%E7%94%BB%E4%BD%9C%E7%A9%BA%E9%97%B4/%E5%8F%A4%E6%96%AF%E5%A1%94%E5%A4%AB%C2%B7%E5%85%8B%E9%87%8C%E5%A7%86%E7%89%B9.md)
     * [巴勃罗·毕加索](research/%E7%94%BB%E4%BD%9C%E7%A9%BA%E9%97%B4/%E5%B7%B4%E5%8B%83%E7%BD%97%C2%B7%E6%AF%95%E5%8A%A0%E7%B4%A2.md)
     * [文森特·梵高](research/%E7%94%BB%E4%BD%9C%E7%A9%BA%E9%97%B4/%E6%96%87%E6%A3%AE%E7%89%B9%C2%B7%E6%A2%B5%E9%AB%98.md)
+    * [翰内斯·维米尔](research/%E7%94%BB%E4%BD%9C%E7%A9%BA%E9%97%B4/%E7%BF%B0%E5%86%85%E6%96%AF%C2%B7%E7%BB%B4%E7%B1%B3%E5%B0%94.md)
     * [莱昂纳多·达·芬奇](research/%E7%94%BB%E4%BD%9C%E7%A9%BA%E9%97%B4/%E8%8E%B1%E6%98%82%E7%BA%B3%E5%A4%9A%C2%B7%E8%BE%BE%C2%B7%E8%8A%AC%E5%A5%87.md)
     * [阿道夫·希特勒](research/%E7%94%BB%E4%BD%9C%E7%A9%BA%E9%97%B4/%E9%98%BF%E9%81%93%E5%A4%AB%C2%B7%E5%B8%8C%E7%89%B9%E5%8B%92.md)
     * [马克·夏加尔](research/%E7%94%BB%E4%BD%9C%E7%A9%BA%E9%97%B4/%E9%A9%AC%E5%85%8B%C2%B7%E5%A4%8F%E5%8A%A0%E5%B0%94.md)
