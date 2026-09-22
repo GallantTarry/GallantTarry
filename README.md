@@ -1,19 +1,21 @@
 <div align="center">
 
-  <a href="https://gallanttarry.github.io/TuKuai/">
-  <img src="https://img.shields.io/badge/Profile-TuKuai-000000?style=for-the-badge&logo=github&logoColor=white" alt="TuKuai"/>
-</a>
-  <a href="https://steamcommunity.com/id/ImShaoXiaBieZou/" target="_blank">
-    <img src="https://img.shields.io/badge/Steam-疯狂游玩中-171a21?style=for-the-badge&logo=steam&logoColor=white" alt="Steam"/>
-  </a>
-  <a href="https://www.minecraft.net/" target="_blank">
-    <img src="https://img.shields.io/badge/Favorite_Game-Minecraft-43B581?style=for-the-badge&logo=minecraft&logoColor=white" alt="Minecraft"/>
-  </a>
-  <a href="https://space.bilibili.com/396312441" target="_blank">
-    <img src="https://img.shields.io/badge/Bilibili-叫我烤地瓜-00A1D6?style=for-the-badge&logo=bilibili&logoColor=white" alt="Bilibili"/>
-  </a>
+  <!-- 引入谷歌超牛逼的古典复古衬线艺术字体 -->
+  <link href="./css/Cinzel+Decorative.css" rel="stylesheet">
 
-  <p><i>“在画布与音符中寻找生活的质感，在底层逻辑与像素世界里保持学徒之心。”</i></p>
+  <div style="
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 28px;
+    font-weight: 950;
+    background: linear-gradient(135deg, #f4f4f5 30%, #10b981 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 30px rgba(16, 185, 129, 0.25);
+    margin: 30px 0 20px 0;
+    letter-spacing: 1.5px;
+  ">
+    "We are standing on the shoulders of giants."
+  </div>
 
 </div>
 
@@ -58,4 +60,20 @@
 *   ⚓ **船长之梦 (Captain's Dream)**
 *   💡 **提高生活质量(Life Quality Upgrades)**
 *   📚 **知识体系构建(Knowledge Architecture)**
+---
+<div align="center">
 
+  <a href="https://gallanttarry.github.io/TuKuai/">
+  <img src="https://img.shields.io/badge/Profile-TuKuai-000000?style=for-the-badge&logo=github&logoColor=white" alt="TuKuai"/>
+</a>
+  <a href="https://steamcommunity.com/id/ImShaoXiaBieZou/" target="_blank">
+    <img src="https://img.shields.io/badge/Steam-疯狂游玩中-171a21?style=for-the-badge&logo=steam&logoColor=white" alt="Steam"/>
+  </a>
+  <a href="https://www.minecraft.net/" target="_blank">
+    <img src="https://img.shields.io/badge/Favorite_Game-Minecraft-43B581?style=for-the-badge&logo=minecraft&logoColor=white" alt="Minecraft"/>
+  </a>
+  <a href="https://space.bilibili.com/396312441" target="_blank">
+    <img src="https://img.shields.io/badge/Bilibili-叫我烤地瓜-00A1D6?style=for-the-badge&logo=bilibili&logoColor=white" alt="Bilibili"/>
+  </a>
+
+</div>

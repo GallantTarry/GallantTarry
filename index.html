@@ -3,31 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <title>学无止境</title>
-  <!-- 标准浏览器及通用高清 Favicon (ICO) -->
   <link rel="icon" href="./favicon/academia.ico" sizes="any">
-
-  <!-- 现代化 SVG/PNG 网页图标标签 -->
   <link rel="icon" type="image/png" href="./favicon/academia.png">
-
-  <!-- Apple 设备桌面书签/剪辑图标 -->
   <link rel="apple-touch-icon" href="./favicon/appleacademia.png">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <meta name="description" content="宝藏库">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/sidebar.min.css" />
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/prism-themes@1.9.0/themes/prism-vsc-dark-plus.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Serif+SC:wght@600;900&display=swap" rel="stylesheet">
-  <!-- 👇 新增：APlayer 核心样式 👇 -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
-  <!-- 👇 新增：DPlayer 核心样式 👇 -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/dplayer/dist/DPlayer.min.css">
-  <!-- 👇 新增：Viewer.js 核心样式 👇 -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/viewerjs@1.11.6/dist/viewer.min.css">
+
+
+  <!-- 2. Docsify 标准 Vue 主题样式：整个文档站点的默认基础视觉皮肤和布局骨架 -->
+  <link rel="stylesheet" href="./css/vue.css">
+
+  <!-- 3. 侧边栏折叠插件样式：配合折叠脚本，让多级菜单能够通过箭头优雅地收起和展开 -->
+  <link rel="stylesheet" href="./css/sidebar.min.css" />
+
+  <!-- 4. 代码块 VSC Dark Plus 高亮主题：让文章里的代码块呈现类似 VS Code 的暗色高级高亮配色 -->
+  <link rel="stylesheet" href="./css/prism-vsc-dark-plus.min.css">
+
+  <!-- 5. Google 网页字体（Inter 与 Noto Serif SC）：为正文和中文字体加载现代、细腻的高级无衬线与衬线字体 -->
+  <link rel="stylesheet" href="./css/Inter_and_Noto_Serif_SC.css">
+
+  <!-- 6. APlayer 音乐播放器样式：让网页里嵌入的音频播放条拥有精致的现代 UI 界面 -->
+  <link rel="stylesheet" href="./css/APlayer.min.css">
+
+  <!-- 7. DPlayer 视频播放器样式：美化网页视频播放器的控制面板、全屏按钮等外观 -->
+  <link rel="stylesheet" href="./css/DPlayer.min.css">
+
+  <!-- 8. Viewer.js 图片查看器样式：为点击文章图片后弹出的全屏相册、缩放和工具栏提供美化支持 -->
+  <link rel="stylesheet" href="./css/viewer.min.css">
 
   <style>
-    /* （这里保留你原本的其他样式...） */
 
     /* ========================================= */
     /* ====== 11. Viewer.js 高级图片查看器美化 ====== */
@@ -845,25 +850,52 @@
       ]
     }
   </script>
-  <!-- 👇 新增：DPlayer 核心脚本 👇 -->
-  <script src="./js/DPlayer.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
-  <script src="./js/docsify-sidebar-collapse.min.js"></script>
-  <script src="./js/prism-java.min.js"></script>
-  <script src="./js/prism-bash.min.js"></script>
-  <!-- ❌ 删掉或者注释掉这行原生插件 ❌ -->
-  <!-- <script src="./js/zoom-image.min.js"></script> -->
+<!-- 1. 网页视频播放器：支持 MP4、HLS 等格式，用来在网页里看视频 -->
+<script src="./js/DPlayer.min.js"></script>
 
-  <!-- 👇 新增：引入专业的 Viewer.js 核心脚本 👇 -->
-  <script src="./js/viewer.min.js"></script>
-  <!-- 👇 新增这一行 👇 -->
-  <script src="./js/docsify-copy-code.min.js"></script>
+<!-- 2. Docsify 核心框架：整个文档站点的灵魂引擎，负责动态加载 Markdown、路由跳转 -->
+<script src="./js/docsify@4.js"></script>
 
-  <!-- 👇 新增：APlayer 核心脚本 👇 -->
-  <script src="./js/APlayer.min.js"></script>
+<!-- 1. 配置 MathJax：开启单美元符号 $ 和双美元符号 $$ 的强力识别 -->
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$']],
+      displayMath: [['$$', '$$']]
+    }
+  };
+</script>
 
-<!-- 👇 新增：真实色彩物理混合库 Spectral.js 👇 -->
+<!-- 2. 引入 MathJax 核心引擎 (自带样式，完美解析一切复杂 LaTeX) -->
+<script src="./js/tex-mml-chtml.js"></script>
+
+<!-- 3. 引入现代维护版 Docsify-LaTeX 桥接插件 -->
+<script src="./js/docsify-latex@0.js"></script>
+
+<!-- 5. 侧边栏折叠插件：让你的多级菜单可以点箭头展开/收起，保持页面清爽 -->
+<script src="./js/docsify-sidebar-collapse.min.js"></script>
+
+<!-- 6. Java 语法高亮扩展：让 Markdown 里的 Java 代码块显示出绚丽的高亮色彩 -->
+<script src="./js/prism-java.min.js"></script>
+
+<!-- 7. Bash 语法高亮扩展：同上，专门用来高亮 Linux 终端命令、Shell 脚本 -->
+<script src="./js/prism-bash.min.js"></script>
+
+<!-- 8. Viewer.js 高级图片查看器：点击文章里的图片时，实现类似相册的放大、旋转、全屏预览 -->
+<script src="./js/viewer.min.js"></script>
+
+<!-- 9. 代码块复制按钮插件：鼠标移到代码块右上角时，自动浮出一个 "Copy" 按钮 -->
+<script src="./js/docsify-copy-code.min.js"></script>
+
+<!-- 10. 网页音乐播放器 APlayer：用来在网页里塞入精美的音频播放条 -->
+<script src="./js/APlayer.min.js"></script>
+
+<!-- 11. Spectral.js 色彩物理混合库：你用来模拟真实颜料混合（K-M 理论封装）的底层计算库 -->
 <script src="./js/spectral.min.js"></script>
+
+
+
+
 
   <!-- 👇 新增：移动端侧边栏强制保持展开拦截脚本 👇 -->
   <script>
