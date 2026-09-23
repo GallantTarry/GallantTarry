@@ -126,6 +126,7 @@
 * 画作空间
     * [什么是颜色？](research/%E7%94%BB%E4%BD%9C%E7%A9%BA%E9%97%B4/%E4%BB%80%E4%B9%88%E6%98%AF%E9%A2%9C%E8%89%B2%EF%BC%9F.md)
     * [伦勃朗·梵·莱茵](research/%E7%94%BB%E4%BD%9C%E7%A9%BA%E9%97%B4/%E4%BC%A6%E5%8B%83%E6%9C%97%C2%B7%E6%A2%B5%C2%B7%E8%8E%B1%E8%8C%B5.md)
+    * [保罗·塞尚](research/%E7%94%BB%E4%BD%9C%E7%A9%BA%E9%97%B4/%E4%BF%9D%E7%BD%97%C2%B7%E5%A1%9E%E5%B0%9A.md)
     * [克劳德·莫奈](research/%E7%94%BB%E4%BD%9C%E7%A9%BA%E9%97%B4/%E5%85%8B%E5%8A%B3%E5%BE%B7%C2%B7%E8%8E%AB%E5%A5%88.md)
     * [古斯塔夫·克里姆特](research/%E7%94%BB%E4%BD%9C%E7%A9%BA%E9%97%B4/%E5%8F%A4%E6%96%AF%E5%A1%94%E5%A4%AB%C2%B7%E5%85%8B%E9%87%8C%E5%A7%86%E7%89%B9.md)
     * [巴勃罗·毕加索](research/%E7%94%BB%E4%BD%9C%E7%A9%BA%E9%97%B4/%E5%B7%B4%E5%8B%83%E7%BD%97%C2%B7%E6%AF%95%E5%8A%A0%E7%B4%A2.md)
