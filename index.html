@@ -731,10 +731,10 @@
       transform: translateY(0);
     }
 
-    <!-- 👇 局部密码拦截层（专属个人创作，默认隐藏） 👇 -->
+    /* 👇 局部密码拦截层（专属个人创作，默认隐藏） 👇 */
 
     #auth-screen {
-      display: none !important; /* 加上 !important 确保最高优先级 */
+      display: none; /* 必须去掉 !important，否则 JS 无法使其显示 */
       opacity: 0;
       pointer-events: none;
       position: fixed;
@@ -1025,34 +1025,6 @@
     }, true);
   })();
 </script>
-
-<!-- 👇 修复：合并并清理唯一有效的跳转主站特效脚本 👇 -->
-<script>
-  document.addEventListener('click', function(e) {
-    // 兼容处理：检查点击的是否是我们自定义的 span，或者 Docsify 外层生成的标题容器
-    const trigger = e.target.closest('.reboot-trigger') || e.target.closest('.sidebar h1');
-
-    if (trigger) {
-      // 阻止默认跳转行为
-      e.preventDefault();
-
-      // 把 appContainer 指向整个 body 节点
-      const appContainer = document.body;
-
-      // 1. 触发关机动画：瞬间压扁整个网页屏幕
-      appContainer.classList.remove('crt-turn-on');
-      appContainer.classList.add('crt-turn-off');
-
-      // 2. 等待关机动画快结束、屏幕完全黑掉时（约 400ms），执行外部网页跳转
-      setTimeout(() => {
-        // 直接跳往主站域名
-        window.location.href = 'https://xn--udsye.art/';
-      }, 400);
-    }
-  });
-</script>
-</body>
-</html>
 
 <!-- 👇 修复：合并并清理唯一有效的跳转主站特效脚本 👇 -->
 <script>
