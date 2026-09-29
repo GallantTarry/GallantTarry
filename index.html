@@ -99,6 +99,49 @@
     }
 
     /* --- B. 顶部标题发光微距 --- */
+
+    /* --- B. 顶部标题发光微距 --- */
+    .sidebar h1 {
+      font-family: 'Cinzel Decorative', serif !important;
+      font-size: 22px; /* 电脑端字号 */
+      font-weight: 900;
+      letter-spacing: 2px;
+      text-align: center;
+      margin-bottom: 40px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex; /* 开启 Flex 布局 */
+      justify-content: center; /* 强行水平居中 */
+      align-items: center;
+    }
+
+    /* 👇 修复 2：给自定义的跳转链接加上炫酷的绿色渐变和居中 👇 */
+    .sidebar h1 .reboot-trigger {
+      text-decoration: none !important;
+      display: block; /* 转为块级元素，占满父容器 */
+      width: 100%;
+      text-align: center; /* 文字内部居中 */
+      /* 经典的高级绿色渐变 */
+      background: linear-gradient(135deg, #10b981, #3b82f6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 4px 20px rgba(16, 185, 129, 0.2); /* 绿色微光 */
+      transition: all 0.3s ease;
+    }
+
+    .sidebar h1 .reboot-trigger:hover {
+      text-shadow: 0 4px 25px rgba(16, 185, 129, 0.8);
+      transform: scale(1.05); /* 悬停时稍微放大 */
+    }
+
+    /* 👇 手机端专属排版：缩小字号，防止超宽 👇 */
+    @media screen and (max-width: 768px) {
+      .sidebar h1 {
+        font-size: 18px !important; /* 手机端字号调小 */
+        letter-spacing: 1px;
+        margin-bottom: 25px; /* 减小底部留白 */
+      }
+    }
     .sidebar h1 {
       /* 👇 修改：应用 Cinzel Decorative 字体，如果没有则回退到 serif 👇 */
       font-family: 'Cinzel Decorative', serif !important;
@@ -596,26 +639,32 @@
 /* ========================================= */
     /* ====== 9. 侧边栏加宽与丝滑动画补全 ====== */
     /* ========================================= */
-    
+
     /* --- A. 侧边栏加宽 (仅在电脑端生效，绝不破坏手机端布局) --- */
     @media screen and (min-width: 769px) {
       .sidebar {
-        width: 350px !important; 
+        width: 350px !important;
+        transition: transform 0.3s ease !important; /* 确保过渡动画生效 */
       }
-      
+
       .content {
-        left: 350px !important; 
-        transition: left 0.3s ease !important; 
+        left: 350px !important;
+        transition: left 0.3s ease !important;
       }
-      
-      /* 👇 必须把收起侧边栏的适配放在 @media 内部，只让它在电脑端生效 👇 */
+
+      /* 当 body 带有 close 类时，侧边栏被收起 */
       body.close .sidebar {
         transform: translateX(-350px) !important;
       }
       body.close .content {
         left: 0 !important;
       }
-    } /* 👈 媒体查询的结束大括号在这里！ */
+
+      /* 强制在电脑端也显示那个收起/展开的小圆点按钮 */
+      body .sidebar-toggle {
+        display: flex !important;
+      }
+    }
 
     /* --- B. 链接悬停的“呼吸感”位移动画 --- */
     .sidebar-nav ul li a {
@@ -799,8 +848,8 @@
   
   <script>
     window.$docsify = {
-      // 👇 修复 2：将 <a> 换成 <span>，避免双重链接冲突 👇
-      name: '<span class="reboot-trigger" style="text-decoration: none; color: inherit;">Experience more.</span>',
+      // 👇 修复 1：去掉 span，恢复为带类名的纯净 a 标签
+      name: '<a href="javascript:void(0)" class="reboot-trigger">Experience more.</a>',
       repo: '',
       loadSidebar: true,
       subMaxLevel: 0,
@@ -956,32 +1005,27 @@
 <!-- 11. Spectral.js 色彩物理混合库：你用来模拟真实颜料混合（K-M 理论封装）的底层计算库 -->
 <script src="./js/spectral.min.js"></script>
 
-<!-- 👇 新增：移动端侧边栏强制保持展开拦截脚本 👇 -->
-<!-- 👇 修复 3：拦截标题点击，触发重新开机并跳回主站特效 👇 -->
+<!-- 👇 恢复：移动端侧边栏强制保持展开拦截脚本 👇 -->
 <script>
-  document.addEventListener('click', function(e) {
-    // 兼容处理：检查点击的是否是我们自定义的 span，或者 Docsify 外层生成的标题容器
-    const trigger = e.target.closest('.reboot-trigger') || e.target.closest('.sidebar h1');
+  (function() {
+    document.addEventListener('click', function(e) {
+      if (window.innerWidth > 768) return;
 
-    if (trigger) {
-      // 阻止默认跳转行为
-      e.preventDefault();
+      // 如果点的是悬浮小圆圈，正常放行
+      if (e.target.closest('.sidebar-toggle')) return;
 
-      // 👇 核心修复：把 appContainer 指向整个 body 节点
-      const appContainer = document.body;
+      const isSidebarOpen = document.body.classList.contains('close');
 
-      // 1. 触发关机动画：瞬间压扁整个网页屏幕
-      appContainer.classList.remove('crt-turn-on');
-      appContainer.classList.add('crt-turn-off');
-
-      // 2. 等待关机动画快结束、屏幕完全黑掉时（约 400ms），执行外部网页跳转
-      setTimeout(() => {
-        // 直接跳往主站域名
-        window.location.href = 'https://xn--udsye.art/';
-      }, 400);
-    }
-  });
+      // 只要侧边栏是开着的，不管点什么，0.01秒后强行给它加回展开类名，死活不让它收缩
+      if (isSidebarOpen) {
+        setTimeout(function() {
+          document.body.classList.add('close');
+        }, 10);
+      }
+    }, true);
+  })();
 </script>
+
 <!-- 👇 修复：合并并清理唯一有效的跳转主站特效脚本 👇 -->
 <script>
   document.addEventListener('click', function(e) {
@@ -1010,3 +1054,30 @@
 </body>
 </html>
 
+<!-- 👇 修复：合并并清理唯一有效的跳转主站特效脚本 👇 -->
+<script>
+  document.addEventListener('click', function(e) {
+    // 兼容处理：检查点击的是否是我们自定义的 span，或者 Docsify 外层生成的标题容器
+    const trigger = e.target.closest('.reboot-trigger') || e.target.closest('.sidebar h1');
+
+    if (trigger) {
+      // 阻止默认跳转行为
+      e.preventDefault();
+
+      // 把 appContainer 指向整个 body 节点
+      const appContainer = document.body;
+
+      // 1. 触发关机动画：瞬间压扁整个网页屏幕
+      appContainer.classList.remove('crt-turn-on');
+      appContainer.classList.add('crt-turn-off');
+
+      // 2. 等待关机动画快结束、屏幕完全黑掉时（约 400ms），执行外部网页跳转
+      setTimeout(() => {
+        // 直接跳往主站域名
+        window.location.href = 'https://xn--udsye.art/';
+      }, 400);
+    }
+  });
+</script>
+</body>
+</html>
