@@ -681,72 +681,75 @@
       opacity: 1;
       transform: translateY(0);
     }
+
+    <!-- 👇 局部密码拦截层（专属个人创作，默认隐藏） 👇 -->
+
+    #auth-screen {
+      display: none !important; /* 加上 !important 确保最高优先级 */
+      opacity: 0;
+      pointer-events: none;
+      position: fixed;
+      inset: 0;
+      background-color: var(--bg-body);
+      z-index: 999999;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      padding: 24px;
+      box-sizing: border-box;
+    }
+    .auth-title { color: var(--theme-color); font-family: 'Noto Serif SC', serif; letter-spacing: 2px; margin-top: 0; margin-bottom: 8px; text-align: center; }
+    .auth-desc { color: var(--text-muted); font-size: 14px; margin-bottom: 32px; text-align: center; }
+    .auth-form { display: flex; gap: 12px; width: 100%; max-width: 320px; box-sizing: border-box; }
+    .auth-input { flex: 1; min-width: 0; padding: 12px 16px; border-radius: 12px; border: 1px solid var(--border-color); background: var(--bg-card); color: var(--text-main); outline: none; text-align: center; font-family: 'Inter', sans-serif; font-size: 16px; box-sizing: border-box; transition: border-color 0.3s; }
+    .auth-input:focus { border-color: var(--theme-color); }
+    .auth-btn { padding: 12px 24px; border-radius: 12px; border: none; background: var(--theme-color); color: #fff; cursor: pointer; font-weight: 600; font-size: 16px; white-space: nowrap; transition: transform 0.2s, background 0.2s; }
+    .auth-btn:active { transform: scale(0.95); background: #059669; }
+    #auth-error { color: #ef4444; font-size: 13px; margin-top: 16px; opacity: 0; transition: opacity 0.3s; height: 20px; }
+
+    /* ========================================= */
+    /* ====== 12. 重新开机 (CRT Reboot) 动画 ====== */
+    /* ========================================= */
+
+    /* 👇 修复 1：把原来的 #app 改成 body 👇 */
+    body {
+      transition: all 0.1s ease;
+      transform-origin: center center; /* 确保是从屏幕正中心向内压扁 */
+    }
+
+    /* 关机动作：瞬间压扁并变成一条白线，然后消失 */
+    .crt-turn-off {
+      animation: crt-off 0.4s cubic-bezier(0.23, 1, 0.32, 1) forwards !important;
+    }
+
+    /* 开机动作：从一条白线瞬间展开恢复原状 */
+    .crt-turn-on {
+      animation: crt-on 0.5s cubic-bezier(0.23, 1, 0.32, 1) forwards !important;
+    }
+
+    @keyframes crt-off {
+      0%   { transform: scale(1, 1); opacity: 1; filter: brightness(1); }
+      40%  { transform: scale(1, 0.005); opacity: 1; filter: brightness(3); }
+      70%  { transform: scale(0.001, 0.005); opacity: 0; filter: brightness(3); }
+      100% { transform: scale(0, 0); opacity: 0; filter: brightness(1); }
+    }
+
+    @keyframes crt-on {
+      0%   { transform: scale(0, 0); opacity: 0; filter: brightness(1); }
+      30%  { transform: scale(0.001, 0.005); opacity: 0; filter: brightness(3); }
+      60%  { transform: scale(1, 0.005); opacity: 1; filter: brightness(3); }
+      100% { transform: scale(1, 1); opacity: 1; filter: brightness(1); }
+    }
+
   </style>
 </head>
 <body>
-<!-- 👇 局部密码拦截层（专属个人创作，默认隐藏） 👇 -->
-<style>
-  #auth-screen {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background-color: var(--bg-body);
-    z-index: 999999;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    padding: 24px;
-    box-sizing: border-box;
-  }
-  .auth-title { color: var(--theme-color); font-family: 'Noto Serif SC', serif; letter-spacing: 2px; margin-top: 0; margin-bottom: 8px; text-align: center; }
-  .auth-desc { color: var(--text-muted); font-size: 14px; margin-bottom: 32px; text-align: center; }
-  .auth-form { display: flex; gap: 12px; width: 100%; max-width: 320px; box-sizing: border-box; }
-  .auth-input { flex: 1; min-width: 0; padding: 12px 16px; border-radius: 12px; border: 1px solid var(--border-color); background: var(--bg-card); color: var(--text-main); outline: none; text-align: center; font-family: 'Inter', sans-serif; font-size: 16px; box-sizing: border-box; transition: border-color 0.3s; }
-  .auth-input:focus { border-color: var(--theme-color); }
-  .auth-btn { padding: 12px 24px; border-radius: 12px; border: none; background: var(--theme-color); color: #fff; cursor: pointer; font-weight: 600; font-size: 16px; white-space: nowrap; transition: transform 0.2s, background 0.2s; }
-  .auth-btn:active { transform: scale(0.95); background: #059669; }
-  #auth-error { color: #ef4444; font-size: 13px; margin-top: 16px; opacity: 0; transition: opacity 0.3s; height: 20px; }
-
-  /* ========================================= */
-  /* ====== 12. 重新开机 (CRT Reboot) 动画 ====== */
-  /* ========================================= */
-
-  /* 控制整个页面内容的包裹层 */
-  #app {
-    transition: all 0.1s ease;
-  }
-
-  /* 关机动作：瞬间压扁并变成一条白线，然后消失 */
-  .crt-turn-off {
-    animation: crt-off 0.4s cubic-bezier(0.23, 1, 0.32, 1) forwards !important;
-  }
-
-  /* 开机动作：从一条白线瞬间展开恢复原状 */
-  .crt-turn-on {
-    animation: crt-on 0.5s cubic-bezier(0.23, 1, 0.32, 1) forwards !important;
-  }
-
-  @keyframes crt-off {
-    0%   { transform: scale(1, 1); opacity: 1; filter: brightness(1); }
-    40%  { transform: scale(1, 0.005); opacity: 1; filter: brightness(3); }
-    70%  { transform: scale(0.001, 0.005); opacity: 0; filter: brightness(3); }
-    100% { transform: scale(0, 0); opacity: 0; filter: brightness(1); }
-  }
-
-  @keyframes crt-on {
-    0%   { transform: scale(0, 0); opacity: 0; filter: brightness(1); }
-    30%  { transform: scale(0.001, 0.005); opacity: 0; filter: brightness(3); }
-    60%  { transform: scale(1, 0.005); opacity: 1; filter: brightness(3); }
-    100% { transform: scale(1, 1); opacity: 1; filter: brightness(1); }
-  }
 
 
-
-</style>
-
-<div id="auth-screen">
+<!-- 👇 修复：直接把隐藏属性写在标签内联样式上，神仙来了它也不会闪 👇 -->
+<div id="auth-screen" style="display: none; opacity: 0; pointer-events: none;">
   <h2 class="auth-title">私密创作空间</h2>
   <p class="auth-desc">请输入访问凭证以解锁此区域的内容</p>
   <div class="auth-form">
@@ -796,8 +799,8 @@
   
   <script>
     window.$docsify = {
-      // 👇 修改：将纯文本标题替换为带特定类名和链接的 HTML 结构 👇
-      name: '<a href="#/" class="reboot-trigger" style="text-decoration: none; color: inherit;">Experience more.</a>',
+      // 👇 修复 2：将 <a> 换成 <span>，避免双重链接冲突 👇
+      name: '<span class="reboot-trigger" style="text-decoration: none; color: inherit;">Experience more.</span>',
       repo: '',
       loadSidebar: true,
       subMaxLevel: 0,
@@ -829,12 +832,20 @@
             if (currentPath.includes('个人创作')) {
               if (sessionStorage.getItem('personal_unlocked') === 'true') {
                 if (authContentBox) authContentBox.style.display = 'block';
-                if (authScreen) authScreen.style.display = 'none';
+                if (authScreen) {
+                  authScreen.style.display = 'none';
+                  authScreen.style.opacity = '0'; // 确保锁定态不可见
+                  authScreen.style.pointerEvents = 'none';
+                }
               } else {
                 if (authContentBox) authContentBox.style.display = 'none';
                 if (authScreen) {
                   authScreen.style.display = 'flex';
-                  authScreen.style.opacity = '1';
+                  // 👇 核心修改：如果是没密码的状态，延迟极小的一瞬间恢复透明度，避开浏览器的初始渲染闪烁
+                  requestAnimationFrame(() => {
+                    authScreen.style.opacity = '1';
+                    authScreen.style.pointerEvents = 'auto';
+                  });
                   const pwdInput = document.getElementById('auth-input');
                   if (pwdInput) pwdInput.value = '';
                 }
@@ -945,71 +956,57 @@
 <!-- 11. Spectral.js 色彩物理混合库：你用来模拟真实颜料混合（K-M 理论封装）的底层计算库 -->
 <script src="./js/spectral.min.js"></script>
 
-
-
-
-
-  <!-- 👇 新增：移动端侧边栏强制保持展开拦截脚本 👇 -->
-  <script>
-    (function() {
-      // 在捕获阶段监听全局点击事件，确保比 Docsify 的内部逻辑先执行
-      document.addEventListener('click', function(e) {
-        // 仅在移动端尺寸 (屏幕宽度 <= 768px) 生效
-        if (window.innerWidth > 768) return;
-
-        // 判断用户点击的是否是那个悬浮辅助小圆圈
-        const isToggleBtn = e.target.closest('.sidebar-toggle');
-        
-        // 如果点击的是小圆圈，什么都不干预，直接放行让其正常展开/收起
-        if (isToggleBtn) return;
-
-        // 如果点击的不是小圆圈（比如点击了文章链接或空白处）
-        // 我们需要先检查侧边栏在点击前【是否处于展开状态】
-        // 注：Docsify 手机端展开侧边栏的原理是给 body 加上 'close' 类名
-        const isSidebarOpen = document.body.classList.contains('close');
-
-        // 如果是展开状态，Docsify 原本会自动移除 'close' 类把侧边栏藏起来。
-        // 我们利用微小延迟 (setTimeout)，在它移除后立刻强制加回来，抵消它的隐藏动作。
-        if (isSidebarOpen) {
-          setTimeout(function() {
-            document.body.classList.add('close');
-          }, 10);
-        }
-      }, true); 
-    })();
-  </script>
-<!-- 👇 新增：拦截标题点击，触发重新开机特效 👇 -->
+<!-- 👇 新增：移动端侧边栏强制保持展开拦截脚本 👇 -->
+<!-- 👇 修复 3：拦截标题点击，触发重新开机并跳回主站特效 👇 -->
 <script>
   document.addEventListener('click', function(e) {
-    // 检查点击的是否是我们设定的标题触发器
-    if (e.target.closest('.reboot-trigger')) {
-      // 阻止 a 标签默认的瞬间跳转行为，让我们有时间播放动画
+    // 兼容处理：检查点击的是否是我们自定义的 span，或者 Docsify 外层生成的标题容器
+    const trigger = e.target.closest('.reboot-trigger') || e.target.closest('.sidebar h1');
+
+    if (trigger) {
+      // 阻止默认跳转行为
       e.preventDefault();
 
-      const appContainer = document.getElementById('app');
+      // 👇 核心修复：把 appContainer 指向整个 body 节点
+      const appContainer = document.body;
 
-      // 1. 触发关机动画
+      // 1. 触发关机动画：瞬间压扁整个网页屏幕
       appContainer.classList.remove('crt-turn-on');
       appContainer.classList.add('crt-turn-off');
 
-      // 2. 等待关机动画快结束时（约 400ms），执行路由跳转
+      // 2. 等待关机动画快结束、屏幕完全黑掉时（约 400ms），执行外部网页跳转
       setTimeout(() => {
-        window.location.hash = '/'; // 跳回主菜单
+        // 直接跳往主站域名
+        window.location.href = 'https://xn--udsye.art/';
+      }, 400);
+    }
+  });
+</script>
+<!-- 👇 修复：合并并清理唯一有效的跳转主站特效脚本 👇 -->
+<script>
+  document.addEventListener('click', function(e) {
+    // 兼容处理：检查点击的是否是我们自定义的 span，或者 Docsify 外层生成的标题容器
+    const trigger = e.target.closest('.reboot-trigger') || e.target.closest('.sidebar h1');
 
-        // 3. 路由跳转后，稍微延迟一点触发开机动画
-        setTimeout(() => {
-          appContainer.classList.remove('crt-turn-off');
-          appContainer.classList.add('crt-turn-on');
+    if (trigger) {
+      // 阻止默认跳转行为
+      e.preventDefault();
 
-          // 4. 动画完全结束后，清理多余的类名，保持 DOM 干净
-          setTimeout(() => {
-            appContainer.classList.remove('crt-turn-on');
-          }, 600);
+      // 把 appContainer 指向整个 body 节点
+      const appContainer = document.body;
 
-        }, 50);
+      // 1. 触发关机动画：瞬间压扁整个网页屏幕
+      appContainer.classList.remove('crt-turn-on');
+      appContainer.classList.add('crt-turn-off');
+
+      // 2. 等待关机动画快结束、屏幕完全黑掉时（约 400ms），执行外部网页跳转
+      setTimeout(() => {
+        // 直接跳往主站域名
+        window.location.href = 'https://xn--udsye.art/';
       }, 400);
     }
   });
 </script>
 </body>
 </html>
+

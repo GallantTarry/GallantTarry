@@ -63,7 +63,7 @@
 ---
 <div align="center">
 
-  <a href="https://gallanttarry.github.io/TuKuai/">
+  <a href="https://github.com/GallantTarry">
   <img src="https://img.shields.io/badge/Profile-TuKuai-000000?style=for-the-badge&logo=github&logoColor=white" alt="TuKuai"/>
 </a>
   <a href="https://steamcommunity.com/id/ImShaoXiaBieZou/" target="_blank">
