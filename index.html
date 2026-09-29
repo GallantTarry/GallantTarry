@@ -23,6 +23,9 @@
   <!-- 5. Google 网页字体（Inter 与 Noto Serif SC）：为正文和中文字体加载现代、细腻的高级无衬线与衬线字体 -->
   <link rel="stylesheet" href="./css/Inter_and_Noto_Serif_SC.css">
 
+  <!-- 👇 新增：引入 Cinzel Decorative 字体 👇 -->
+  <link href="./css/Cinzel+Decorative.css" rel="stylesheet">
+
   <!-- 6. APlayer 音乐播放器样式：让网页里嵌入的音频播放条拥有精致的现代 UI 界面 -->
   <link rel="stylesheet" href="./css/APlayer.min.css">
 
@@ -73,10 +76,11 @@
 
     /* ====== 1. 全局极致暗黑背景 ====== */
     body {
-      background-color: var(--bg-body) !important; 
+      background-color: var(--bg-body) !important;
       color: var(--text-main) !important;
-      font-family: 'Inter', -apple-system, sans-serif !important;
-      font-size: 16px; 
+      /* 👇 满血版系统字体栈：加入了 BlinkMacSystemFont 和明确的中文字体名称 */
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif !important;
+      font-size: 16px;
       -webkit-font-smoothing: antialiased;
     }
 
@@ -96,14 +100,25 @@
 
     /* --- B. 顶部标题发光微距 --- */
     .sidebar h1 {
-      font-family: 'Noto Serif SC', serif !important;
+      /* 👇 修改：应用 Cinzel Decorative 字体，如果没有则回退到 serif 👇 */
+      font-family: 'Cinzel Decorative', serif !important;
       color: var(--text-title) !important;
-      font-size: 26px;
+      /* 👇 修改：将原本的 26px 调小到 22px（你可以根据感觉再微调） 👇 */
+      font-size: 22px;
       font-weight: 900;
       letter-spacing: 2px;
       text-align: center;
       margin-bottom: 40px;
       text-shadow: 0 4px 20px rgba(255, 255, 255, 0.15); /* 标题自带微弱神圣光晕 */
+      /* 👇 新增：让整个标题区域看起来像个可以点击的按钮 👇 */
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    /* 👇 新增：鼠标悬停时稍微提亮并放大，增强交互感 👇 */
+    .sidebar h1:hover {
+      text-shadow: 0 4px 25px rgba(16, 185, 129, 0.6);
+      transform: scale(1.02);
     }
     .sidebar h1 strong {
       color: var(--theme-color);
@@ -693,6 +708,42 @@
   .auth-btn { padding: 12px 24px; border-radius: 12px; border: none; background: var(--theme-color); color: #fff; cursor: pointer; font-weight: 600; font-size: 16px; white-space: nowrap; transition: transform 0.2s, background 0.2s; }
   .auth-btn:active { transform: scale(0.95); background: #059669; }
   #auth-error { color: #ef4444; font-size: 13px; margin-top: 16px; opacity: 0; transition: opacity 0.3s; height: 20px; }
+
+  /* ========================================= */
+  /* ====== 12. 重新开机 (CRT Reboot) 动画 ====== */
+  /* ========================================= */
+
+  /* 控制整个页面内容的包裹层 */
+  #app {
+    transition: all 0.1s ease;
+  }
+
+  /* 关机动作：瞬间压扁并变成一条白线，然后消失 */
+  .crt-turn-off {
+    animation: crt-off 0.4s cubic-bezier(0.23, 1, 0.32, 1) forwards !important;
+  }
+
+  /* 开机动作：从一条白线瞬间展开恢复原状 */
+  .crt-turn-on {
+    animation: crt-on 0.5s cubic-bezier(0.23, 1, 0.32, 1) forwards !important;
+  }
+
+  @keyframes crt-off {
+    0%   { transform: scale(1, 1); opacity: 1; filter: brightness(1); }
+    40%  { transform: scale(1, 0.005); opacity: 1; filter: brightness(3); }
+    70%  { transform: scale(0.001, 0.005); opacity: 0; filter: brightness(3); }
+    100% { transform: scale(0, 0); opacity: 0; filter: brightness(1); }
+  }
+
+  @keyframes crt-on {
+    0%   { transform: scale(0, 0); opacity: 0; filter: brightness(1); }
+    30%  { transform: scale(0.001, 0.005); opacity: 0; filter: brightness(3); }
+    60%  { transform: scale(1, 0.005); opacity: 1; filter: brightness(3); }
+    100% { transform: scale(1, 1); opacity: 1; filter: brightness(1); }
+  }
+
+
+
 </style>
 
 <div id="auth-screen">
@@ -745,7 +796,8 @@
   
   <script>
     window.$docsify = {
-      name: 'Experience more.',
+      // 👇 修改：将纯文本标题替换为带特定类名和链接的 HTML 结构 👇
+      name: '<a href="#/" class="reboot-trigger" style="text-decoration: none; color: inherit;">Experience more.</a>',
       repo: '',
       loadSidebar: true,
       subMaxLevel: 0,
@@ -926,5 +978,38 @@
       }, true); 
     })();
   </script>
+<!-- 👇 新增：拦截标题点击，触发重新开机特效 👇 -->
+<script>
+  document.addEventListener('click', function(e) {
+    // 检查点击的是否是我们设定的标题触发器
+    if (e.target.closest('.reboot-trigger')) {
+      // 阻止 a 标签默认的瞬间跳转行为，让我们有时间播放动画
+      e.preventDefault();
+
+      const appContainer = document.getElementById('app');
+
+      // 1. 触发关机动画
+      appContainer.classList.remove('crt-turn-on');
+      appContainer.classList.add('crt-turn-off');
+
+      // 2. 等待关机动画快结束时（约 400ms），执行路由跳转
+      setTimeout(() => {
+        window.location.hash = '/'; // 跳回主菜单
+
+        // 3. 路由跳转后，稍微延迟一点触发开机动画
+        setTimeout(() => {
+          appContainer.classList.remove('crt-turn-off');
+          appContainer.classList.add('crt-turn-on');
+
+          // 4. 动画完全结束后，清理多余的类名，保持 DOM 干净
+          setTimeout(() => {
+            appContainer.classList.remove('crt-turn-on');
+          }, 600);
+
+        }, 50);
+      }, 400);
+    }
+  });
+</script>
 </body>
 </html>
