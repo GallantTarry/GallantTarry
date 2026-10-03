@@ -160,3 +160,165 @@ public class PigController {
 
 
 当然这些还是仅仅不够的，有一天你会发现，前端传进来的东西和entity实体类的根本对不上，很多变量名不一致或数据结构不匹配，那么就需要新建一个全新的java类**DTO** 全称是 **Data Transfer Object（数据传输对象）**。在另一篇文章会再详细讲述这个科班方法。
+
+
+<div id="restful-graph-container" style="width: 100%; height: 600px; background: #1a1a1a; border-radius: 12px; border: 1px solid #333; overflow: hidden; position: relative;">
+  <div style="position: absolute; top: 15px; left: 15px; pointer-events: none; color: #888; font-size: 12px; font-weight: bold;">
+    💡 交互图解：RESTful 路由与 Spring Boot 核心组件映射 (悬停高亮链路)
+  </div>
+</div>
+
+<script>
+setTimeout(function() {
+  const container = document.getElementById('restful-graph-container');
+  if (!container || typeof d3 === 'undefined') {
+    return;
+  }
+
+  const width = container.clientWidth;
+  const height = container.clientHeight;
+
+  const data = {
+    nodes: [
+      { id: "Resource", label: "/api/pigs (核心资源)", color: "#8b5cf6", radius: 35 },
+      { id: "GET_List", label: "GET (查全)", color: "#3b82f6", radius: 26 },
+      { id: "GET_One", label: "GET /{id} (查单)", color: "#3b82f6", radius: 26 },
+      { id: "POST", label: "POST (增)", color: "#10b981", radius: 26 },
+      { id: "PUT", label: "PUT /{id} (改)", color: "#f59e0b", radius: 26 },
+      { id: "DELETE", label: "DELETE /{id} (删)", color: "#ef4444", radius: 26 },
+      { id: "Ann_Get", label: "@GetMapping", color: "#6366f1", radius: 22 },
+      { id: "Ann_Post", label: "@PostMapping", color: "#6366f1", radius: 22 },
+      { id: "Ann_Put", label: "@PutMapping", color: "#6366f1", radius: 22 },
+      { id: "Ann_Del", label: "@DeleteMapping", color: "#6366f1", radius: 22 },
+      { id: "Param_Path", label: "@PathVariable (提取ID)", color: "#ec4899", radius: 22 },
+      { id: "Param_Body", label: "@RequestBody (解JSON)", color: "#ec4899", radius: 22 }
+    ],
+    links: [
+      { source: "Resource", target: "GET_List", label: "分发" },
+      { source: "Resource", target: "GET_One", label: "分发" },
+      { source: "Resource", target: "POST", label: "分发" },
+      { source: "Resource", target: "PUT", label: "分发" },
+      { source: "Resource", target: "DELETE", label: "分发" },
+      { source: "GET_List", target: "Ann_Get", label: "映射" },
+      { source: "GET_One", target: "Ann_Get", label: "映射" },
+      { source: "POST", target: "Ann_Post", label: "映射" },
+      { source: "PUT", target: "Ann_Put", label: "映射" },
+      { source: "DELETE", target: "Ann_Del", label: "映射" },
+      { source: "GET_One", target: "Param_Path", label: "需参数" },
+      { source: "PUT", target: "Param_Path", label: "需参数" },
+      { source: "DELETE", target: "Param_Path", label: "需参数" },
+      { source: "POST", target: "Param_Body", label: "需载荷" },
+      { source: "PUT", target: "Param_Body", label: "需载荷" }
+    ]
+  };
+
+  let linkedByIndex = {};
+  data.links.forEach(function(d) { 
+    linkedByIndex[d.source + "," + d.target] = true; 
+  });
+  
+  function isConnected(a, b) {
+    return linkedByIndex[a.id + "," + b.id] || linkedByIndex[b.id + "," + a.id] || a.id === b.id;
+  }
+
+  container.innerHTML = '';
+  const svg = d3.select(container).append("svg").attr("width", width).attr("height", height);
+
+  svg.append("defs").append("marker")
+      .attr("id", "arrow-rest")
+      .attr("viewBox", "0 -5 10 10")
+      .attr("refX", 34)
+      .attr("refY", 0)
+      .attr("orient", "auto")
+      .attr("markerWidth", 6)
+      .attr("markerHeight", 6)
+      .append("path")
+      .attr("d", "M0,-5L10,0L0,5")
+      .attr("fill", "#666");
+
+  const simulation = d3.forceSimulation(data.nodes)
+      .force("link", d3.forceLink(data.links).id(function(d) { return d.id; }).distance(130))
+      .force("charge", d3.forceManyBody().strength(-900))
+      .force("center", d3.forceCenter(width / 2, height / 2))
+      .force("collide", d3.forceCollide().radius(50));
+
+  const link = svg.append("g")
+      .selectAll("line")
+      .data(data.links)
+      .join("line")
+      .attr("stroke", "#444")
+      .attr("stroke-width", 2)
+      .attr("marker-end", "url(#arrow-rest)")
+      .style("transition", "stroke 0.3s, opacity 0.3s");
+
+  const linkLabel = svg.append("g")
+      .selectAll("text")
+      .data(data.links)
+      .join("text")
+      .attr("fill", "#bbb")
+      .attr("font-size", "11px")
+      .attr("text-anchor", "middle")
+      .style("paint-order", "stroke")
+      .style("stroke", "#1a1a1a")
+      .style("stroke-width", "4px")
+      .style("transition", "opacity 0.3s")
+      .text(function(d) { return d.label; });
+
+  const node = svg.append("g")
+      .selectAll("g")
+      .data(data.nodes)
+      .join("g")
+      .call(d3.drag()
+          .on("start", function(event) {
+            if (!event.active) simulation.alphaTarget(0.3).restart();
+            event.subject.fx = event.subject.x;
+            event.subject.fy = event.subject.y;
+          })
+          .on("drag", function(event) {
+            event.subject.fx = event.x;
+            event.subject.fy = event.y;
+          })
+          .on("end", function(event) {
+            if (!event.active) simulation.alphaTarget(0);
+            event.subject.fx = null;
+            event.subject.fy = null;
+          }))
+      .style("cursor", "grab");
+
+  node.append("circle")
+      .attr("r", function(d) { return d.radius; })
+      .attr("fill", function(d) { return d.color; })
+      .style("transition", "opacity 0.3s");
+
+  node.append("text")
+      .text(function(d) { return d.label; })
+      .attr("x", 0)
+      .attr("y", function(d) { return d.radius + 18; })
+      .attr("text-anchor", "middle")
+      .attr("fill", "#e5e5e5")
+      .attr("font-size", "12px")
+      .attr("font-weight", "bold")
+      .style("pointer-events", "none");
+
+  node.on("mouseover", function(event, d) {
+    node.style("opacity", function(o) { return isConnected(d, o) ? 1 : 0.1; });
+    link.style("opacity", function(o) { return (o.source.id === d.id || o.target.id === d.id) ? 1 : 0.1; })
+        .style("stroke", function(o) { return (o.source.id === d.id || o.target.id === d.id) ? d.color : "#444"; });
+    linkLabel.style("opacity", function(o) { return (o.source.id === d.id || o.target.id === d.id) ? 1 : 0.1; });
+  }).on("mouseout", function() {
+    node.style("opacity", 1);
+    link.style("opacity", 1).style("stroke", "#444");
+    linkLabel.style("opacity", 1);
+  });
+
+  simulation.on("tick", function() {
+    link.attr("x1", function(d) { return d.source.x; }).attr("y1", function(d) { return d.source.y; })
+        .attr("x2", function(d) { return d.target.x; }).attr("y2", function(d) { return d.target.y; });
+
+    linkLabel.attr("x", function(d) { return (d.source.x + d.target.x) / 2; })
+        .attr("y", function(d) { return (d.source.y + d.target.y) / 2 - 6; });
+
+    node.attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
+  });
+}, 500);
+</script>
