@@ -10,9 +10,9 @@
 
 假设前端传来这样一段 JSON 数据：
 
-JSON
 
-```
+
+```JSON
 {
   "username": "admin",
   "age": 25
@@ -21,9 +21,9 @@ JSON
 
 如果你不使用 Lombok，你的接收类（DTO 或 Entity）以及 Controller 大概是这样的。看代码里的注释，这就是 Jackson 默默为你做的事情：
 
-Java
 
-```
+
+```Java
 // 接收前端数据的 DTO
 public class UserRequest {
     private String username;

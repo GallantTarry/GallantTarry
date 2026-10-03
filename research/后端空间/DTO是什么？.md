@@ -10,9 +10,9 @@
 
 这是最直接的办法。缺什么补什么，名字对不上就手动对应。
 
-Java
 
-```
+
+```Java
 public void saveUser(UserDTO dto) {
     UserEntity entity = new UserEntity();
     
@@ -41,9 +41,9 @@ public void saveUser(UserDTO dto) {
 
 它的逻辑是：**只要 DTO 和 Entity 中名字和类型一模一样的字段，它就帮你自动拷贝过去。对不齐的字段，它直接忽略。**
 
-Java
 
-```
+
+```Java
 public void saveUser(UserDTO dto) {
     UserEntity entity = new UserEntity();
     
@@ -68,9 +68,9 @@ public void saveUser(UserDTO dto) {
 
 它和 Lombok 的原理类似，不需要你手写转换逻辑，只要写一个接口并加上注解告诉它“谁对应谁”，它在编译代码的时候，就会**自动帮你生成全套的 Getter/Setter 转换代码**。
 
-Java
 
-```
+
+```Java
 @Mapper(componentModel = "spring")
 public interface UserConvert {
     
@@ -84,9 +84,9 @@ public interface UserConvert {
 
 使用的时候极其优雅：
 
-Java
 
-```
+
+```Java
 public void saveUser(UserDTO dto) {
     // 直接调用转换器，拿到 Entity
     UserEntity entity = userConvert.dtoToEntity(dto);

@@ -12,22 +12,22 @@ DataGrip 和你刚才在 IDEA 里使用的 Database 数据库面板其实使用�
 
 1. **定位数据库**：在左侧的 Database 资源管理器中，展开你的数据库连接，右键点击目标架构（例如你的 `shaoxia_db`）或者它下方的 **表 (Tables)** 文件夹。
     
-2. **选择新建**：在弹出的右键菜单中，选择 **New (新建)** -> **Table (表)**。
+2. **选择新建**：在弹出的右键菜单中，选择 **New (新建)** -> **Table (表)** 。
     
 3. **配置表结构**：此时会弹出一个可视化的建表窗口：
     
-    - **Name (名称)**：在顶部输入你要创建的表名。
+    - **Name (名称)** ：在顶部输入你要创建的表名。
         
-    - **Columns (列)**：点击中间区域的 **`+`** 号（或按 `Alt+Insert`），可以逐个添加字段。
+    - **Columns (列)** ：点击中间区域的 **`+`** 号（或按 `Alt+Insert`），可以逐个添加字段。
         
     - **字段属性**：直接在表格中设置字段名、Type (数据类型)、PK (是否主键)、NN (是否非空)、AI (是否自增) 以及 Default (默认值)。
         
-4. **预览与执行**：在该窗口的下半部分，DataGrip 会根据你的界面配置实时生成对应的 **DDL (SQL 建表语句)**。确认无误后，点击右下角的 **Execute (执行)** 或 **OK (确定)**，表就建好了。
+4. **预览与执行**：在该窗口的下半部分，DataGrip 会根据你的界面配置实时生成对应的 **DDL (SQL 建表语句)** 。确认无误后，点击右下角的 **Execute (执行)** 或 **OK (确定)** ，表就建好了。
     
 
 ### 方法二：使用 SQL 控制台通过代码创建（适合习惯手写 SQL 的情况）
 
-1. **打开控制台**：右键点击目标数据库，选择 **New (新建)** -> **Query Console (查询控制台)**，或者直接按快捷键 `Ctrl+Shift+Q` 打开一个新的 SQL 编写窗口。
+1. **打开控制台**：右键点击目标数据库，选择 **New (新建)** -> **Query Console (查询控制台)** ，或者直接按快捷键 `Ctrl+Shift+Q` 打开一个新的 SQL 编写窗口。
     
 2. **编写语句**：在控制台中直接编写标准的 `CREATE TABLE` 语句。例如：
     
@@ -53,36 +53,36 @@ DataGrip 和你刚才在 IDEA 里使用的 Database 数据库面板其实使用�
 
 1. 在你截图中的 Database 树状视图中，**右键点击**高亮的 `shaoxia_db` 节点。
     
-2. 在弹出的菜单中选择 **Import/Export (导入/导出)**，然后点击 **Export with 'mysqldump' (使用 'mysqldump' 导出)**。
+2. 在弹出的菜单中选择 **Import/Export (导入/导出)** ，然后点击 **Export with 'mysqldump' (使用 'mysqldump' 导出)** 。
     
 3. 在弹出的配置窗口中完成以下设置：
     
-    - **Path to mysqldump (mysqldump 路径)**：选择你本地 MySQL 安装目录 `bin` 文件夹下的 `mysqldump.exe`（如果 IDEA 尚未自动识别）。
+    - **Path to mysqldump (mysqldump 路径)** ：选择你本地 MySQL 安装目录 `bin` 文件夹下的 `mysqldump.exe`（如果 IDEA 尚未自动识别）。
         
-    - **Output path (输出路径)**：设置你想保存 `.sql` 文件的本地文件夹和文件名。
+    - **Output path (输出路径)** ：设置你想保存 `.sql` 文件的本地文件夹和文件名。
         
-4. 点击 **Run (运行)**，IDEA 就会在后台调用该工具为你生成完整的 SQL 脚本。
+4. 点击 **Run (运行)** ，IDEA 就会在后台调用该工具为你生成完整的 SQL 脚本。
     
 
 ### 方法二：使用 IDEA 内置提取器导出（只想单独导出表结构/单表数据）
 
 如果你当前没有配置 MySQL 环境路径，或者只想单独导出表结构/单表数据，可以使用内置功能：
 
-- **仅导出数据库结构 (DDL)**：
+- **仅导出数据库结构 (DDL)** ：
     
     1. 右键点击 `shaoxia_db` 架构。
         
-    2. 选择 **SQL Scripts (SQL 脚本)** -> **SQL Generator... (SQL 生成器...)**。
+    2. 选择 **SQL Scripts (SQL 脚本)** -> **SQL Generator... (SQL 生成器...)** 。
         
     3. 在弹出的窗口右侧会自动生成所有表的建表语句，你可以直接点击右面复制或保存图标存为 `.sql` 文件。
         
-- **仅导出表初始数据 (Insert 语句)**：
+- **仅导出表初始数据 (Insert 语句)** ：
     
     1. 展开你的数据库找到 `表` 文件夹，选中你需要导出的表（例如 `sys_user`，按住 `Ctrl` 可以多选）。
         
-    2. 右键选择 **Export Data to File (将数据导出至文件)**。
+    2. 右键选择 **Export Data to File (将数据导出至文件)** 。
         
-    3. 在弹出的窗口中，将第一项的 **Extractor (提取器)** 更改为 **SQL Inserts**也就是中文的**SQL 插入**下拉还有**SQL-Insert-Statements**（这会为每一行数据生成一条单独的 Insert 语句）。如果你希望多行数据合并在一条 Insert 语句中以提高执行效率，也可以选择 **SQL-Insert-Multirow**。。
+    3. 在弹出的窗口中，将第一项的 **Extractor (提取器)** 更改为 **SQL Inserts**也就是中文的**SQL 插入**下拉还有**SQL-Insert-Statements**（这会为每一行数据生成一条单独的 Insert 语句）。如果你希望多行数据合并在一条 Insert 语句中以提高执行效率，也可以选择 **SQL-Insert-Multirow** 。
         
     4. 指定 Output file (输出路径) 并点击 **Export (导出)** 即可。
 
