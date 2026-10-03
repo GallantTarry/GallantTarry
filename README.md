@@ -13,9 +13,9 @@
     ">
       "We are standing on the shoulders of giants."
     </div>
-    <div style="font-family: 'Inter', sans-serif; font-weight: 600; font-size: 13px; color: #71717a; letter-spacing: 5px;">
-      GALLANT TARRY · THE ART OF CODE & LIFE
-    </div>
+   <div style="font-family: 'Playfair Display', 'Georgia', serif; font-style: italic; font-size: 11px; color: #8a8a93; letter-spacing: 2px;">
+  "At its core, technology is a shared infrastructure belonging to all of humanity."
+</div>
   </div>
 </div>
 
@@ -37,7 +37,7 @@
   text-shadow: 0 4px 15px rgba(16, 185, 129, 0.15);
   margin: 24px 0;
 ">
-  "If you set your mind to it, you can accomplish anything."
+  "Technology is essentially a vessel; what truly gives it a soul is your creative intent."
 </p>
 <ul style="list-style-type: none; padding-left: 0; margin-bottom: 0; display: flex; flex-direction: column; gap: 14px;">
 
