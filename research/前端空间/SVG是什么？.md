@@ -140,23 +140,52 @@ SVG（Scalable Vector Graphics）本质上不是一张传统的“图片”，�
 
 在你的 `./imgs/` 目录下新建 `smoking_avatar.svg`。把小人的代码填进去，**必须在第一行加上 `xmlns` 属性**。（这段代码是旧的代码）
 
-```
+```svg
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
-    <!-- 1. 原汁原味的基础身体 -->
+    <!-- 0. 定义环境光影 (左上角暖黄斜光，右下角暗红阴影) -->
+    <defs>
+        <linearGradient id="sunset-light" x1="0%" y1="0%" x2="100%" y2="100%">
+            <!-- 左上角的高光 (橘黄色光晕) -->
+            <stop offset="0%" stop-color="#fde047" stop-opacity="0.55" />
+            <!-- 中间的自然过渡 -->
+            <stop offset="40%" stop-color="#fb923c" stop-opacity="0.1" />
+            <!-- 右下角的暗部阴影 -->
+            <stop offset="100%" stop-color="#4a044e" stop-opacity="0.65" />
+        </linearGradient>
+    </defs>
+
+    <!-- 1. 红石砖背景 (橘红/淡红底色) -->
+    <rect fill="#7c2d12" width="16" height="16" x="0" y="0"/> <!-- 砖缝：暖橘棕色 -->
+    <g id="red-bricks" fill="#e85d47"> <!-- 砖块：淡红偏橘的明快色调 -->
+        <!-- 第一排砖块 -->
+        <rect x="0" y="0" width="7" height="3"/>
+        <rect x="8" y="0" width="7" height="3"/>
+        <!-- 第二排砖块 (交错拼法) -->
+        <rect x="0" y="4" width="3" height="3"/>
+        <rect x="4" y="4" width="7" height="3"/>
+        <rect x="12" y="4" width="4" height="3"/>
+        <!-- 第三排砖块 -->
+        <rect x="0" y="8" width="7" height="3"/>
+        <rect x="8" y="8" width="7" height="3"/>
+        <!-- 第四排砖块 -->
+        <rect x="0" y="12" width="3" height="3"/>
+        <rect x="4" y="12" width="7" height="3"/>
+        <rect x="12" y="12" width="4" height="3"/>
+    </g>
+
+    <!-- 2. 将光影遮罩盖在墙壁上 (产生绝佳的明暗体积感) -->
+    <rect fill="url(#sunset-light)" width="16" height="16" x="0" y="0"/>
+
+    <!-- 3. 原汁原味的基础身体 -->
     <g id="base-avatar">
-        <rect fill="#292524" height="5" width="1" x="3" y="4"/>
-        <rect fill="#292524" height="5" width="1" x="12" y="4"/>
+        <!-- 脸部皮肤与五官 -->
         <rect fill="#fed7aa" height="5" width="8" x="4" y="5"/>
         <rect fill="#fdba74" height="1" width="8" x="4" y="9"/>
         <rect fill="#f97316" height="1" width="2" x="7" y="9"/>
-        <rect fill="#1c1917" height="1" width="2" x="5" y="7"/>
-        <rect fill="#1c1917" height="1" width="2" x="9" y="7"/>
-        <rect fill="#292524" height="3" width="8" x="4" y="2"/>
-        <rect fill="#292524" height="1" width="2" x="5" y="1"/>
-        <rect fill="#292524" height="1" width="3" x="8" y="1"/>
-        <rect fill="#292524" height="1" width="2" x="4" y="5"/>
-        <rect fill="#292524" height="1" width="2" x="7" y="5"/>
-        <rect fill="#292524" height="1" width="1" x="11" y="5"/>
+        <rect fill="#171717" height="1" width="2" x="5" y="7"/>
+        <rect fill="#171717" height="1" width="2" x="9" y="7"/>
+
+        <!-- 身体与衣服 -->
         <rect fill="#475569" height="5" width="12" x="2" y="11"/>
         <rect fill="#475569" height="1" width="10" x="3" y="10"/>
         <rect fill="#fdba74" height="1" width="4" x="6" y="10"/>
@@ -165,9 +194,22 @@ SVG（Scalable Vector Graphics）本质上不是一张传统的“图片”，�
         <rect fill="#94a3b8" height="3" width="1" x="5" y="11"/>
         <rect fill="#94a3b8" height="3" width="1" x="10" y="11"/>
         <rect fill="#334155" height="4" width="2" x="7" y="12"/>
+
+        <!-- 头发 -->
+        <g id="hair" fill="#171717">
+            <!-- 再画头发轮廓（覆盖在皮肤上，露出刘海） -->
+            <rect fill="#292524" height="5" width="1" x="3" y="4"/>
+            <rect fill="#292524" height="5" width="1" x="12" y="4"/>
+            <rect fill="#292524" height="3" width="8" x="4" y="2"/>
+            <rect fill="#292524" height="1" width="2" x="5" y="1"/>
+            <rect fill="#292524" height="1" width="3" x="8" y="1"/>
+            <rect fill="#292524" height="1" width="2" x="4" y="5"/> <!-- 刘海1 -->
+            <rect fill="#292524" height="1" width="2" x="7" y="5"/> <!-- 刘海2 -->
+            <rect fill="#292524" height="1" width="1" x="11" y="5"/> <!-- 刘海3 -->
+        </g>
     </g>
 
-    <!-- 2. 动画动作A：抬手深吸 -->
+    <!-- 4. 动画动作A：抬手深吸 -->
     <g id="arm-up" opacity="1">
         <animate attributeName="opacity" dur="4s" keyTimes="0; 0.40; 0.42; 0.98; 1" repeatCount="indefinite" values="1; 1; 0; 0; 1"/>
         <rect fill="#334155" height="2" width="2" x="2" y="11"/>
@@ -180,7 +222,7 @@ SVG（Scalable Vector Graphics）本质上不是一张传统的“图片”，�
         <rect fill="#fed7aa" height="1" width="1" x="6" y="9"/>
     </g>
 
-    <!-- 3. 动画动作B：手放下、拿开香烟 -->
+    <!-- 5. 动画动作B：手放下、拿开香烟 -->
     <g id="arm-down" opacity="0">
         <animate attributeName="opacity" dur="4s" keyTimes="0; 0.40; 0.42; 0.98; 1" repeatCount="indefinite" values="0; 0; 1; 1; 0"/>
         <rect fill="#334155" height="3" width="2" x="2" y="11"/>
@@ -193,7 +235,7 @@ SVG（Scalable Vector Graphics）本质上不是一张传统的“图片”，�
         </rect>
     </g>
 
-    <!-- 4. 动画动作C：吐出的动态大团烟雾 -->
+    <!-- 6. 动画动作C：吐出的动态大团烟雾 -->
     <g id="exhale-smoke">
         <rect fill="#a1a1aa" height="1" opacity="0" width="1" x="7" y="9">
             <animate attributeName="opacity" dur="4s" keyTimes="0; 0.40; 0.42; 0.55; 0.90; 1" repeatCount="indefinite" values="0; 0; 0; 0.8; 0; 0"/>
