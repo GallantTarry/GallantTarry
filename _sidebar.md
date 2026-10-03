@@ -37,6 +37,7 @@
     * [如何在windows上给硬盘分盘？](research/Geek%E7%A9%BA%E9%97%B4/%E5%A6%82%E4%BD%95%E5%9C%A8windows%E4%B8%8A%E7%BB%99%E7%A1%AC%E7%9B%98%E5%88%86%E7%9B%98%EF%BC%9F.md)
     * [如何快速将文件拖入windows文件夹？](research/Geek%E7%A9%BA%E9%97%B4/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E5%B0%86%E6%96%87%E4%BB%B6%E6%8B%96%E5%85%A5windows%E6%96%87%E4%BB%B6%E5%A4%B9%EF%BC%9F.md)
     * [如何自己制作一个软件签证证书？](research/Geek%E7%A9%BA%E9%97%B4/%E5%A6%82%E4%BD%95%E8%87%AA%E5%B7%B1%E5%88%B6%E4%BD%9C%E4%B8%80%E4%B8%AA%E8%BD%AF%E4%BB%B6%E7%AD%BE%E8%AF%81%E8%AF%81%E4%B9%A6%EF%BC%9F.md)
+    * [安装文件时要注意架构](research/Geek%E7%A9%BA%E9%97%B4/%E5%AE%89%E8%A3%85%E6%96%87%E4%BB%B6%E6%97%B6%E8%A6%81%E6%B3%A8%E6%84%8F%E6%9E%B6%E6%9E%84.md)
     * [接口引用、多态、变量声明是什么？](research/Geek%E7%A9%BA%E9%97%B4/%E6%8E%A5%E5%8F%A3%E5%BC%95%E7%94%A8%E3%80%81%E5%A4%9A%E6%80%81%E3%80%81%E5%8F%98%E9%87%8F%E5%A3%B0%E6%98%8E%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F.md)
     * [无服务架构Serverless Architecture](research/Geek%E7%A9%BA%E9%97%B4/%E6%97%A0%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%84Serverless%20Architecture.md)
     * [本地AI模型需要什么物理设备？内存又充当什么角色？](research/Geek%E7%A9%BA%E9%97%B4/%E6%9C%AC%E5%9C%B0AI%E6%A8%A1%E5%9E%8B%E9%9C%80%E8%A6%81%E4%BB%80%E4%B9%88%E7%89%A9%E7%90%86%E8%AE%BE%E5%A4%87%EF%BC%9F%E5%86%85%E5%AD%98%E5%8F%88%E5%85%85%E5%BD%93%E4%BB%80%E4%B9%88%E8%A7%92%E8%89%B2%EF%BC%9F.md)
