@@ -79,6 +79,7 @@
     * [如何用Idea初建springboot项目？](research/%E5%90%8E%E7%AB%AF%E7%A9%BA%E9%97%B4/%E5%A6%82%E4%BD%95%E7%94%A8Idea%E5%88%9D%E5%BB%BAspringboot%E9%A1%B9%E7%9B%AE%EF%BC%9F.md)
     * [控制反转是什么？如何使用？](research/%E5%90%8E%E7%AB%AF%E7%A9%BA%E9%97%B4/%E6%8E%A7%E5%88%B6%E5%8F%8D%E8%BD%AC%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%EF%BC%9F.md)
 * 文字空间
+    * [Szabadság, szerelem!](research/%E6%96%87%E5%AD%97%E7%A9%BA%E9%97%B4/Szabads%C3%A1g%2C%20szerelem!.md)
     * [世界上主流的宗教有哪些，各自有什么信仰？](research/%E6%96%87%E5%AD%97%E7%A9%BA%E9%97%B4/%E4%B8%96%E7%95%8C%E4%B8%8A%E4%B8%BB%E6%B5%81%E7%9A%84%E5%AE%97%E6%95%99%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%8C%E5%90%84%E8%87%AA%E6%9C%89%E4%BB%80%E4%B9%88%E4%BF%A1%E4%BB%B0%EF%BC%9F.md)
     * [亚历山大大帝是谁？](research/%E6%96%87%E5%AD%97%E7%A9%BA%E9%97%B4/%E4%BA%9A%E5%8E%86%E5%B1%B1%E5%A4%A7%E5%A4%A7%E5%B8%9D%E6%98%AF%E8%B0%81%EF%BC%9F.md)
     * [什么是地中海文明？](research/%E6%96%87%E5%AD%97%E7%A9%BA%E9%97%B4/%E4%BB%80%E4%B9%88%E6%98%AF%E5%9C%B0%E4%B8%AD%E6%B5%B7%E6%96%87%E6%98%8E%EF%BC%9F.md)
@@ -86,6 +87,7 @@
     * [以色列和耶路撒冷](research/%E6%96%87%E5%AD%97%E7%A9%BA%E9%97%B4/%E4%BB%A5%E8%89%B2%E5%88%97%E5%92%8C%E8%80%B6%E8%B7%AF%E6%92%92%E5%86%B7.md)
     * [十字军东征是什么？](research/%E6%96%87%E5%AD%97%E7%A9%BA%E9%97%B4/%E5%8D%81%E5%AD%97%E5%86%9B%E4%B8%9C%E5%BE%81%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F.md)
     * [古希腊神话有哪些？](research/%E6%96%87%E5%AD%97%E7%A9%BA%E9%97%B4/%E5%8F%A4%E5%B8%8C%E8%85%8A%E7%A5%9E%E8%AF%9D%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F.md)
+    * [咖啡的起源和学问](research/%E6%96%87%E5%AD%97%E7%A9%BA%E9%97%B4/%E5%92%96%E5%95%A1%E7%9A%84%E8%B5%B7%E6%BA%90%E5%92%8C%E5%AD%A6%E9%97%AE.md)
     * [圣经的旧约和新约](research/%E6%96%87%E5%AD%97%E7%A9%BA%E9%97%B4/%E5%9C%A3%E7%BB%8F%E7%9A%84%E6%97%A7%E7%BA%A6%E5%92%8C%E6%96%B0%E7%BA%A6.md)
     * [奥德修斯](research/%E6%96%87%E5%AD%97%E7%A9%BA%E9%97%B4/%E5%A5%A5%E5%BE%B7%E4%BF%AE%E6%96%AF.md)
     * [宙斯的律法有哪些？](research/%E6%96%87%E5%AD%97%E7%A9%BA%E9%97%B4/%E5%AE%99%E6%96%AF%E7%9A%84%E5%BE%8B%E6%B3%95%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F.md)
