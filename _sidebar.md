@@ -37,6 +37,7 @@
     * [如何借用代码？](research/Geek%E7%A9%BA%E9%97%B4/%E5%A6%82%E4%BD%95%E5%80%9F%E7%94%A8%E4%BB%A3%E7%A0%81%EF%BC%9F.md)
     * [如何在windows上给硬盘分盘？](research/Geek%E7%A9%BA%E9%97%B4/%E5%A6%82%E4%BD%95%E5%9C%A8windows%E4%B8%8A%E7%BB%99%E7%A1%AC%E7%9B%98%E5%88%86%E7%9B%98%EF%BC%9F.md)
     * [如何快速将文件拖入windows文件夹？](research/Geek%E7%A9%BA%E9%97%B4/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E5%B0%86%E6%96%87%E4%BB%B6%E6%8B%96%E5%85%A5windows%E6%96%87%E4%BB%B6%E5%A4%B9%EF%BC%9F.md)
+    * [如何用Inno Setup封装PySide6？](research/Geek%E7%A9%BA%E9%97%B4/%E5%A6%82%E4%BD%95%E7%94%A8Inno%20Setup%E5%B0%81%E8%A3%85PySide6%EF%BC%9F.md)
     * [如何自己制作一个软件签证证书？](research/Geek%E7%A9%BA%E9%97%B4/%E5%A6%82%E4%BD%95%E8%87%AA%E5%B7%B1%E5%88%B6%E4%BD%9C%E4%B8%80%E4%B8%AA%E8%BD%AF%E4%BB%B6%E7%AD%BE%E8%AF%81%E8%AF%81%E4%B9%A6%EF%BC%9F.md)
     * [安装文件时要注意架构](research/Geek%E7%A9%BA%E9%97%B4/%E5%AE%89%E8%A3%85%E6%96%87%E4%BB%B6%E6%97%B6%E8%A6%81%E6%B3%A8%E6%84%8F%E6%9E%B6%E6%9E%84.md)
     * [怎么用wix封装java软件为msi和同步签名？](research/Geek%E7%A9%BA%E9%97%B4/%E6%80%8E%E4%B9%88%E7%94%A8wix%E5%B0%81%E8%A3%85java%E8%BD%AF%E4%BB%B6%E4%B8%BAmsi%E5%92%8C%E5%90%8C%E6%AD%A5%E7%AD%BE%E5%90%8D%EF%BC%9F.md)
