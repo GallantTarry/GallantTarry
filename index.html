@@ -791,7 +791,89 @@
       60%  { transform: scale(1, 0.005); opacity: 1; filter: brightness(3); }
       100% { transform: scale(1, 1); opacity: 1; filter: brightness(1); }
     }
+    /* ========================================= */
+    /* ====== 13. 搜索框极致暗黑与毛玻璃适配 ====== */
+    /* ========================================= */
+    .sidebar .search {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
+      padding: 15px 20px;
+      margin-top: 10px;
+    }
 
+    .sidebar .search .input-wrap {
+      display: flex;
+      align-items: center;
+    }
+
+    /* 搜索输入框本体 */
+    .sidebar .search input {
+      background-color: rgba(255, 255, 255, 0.05) !important; /* 微微透光的底色 */
+      color: var(--text-main) !important;
+      border: 1px solid rgba(255, 255, 255, 0.1) !important;
+      border-radius: 12px !important; /* 与你胶囊风格呼应的圆角 */
+      padding: 10px 15px !important;
+      font-size: 14px;
+      font-family: 'Inter', sans-serif !important;
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+      outline: none;
+      width: 100%;
+    }
+
+    /* 输入框发光交互 */
+    .sidebar .search input:focus {
+      border-color: var(--theme-color) !important;
+      box-shadow: 0 0 15px rgba(16, 185, 129, 0.3) !important;
+      background-color: rgba(255, 255, 255, 0.08) !important;
+    }
+
+    /* 右侧清除按钮图标 (X) 的颜色 */
+    .sidebar .search .clear-button {
+      background: transparent !important;
+      fill: var(--text-muted) !important;
+    }
+    .sidebar .search .clear-button:hover {
+      fill: var(--theme-color) !important;
+    }
+
+    /* 搜索结果弹出的匹配项面板 */
+    .sidebar .search .results-panel {
+      border-top: none !important;
+    }
+
+    .sidebar .search .matching-post {
+      border-bottom: 1px solid var(--border-color) !important;
+      padding: 12px 0 !important;
+      transition: all 0.3s ease;
+    }
+
+    .sidebar .search .matching-post:hover {
+      transform: translateX(4px);
+    }
+
+    /* 搜索结果标题 */
+    .sidebar .search h2 {
+      color: var(--text-title) !important;
+      font-size: 16px !important;
+      border: none !important;
+      margin: 0 0 8px 0 !important;
+    }
+
+    /* 搜索结果的匹配上下文文本 */
+    .sidebar .search p {
+      color: var(--text-muted) !important;
+      font-size: 13px !important;
+      line-height: 1.5 !important;
+    }
+
+    /* 关键字高亮标记：采用你的翠绿主题色 */
+    .sidebar .search em {
+      color: var(--theme-color) !important;
+      font-weight: 700;
+      font-style: normal;
+      background: rgba(16, 185, 129, 0.15) !important;
+      padding: 0 4px;
+      border-radius: 4px;
+    }
   </style>
 </head>
 <body>
@@ -857,6 +939,16 @@
       auto2top: true,
       routerMode: 'hash',
       executeScript: true,
+      // 👇 新增搜索功能配置 👇
+      search: {
+        maxAge: 86400000, // 过期时间，单位毫秒，默认一天（缓存本地搜集到的文本数据）
+        paths: 'auto',    // 自动抓取整个站点的所有 Markdown 链接
+        placeholder: '🔍 探索野生土块艺术...',
+        noData: '😭 哎呀，没有找到相关内容！',
+        depth: 6,         // 搜索标题的最大层级（1-6）
+        hideOtherSidebarContent: false, // 搜索时是否隐藏侧边栏的其他菜单栏
+      },
+      // 👆 新增结束 👆
       plugins: [
         function(hook, vm) {
 
@@ -962,6 +1054,10 @@
       ]
     }
   </script>
+
+
+<!-- Docsify 官方全文搜索插件 -->
+<script src="./js/search.min.js"></script>
 
 <!-- 引入 Chart.js 引擎 (用于绘制高级折线图、柱状图) -->
 <script src="./js/chart.js"></script>
