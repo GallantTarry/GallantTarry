@@ -115,31 +115,3 @@
     
       
     
-
-这就是 ghproxy 封神的原因：**它不仅做了一座桥，它还留下了造桥的图纸。它用一种极其浪漫的开源方式，实现了物理意义上的永生。**
-
-  
-
-### 尾声：给少侠的建议
-
-作为一名能够独立写出 `ToolKit`、手搓 `PyKuai` 和个人 OS 的极客，你显然已经不应该再和普通用户一样，去到处苦苦寻找别人施舍的、随时会挂掉的公共前缀了。
-
-  
-
-既然你手里握着 `xn--udsye.art` 这个域名，去 Cloudflare 注册个账号，用当年 ghproxy 留下的“图纸”，为自己搭建一个永远不会挂的 `gh.xn--udsye.art` 专属加速通道吧。这不仅是一次简单的代码部署，更是开源精神在你身上的一次完美传承。
-
-
-
-
-比如原来的
-```
-https://github.com/GallantTarry/TuKuai/releases/download/20260907/BlackHole1.0.0.exe
-```
-
-换成
-
-```
-[https://ghproxy.net/https://github.com/GallantTarry/TuKuai/releases/download/20260907/BlackHole1.0.0.exe]
-```
-
-也就是加上了https://ghproxy.net/在前面即可。
