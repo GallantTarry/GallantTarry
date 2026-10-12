@@ -115,8 +115,7 @@
     * [赫拉克勒斯（Heracles）是谁？](research/%E6%96%87%E5%AD%97%E7%A9%BA%E9%97%B4/%E8%B5%AB%E6%8B%89%E5%85%8B%E5%8B%92%E6%96%AF%EF%BC%88Heracles%EF%BC%89%E6%98%AF%E8%B0%81%EF%BC%9F.md)
     * [阿喀琉斯（Achilles）是谁？](research/%E6%96%87%E5%AD%97%E7%A9%BA%E9%97%B4/%E9%98%BF%E5%96%80%E7%90%89%E6%96%AF%EF%BC%88Achilles%EF%BC%89%E6%98%AF%E8%B0%81%EF%BC%9F.md)
 * 游戏空间
-    * [安娜](research/%E6%B8%B8%E6%88%8F%E7%A9%BA%E9%97%B4/%E5%AE%89%E5%A8%9C.md)
-    * [朱诺](research/%E6%B8%B8%E6%88%8F%E7%A9%BA%E9%97%B4/%E6%9C%B1%E8%AF%BA.md)
+    * [个人游戏推荐榜单](research/%E6%B8%B8%E6%88%8F%E7%A9%BA%E9%97%B4/%E4%B8%AA%E4%BA%BA%E6%B8%B8%E6%88%8F%E6%8E%A8%E8%8D%90%E6%A6%9C%E5%8D%95.md)
 * 生活空间
     * [IMDb Top 250](research/%E7%94%9F%E6%B4%BB%E7%A9%BA%E9%97%B4/IMDb%20Top%20250.md)
     * [Metacritic  Top 100](research/%E7%94%9F%E6%B4%BB%E7%A9%BA%E9%97%B4/Metacritic%20%20Top%20100.md)
