@@ -19,6 +19,7 @@
     * [Markdown 语法如何使用？](research/Geek%E7%A9%BA%E9%97%B4/Markdown%20%E8%AF%AD%E6%B3%95%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%EF%BC%9F.md)
     * [PySide6单文件打包方法和丢失依赖解决方法](research/Geek%E7%A9%BA%E9%97%B4/PySide6%E5%8D%95%E6%96%87%E4%BB%B6%E6%89%93%E5%8C%85%E6%96%B9%E6%B3%95%E5%92%8C%E4%B8%A2%E5%A4%B1%E4%BE%9D%E8%B5%96%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95.md)
     * [static 修饰的静态变量运行后在jvm哪里？](research/Geek%E7%A9%BA%E9%97%B4/static%20%E4%BF%AE%E9%A5%B0%E7%9A%84%E9%9D%99%E6%80%81%E5%8F%98%E9%87%8F%E8%BF%90%E8%A1%8C%E5%90%8E%E5%9C%A8jvm%E5%93%AA%E9%87%8C%EF%BC%9F.md)
+    * [WebDAV是啥？](research/Geek%E7%A9%BA%E9%97%B4/WebDAV%E6%98%AF%E5%95%A5%EF%BC%9F.md)
     * [WebStorm 在前端开发领域的核心优势是什么？](research/Geek%E7%A9%BA%E9%97%B4/WebStorm%20%E5%9C%A8%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E9%A2%86%E5%9F%9F%E7%9A%84%E6%A0%B8%E5%BF%83%E4%BC%98%E5%8A%BF%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F.md)
     * [Windows 视窗系统快捷操作有哪些？](research/Geek%E7%A9%BA%E9%97%B4/Windows%20%E8%A7%86%E7%AA%97%E7%B3%BB%E7%BB%9F%E5%BF%AB%E6%8D%B7%E6%93%8D%E4%BD%9C%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F.md)
     * [windows怎么用终端使用SSH服务链接WSL服务器？](research/Geek%E7%A9%BA%E9%97%B4/windows%E6%80%8E%E4%B9%88%E7%94%A8%E7%BB%88%E7%AB%AF%E4%BD%BF%E7%94%A8SSH%E6%9C%8D%E5%8A%A1%E9%93%BE%E6%8E%A5WSL%E6%9C%8D%E5%8A%A1%E5%99%A8%EF%BC%9F.md)
@@ -135,6 +136,7 @@
     * [伦勃朗·梵·莱茵](research/%E7%94%BB%E4%BD%9C%E7%A9%BA%E9%97%B4/%E4%BC%A6%E5%8B%83%E6%9C%97%C2%B7%E6%A2%B5%C2%B7%E8%8E%B1%E8%8C%B5.md)
     * [保罗·塞尚](research/%E7%94%BB%E4%BD%9C%E7%A9%BA%E9%97%B4/%E4%BF%9D%E7%BD%97%C2%B7%E5%A1%9E%E5%B0%9A.md)
     * [克劳德·莫奈](research/%E7%94%BB%E4%BD%9C%E7%A9%BA%E9%97%B4/%E5%85%8B%E5%8A%B3%E5%BE%B7%C2%B7%E8%8E%AB%E5%A5%88.md)
+    * [古典油画的创作周期](research/%E7%94%BB%E4%BD%9C%E7%A9%BA%E9%97%B4/%E5%8F%A4%E5%85%B8%E6%B2%B9%E7%94%BB%E7%9A%84%E5%88%9B%E4%BD%9C%E5%91%A8%E6%9C%9F.md)
     * [古斯塔夫·克里姆特](research/%E7%94%BB%E4%BD%9C%E7%A9%BA%E9%97%B4/%E5%8F%A4%E6%96%AF%E5%A1%94%E5%A4%AB%C2%B7%E5%85%8B%E9%87%8C%E5%A7%86%E7%89%B9.md)
     * [巴勃罗·毕加索](research/%E7%94%BB%E4%BD%9C%E7%A9%BA%E9%97%B4/%E5%B7%B4%E5%8B%83%E7%BD%97%C2%B7%E6%AF%95%E5%8A%A0%E7%B4%A2.md)
     * [文森特·梵高](research/%E7%94%BB%E4%BD%9C%E7%A9%BA%E9%97%B4/%E6%96%87%E6%A3%AE%E7%89%B9%C2%B7%E6%A2%B5%E9%AB%98.md)
@@ -142,6 +144,7 @@
     * [翰内斯·维米尔](research/%E7%94%BB%E4%BD%9C%E7%A9%BA%E9%97%B4/%E7%BF%B0%E5%86%85%E6%96%AF%C2%B7%E7%BB%B4%E7%B1%B3%E5%B0%94.md)
     * [莱昂纳多·达·芬奇](research/%E7%94%BB%E4%BD%9C%E7%A9%BA%E9%97%B4/%E8%8E%B1%E6%98%82%E7%BA%B3%E5%A4%9A%C2%B7%E8%BE%BE%C2%B7%E8%8A%AC%E5%A5%87.md)
     * [阿道夫·希特勒](research/%E7%94%BB%E4%BD%9C%E7%A9%BA%E9%97%B4/%E9%98%BF%E9%81%93%E5%A4%AB%C2%B7%E5%B8%8C%E7%89%B9%E5%8B%92.md)
+    * [面部三段式](research/%E7%94%BB%E4%BD%9C%E7%A9%BA%E9%97%B4/%E9%9D%A2%E9%83%A8%E4%B8%89%E6%AE%B5%E5%BC%8F.md)
     * [马克·夏加尔](research/%E7%94%BB%E4%BD%9C%E7%A9%BA%E9%97%B4/%E9%A9%AC%E5%85%8B%C2%B7%E5%A4%8F%E5%8A%A0%E5%B0%94.md)
 * 科学空间
     * [什么是涌现？](research/%E7%A7%91%E5%AD%A6%E7%A9%BA%E9%97%B4/%E4%BB%80%E4%B9%88%E6%98%AF%E6%B6%8C%E7%8E%B0%EF%BC%9F.md)
@@ -194,6 +197,7 @@
     * [答案在风中飘](research/%E9%9F%B3%E9%A2%91%E7%A9%BA%E9%97%B4/%E7%AD%94%E6%A1%88%E5%9C%A8%E9%A3%8E%E4%B8%AD%E9%A3%98.md)
     * [罗素给世界的留言](research/%E9%9F%B3%E9%A2%91%E7%A9%BA%E9%97%B4/%E7%BD%97%E7%B4%A0%E7%BB%99%E4%B8%96%E7%95%8C%E7%9A%84%E7%95%99%E8%A8%80.md)
 * 🔒个人创作
+    * [MD可视化图形兼容需求提示词](research/%F0%9F%94%92%E4%B8%AA%E4%BA%BA%E5%88%9B%E4%BD%9C/MD%E5%8F%AF%E8%A7%86%E5%8C%96%E5%9B%BE%E5%BD%A2%E5%85%BC%E5%AE%B9%E9%9C%80%E6%B1%82%E6%8F%90%E7%A4%BA%E8%AF%8D.md)
     * [为什么要努力学英文？](research/%F0%9F%94%92%E4%B8%AA%E4%BA%BA%E5%88%9B%E4%BD%9C/%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%8A%AA%E5%8A%9B%E5%AD%A6%E8%8B%B1%E6%96%87%EF%BC%9F.md)
     * [做一个浪漫的人](research/%F0%9F%94%92%E4%B8%AA%E4%BA%BA%E5%88%9B%E4%BD%9C/%E5%81%9A%E4%B8%80%E4%B8%AA%E6%B5%AA%E6%BC%AB%E7%9A%84%E4%BA%BA.md)
     * [应激创伤的幸福者测试理论](research/%F0%9F%94%92%E4%B8%AA%E4%BA%BA%E5%88%9B%E4%BD%9C/%E5%BA%94%E6%BF%80%E5%88%9B%E4%BC%A4%E7%9A%84%E5%B9%B8%E7%A6%8F%E8%80%85%E6%B5%8B%E8%AF%95%E7%90%86%E8%AE%BA.md)
