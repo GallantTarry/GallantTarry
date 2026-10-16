@@ -199,6 +199,7 @@
     * [Keanu Reeves](research/%E9%9F%B3%E9%A2%91%E7%A9%BA%E9%97%B4/Keanu%20Reeves.md)
     * [Steve Jobs Secrets of Life](research/%E9%9F%B3%E9%A2%91%E7%A9%BA%E9%97%B4/Steve%20Jobs%20Secrets%20of%20Life.md)
     * [三毛](research/%E9%9F%B3%E9%A2%91%E7%A9%BA%E9%97%B4/%E4%B8%89%E6%AF%9B.md)
+    * [乔布斯在斯坦福大学毕业典礼上的演讲](research/%E9%9F%B3%E9%A2%91%E7%A9%BA%E9%97%B4/%E4%B9%94%E5%B8%83%E6%96%AF%E5%9C%A8%E6%96%AF%E5%9D%A6%E7%A6%8F%E5%A4%A7%E5%AD%A6%E6%AF%95%E4%B8%9A%E5%85%B8%E7%A4%BC%E4%B8%8A%E7%9A%84%E6%BC%94%E8%AE%B2.md)
     * [刘翔退役剪辑](research/%E9%9F%B3%E9%A2%91%E7%A9%BA%E9%97%B4/%E5%88%98%E7%BF%94%E9%80%80%E5%BD%B9%E5%89%AA%E8%BE%91.md)
     * [南方见](research/%E9%9F%B3%E9%A2%91%E7%A9%BA%E9%97%B4/%E5%8D%97%E6%96%B9%E8%A7%81.md)
     * [可恶的蜥蜴](research/%E9%9F%B3%E9%A2%91%E7%A9%BA%E9%97%B4/%E5%8F%AF%E6%81%B6%E7%9A%84%E8%9C%A5%E8%9C%B4.md)
