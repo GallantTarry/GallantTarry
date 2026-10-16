@@ -443,29 +443,28 @@
             border: 1px solid rgba(255, 255, 255, 0.05) !important;
         }
 
-        /* ====== 代码块与 VS Code Dark+ 满血语法高亮修复 ====== */
+        /* ====== 代码块与 IDE 级多色彩语义高亮 ====== */
         .markdown-section pre {
             position: relative;
             background-color: #0d0d0f !important;
             border: 1px solid var(--border-color) !important;
             border-radius: 12px !important;
-            padding: 38px 20px 20px 20px !important; /* 顶部留出语言标签空间 */
+            padding: 20px !important; /* 修复顶部多余留白，恢复四周对称 */
             margin: 24px 0;
             overflow-x: auto;
         }
-
 
         .markdown-section pre code {
             background-color: transparent !important;
             border: none !important;
             padding: 0 !important;
-            color: #9cdcfe !important; /* 默认变量名采用 VS Code 浅晶蓝，不再是一片惨白 */
+            color: #e4e4e7 !important; /* 普通变量与标识符改为星光亮白，告别全篇发蓝 */
             font-family: 'JetBrains Mono', Consolas, 'Courier New', monospace !important;
             font-size: 14px !important;
             line-height: 1.65 !important;
         }
 
-        /* 强制覆盖 vue.css 的残缺 Token 颜色，还原正宗 VS Code Dark+ 层次感 */
+        /* 1. 注释：柔和橄榄绿 */
         .markdown-section pre .token.comment,
         .markdown-section pre .token.prolog,
         .markdown-section pre .token.doctype {
@@ -473,65 +472,69 @@
             font-style: italic;
         }
 
+        /* 2. 基础声明关键字 (class/public/static/func/def/struct)：经典亮蓝 */
         .markdown-section pre .token.keyword,
-        .markdown-section pre .token.boolean,
-        .markdown-section pre .token.null {
+        .markdown-section pre .token.tag {
             color: #569cd6 !important;
             font-weight: 600;
         }
 
+        /* 3. 流程控制关键字 (if/else/for/while/return/switch/break) 与宏指令 (#include)：霓虹紫粉 */
+        .markdown-section pre .token.token-control,
         .markdown-section pre .token.control,
         .markdown-section pre .token.directive,
+        .markdown-section pre .token.directive-hash,
+        .markdown-section pre .token.macro,
         .markdown-section pre .token.important,
         .markdown-section pre .token.atrule {
             color: #c586c0 !important;
+            font-weight: 600;
         }
 
-        /* return/if/#include/@Override 紫粉色 */
+        /* 4. 数据类型与类名 (int/void/char/double/String/List)：青翠色 */
+        .markdown-section pre .token.token-type,
+        .markdown-section pre .token.class-name,
+        .markdown-section pre .token.builtin,
+        .markdown-section pre .token.type-definition {
+            color: #4ec9b0 !important;
+            font-weight: 600;
+        }
+
+        /* 5. 函数名、方法调用与注解/装饰器 (main/printf/println/@Override)：明黄色 */
+        .markdown-section pre .token.function,
+        .markdown-section pre .token.method,
+        .markdown-section pre .token.annotation,
+        .markdown-section pre .token.decorator {
+            color: #dcdcaa !important;
+        }
+
+        /* 6. 字符串与字符：暖珊瑚橙 */
         .markdown-section pre .token.string,
         .markdown-section pre .token.char,
         .markdown-section pre .token.attr-value {
             color: #ce9178 !important;
         }
 
-        /* 字符串暖橙色 */
+        /* 7. 数字、布尔值与常量 (true/false/null/100)：浅金与豆绿 */
         .markdown-section pre .token.number {
             color: #b5cea8 !important;
         }
-
-        /* 数字浅豆绿 */
-        .markdown-section pre .token.function,
-        .markdown-section pre .token.method {
-            color: #dcdcaa !important;
+        .markdown-section pre .token.boolean,
+        .markdown-section pre .token.constant,
+        .markdown-section pre .token.null {
+            color: #fb923c !important;
+            font-weight: 600;
         }
 
-        /* 函数与方法调用明黄色 */
-        .markdown-section pre .token.class-name,
-        .markdown-section pre .token.builtin,
-        .markdown-section pre .token.type-definition {
-            color: #4ec9b0 !important;
-        }
-
-        /* 类名/结构体/类型青翠色 */
-        .markdown-section pre .token.annotation,
-        .markdown-section pre .token.decorator,
-        .markdown-section pre .token.macro {
-            color: #dcdcaa !important;
-        }
-
-        /* Java 注解 / Python 装饰器 */
+        /* 8. 运算符与属性名 (+ / = / -> / & / *)：浅青蓝与灰白标点 */
         .markdown-section pre .token.operator,
-        .markdown-section pre .token.punctuation {
-            color: #d4d4d4 !important;
+        .markdown-section pre .token.attr-name {
+            color: #38bdf8 !important;
             background: transparent !important;
         }
-
-        .markdown-section pre .token.tag {
-            color: #569cd6 !important;
-        }
-
-        .markdown-section pre .token.attr-name {
-            color: #9cdcfe !important;
+        .markdown-section pre .token.punctuation {
+            color: #a1a1aa !important;
+            background: transparent !important;
         }
 
         /* ========================================= */
@@ -1217,22 +1220,36 @@
                         }
                     });
 
-                    // === 新增：修复 Prism 语法高亮类名断层与 Vue/C 语言二次渲染 ===
+                    // === 新增：修复 Prism 语法高亮大小写断层与 IDE 级语义细分染色 ===
                     if (window.Prism) {
-                        // 让 ```vue 代码块直接继承 HTML/Markup 混合高亮能力
                         if (!Prism.languages.vue) {
                             Prism.languages.vue = Prism.languages.markup;
                         }
+                        var typeWords = /^(int|char|void|float|double|long|short|unsigned|signed|bool|_Bool|byte|rune|string|error|size_t|int8_t|int16_t|int32_t|int64_t|uint8_t|uint16_t|uint32_t|uint64_t|uintptr|int8|int16|int32|int64|uint|uint8|uint16|uint32|uint64|float32|float64|boolean|var|let|const|auto|chan|map)$/;
+                        var ctrlWords = /^(if|else|elif|switch|case|default|for|while|do|break|continue|return|goto|try|catch|finally|throw|throws|defer|go|select|fallthrough|range|match|with|as|yield|async|await|pass|raise|except)$/;
+
                         document.querySelectorAll('.markdown-section pre[data-lang]').forEach(function (pre) {
-                            var lang = pre.getAttribute('data-lang') || 'text';
-                            pre.classList.add('language-' + lang);
+                            var rawLang = (pre.getAttribute('data-lang') || 'text').toLowerCase().trim();
+                            var aliasMap = { js: 'javascript', py: 'python', golang: 'go', sh: 'bash', shell: 'bash', html: 'markup', xml: 'markup' };
+                            var lang = aliasMap[rawLang] || rawLang;
+
+                            pre.className = 'language-' + lang;
                             var code = pre.querySelector('code');
-                            if (code) {
-                                code.classList.add('language-' + lang);
-                                // 如果动态加载了语言包，确保重新分词染色
-                                if (Prism.languages[lang] && !code.querySelector('.token')) {
+                            if (code && !code.getAttribute('data-prism-enhanced')) {
+                                code.className = 'language-' + lang;
+                                if (Prism.languages[lang]) {
                                     Prism.highlightElement(code);
                                 }
+                                // 细分关键字：将数据类型染为青翠色，流程控制染为紫粉色
+                                code.querySelectorAll('.token.keyword').forEach(function (kw) {
+                                    var txt = kw.textContent.trim();
+                                    if (typeWords.test(txt)) {
+                                        kw.classList.add('token-type');
+                                    } else if (ctrlWords.test(txt)) {
+                                        kw.classList.add('token-control');
+                                    }
+                                });
+                                code.setAttribute('data-prism-enhanced', 'true');
                             }
                         });
                     }
