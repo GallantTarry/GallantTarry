@@ -1,1142 +1,1309 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <title>学无止境</title>
-  <link rel="icon" href="./favicon/academia.ico" sizes="any">
-  <link rel="icon" type="image/png" href="./favicon/academia.png">
-  <link rel="apple-touch-icon" href="./favicon/appleacademia.png">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <meta name="description" content="宝藏库">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
-
-  <!-- 2. Docsify 标准 Vue 主题样式：整个文档站点的默认基础视觉皮肤和布局骨架 -->
-  <link rel="stylesheet" href="./css/vue.css">
-
-  <!-- 3. 侧边栏折叠插件样式：配合折叠脚本，让多级菜单能够通过箭头优雅地收起和展开 -->
-  <link rel="stylesheet" href="./css/sidebar.min.css" />
-
-  <!-- 4. 代码块 VSC Dark Plus 高亮主题：让文章里的代码块呈现类似 VS Code 的暗色高级高亮配色 -->
-  <link rel="stylesheet" href="./css/prism-vsc-dark-plus.min.css">
-
-  <!-- 5. Google 网页字体（Inter 与 Noto Serif SC）：为正文和中文字体加载现代、细腻的高级无衬线与衬线字体 -->
-  <link rel="stylesheet" href="./css/Inter_and_Noto_Serif_SC.css">
-
-  <!-- 👇 新增：引入 Cinzel Decorative 字体 👇 -->
-  <link href="./css/Cinzel+Decorative.css" rel="stylesheet">
-
-  <!-- 6. APlayer 音乐播放器样式：让网页里嵌入的音频播放条拥有精致的现代 UI 界面 -->
-  <link rel="stylesheet" href="./css/APlayer.min.css">
-
-  <!-- 7. DPlayer 视频播放器样式：美化网页视频播放器的控制面板、全屏按钮等外观 -->
-  <link rel="stylesheet" href="./css/DPlayer.min.css">
-
-  <!-- 8. Viewer.js 图片查看器样式：为点击文章图片后弹出的全屏相册、缩放和工具栏提供美化支持 -->
-  <link rel="stylesheet" href="./css/viewer.min.css">
-
-  <style>
-
-    /* ========================================= */
-    /* ====== 11. Viewer.js 高级图片查看器美化 ====== */
-    /* ========================================= */
-    .viewer-backdrop {
-      /* 继承你侧边栏的极致深色与强毛玻璃特效 */
-      background-color: rgba(9, 9, 11, 0.85) !important;
-      backdrop-filter: blur(12px) !important;
-      -webkit-backdrop-filter: blur(12px) !important;
-    }
-
-    /* 弱化底部工具栏的背景，突出悬浮感 */
-    .viewer-toolbar > li {
-      background-color: rgba(39, 39, 42, 0.7) !important;
-      transition: background-color 0.3s ease;
-    }
-    .viewer-toolbar > li:hover {
-      background-color: var(--theme-color) !important; /* 悬停时点亮为你的翠绿色 */
-    }
-  </style>
-
-  <style>
-    :root {
-      /* 主操作色：依然保留翠绿，但更沉稳 */
-      --theme-color: #10b981; 
-      
-      /* 全球主流极客暗色体系 (Zinc - 无蓝调的纯粹黑灰) */
-      --bg-body: #09090b;       /* 极深底色 */
-      --bg-sidebar: #121214;    /* 侧边栏稍亮 */
-      --bg-card: #18181b;       /* 内容卡片底色 */
-      --border-color: #27272a;  /* 柔和边界线 */
-      
-      /* 柔和护眼文本体系 */
-      --text-title: #f4f4f5;    /* 标题亮白 */
-      --text-main: #d4d4d8;     /* 正文星光灰，非纯白 */
-      --text-muted: #a1a1aa;    /* 弱化文本 */
-    }
-
-    /* ====== 1. 全局极致暗黑背景 ====== */
-    body {
-      background-color: var(--bg-body) !important;
-      color: var(--text-main) !important;
-      /* 👇 满血版系统字体栈：加入了 BlinkMacSystemFont 和明确的中文字体名称 */
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif !important;
-      font-size: 16px;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    /* ========================================================= */
-    /* ====== 2. 侧边栏：世界级 UI - 深空毛玻璃与磁吸悬浮胶囊 ====== */
-    /* ========================================================= */
-
-    /* --- A. 极致通透的毛玻璃面板 --- */
-    .sidebar {
-      background: rgba(18, 18, 20, 0.65) !important; /* 降低透明度，透出底层黑度 */
-      backdrop-filter: blur(24px) saturate(150%) !important; /* 极强的高斯模糊与色彩增强 */
-      -webkit-backdrop-filter: blur(24px) saturate(150%) !important;
-      border-right: 1px solid rgba(255, 255, 255, 0.06) !important; /* 极细的高光边缘 */
-      box-shadow: 4px 0 30px rgba(0, 0, 0, 0.5) !important; /* 右侧投下深邃阴影 */
-      padding-top: 40px;
-    }
-
-    /* --- B. 顶部标题发光微距 --- */
-
-    /* --- B. 顶部标题发光微距 --- */
-    .sidebar h1 {
-      font-family: 'Cinzel Decorative', serif !important;
-      font-size: 22px; /* 电脑端字号 */
-      font-weight: 900;
-      letter-spacing: 2px;
-      text-align: center;
-      margin-bottom: 40px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      display: flex; /* 开启 Flex 布局 */
-      justify-content: center; /* 强行水平居中 */
-      align-items: center;
-    }
-
-    /* 👇 修复 2：给自定义的跳转链接加上炫酷的绿色渐变和居中 👇 */
-    .sidebar h1 .reboot-trigger {
-      text-decoration: none !important;
-      display: block; /* 转为块级元素，占满父容器 */
-      width: 100%;
-      text-align: center; /* 文字内部居中 */
-      /* 经典的高级绿色渐变 */
-      background: linear-gradient(135deg, #10b981, #3b82f6);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      text-shadow: 0 4px 20px rgba(16, 185, 129, 0.2); /* 绿色微光 */
-      transition: all 0.3s ease;
-    }
-
-    .sidebar h1 .reboot-trigger:hover {
-      text-shadow: 0 4px 25px rgba(16, 185, 129, 0.8);
-      transform: scale(1.05); /* 悬停时稍微放大 */
-    }
-
-    /* 👇 手机端专属排版：缩小字号，防止超宽 👇 */
-    @media screen and (max-width: 768px) {
-      .sidebar h1 {
-        font-size: 18px !important; /* 手机端字号调小 */
-        letter-spacing: 1px;
-        margin-bottom: 25px; /* 减小底部留白 */
-      }
-    }
-    .sidebar h1 {
-      /* 👇 修改：应用 Cinzel Decorative 字体，如果没有则回退到 serif 👇 */
-      font-family: 'Cinzel Decorative', serif !important;
-      color: var(--text-title) !important;
-      /* 👇 修改：将原本的 26px 调小到 22px（你可以根据感觉再微调） 👇 */
-      font-size: 22px;
-      font-weight: 900;
-      letter-spacing: 2px;
-      text-align: center;
-      margin-bottom: 40px;
-      text-shadow: 0 4px 20px rgba(255, 255, 255, 0.15); /* 标题自带微弱神圣光晕 */
-      /* 👇 新增：让整个标题区域看起来像个可以点击的按钮 👇 */
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-
-    /* 👇 新增：鼠标悬停时稍微提亮并放大，增强交互感 👇 */
-    .sidebar h1:hover {
-      text-shadow: 0 4px 25px rgba(16, 185, 129, 0.6);
-      transform: scale(1.02);
-    }
-    .sidebar h1 strong {
-      color: var(--theme-color);
-      text-shadow: 0 2px 15px rgba(16, 185, 129, 0.4); /* 主题色文字光晕更强 */
-    }
-
-    /* --- C. 优雅隐匿的滚动条 --- */
-    .sidebar::-webkit-scrollbar { width: 4px; }
-    .sidebar::-webkit-scrollbar-track { background: transparent; }
-    .sidebar::-webkit-scrollbar-thumb {
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 10px;
-    }
-    .sidebar:hover::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.2); }
-
-    /* --- D. 一级目录：无边框悬浮感 --- */
-    .sidebar-nav > ul > li {
-      font-size: 17px !important;
-      font-weight: 700 !important;
-      color: rgba(255, 255, 255, 0.95) !important;
-      margin: 20px 16px 8px 16px !important; /* 两侧留白，为后续胶囊态做准备 */
-      padding-left: 8px !important;
-      cursor: pointer;
-      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-    }
-    .sidebar-nav > ul > li:hover {
-      color: #ffffff !important;
-      text-shadow: 0 0 10px rgba(255, 255, 255, 0.3); /* 悬停时文字发光 */
-      transform: translateX(4px);
-    }
-
-    /* 兼容性兜底（清空内部包裹标签的影响） */
-    .sidebar-nav > ul > li > p {
-      font-size: inherit !important;
-      font-weight: inherit !important;
-      color: inherit !important;
-      margin: 0 !important;
-    }
-
-    /* --- 新增：彻底清空 Docsify 及折叠插件的默认深层缩进 --- */
-    .sidebar-nav ul ul {
-      padding-left: 0 !important;
-      margin: 0 !important;
-    }
-    .sidebar-nav ul ul li {
-      padding-left: 0 !important;
-      margin: 0 !important;
-    }
-
-    /* --- E. 子级文件：极致丝滑的圆角胶囊悬停态 --- */
-    .sidebar-nav ul li a {
-      color: #a1a1aa !important;
-      font-size: 14.5px !important;
-      font-weight: 500 !important;
-      /* 👇 核心修复：把 28px 大幅削减到 8px。由于胶囊自带 16px 左外边距，只需 8px 即可与上方文字完美对齐 👇 */
-      padding: 10px 16px 10px 8px !important;
-      margin: 4px 16px !important;
-      border-radius: 12px !important;
-      display: block;
-      position: relative;
-      overflow: hidden;
-      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
-    }
-
-    /* 鼠标悬停子文件：浮出毛玻璃胶囊 */
-    .sidebar-nav ul li a:hover {
-      background: rgba(255, 255, 255, 0.08) !important;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
-      color: #ffffff !important;
-      transform: translateX(6px) scale(1.02);
-    }
-
-    /* --- F. 当前激活文章：光剑霓虹特效 --- */
-    .sidebar-nav ul li.active > a {
-      color: var(--theme-color) !important;
-      font-weight: 700 !important;
-      background: linear-gradient(90deg, rgba(16, 185, 129, 0.12) 0%, transparent 100%) !important; /* 渐变底光 */
-      border-right: none !important; /* 抛弃老旧的右侧边框 */
-    }
-
-    /* 使用绝对定位伪元素打造左侧霓虹光剑 */
-    .sidebar-nav ul li.active > a::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 15%;
-      height: 70%;
-      width: 4px;
-      background: var(--theme-color);
-      border-radius: 0 4px 4px 0;
-      box-shadow: 0 0 14px var(--theme-color); /* 强烈的翠绿光晕 */
-    }
-
-    /* --- G. 科技感折叠小箭头 --- */
-    .sidebar-nav li.collapse > a::before,
-    .sidebar-nav li.collapse > a::after,
-    .sidebar-nav li.collapse::before,
-    .sidebar-nav li.collapse::after {
-      transform: scale(1.2) !important;
-      margin-right: 14px !important;
-      color: rgba(255, 255, 255, 0.5) !important;
-      transition: all 0.3s ease !important;
-    }
-    .sidebar-nav li.collapse:hover::before,
-    .sidebar-nav li.collapse:hover::after {
-      color: rgba(255, 255, 255, 0.9) !important; /* 鼠标靠近时箭头提亮 */
-    }
-    /* ====== 3. 主内容区 ====== */
-    main { padding-bottom: 80px !important; }
-    .content {
-      padding-top: 60px;
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      min-height: 100vh;
-    }
-
-    .markdown-section {
-      background: var(--bg-card) !important;
-      border: 1px solid var(--border-color);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
-      border-radius: 16px !important; 
-      padding: 60px 80px;
-      max-width: 900px;
-      width: 100%;
-      color: var(--text-main);
-      margin-bottom: 60px !important; 
-    }
-
-    /* ========================================= */
-    /* ====== 4. MD语法多色彩语义化系统 ====== */
-    /* ========================================= */
-
-    /* --- 引用块：内发光微亚克力质感 --- */
-    .markdown-section blockquote {
-      /* 左侧边带一点荧光感 */
-      border-left: 4px solid var(--theme-color) !important;
-      /* 极其微妙的渐变背景 */
-      background: linear-gradient(120deg, rgba(16, 185, 129, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%) !important;
-      color: #e4e4e7 !important;
-      padding: 20px 24px !important;
-      border-radius: 6px 16px 16px 6px !important; /* 右侧圆润，左侧平直 */
-      /* 顶部和左侧增加 1px 的内侧微光，营造 3D 立体切割感 */
-      box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.05), 0 4px 12px rgba(0, 0, 0, 0.1) !important;
-      margin: 2.5em 0 !important;
-    }
-
-    .markdown-section blockquote p {
-      margin-bottom: 0 !important; /* 消除内部段落底部多余的间距 */
-      color: #a1a1aa !important;   /* 文字稍微调暗，与正文产生层次 */
-    }
-
-
-
-
-
-    /* --- 全局：定制高光选中颜色 --- */
-    ::selection {
-      background: rgba(16, 185, 129, 0.3) !important; /* 翠绿半透明 */
-      color: #ffffff !important;
-      text-shadow: none !important;
-    }
-    ::-moz-selection {
-      background: rgba(16, 185, 129, 0.3) !important;
-      color: #ffffff !important;
-    }
-
-    /* --- 图片：圆角画廊与磁吸悬浮 --- */
-    .markdown-section img {
-      border-radius: 12px;     /* 与外层卡片呼应的圆角 */
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4); /* 赋予图片独立的空间感 */
-      display: block;
-      margin: 2.5em auto;      /* 图片上下留白，强制居中 */
-      max-width: 100%;
-      transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
-    }
-
-    .markdown-section img:hover {
-      transform: translateY(-4px) scale(1.01); /* 鼠标悬停时微微上浮并放大 */
-      box-shadow: 0 16px 32px rgba(0, 0, 0, 0.6); /* 阴影加深扩散 */
-    }
-
-
-    .markdown-section h1, .markdown-section h2, .markdown-section h3,
-    .markdown-section h4, .markdown-section h5, .markdown-section h6 {
-      font-family: 'Noto Serif SC', serif !important;
-      font-weight: 600;
-      margin-top: 2em;
-      margin-bottom: 1em;
-    }
-    
-    .markdown-section h1:first-of-type {
-      font-size: 40px !important;
-      font-weight: 900;
-      text-align: center;
-      margin-bottom: 50px;
-      margin-top: 0;
-      background: linear-gradient(135deg, #10b981, #3b82f6); 
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      border-bottom: none !important;
-    }
-    
-    .markdown-section h2 {
-      color: #f4f4f5 !important; 
-      border-bottom: 1px solid var(--border-color) !important;
-      padding-bottom: 12px;
-    }
-    
-    .markdown-section h3 { color: #10b981 !important; }
-    .markdown-section h4 { color: #a78bfa !important; }
-
-    .markdown-section p {
-      font-size: 16px;
-      line-height: 1.8;
-      color: var(--text-main); 
-    }
-
-    .markdown-section strong {
-      color: #fb923c !important;
-      font-weight: 700;
-    }
-
-    .markdown-section em {
-      color: #f472b6 !important;
-      font-style: italic;
-    }
-
-    .markdown-section del {
-      color: #71717a !important;
-    }
-
-    /* --- 修复双下划线冲突 --- */
-    .markdown-section a {
-      color: var(--theme-color) !important;
-      text-decoration: none !important; /* 彻底屏蔽原生默认下划线 */
-      border-bottom: 1px solid transparent;
-      transition: border-color 0.2s ease;
-    }
-
-    .markdown-section a:hover {
-      text-decoration: none !important; /* 悬停时依然强制屏蔽原生下划线 */
-      border-bottom-color: var(--theme-color) !important; /* 只显现我们定制的边框线 */
-    }
-
-    .markdown-section ul { padding-left: 1.5rem; }
-    .markdown-section ul > li { line-height: 1.8; margin-bottom: 8px; }
-    .markdown-section ul > li::marker { color: #10b981; font-weight: bold; } 
-    .markdown-section ol > li::marker { color: #fb923c; font-weight: bold; } 
-
-    .markdown-section blockquote {
-      border-left: 4px solid #8b5cf6;
-      background: rgba(139, 92, 246, 0.08); 
-      color: #c4b5fd; 
-      padding: 16px 24px;
-      border-radius: 0 8px 8px 0;
-      margin: 2em 0;
-    }
-    .markdown-section blockquote p {
-      color: inherit; 
-      margin: 0;
-    }
-
-    .markdown-section code {
-      background-color: #27272a !important;
-      color: #fca5a5 !important; 
-      padding: 4px 6px;
-      border-radius: 6px;
-      font-size: 0.9em;
-      font-family: 'JetBrains Mono', Consolas, 'Courier New', monospace !important;
-      border: 1px solid rgba(255,255,255,0.05) !important;
-    }
-
-    /* ====== 代码块与 VS Code Dark+ 满血语法高亮修复 ====== */
-    .markdown-section pre {
-      position: relative;
-      background-color: #0d0d0f !important;
-      border: 1px solid var(--border-color) !important;
-      border-radius: 12px !important;
-      padding: 38px 20px 20px 20px !important; /* 顶部留出语言标签空间 */
-      margin: 24px 0;
-      overflow-x: auto;
-    }
-
-    /* 左上角自动显示语言名称角标 (如 JAVA / C / GO / PYTHON) */
-    .markdown-section pre[data-lang]::before {
-      content: attr(data-lang);
-      position: absolute;
-      top: 8px;
-      left: 16px;
-      font-size: 11px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: var(--theme-color);
-      font-family: 'JetBrains Mono', Consolas, monospace;
-      opacity: 0.85;
-    }
-
-    .markdown-section pre code {
-      background-color: transparent !important;
-      border: none !important;
-      padding: 0 !important;
-      color: #9cdcfe !important; /* 默认变量名采用 VS Code 浅晶蓝，不再是一片惨白 */
-      font-family: 'JetBrains Mono', Consolas, 'Courier New', monospace !important;
-      font-size: 14px !important;
-      line-height: 1.65 !important;
-    }
-
-    /* 强制覆盖 vue.css 的残缺 Token 颜色，还原正宗 VS Code Dark+ 层次感 */
-    .markdown-section pre .token.comment,
-    .markdown-section pre .token.prolog,
-    .markdown-section pre .token.doctype { color: #6a9955 !important; font-style: italic; }
-    .markdown-section pre .token.keyword,
-    .markdown-section pre .token.boolean,
-    .markdown-section pre .token.null { color: #569cd6 !important; font-weight: 600; }
-    .markdown-section pre .token.control,
-    .markdown-section pre .token.directive,
-    .markdown-section pre .token.important,
-    .markdown-section pre .token.atrule { color: #c586c0 !important; } /* return/if/#include/@Override 紫粉色 */
-    .markdown-section pre .token.string,
-    .markdown-section pre .token.char,
-    .markdown-section pre .token.attr-value { color: #ce9178 !important; } /* 字符串暖橙色 */
-    .markdown-section pre .token.number { color: #b5cea8 !important; } /* 数字浅豆绿 */
-    .markdown-section pre .token.function,
-    .markdown-section pre .token.method { color: #dcdcaa !important; } /* 函数与方法调用明黄色 */
-    .markdown-section pre .token.class-name,
-    .markdown-section pre .token.builtin,
-    .markdown-section pre .token.type-definition { color: #4ec9b0 !important; } /* 类名/结构体/类型青翠色 */
-    .markdown-section pre .token.annotation,
-    .markdown-section pre .token.decorator,
-    .markdown-section pre .token.macro { color: #dcdcaa !important; } /* Java 注解 / Python 装饰器 */
-    .markdown-section pre .token.operator,
-    .markdown-section pre .token.punctuation { color: #d4d4d4 !important; background: transparent !important; }
-    .markdown-section pre .token.tag { color: #569cd6 !important; }
-    .markdown-section pre .token.attr-name { color: #9cdcfe !important; }
-
-    /* ========================================= */
-    /* ====== 5. 表格：完美包裹适配移动端 ====== */
-    /* ========================================= */
-
-    /* 1. 新增的外层包裹器：负责移动端横向滚动和整体外边距 */
-    .table-wrapper {
-      width: 100%;
-      overflow-x: auto; /* 屏幕不够宽时，允许在此容器内横向滚动 */
-      margin: 30px 0;   /* 原本在 table 上的 margin 转移到这里 */
-      border-radius: 8px;
-    }
-
-    /* 2. 表格本身样式 */
-    .markdown-section table {
-      width: 100%;
-      display: table !important; /* 强制覆盖 vue.css 的 block 属性，解决电脑端占不满的问题 */
-      border-collapse: separate;
-      border-spacing: 0;
-      margin: 0; /* 边距已交由 wrapper 处理，此处清零 */
-      border-radius: 8px;
-      overflow: hidden;
-      border: 1px solid var(--border-color);
-      min-width: 600px; /* 关键：给表格设一个最小宽度，保证在手机端文字不会被挤成一柱擎天，而是优雅地触发横向滚动 */
-    }
-
-    .markdown-section table th, .markdown-section table td {
-      padding: 14px 20px;
-      color: #d4d4d8 !important;
-      border-bottom: 1px solid var(--border-color);
-      border-right: 1px solid var(--border-color);
-      transition: background-color 0.2s ease, color 0.2s ease;
-      word-break: break-word; /* 允许长单词或长链接自动换行，防止撑破单元格 */
-    }
-
-    .markdown-section table th:last-child,
-    .markdown-section table td:last-child {
-      border-right: none;
-    }
-
-    .markdown-section table th {
-      background-color: #27272a;
-      color: #f4f4f5 !important;
-      font-weight: 600;
-      text-align: left;
-    }
-
-    .markdown-section table tr:nth-child(even) td {
-      background-color: #1f1f22;
-    }
-    .markdown-section table tr:nth-child(odd) td {
-      background-color: transparent;
-    }
-
-    .markdown-section table tr:hover td {
-      background-color: #27272a !important;
-      color: #e4e4e7 !important;
-    }
-
-    .markdown-section table tr:last-child td {
-      border-bottom: none;
-    }
-
-    /* ========================================= */
-    /* ====== 6. 悬浮辅助按钮 (灰色圆点版) ====== */
-    /* ========================================= */
-    
-    .sidebar-toggle {
-      display: flex !important;
-      background: rgba(35, 35, 38, 0.6) !important; 
-      backdrop-filter: blur(12px) !important; 
-      -webkit-backdrop-filter: blur(12px) !important;
-      border: 1px solid rgba(255, 255, 255, 0.05) !important;
-      border-radius: 50% !important; 
-      width: 52px !important;
-      height: 52px !important;
-      bottom: 30px !important;
-      right: 30px !important; 
-      left: auto !important; 
-      padding: 0 !important;
-      justify-content: center !important;
-      align-items: center !important;
-      z-index: 9999 !important;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3) !important;
-      transition: transform 0.2s cubic-bezier(0.25, 0.8, 0.25, 1), background 0.2s ease !important;
-    }
-
-    .sidebar-toggle:active {
-      transform: scale(0.85) !important; 
-      background: rgba(55, 55, 60, 0.8) !important;
-    }
-
-    .sidebar-toggle span {
-      display: none !important;
-    }
-
-    /* 中心内圈：改为低调的灰色 */
-    .sidebar-toggle::after {
-      content: '' !important;
-      display: block !important;
-      width: 22px !important;
-      height: 22px !important;
-      border-radius: 50% !important;
-      background: rgba(113, 113, 122, 0.8) !important; /* 沉稳的灰色 (Zinc 500) */
-      box-shadow: 0 0 8px rgba(113, 113, 122, 0.15) !important;
-      transition: background 0.2s ease !important;
-    }
-
-    /* 鼠标悬停时：灰点微微提亮 */
-    .sidebar-toggle:hover::after {
-      background: rgba(161, 161, 170, 0.95) !important; /* 稍微亮一点的灰 (Zinc 400) */
-    }
-
-    /* ========================================= */
-    /* ====== 7. 移动端(手机)深度完美适配 ====== */
-    /* ========================================= */
-    @media screen and (max-width: 768px) {
-      .sidebar { padding-top: 20px; }
-      .content { padding-top: 20px; }
-      .markdown-section {
-        padding: 30px 24px !important;
-        border-radius: 0 !important;
-        box-shadow: none;
-        border: none;
-        border-top: 1px solid var(--border-color);
-        background: transparent !important;
-      }
-      
-      .sidebar-toggle {
-        width: 48px !important;
-        height: 48px !important;
-        bottom: 24px !important;
-        right: 20px !important;
-      }
-      .sidebar-toggle::after {
-        width: 20px !important;
-        height: 20px !important;
-      }
-    }
-	
-	/* ========================================= */
-    /* ====== 8. 代码块复制按钮深度美化 ====== */
-    /* ========================================= */
-    
-    /* 调整代码块外层容器，确保按钮定位准确 */
-    .docsify-copy-code-button {
-      background: rgba(39, 39, 42, 0.8) !important; /* 半透明暗灰底色 */
-      color: #a1a1aa !important; /* 柔和的灰色文字 */
-      border: 1px solid rgba(255, 255, 255, 0.1) !important; /* 极细的边框 */
-      border-radius: 8px !important; /* 圆角美化 */
-      padding: 4px 10px !important; /* 缩小按钮体积，使其更精致 */
-      font-size: 12px !important; /* 缩小字体 */
-      font-family: 'Inter', sans-serif !important;
-      font-weight: 500 !important;
-      backdrop-filter: blur(4px) !important; /* 毛玻璃效果 */
-      right: 10px !important; /* 稍微往里缩一点 */
-      top: 10px !important; /* 稍微往下移一点，不要贴死边缘 */
-      transition: all 0.3s ease !important; /* 平滑动画 */
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2) !important; /* 微弱阴影 */
-    }
-
-    /* 鼠标悬停时的状态 */
-    .docsify-copy-code-button:hover {
-      background: rgba(63, 63, 70, 0.9) !important; /* 悬停时稍微亮一点 */
-      color: #f4f4f5 !important; /* 文字变白 */
-      border-color: rgba(255, 255, 255, 0.2) !important;
-    }
-
-    /* 复制成功后的状态 (Docsify 默认会把文字改成 "Copied" 并且加一个 success 类) */
-    .docsify-copy-code-button.success {
-      background: rgba(16, 185, 129, 0.2) !important; /* 成功时变成你的主题色(淡绿底) */
-      color: #10b981 !important; /* 成功时文字变亮绿 */
-      border-color: rgba(16, 185, 129, 0.5) !important;
-    }
-
-    /* (可选) 隐藏原本丑陋的 "Copy to clipboard" 长文本，直接改成 "Copy" */
-    /* Docsify 默认生成的是带 span 的结构，我们可以用伪元素替换文字 */
-    .docsify-copy-code-button span {
-      display: none !important; /* 隐藏原生文字 */
-    }
-    .docsify-copy-code-button::before {
-      content: "Copy"; /* 默认显示简短的 Copy */
-    }
-    .docsify-copy-code-button.success::before {
-      content: "Copied!"; /* 成功时显示 Copied! */
-    }
-	
-	
-/* ========================================= */
-    /* ====== 9. 侧边栏加宽与丝滑动画补全 ====== */
-    /* ========================================= */
-
-    /* --- A. 侧边栏加宽 (仅在电脑端生效，绝不破坏手机端布局) --- */
-    @media screen and (min-width: 769px) {
-      .sidebar {
-        width: 350px !important;
-        transition: transform 0.3s ease !important; /* 确保过渡动画生效 */
-      }
-
-      .content {
-        left: 350px !important;
-        transition: left 0.3s ease !important;
-      }
-
-      /* 当 body 带有 close 类时，侧边栏被收起 */
-      body.close .sidebar {
-        transform: translateX(-350px) !important;
-      }
-      body.close .content {
-        left: 0 !important;
-      }
-
-      /* 强制在电脑端也显示那个收起/展开的小圆点按钮 */
-      body .sidebar-toggle {
-        display: flex !important;
-      }
-    }
-
-    /* --- B. 链接悬停的“呼吸感”位移动画 --- */
-    .sidebar-nav ul li a {
-      /* 把原本简单的过渡升级为高级的贝塞尔曲线，增加阻尼感 */
-      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important; 
-    }
-    .sidebar-nav ul li a:hover {
-      /* 鼠标放上去时，除了变色，再向右发生微妙的 6px 推移 */
-      transform: translateX(6px); 
-    }
-    
-    /* --- C. 折叠箭头与展开菜单的柔和化处理 --- */
-    /* 针对 docsify-sidebar-collapse 插件的三角图标增加平滑旋转 */
-    .sidebar-nav li > a::before,
-    .sidebar-nav li > a::after {
-       transition: transform 0.3s ease !important;
-    }
-    
-    /* 给展开的子菜单注入灵魂：加一个轻微下坠+淡入的视效，化解插件原本的生硬感 */
-    .sidebar-nav li > ul {
-      animation: fadeSlideDown 0.35s ease-out forwards;
-    }
-
-    @keyframes fadeSlideDown {
-      0% {
-        opacity: 0;
-        transform: translateY(-8px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-    /* ========================================= */
-    /* ====== 10. 页面内容滚动渐显特效 (Scroll Reveal) ====== */
-    /* ========================================= */
-
-    /* A. 定义需要渐显的元素的初始状态：透明度为0，向下偏移 30px */
-    .markdown-section > p,
-    .markdown-section > h2,
-    .markdown-section > h3,
-    .markdown-section > h4,
-    .markdown-section > pre,
-    .markdown-section > blockquote,
-    .markdown-section > ul,
-    .markdown-section > ol,
-    .markdown-section > img,
-    .markdown-section > .table-wrapper {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.8s cubic-bezier(0.25, 0.8, 0.25, 1), transform 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
-      will-change: opacity, transform; /* 开启硬件加速，保证丝滑 */
-    }
-
-    /* B. 定义元素进入视口后的状态：恢复不透明度和原始位置 */
-    .markdown-section > .reveal-visible {
-      opacity: 1 !important;
-      transform: translateY(0) !important;
-    }
-
-    /* 排除第一个大标题(h1)，让它一进页面就直接显示，不需要等滚动 */
-    .markdown-section h1:first-of-type {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* 👇 局部密码拦截层（专属个人创作，默认隐藏） 👇 */
-
-    #auth-screen {
-      display: none; /* 必须去掉 !important，否则 JS 无法使其显示 */
-      opacity: 0;
-      pointer-events: none;
-      position: fixed;
-      inset: 0;
-      background-color: var(--bg-body);
-      z-index: 999999;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      padding: 24px;
-      box-sizing: border-box;
-    }
-    .auth-title { color: var(--theme-color); font-family: 'Noto Serif SC', serif; letter-spacing: 2px; margin-top: 0; margin-bottom: 8px; text-align: center; }
-    .auth-desc { color: var(--text-muted); font-size: 14px; margin-bottom: 32px; text-align: center; }
-    .auth-form { display: flex; gap: 12px; width: 100%; max-width: 320px; box-sizing: border-box; }
-    .auth-input { flex: 1; min-width: 0; padding: 12px 16px; border-radius: 12px; border: 1px solid var(--border-color); background: var(--bg-card); color: var(--text-main); outline: none; text-align: center; font-family: 'Inter', sans-serif; font-size: 16px; box-sizing: border-box; transition: border-color 0.3s; }
-    .auth-input:focus { border-color: var(--theme-color); }
-    .auth-btn { padding: 12px 24px; border-radius: 12px; border: none; background: var(--theme-color); color: #fff; cursor: pointer; font-weight: 600; font-size: 16px; white-space: nowrap; transition: transform 0.2s, background 0.2s; }
-    .auth-btn:active { transform: scale(0.95); background: #059669; }
-    #auth-error { color: #ef4444; font-size: 13px; margin-top: 16px; opacity: 0; transition: opacity 0.3s; height: 20px; }
-
-    /* ========================================= */
-    /* ====== 12. 重新开机 (CRT Reboot) 动画 ====== */
-    /* ========================================= */
-
-    /* 👇 修复 1：把原来的 #app 改成 body 👇 */
-    body {
-      transition: all 0.1s ease;
-      transform-origin: center center; /* 确保是从屏幕正中心向内压扁 */
-    }
-
-    /* 关机动作：瞬间压扁并变成一条白线，然后消失 */
-    .crt-turn-off {
-      animation: crt-off 0.4s cubic-bezier(0.23, 1, 0.32, 1) forwards !important;
-    }
-
-    /* 开机动作：从一条白线瞬间展开恢复原状 */
-    .crt-turn-on {
-      animation: crt-on 0.5s cubic-bezier(0.23, 1, 0.32, 1) forwards !important;
-    }
-
-    @keyframes crt-off {
-      0%   { transform: scale(1, 1); opacity: 1; filter: brightness(1); }
-      40%  { transform: scale(1, 0.005); opacity: 1; filter: brightness(3); }
-      70%  { transform: scale(0.001, 0.005); opacity: 0; filter: brightness(3); }
-      100% { transform: scale(0, 0); opacity: 0; filter: brightness(1); }
-    }
-
-    @keyframes crt-on {
-      0%   { transform: scale(0, 0); opacity: 0; filter: brightness(1); }
-      30%  { transform: scale(0.001, 0.005); opacity: 0; filter: brightness(3); }
-      60%  { transform: scale(1, 0.005); opacity: 1; filter: brightness(3); }
-      100% { transform: scale(1, 1); opacity: 1; filter: brightness(1); }
-    }
-    /* ========================================= */
-    /* ====== 13. 搜索框极致暗黑与毛玻璃适配 ====== */
-    /* ========================================= */
-    .sidebar .search {
-      border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
-      padding: 15px 20px;
-      margin-top: 10px;
-    }
-
-    .sidebar .search .input-wrap {
-      display: flex;
-      align-items: center;
-    }
-
-    /* 搜索输入框本体 */
-    .sidebar .search input {
-      background-color: rgba(255, 255, 255, 0.05) !important; /* 微微透光的底色 */
-      color: var(--text-main) !important;
-      border: 1px solid rgba(255, 255, 255, 0.1) !important;
-      border-radius: 12px !important; /* 与你胶囊风格呼应的圆角 */
-      padding: 10px 15px !important;
-      font-size: 14px;
-      font-family: 'Inter', sans-serif !important;
-      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
-      outline: none;
-      width: 100%;
-    }
-
-    /* 输入框发光交互 */
-    .sidebar .search input:focus {
-      border-color: var(--theme-color) !important;
-      box-shadow: 0 0 15px rgba(16, 185, 129, 0.3) !important;
-      background-color: rgba(255, 255, 255, 0.08) !important;
-    }
-
-    /* 右侧清除按钮图标 (X) 的颜色 */
-    .sidebar .search .clear-button {
-      background: transparent !important;
-      fill: var(--text-muted) !important;
-    }
-    .sidebar .search .clear-button:hover {
-      fill: var(--theme-color) !important;
-    }
-
-    /* 搜索结果弹出的匹配项面板 */
-    .sidebar .search .results-panel {
-      border-top: none !important;
-    }
-
-    .sidebar .search .matching-post {
-      border-bottom: 1px solid var(--border-color) !important;
-      padding: 12px 0 !important;
-      transition: all 0.3s ease;
-    }
-
-    .sidebar .search .matching-post:hover {
-      transform: translateX(4px);
-    }
-
-    /* 搜索结果标题 */
-    .sidebar .search h2 {
-      color: var(--text-title) !important;
-      font-size: 16px !important;
-      border: none !important;
-      margin: 0 0 8px 0 !important;
-    }
-
-    /* 搜索结果的匹配上下文文本 */
-    .sidebar .search p {
-      color: var(--text-muted) !important;
-      font-size: 13px !important;
-      line-height: 1.5 !important;
-    }
-
-    /* 关键字高亮标记：采用你的翠绿主题色 */
-    .sidebar .search em {
-      color: var(--theme-color) !important;
-      font-weight: 700;
-      font-style: normal;
-      background: rgba(16, 185, 129, 0.15) !important;
-      padding: 0 4px;
-      border-radius: 4px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>学无止境</title>
+    <link rel="icon" href="./favicon/academia.ico" sizes="any">
+    <link rel="icon" type="image/png" href="./favicon/academia.png">
+    <link rel="apple-touch-icon" href="./favicon/appleacademia.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="description" content="宝藏库">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+
+    <!-- 2. Docsify 标准 Vue 主题样式：整个文档站点的默认基础视觉皮肤和布局骨架 -->
+    <link rel="stylesheet" href="./css/vue.css">
+
+    <!-- 3. 侧边栏折叠插件样式：配合折叠脚本，让多级菜单能够通过箭头优雅地收起和展开 -->
+    <link rel="stylesheet" href="./css/sidebar.min.css"/>
+
+    <!-- 4. 代码块 VSC Dark Plus 高亮主题：让文章里的代码块呈现类似 VS Code 的暗色高级高亮配色 -->
+    <link rel="stylesheet" href="./css/prism-vsc-dark-plus.min.css">
+
+    <!-- 5. Google 网页字体（Inter 与 Noto Serif SC）：为正文和中文字体加载现代、细腻的高级无衬线与衬线字体 -->
+    <link rel="stylesheet" href="./css/Inter_and_Noto_Serif_SC.css">
+
+    <!-- 👇 新增：引入 Cinzel Decorative 字体 👇 -->
+    <link href="./css/Cinzel+Decorative.css" rel="stylesheet">
+
+    <!-- 6. APlayer 音乐播放器样式：让网页里嵌入的音频播放条拥有精致的现代 UI 界面 -->
+    <link rel="stylesheet" href="./css/APlayer.min.css">
+
+    <!-- 7. DPlayer 视频播放器样式：美化网页视频播放器的控制面板、全屏按钮等外观 -->
+    <link rel="stylesheet" href="./css/DPlayer.min.css">
+
+    <!-- 8. Viewer.js 图片查看器样式：为点击文章图片后弹出的全屏相册、缩放和工具栏提供美化支持 -->
+    <link rel="stylesheet" href="./css/viewer.min.css">
+
+    <style>
+
+        /* ========================================= */
+        /* ====== 11. Viewer.js 高级图片查看器美化 ====== */
+        /* ========================================= */
+        .viewer-backdrop {
+            /* 继承你侧边栏的极致深色与强毛玻璃特效 */
+            background-color: rgba(9, 9, 11, 0.85) !important;
+            backdrop-filter: blur(12px) !important;
+            -webkit-backdrop-filter: blur(12px) !important;
+        }
+
+        /* 弱化底部工具栏的背景，突出悬浮感 */
+        .viewer-toolbar > li {
+            background-color: rgba(39, 39, 42, 0.7) !important;
+            transition: background-color 0.3s ease;
+        }
+
+        .viewer-toolbar > li:hover {
+            background-color: var(--theme-color) !important; /* 悬停时点亮为你的翠绿色 */
+        }
+    </style>
+
+    <style>
+        :root {
+            /* 主操作色：依然保留翠绿，但更沉稳 */
+            --theme-color: #10b981;
+
+            /* 全球主流极客暗色体系 (Zinc - 无蓝调的纯粹黑灰) */
+            --bg-body: #09090b; /* 极深底色 */
+            --bg-sidebar: #121214; /* 侧边栏稍亮 */
+            --bg-card: #18181b; /* 内容卡片底色 */
+            --border-color: #27272a; /* 柔和边界线 */
+
+            /* 柔和护眼文本体系 */
+            --text-title: #f4f4f5; /* 标题亮白 */
+            --text-main: #d4d4d8; /* 正文星光灰，非纯白 */
+            --text-muted: #a1a1aa; /* 弱化文本 */
+        }
+
+        /* ====== 1. 全局极致暗黑背景 ====== */
+        body {
+            background-color: var(--bg-body) !important;
+            color: var(--text-main) !important;
+            /* 👇 满血版系统字体栈：加入了 BlinkMacSystemFont 和明确的中文字体名称 */
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif !important;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ========================================================= */
+        /* ====== 2. 侧边栏：世界级 UI - 深空毛玻璃与磁吸悬浮胶囊 ====== */
+        /* ========================================================= */
+
+        /* --- A. 极致通透的毛玻璃面板 --- */
+        .sidebar {
+            background: rgba(18, 18, 20, 0.65) !important; /* 降低透明度，透出底层黑度 */
+            backdrop-filter: blur(24px) saturate(150%) !important; /* 极强的高斯模糊与色彩增强 */
+            -webkit-backdrop-filter: blur(24px) saturate(150%) !important;
+            border-right: 1px solid rgba(255, 255, 255, 0.06) !important; /* 极细的高光边缘 */
+            box-shadow: 4px 0 30px rgba(0, 0, 0, 0.5) !important; /* 右侧投下深邃阴影 */
+            padding-top: 40px;
+        }
+
+        /* --- B. 顶部标题发光微距 --- */
+
+        /* --- B. 顶部标题发光微距 --- */
+        .sidebar h1 {
+            font-family: 'Cinzel Decorative', serif !important;
+            font-size: 22px; /* 电脑端字号 */
+            font-weight: 900;
+            letter-spacing: 2px;
+            text-align: center;
+            margin-bottom: 40px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex; /* 开启 Flex 布局 */
+            justify-content: center; /* 强行水平居中 */
+            align-items: center;
+        }
+
+        /* 👇 修复 2：给自定义的跳转链接加上炫酷的绿色渐变和居中 👇 */
+        .sidebar h1 .reboot-trigger {
+            text-decoration: none !important;
+            display: block; /* 转为块级元素，占满父容器 */
+            width: 100%;
+            text-align: center; /* 文字内部居中 */
+            /* 经典的高级绿色渐变 */
+            background: linear-gradient(135deg, #10b981, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 4px 20px rgba(16, 185, 129, 0.2); /* 绿色微光 */
+            transition: all 0.3s ease;
+        }
+
+        .sidebar h1 .reboot-trigger:hover {
+            text-shadow: 0 4px 25px rgba(16, 185, 129, 0.8);
+            transform: scale(1.05); /* 悬停时稍微放大 */
+        }
+
+        /* 👇 手机端专属排版：缩小字号，防止超宽 👇 */
+        @media screen and (max-width: 768px) {
+            .sidebar h1 {
+                font-size: 18px !important; /* 手机端字号调小 */
+                letter-spacing: 1px;
+                margin-bottom: 25px; /* 减小底部留白 */
+            }
+        }
+
+        /* 👇 新增：鼠标悬停时稍微提亮并放大，增强交互感 👇 */
+        .sidebar h1:hover {
+            text-shadow: 0 4px 25px rgba(16, 185, 129, 0.6);
+            transform: scale(1.02);
+        }
+
+        .sidebar h1 strong {
+            color: var(--theme-color);
+            text-shadow: 0 2px 15px rgba(16, 185, 129, 0.4); /* 主题色文字光晕更强 */
+        }
+
+        /* --- C. 优雅隐匿的滚动条 --- */
+        .sidebar::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .sidebar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .sidebar::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+
+        .sidebar:hover::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* --- D. 一级目录：无边框悬浮感 --- */
+        .sidebar-nav > ul > li {
+            font-size: 17px !important;
+            font-weight: 700 !important;
+            color: rgba(255, 255, 255, 0.95) !important;
+            margin: 20px 16px 8px 16px !important; /* 两侧留白，为后续胶囊态做准备 */
+            padding-left: 8px !important;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .sidebar-nav > ul > li:hover {
+            color: #ffffff !important;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.3); /* 悬停时文字发光 */
+            transform: translateX(4px);
+        }
+
+        /* 兼容性兜底（清空内部包裹标签的影响） */
+        .sidebar-nav > ul > li > p {
+            font-size: inherit !important;
+            font-weight: inherit !important;
+            color: inherit !important;
+            margin: 0 !important;
+        }
+
+        /* --- 新增：彻底清空 Docsify 及折叠插件的默认深层缩进 --- */
+        .sidebar-nav ul ul {
+            padding-left: 0 !important;
+            margin: 0 !important;
+        }
+
+        .sidebar-nav ul ul li {
+            padding-left: 0 !important;
+            margin: 0 !important;
+        }
+
+        /* --- E. 子级文件：极致丝滑的圆角胶囊悬停态 --- */
+        .sidebar-nav ul li a {
+            color: #a1a1aa !important;
+            font-size: 14.5px !important;
+            font-weight: 500 !important;
+            /* 👇 核心修复：把 28px 大幅削减到 8px。由于胶囊自带 16px 左外边距，只需 8px 即可与上方文字完美对齐 👇 */
+            padding: 10px 16px 10px 8px !important;
+            margin: 4px 16px !important;
+            border-radius: 12px !important;
+            display: block;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+        }
+
+        /* 鼠标悬停子文件：浮出毛玻璃胶囊 */
+        .sidebar-nav ul li a:hover {
+            background: rgba(255, 255, 255, 0.08) !important;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
+            color: #ffffff !important;
+            transform: translateX(6px) scale(1.02);
+        }
+
+        /* --- F. 当前激活文章：光剑霓虹特效 --- */
+        .sidebar-nav ul li.active > a {
+            color: var(--theme-color) !important;
+            font-weight: 700 !important;
+            background: linear-gradient(90deg, rgba(16, 185, 129, 0.12) 0%, transparent 100%) !important; /* 渐变底光 */
+            border-right: none !important; /* 抛弃老旧的右侧边框 */
+        }
+
+        /* 使用绝对定位伪元素打造左侧霓虹光剑 */
+        .sidebar-nav ul li.active > a::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 15%;
+            height: 70%;
+            width: 4px;
+            background: var(--theme-color);
+            border-radius: 0 4px 4px 0;
+            box-shadow: 0 0 14px var(--theme-color); /* 强烈的翠绿光晕 */
+        }
+
+        /* --- G. 科技感折叠小箭头 --- */
+        .sidebar-nav li.collapse > a::before,
+        .sidebar-nav li.collapse > a::after,
+        .sidebar-nav li.collapse::before,
+        .sidebar-nav li.collapse::after {
+            transform: scale(1.2) !important;
+            margin-right: 14px !important;
+            color: rgba(255, 255, 255, 0.5) !important;
+            transition: all 0.3s ease !important;
+        }
+
+        .sidebar-nav li.collapse:hover::before,
+        .sidebar-nav li.collapse:hover::after {
+            color: rgba(255, 255, 255, 0.9) !important; /* 鼠标靠近时箭头提亮 */
+        }
+
+        /* ====== 3. 主内容区 ====== */
+        main {
+            padding-bottom: 80px !important;
+        }
+
+        .content {
+            padding-top: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+        }
+
+        .markdown-section {
+            background: var(--bg-card) !important;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+            border-radius: 16px !important;
+            padding: 60px 80px;
+            max-width: 900px;
+            width: 100%;
+            color: var(--text-main);
+            margin-bottom: 60px !important;
+        }
+
+        /* ========================================= */
+        /* ====== 4. MD语法多色彩语义化系统 ====== */
+        /* ========================================= */
+
+        /* --- 引用块：内发光微亚克力质感 --- */
+        .markdown-section blockquote {
+            /* 左侧边带一点荧光感 */
+            border-left: 4px solid var(--theme-color) !important;
+            /* 极其微妙的渐变背景 */
+            background: linear-gradient(120deg, rgba(16, 185, 129, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%) !important;
+            color: #e4e4e7 !important;
+            padding: 20px 24px !important;
+            border-radius: 6px 16px 16px 6px !important; /* 右侧圆润，左侧平直 */
+            /* 顶部和左侧增加 1px 的内侧微光，营造 3D 立体切割感 */
+            box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.05), 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+            margin: 2.5em 0 !important;
+        }
+
+        .markdown-section blockquote p {
+            margin-bottom: 0 !important; /* 消除内部段落底部多余的间距 */
+            color: #a1a1aa !important; /* 文字稍微调暗，与正文产生层次 */
+        }
+
+
+        /* --- 全局：定制高光选中颜色 --- */
+        ::selection {
+            background: rgba(16, 185, 129, 0.3) !important; /* 翠绿半透明 */
+            color: #ffffff !important;
+            text-shadow: none !important;
+        }
+
+        ::-moz-selection {
+            background: rgba(16, 185, 129, 0.3) !important;
+            color: #ffffff !important;
+        }
+
+        /* --- 图片：圆角画廊与磁吸悬浮 --- */
+        .markdown-section img {
+            border-radius: 12px; /* 与外层卡片呼应的圆角 */
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4); /* 赋予图片独立的空间感 */
+            display: block;
+            margin: 2.5em auto; /* 图片上下留白，强制居中 */
+            max-width: 100%;
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+        }
+
+        .markdown-section img:hover {
+            transform: translateY(-4px) scale(1.01); /* 鼠标悬停时微微上浮并放大 */
+            box-shadow: 0 16px 32px rgba(0, 0, 0, 0.6); /* 阴影加深扩散 */
+        }
+
+
+        .markdown-section h1, .markdown-section h2, .markdown-section h3,
+        .markdown-section h4, .markdown-section h5, .markdown-section h6 {
+            font-family: 'Noto Serif SC', serif !important;
+            font-weight: 600;
+            margin-top: 2em;
+            margin-bottom: 1em;
+        }
+
+        .markdown-section h1:first-of-type {
+            font-size: 40px !important;
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 50px;
+            margin-top: 0;
+            background: linear-gradient(135deg, #10b981, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            border-bottom: none !important;
+        }
+
+        .markdown-section h2 {
+            color: #f4f4f5 !important;
+            border-bottom: 1px solid var(--border-color) !important;
+            padding-bottom: 12px;
+        }
+
+        .markdown-section h3 {
+            color: #10b981 !important;
+        }
+
+        .markdown-section h4 {
+            color: #a78bfa !important;
+        }
+
+        .markdown-section p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: var(--text-main);
+        }
+
+        .markdown-section strong {
+            color: #fb923c !important;
+            font-weight: 700;
+        }
+
+        .markdown-section em {
+            color: #f472b6 !important;
+            font-style: italic;
+        }
+
+        .markdown-section del {
+            color: #71717a !important;
+        }
+
+        /* --- 修复双下划线冲突 --- */
+        .markdown-section a {
+            color: var(--theme-color) !important;
+            text-decoration: none !important; /* 彻底屏蔽原生默认下划线 */
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s ease;
+        }
+
+        .markdown-section a:hover {
+            text-decoration: none !important; /* 悬停时依然强制屏蔽原生下划线 */
+            border-bottom-color: var(--theme-color) !important; /* 只显现我们定制的边框线 */
+        }
+
+        .markdown-section ul {
+            padding-left: 1.5rem;
+        }
+
+        .markdown-section ul > li {
+            line-height: 1.8;
+            margin-bottom: 8px;
+        }
+
+        .markdown-section ul > li::marker {
+            color: #10b981;
+            font-weight: bold;
+        }
+
+        .markdown-section ol > li::marker {
+            color: #fb923c;
+            font-weight: bold;
+        }
+
+        .markdown-section code {
+            background-color: #27272a !important;
+            color: #fca5a5 !important;
+            padding: 4px 6px;
+            border-radius: 6px;
+            font-size: 0.9em;
+            font-family: 'JetBrains Mono', Consolas, 'Courier New', monospace !important;
+            border: 1px solid rgba(255, 255, 255, 0.05) !important;
+        }
+
+        /* ====== 代码块与 VS Code Dark+ 满血语法高亮修复 ====== */
+        .markdown-section pre {
+            position: relative;
+            background-color: #0d0d0f !important;
+            border: 1px solid var(--border-color) !important;
+            border-radius: 12px !important;
+            padding: 38px 20px 20px 20px !important; /* 顶部留出语言标签空间 */
+            margin: 24px 0;
+            overflow-x: auto;
+        }
+
+
+        .markdown-section pre code {
+            background-color: transparent !important;
+            border: none !important;
+            padding: 0 !important;
+            color: #9cdcfe !important; /* 默认变量名采用 VS Code 浅晶蓝，不再是一片惨白 */
+            font-family: 'JetBrains Mono', Consolas, 'Courier New', monospace !important;
+            font-size: 14px !important;
+            line-height: 1.65 !important;
+        }
+
+        /* 强制覆盖 vue.css 的残缺 Token 颜色，还原正宗 VS Code Dark+ 层次感 */
+        .markdown-section pre .token.comment,
+        .markdown-section pre .token.prolog,
+        .markdown-section pre .token.doctype {
+            color: #6a9955 !important;
+            font-style: italic;
+        }
+
+        .markdown-section pre .token.keyword,
+        .markdown-section pre .token.boolean,
+        .markdown-section pre .token.null {
+            color: #569cd6 !important;
+            font-weight: 600;
+        }
+
+        .markdown-section pre .token.control,
+        .markdown-section pre .token.directive,
+        .markdown-section pre .token.important,
+        .markdown-section pre .token.atrule {
+            color: #c586c0 !important;
+        }
+
+        /* return/if/#include/@Override 紫粉色 */
+        .markdown-section pre .token.string,
+        .markdown-section pre .token.char,
+        .markdown-section pre .token.attr-value {
+            color: #ce9178 !important;
+        }
+
+        /* 字符串暖橙色 */
+        .markdown-section pre .token.number {
+            color: #b5cea8 !important;
+        }
+
+        /* 数字浅豆绿 */
+        .markdown-section pre .token.function,
+        .markdown-section pre .token.method {
+            color: #dcdcaa !important;
+        }
+
+        /* 函数与方法调用明黄色 */
+        .markdown-section pre .token.class-name,
+        .markdown-section pre .token.builtin,
+        .markdown-section pre .token.type-definition {
+            color: #4ec9b0 !important;
+        }
+
+        /* 类名/结构体/类型青翠色 */
+        .markdown-section pre .token.annotation,
+        .markdown-section pre .token.decorator,
+        .markdown-section pre .token.macro {
+            color: #dcdcaa !important;
+        }
+
+        /* Java 注解 / Python 装饰器 */
+        .markdown-section pre .token.operator,
+        .markdown-section pre .token.punctuation {
+            color: #d4d4d4 !important;
+            background: transparent !important;
+        }
+
+        .markdown-section pre .token.tag {
+            color: #569cd6 !important;
+        }
+
+        .markdown-section pre .token.attr-name {
+            color: #9cdcfe !important;
+        }
+
+        /* ========================================= */
+        /* ====== 5. 表格：完美包裹适配移动端 ====== */
+        /* ========================================= */
+
+        /* 1. 新增的外层包裹器：负责移动端横向滚动和整体外边距 */
+        .table-wrapper {
+            width: 100%;
+            overflow-x: auto; /* 屏幕不够宽时，允许在此容器内横向滚动 */
+            margin: 30px 0; /* 原本在 table 上的 margin 转移到这里 */
+            border-radius: 8px;
+        }
+
+        /* 2. 表格本身样式 */
+        .markdown-section table {
+            width: 100%;
+            display: table !important; /* 强制覆盖 vue.css 的 block 属性，解决电脑端占不满的问题 */
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 0; /* 边距已交由 wrapper 处理，此处清零 */
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            min-width: 600px; /* 关键：给表格设一个最小宽度，保证在手机端文字不会被挤成一柱擎天，而是优雅地触发横向滚动 */
+        }
+
+        .markdown-section table th, .markdown-section table td {
+            padding: 14px 20px;
+            color: #d4d4d8 !important;
+            border-bottom: 1px solid var(--border-color);
+            border-right: 1px solid var(--border-color);
+            transition: background-color 0.2s ease, color 0.2s ease;
+            word-break: break-word; /* 允许长单词或长链接自动换行，防止撑破单元格 */
+        }
+
+        .markdown-section table th:last-child,
+        .markdown-section table td:last-child {
+            border-right: none;
+        }
+
+        .markdown-section table th {
+            background-color: #27272a;
+            color: #f4f4f5 !important;
+            font-weight: 600;
+            text-align: left;
+        }
+
+        .markdown-section table tr:nth-child(even) td {
+            background-color: #1f1f22;
+        }
+
+        .markdown-section table tr:nth-child(odd) td {
+            background-color: transparent;
+        }
+
+        .markdown-section table tr:hover td {
+            background-color: #27272a !important;
+            color: #e4e4e7 !important;
+        }
+
+        .markdown-section table tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* ========================================= */
+        /* ====== 6. 悬浮辅助按钮 (灰色圆点版) ====== */
+        /* ========================================= */
+
+        .sidebar-toggle {
+            display: flex !important;
+            background: rgba(35, 35, 38, 0.6) !important;
+            backdrop-filter: blur(12px) !important;
+            -webkit-backdrop-filter: blur(12px) !important;
+            border: 1px solid rgba(255, 255, 255, 0.05) !important;
+            border-radius: 50% !important;
+            width: 52px !important;
+            height: 52px !important;
+            bottom: 30px !important;
+            right: 30px !important;
+            left: auto !important;
+            padding: 0 !important;
+            justify-content: center !important;
+            align-items: center !important;
+            z-index: 9999 !important;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3) !important;
+            transition: transform 0.2s cubic-bezier(0.25, 0.8, 0.25, 1), background 0.2s ease !important;
+        }
+
+        .sidebar-toggle:active {
+            transform: scale(0.85) !important;
+            background: rgba(55, 55, 60, 0.8) !important;
+        }
+
+        .sidebar-toggle span {
+            display: none !important;
+        }
+
+        /* 中心内圈：改为低调的灰色 */
+        .sidebar-toggle::after {
+            content: '' !important;
+            display: block !important;
+            width: 22px !important;
+            height: 22px !important;
+            border-radius: 50% !important;
+            background: rgba(113, 113, 122, 0.8) !important; /* 沉稳的灰色 (Zinc 500) */
+            box-shadow: 0 0 8px rgba(113, 113, 122, 0.15) !important;
+            transition: background 0.2s ease !important;
+        }
+
+        /* 鼠标悬停时：灰点微微提亮 */
+        .sidebar-toggle:hover::after {
+            background: rgba(161, 161, 170, 0.95) !important; /* 稍微亮一点的灰 (Zinc 400) */
+        }
+
+        /* ========================================= */
+        /* ====== 7. 移动端(手机)深度完美适配 ====== */
+        /* ========================================= */
+        @media screen and (max-width: 768px) {
+            .sidebar {
+                padding-top: 20px;
+            }
+
+            .content {
+                padding-top: 20px;
+            }
+
+            .markdown-section {
+                padding: 30px 24px !important;
+                border-radius: 0 !important;
+                box-shadow: none;
+                border: none;
+                border-top: 1px solid var(--border-color);
+                background: transparent !important;
+            }
+
+            .sidebar-toggle {
+                width: 48px !important;
+                height: 48px !important;
+                bottom: 24px !important;
+                right: 20px !important;
+            }
+
+            .sidebar-toggle::after {
+                width: 20px !important;
+                height: 20px !important;
+            }
+        }
+
+        /* ========================================= */
+        /* ====== 8. 代码块复制按钮深度美化 ====== */
+        /* ========================================= */
+
+        /* 调整代码块外层容器，确保按钮定位准确 */
+        .docsify-copy-code-button {
+            background: rgba(39, 39, 42, 0.8) !important; /* 半透明暗灰底色 */
+            color: #a1a1aa !important; /* 柔和的灰色文字 */
+            border: 1px solid rgba(255, 255, 255, 0.1) !important; /* 极细的边框 */
+            border-radius: 8px !important; /* 圆角美化 */
+            padding: 4px 10px !important; /* 缩小按钮体积，使其更精致 */
+            font-size: 12px !important; /* 缩小字体 */
+            font-family: 'Inter', sans-serif !important;
+            font-weight: 500 !important;
+            backdrop-filter: blur(4px) !important; /* 毛玻璃效果 */
+            right: 10px !important; /* 稍微往里缩一点 */
+            top: 10px !important; /* 稍微往下移一点，不要贴死边缘 */
+            transition: all 0.3s ease !important; /* 平滑动画 */
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2) !important; /* 微弱阴影 */
+        }
+
+        /* 鼠标悬停时的状态 */
+        .docsify-copy-code-button:hover {
+            background: rgba(63, 63, 70, 0.9) !important; /* 悬停时稍微亮一点 */
+            color: #f4f4f5 !important; /* 文字变白 */
+            border-color: rgba(255, 255, 255, 0.2) !important;
+        }
+
+        /* 复制成功后的状态 (Docsify 默认会把文字改成 "Copied" 并且加一个 success 类) */
+        .docsify-copy-code-button.success {
+            background: rgba(16, 185, 129, 0.2) !important; /* 成功时变成你的主题色(淡绿底) */
+            color: #10b981 !important; /* 成功时文字变亮绿 */
+            border-color: rgba(16, 185, 129, 0.5) !important;
+        }
+
+        /* (可选) 隐藏原本丑陋的 "Copy to clipboard" 长文本，直接改成 "Copy" */
+        /* Docsify 默认生成的是带 span 的结构，我们可以用伪元素替换文字 */
+        .docsify-copy-code-button span {
+            display: none !important; /* 隐藏原生文字 */
+        }
+
+        .docsify-copy-code-button::before {
+            content: "Copy"; /* 默认显示简短的 Copy */
+        }
+
+        .docsify-copy-code-button.success::before {
+            content: "Copied!"; /* 成功时显示 Copied! */
+        }
+
+
+        /* ========================================= */
+        /* ====== 9. 侧边栏加宽与丝滑动画补全 ====== */
+        /* ========================================= */
+
+        /* --- A. 侧边栏加宽 (仅在电脑端生效，绝不破坏手机端布局) --- */
+        @media screen and (min-width: 769px) {
+            .sidebar {
+                width: 350px !important;
+                transition: transform 0.3s ease !important; /* 确保过渡动画生效 */
+            }
+
+            .content {
+                left: 350px !important;
+                transition: left 0.3s ease !important;
+            }
+
+            /* 当 body 带有 close 类时，侧边栏被收起 */
+            body.close .sidebar {
+                transform: translateX(-350px) !important;
+            }
+
+            body.close .content {
+                left: 0 !important;
+            }
+
+            /* 强制在电脑端也显示那个收起/展开的小圆点按钮 */
+            body .sidebar-toggle {
+                display: flex !important;
+            }
+        }
+
+        /* --- B. 链接悬停的“呼吸感”位移动画 --- */
+        .sidebar-nav ul li a {
+            /* 把原本简单的过渡升级为高级的贝塞尔曲线，增加阻尼感 */
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+        }
+
+        .sidebar-nav ul li a:hover {
+            /* 鼠标放上去时，除了变色，再向右发生微妙的 6px 推移 */
+            transform: translateX(6px);
+        }
+
+        /* --- C. 折叠箭头与展开菜单的柔和化处理 --- */
+        /* 针对 docsify-sidebar-collapse 插件的三角图标增加平滑旋转 */
+        .sidebar-nav li > a::before,
+        .sidebar-nav li > a::after {
+            transition: transform 0.3s ease !important;
+        }
+
+        /* 给展开的子菜单注入灵魂：加一个轻微下坠+淡入的视效，化解插件原本的生硬感 */
+        .sidebar-nav li > ul {
+            animation: fadeSlideDown 0.35s ease-out forwards;
+        }
+
+        @keyframes fadeSlideDown {
+            0% {
+                opacity: 0;
+                transform: translateY(-8px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ========================================= */
+        /* ====== 10. 页面内容滚动渐显特效 (Scroll Reveal) ====== */
+        /* ========================================= */
+
+        /* A. 定义需要渐显的元素的初始状态：透明度为0，向下偏移 30px */
+        .markdown-section > p,
+        .markdown-section > h2,
+        .markdown-section > h3,
+        .markdown-section > h4,
+        .markdown-section > pre,
+        .markdown-section > blockquote,
+        .markdown-section > ul,
+        .markdown-section > ol,
+        .markdown-section > img,
+        .markdown-section > .table-wrapper {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.25, 0.8, 0.25, 1), transform 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+            will-change: opacity, transform; /* 开启硬件加速，保证丝滑 */
+        }
+
+        /* B. 定义元素进入视口后的状态：恢复不透明度和原始位置 */
+        .markdown-section > .reveal-visible {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+        }
+
+        /* 排除第一个大标题(h1)，让它一进页面就直接显示，不需要等滚动 */
+        .markdown-section h1:first-of-type {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* 👇 局部密码拦截层（专属个人创作，默认隐藏） 👇 */
+
+        #auth-screen {
+            display: none; /* 必须去掉 !important，否则 JS 无法使其显示 */
+            opacity: 0;
+            pointer-events: none;
+            position: fixed;
+            inset: 0;
+            background-color: var(--bg-body);
+            z-index: 999999;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            padding: 24px;
+            box-sizing: border-box;
+        }
+
+        .auth-title {
+            color: var(--theme-color);
+            font-family: 'Noto Serif SC', serif;
+            letter-spacing: 2px;
+            margin-top: 0;
+            margin-bottom: 8px;
+            text-align: center;
+        }
+
+        .auth-desc {
+            color: var(--text-muted);
+            font-size: 14px;
+            margin-bottom: 32px;
+            text-align: center;
+        }
+
+        .auth-form {
+            display: flex;
+            gap: 12px;
+            width: 100%;
+            max-width: 320px;
+            box-sizing: border-box;
+        }
+
+        .auth-input {
+            flex: 1;
+            min-width: 0;
+            padding: 12px 16px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            background: var(--bg-card);
+            color: var(--text-main);
+            outline: none;
+            text-align: center;
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            box-sizing: border-box;
+            transition: border-color 0.3s;
+        }
+
+        .auth-input:focus {
+            border-color: var(--theme-color);
+        }
+
+        .auth-btn {
+            padding: 12px 24px;
+            border-radius: 12px;
+            border: none;
+            background: var(--theme-color);
+            color: #fff;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 16px;
+            white-space: nowrap;
+            transition: transform 0.2s, background 0.2s;
+        }
+
+        .auth-btn:active {
+            transform: scale(0.95);
+            background: #059669;
+        }
+
+        #auth-error {
+            color: #ef4444;
+            font-size: 13px;
+            margin-top: 16px;
+            opacity: 0;
+            transition: opacity 0.3s;
+            height: 20px;
+        }
+
+        /* ========================================= */
+        /* ====== 12. 重新开机 (CRT Reboot) 动画 ====== */
+        /* ========================================= */
+
+        /* 👇 修复 1：把原来的 #app 改成 body 👇 */
+        body {
+            transition: all 0.1s ease;
+            transform-origin: center center; /* 确保是从屏幕正中心向内压扁 */
+        }
+
+        /* 关机动作：瞬间压扁并变成一条白线，然后消失 */
+        .crt-turn-off {
+            animation: crt-off 0.4s cubic-bezier(0.23, 1, 0.32, 1) forwards !important;
+        }
+
+        /* 开机动作：从一条白线瞬间展开恢复原状 */
+        .crt-turn-on {
+            animation: crt-on 0.5s cubic-bezier(0.23, 1, 0.32, 1) forwards !important;
+        }
+
+        @keyframes crt-off {
+            0% {
+                transform: scale(1, 1);
+                opacity: 1;
+                filter: brightness(1);
+            }
+            40% {
+                transform: scale(1, 0.005);
+                opacity: 1;
+                filter: brightness(3);
+            }
+            70% {
+                transform: scale(0.001, 0.005);
+                opacity: 0;
+                filter: brightness(3);
+            }
+            100% {
+                transform: scale(0, 0);
+                opacity: 0;
+                filter: brightness(1);
+            }
+        }
+
+        @keyframes crt-on {
+            0% {
+                transform: scale(0, 0);
+                opacity: 0;
+                filter: brightness(1);
+            }
+            30% {
+                transform: scale(0.001, 0.005);
+                opacity: 0;
+                filter: brightness(3);
+            }
+            60% {
+                transform: scale(1, 0.005);
+                opacity: 1;
+                filter: brightness(3);
+            }
+            100% {
+                transform: scale(1, 1);
+                opacity: 1;
+                filter: brightness(1);
+            }
+        }
+
+        /* ========================================= */
+        /* ====== 13. 搜索框极致暗黑与毛玻璃适配 ====== */
+        /* ========================================= */
+        .sidebar .search {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
+            padding: 15px 20px;
+            margin-top: 10px;
+        }
+
+        .sidebar .search .input-wrap {
+            display: flex;
+            align-items: center;
+        }
+
+        /* 搜索输入框本体 */
+        .sidebar .search input {
+            background-color: rgba(255, 255, 255, 0.05) !important; /* 微微透光的底色 */
+            color: var(--text-main) !important;
+            border: 1px solid rgba(255, 255, 255, 0.1) !important;
+            border-radius: 12px !important; /* 与你胶囊风格呼应的圆角 */
+            padding: 10px 15px !important;
+            font-size: 14px;
+            font-family: 'Inter', sans-serif !important;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+            outline: none;
+            width: 100%;
+        }
+
+        /* 输入框发光交互 */
+        .sidebar .search input:focus {
+            border-color: var(--theme-color) !important;
+            box-shadow: 0 0 15px rgba(16, 185, 129, 0.3) !important;
+            background-color: rgba(255, 255, 255, 0.08) !important;
+        }
+
+        /* 右侧清除按钮图标 (X) 的颜色 */
+        .sidebar .search .clear-button {
+            background: transparent !important;
+            fill: var(--text-muted) !important;
+        }
+
+        .sidebar .search .clear-button:hover {
+            fill: var(--theme-color) !important;
+        }
+
+        /* 搜索结果弹出的匹配项面板 */
+        .sidebar .search .results-panel {
+            border-top: none !important;
+        }
+
+        .sidebar .search .matching-post {
+            border-bottom: 1px solid var(--border-color) !important;
+            padding: 12px 0 !important;
+            transition: all 0.3s ease;
+        }
+
+        .sidebar .search .matching-post:hover {
+            transform: translateX(4px);
+        }
+
+        /* 搜索结果标题 */
+        .sidebar .search h2 {
+            color: var(--text-title) !important;
+            font-size: 16px !important;
+            border: none !important;
+            margin: 0 0 8px 0 !important;
+        }
+
+        /* 搜索结果的匹配上下文文本 */
+        .sidebar .search p {
+            color: var(--text-muted) !important;
+            font-size: 13px !important;
+            line-height: 1.5 !important;
+        }
+
+        /* 关键字高亮标记：采用你的翠绿主题色 */
+        .sidebar .search em {
+            color: var(--theme-color) !important;
+            font-weight: 700;
+            font-style: normal;
+            background: rgba(16, 185, 129, 0.15) !important;
+            padding: 0 4px;
+            border-radius: 4px;
+        }
+    </style>
 </head>
 <body>
 
 
 <!-- 👇 修复：直接把隐藏属性写在标签内联样式上，神仙来了它也不会闪 👇 -->
 <div id="auth-screen" style="display: none; opacity: 0; pointer-events: none;">
-  <h2 class="auth-title">私密创作空间</h2>
-  <p class="auth-desc">请输入访问凭证以解锁此区域的内容</p>
-  <div class="auth-form">
-    <input type="password" id="auth-input" class="auth-input" placeholder="Password">
-    <button class="auth-btn" onclick="checkPassword()">解锁</button>
-  </div>
-  <p id="auth-error">密码错误，请重试</p>
+    <h2 class="auth-title">私密创作空间</h2>
+    <p class="auth-desc">请输入访问凭证以解锁此区域的内容</p>
+    <div class="auth-form">
+        <input type="password" id="auth-input" class="auth-input" placeholder="Password">
+        <button class="auth-btn" onclick="checkPassword()">解锁</button>
+    </div>
+    <p id="auth-error">密码错误，请重试</p>
 </div>
 
 <script>
-  // 挂载回车键快捷提交
-  document.getElementById('auth-input')?.addEventListener('keypress', function(e) {
-    if (e.key === 'Enter') checkPassword();
-  });
-
-  window.updateSidebarLock = function() {
-    const isUnlocked = sessionStorage.getItem('personal_unlocked') === 'true';
-    document.querySelectorAll('.sidebar-nav li').forEach(function(li) {
-      if (li.innerHTML.includes('个人创作')) {
-        if (isUnlocked) {
-          li.innerHTML = li.innerHTML.replace(/🔒/g, '🔓');
-        } else {
-          li.innerHTML = li.innerHTML.replace(/🔓/g, '🔒');
-        }
-      }
+    // 挂载回车键快捷提交
+    document.getElementById('auth-input')?.addEventListener('keypress', function (e) {
+        if (e.key === 'Enter') checkPassword();
     });
-  };
 
-  function checkPassword() {
-    const input = document.getElementById('auth-input').value;
-    const errorMsg = document.getElementById('auth-error');
-    const authScreen = document.getElementById('auth-screen');
-    const mainContent = document.querySelector('.markdown-section');
+    window.updateSidebarLock = function () {
+        const isUnlocked = sessionStorage.getItem('personal_unlocked') === 'true';
+        document.querySelectorAll('.sidebar-nav li').forEach(function (li) {
+            if (li.innerHTML.includes('个人创作')) {
+                if (isUnlocked) {
+                    li.innerHTML = li.innerHTML.replace(/🔒/g, '🔓');
+                } else {
+                    li.innerHTML = li.innerHTML.replace(/🔓/g, '🔒');
+                }
+            }
+        });
+    };
 
-    if (input === '574185') {
-      // 密码正确：存入解锁状态
-      sessionStorage.setItem('personal_unlocked', 'true');
+    function checkPassword() {
+        const input = document.getElementById('auth-input').value;
+        const errorMsg = document.getElementById('auth-error');
+        const authScreen = document.getElementById('auth-screen');
+        const mainContent = document.querySelector('.markdown-section');
 
-      authScreen.style.transition = 'opacity 0.4s ease';
-      authScreen.style.opacity = '0';
-      setTimeout(() => {
-        authScreen.style.display = 'none';
-        if (mainContent) {
-          mainContent.style.display = 'block';
-          mainContent.style.animation = 'fadeSlideDown 0.5s ease forwards';
+        if (input === '574185') {
+            // 密码正确：存入解锁状态
+            sessionStorage.setItem('personal_unlocked', 'true');
+
+            authScreen.style.transition = 'opacity 0.4s ease';
+            authScreen.style.opacity = '0';
+            setTimeout(() => {
+                authScreen.style.display = 'none';
+                if (mainContent) {
+                    mainContent.style.display = 'block';
+                    mainContent.style.animation = 'fadeSlideDown 0.5s ease forwards';
+                }
+                // 解锁成功后，立刻触发侧边栏的图标刷新，把 🔒 变成 🔓
+                if (typeof window.updateSidebarLock === 'function') window.updateSidebarLock();
+            }, 400);
+        } else {
+            // 密码错误
+            errorMsg.style.opacity = '1';
+            setTimeout(() => {
+                errorMsg.style.opacity = '0';
+            }, 2000);
         }
-        // 解锁成功后，立刻触发侧边栏的图标刷新，把 🔒 变成 🔓
-        if(typeof window.updateSidebarLock === 'function') window.updateSidebarLock();
-      }, 400);
-    } else {
-      // 密码错误
-      errorMsg.style.opacity = '1';
-      setTimeout(() => { errorMsg.style.opacity = '0'; }, 2000);
     }
-  }
 
 </script>
 <!-- 👆 局部密码拦截层结束 👆 -->
-  <div id="app">kale...</div>
-  
-  <script>
+<div id="app">kale...</div>
+
+<script>
     window.$docsify = {
-      // 👇 修复 1：去掉 span，恢复为带类名的纯净 a 标签
-      name: '<a href="javascript:void(0)" class="reboot-trigger">Experience more.</a>',
-      repo: '',
-      loadSidebar: true,
-      subMaxLevel: 0,
-      sidebarDisplayLevel: 0,
-      auto2top: true,
-      routerMode: 'hash',
-      executeScript: true,
-      // 👇 新增搜索功能配置 👇
-      search: {
-        maxAge: 86400000, // 过期时间，单位毫秒，默认一天（缓存本地搜集到的文本数据）
-        paths: 'auto',    // 自动抓取整个站点的所有 Markdown 链接
-        placeholder: '🔍 探索野生土块艺术...',
-        noData: '😭 哎呀，没有找到相关内容！',
-        depth: 6,         // 搜索标题的最大层级（1-6）
-        hideOtherSidebarContent: false, // 搜索时是否隐藏侧边栏的其他菜单栏
-      },
-      // 👆 新增结束 👆
-      plugins: [
-        function(hook, vm) {
+        // 👇 修复 1：去掉 span，恢复为带类名的纯净 a 标签
+        name: '<a href="javascript:void(0)" class="reboot-trigger">Experience more.</a>',
+        repo: '',
+        loadSidebar: true,
+        subMaxLevel: 0,
+        sidebarDisplayLevel: 0,
+        auto2top: true,
+        routerMode: 'hash',
+        executeScript: true,
+        // 👇 新增搜索功能配置 👇
+        search: {
+            maxAge: 86400000, // 过期时间，单位毫秒，默认一天（缓存本地搜集到的文本数据）
+            paths: 'auto',    // 自动抓取整个站点的所有 Markdown 链接
+            placeholder: '🔍 探索野生土块艺术...',
+            noData: '😭 哎呀，没有找到相关内容！',
+            depth: 6,         // 搜索标题的最大层级（1-6）
+            hideOtherSidebarContent: false, // 搜索时是否隐藏侧边栏的其他菜单栏
+        },
+        // 👆 新增结束 👆
+        plugins: [
+            function (hook, vm) {
 
-          // === 1. 全局自动修复加粗与代码块嵌套的 Bug ===
-          hook.beforeEach(function(content) {
-            return content.replace(/\*\*\`(.*?)\`\*\*/g, '<strong><code>$1</code></strong>');
-          });
-
-          hook.doneEach(function() {
-
-            // === 2. 路由判定与锁图标动态刷新 ===
-            if(typeof window.updateSidebarLock === 'function') window.updateSidebarLock();
-
-            const authScreen = document.getElementById('auth-screen');
-            const authContentBox = document.querySelector('.markdown-section'); // 专属命名，防止冲突
-
-
-            // 同时兼容匹配 '个人创作' 和你可能存在的英文文件夹名 'research'
-            // 👇 核心修复：删掉害人的 '/research'，只认准“个人创作”这四个字！
-            const currentPath = decodeURIComponent(vm.route.path || '');
-
-            if (currentPath.includes('个人创作')) {
-              if (sessionStorage.getItem('personal_unlocked') === 'true') {
-                if (authContentBox) authContentBox.style.display = 'block';
-                if (authScreen) {
-                  authScreen.style.display = 'none';
-                  authScreen.style.opacity = '0'; // 确保锁定态不可见
-                  authScreen.style.pointerEvents = 'none';
-                }
-              } else {
-                if (authContentBox) authContentBox.style.display = 'none';
-                if (authScreen) {
-                  authScreen.style.display = 'flex';
-                  // 👇 核心修改：如果是没密码的状态，延迟极小的一瞬间恢复透明度，避开浏览器的初始渲染闪烁
-                  requestAnimationFrame(() => {
-                    authScreen.style.opacity = '1';
-                    authScreen.style.pointerEvents = 'auto';
-                  });
-                  const pwdInput = document.getElementById('auth-input');
-                  if (pwdInput) pwdInput.value = '';
-                }
-              }
-            } else {
-              if (authContentBox) authContentBox.style.display = 'block';
-              if (authScreen) authScreen.style.display = 'none';
-            }
-
-            // === 3. 表格：完美包裹适配移动端 ===
-            var tables = document.querySelectorAll('.markdown-section table');
-            tables.forEach(function(table) {
-              if (!table.parentNode.classList.contains('table-wrapper')) {
-                var wrapper = document.createElement('div');
-                wrapper.className = 'table-wrapper';
-                table.parentNode.insertBefore(wrapper, table);
-                wrapper.appendChild(table);
-              }
-            });
-
-            // === 新增：修复 Prism 语法高亮类名断层与 Vue/C 语言二次渲染 ===
-            if (window.Prism) {
-              // 让 ```vue 代码块直接继承 HTML/Markup 混合高亮能力
-              if (!Prism.languages.vue) {
-                Prism.languages.vue = Prism.languages.markup;
-              }
-              document.querySelectorAll('.markdown-section pre[data-lang]').forEach(function(pre) {
-                var lang = pre.getAttribute('data-lang') || 'text';
-                pre.classList.add('language-' + lang);
-                var code = pre.querySelector('code');
-                if (code) {
-                  code.classList.add('language-' + lang);
-                  // 如果动态加载了语言包，确保重新分词染色
-                  if (Prism.languages[lang] && !code.querySelector('.token')) {
-                    Prism.highlightElement(code);
-                  }
-                }
-              });
-            }
-
-            // === 4. 页面内容滚动渐显特效 ===
-            var observer = new IntersectionObserver(function(entries, obs) {
-              entries.forEach(function(entry) {
-                if (entry.isIntersecting) {
-                  entry.target.classList.add('reveal-visible');
-                  obs.unobserve(entry.target);
-                }
-              });
-            }, {
-              rootMargin: "0px 0px 50px 0px",
-              threshold: 0
-            });
-
-            var elements = document.querySelectorAll('.markdown-section > p, .markdown-section > h2, .markdown-section > h3, .markdown-section > h4, .markdown-section > pre, .markdown-section > blockquote, .markdown-section > ul, .markdown-section > ol, .markdown-section > img, .markdown-section > .table-wrapper');
-            elements.forEach(function(el) { observer.observe(el); });
-
-            // === 5. 图片异步加载与 Viewer.js 初始化 ===
-            var viewerContentBox = document.querySelector('.markdown-section'); // 专属命名，彻底隔离
-            if (viewerContentBox) {
-              var images = viewerContentBox.querySelectorAll('img');
-              if (images.length > 0) {
-                var loadedCount = 0;
-
-                function initViewer() {
-                  if (viewerContentBox.viewer) viewerContentBox.viewer.destroy();
-                  new Viewer(viewerContentBox, {
-                    zoomable: true, movable: true, wheel: true, navbar: false, button: false,
-                    toolbar: { zoomIn: 1, zoomOut: 1, oneToOne: 1, reset: 1, prev: 0, play: 0, next: 0, rotateLeft: 0, rotateRight: 0, flipHorizontal: 0, flipVertical: 0 }
-                  });
-                }
-
-                images.forEach(function(img) {
-                  if (img.complete) {
-                    loadedCount++;
-                    if (loadedCount === images.length) initViewer();
-                  } else {
-                    img.addEventListener('load', function() { loadedCount++; if (loadedCount === images.length) initViewer(); });
-                    img.addEventListener('error', function() { loadedCount++; if (loadedCount === images.length) initViewer(); });
-                  }
+                // === 1. 全局自动修复加粗与代码块嵌套的 Bug ===
+                hook.beforeEach(function (content) {
+                    return content.replace(/\*\*\`(.*?)\`\*\*/g, '<strong><code>$1</code></strong>');
                 });
-              }
+
+                hook.doneEach(function () {
+
+                    // === 2. 路由判定与锁图标动态刷新 ===
+                    if (typeof window.updateSidebarLock === 'function') window.updateSidebarLock();
+
+                    const authScreen = document.getElementById('auth-screen');
+                    const authContentBox = document.querySelector('.markdown-section'); // 专属命名，防止冲突
+
+
+                    // 同时兼容匹配 '个人创作' 和你可能存在的英文文件夹名 'research'
+                    // 👇 核心修复：删掉害人的 '/research'，只认准“个人创作”这四个字！
+                    const currentPath = decodeURIComponent(vm.route.path || '');
+
+                    if (currentPath.includes('个人创作')) {
+                        if (sessionStorage.getItem('personal_unlocked') === 'true') {
+                            if (authContentBox) authContentBox.style.display = 'block';
+                            if (authScreen) {
+                                authScreen.style.display = 'none';
+                                authScreen.style.opacity = '0'; // 确保锁定态不可见
+                                authScreen.style.pointerEvents = 'none';
+                            }
+                        } else {
+                            if (authContentBox) authContentBox.style.display = 'none';
+                            if (authScreen) {
+                                authScreen.style.display = 'flex';
+                                // 👇 核心修改：如果是没密码的状态，延迟极小的一瞬间恢复透明度，避开浏览器的初始渲染闪烁
+                                requestAnimationFrame(() => {
+                                    authScreen.style.opacity = '1';
+                                    authScreen.style.pointerEvents = 'auto';
+                                });
+                                const pwdInput = document.getElementById('auth-input');
+                                if (pwdInput) pwdInput.value = '';
+                            }
+                        }
+                    } else {
+                        if (authContentBox) authContentBox.style.display = 'block';
+                        if (authScreen) authScreen.style.display = 'none';
+                    }
+
+                    // === 3. 表格：完美包裹适配移动端 ===
+                    var tables = document.querySelectorAll('.markdown-section table');
+                    tables.forEach(function (table) {
+                        if (!table.parentNode.classList.contains('table-wrapper')) {
+                            var wrapper = document.createElement('div');
+                            wrapper.className = 'table-wrapper';
+                            table.parentNode.insertBefore(wrapper, table);
+                            wrapper.appendChild(table);
+                        }
+                    });
+
+                    // === 新增：修复 Prism 语法高亮类名断层与 Vue/C 语言二次渲染 ===
+                    if (window.Prism) {
+                        // 让 ```vue 代码块直接继承 HTML/Markup 混合高亮能力
+                        if (!Prism.languages.vue) {
+                            Prism.languages.vue = Prism.languages.markup;
+                        }
+                        document.querySelectorAll('.markdown-section pre[data-lang]').forEach(function (pre) {
+                            var lang = pre.getAttribute('data-lang') || 'text';
+                            pre.classList.add('language-' + lang);
+                            var code = pre.querySelector('code');
+                            if (code) {
+                                code.classList.add('language-' + lang);
+                                // 如果动态加载了语言包，确保重新分词染色
+                                if (Prism.languages[lang] && !code.querySelector('.token')) {
+                                    Prism.highlightElement(code);
+                                }
+                            }
+                        });
+                    }
+
+                    // === 4. 页面内容滚动渐显特效 ===
+                    var observer = new IntersectionObserver(function (entries, obs) {
+                        entries.forEach(function (entry) {
+                            if (entry.isIntersecting) {
+                                entry.target.classList.add('reveal-visible');
+                                obs.unobserve(entry.target);
+                            }
+                        });
+                    }, {
+                        rootMargin: "0px 0px 50px 0px",
+                        threshold: 0
+                    });
+
+                    var elements = document.querySelectorAll('.markdown-section > p, .markdown-section > h2, .markdown-section > h3, .markdown-section > h4, .markdown-section > pre, .markdown-section > blockquote, .markdown-section > ul, .markdown-section > ol, .markdown-section > img, .markdown-section > .table-wrapper');
+                    elements.forEach(function (el) {
+                        observer.observe(el);
+                    });
+
+                    // === 5. 图片异步加载与 Viewer.js 初始化 ===
+                    var viewerContentBox = document.querySelector('.markdown-section'); // 专属命名，彻底隔离
+                    if (viewerContentBox) {
+                        var images = viewerContentBox.querySelectorAll('img:not([src^="data:image/gif"]):not([data-no-zoom])');
+                        if (images.length > 0) {
+                            var loadedCount = 0;
+
+                            function initViewer() {
+                                if (viewerContentBox.viewer) viewerContentBox.viewer.destroy();
+                                new Viewer(viewerContentBox, {
+                                    zoomable: true, movable: true, wheel: true, navbar: false, button: false,
+                                    toolbar: {
+                                        zoomIn: 1,
+                                        zoomOut: 1,
+                                        oneToOne: 1,
+                                        reset: 1,
+                                        prev: 0,
+                                        play: 0,
+                                        next: 0,
+                                        rotateLeft: 0,
+                                        rotateRight: 0,
+                                        flipHorizontal: 0,
+                                        flipVertical: 0
+                                    }
+                                });
+                            }
+
+                            images.forEach(function (img) {
+                                if (img.complete) {
+                                    loadedCount++;
+                                    if (loadedCount === images.length) initViewer();
+                                } else {
+                                    img.addEventListener('load', function () {
+                                        loadedCount++;
+                                        if (loadedCount === images.length) initViewer();
+                                    });
+                                    img.addEventListener('error', function () {
+                                        loadedCount++;
+                                        if (loadedCount === images.length) initViewer();
+                                    });
+                                }
+                            });
+                        }
+                    }
+                });
             }
-          });
-        }
-      ]
+        ]
     }
-  </script>
+</script>
 
 <!-- 必须加上这个插件，它能让 md 文件里内嵌的 script 标签生效 -->
 <script src="./js/external-script.min.js"></script>
@@ -1154,12 +1321,12 @@
 
 <!-- 1. 配置 MathJax：开启单美元符号 $ 和双美元符号 $$ 的强力识别 -->
 <script>
-  window.MathJax = {
-    tex: {
-      inlineMath: [['$', '$']],
-      displayMath: [['$$', '$$']]
-    }
-  };
+    window.MathJax = {
+        tex: {
+            inlineMath: [['$', '$']],
+            displayMath: [['$$', '$$']]
+        }
+    };
 </script>
 
 <!-- 2. 引入 MathJax 核心引擎 (自带样式，完美解析一切复杂 LaTeX) -->
@@ -1170,12 +1337,6 @@
 
 <!-- 5. 侧边栏折叠插件：让你的多级菜单可以点箭头展开/收起，保持页面清爽 -->
 <script src="./js/docsify-sidebar-collapse.min.js"></script>
-
-<!-- 6. Java 语法高亮扩展：让 Markdown 里的 Java 代码块显示出绚丽的高亮色彩 -->
-<script src="./js/prism-java.min.js"></script>
-
-<!-- 7. Bash 语法高亮扩展：同上，专门用来高亮 Linux 终端命令、Shell 脚本 -->
-<script src="./js/prism-bash.min.js"></script>
 
 <!-- 8. Viewer.js 高级图片查看器：点击文章里的图片时，实现类似相册的放大、旋转、全屏预览 -->
 <script src="./js/viewer.min.js"></script>
@@ -1189,7 +1350,6 @@
 <!-- 11. Spectral.js 色彩物理混合库：你用来模拟真实颜料混合（K-M 理论封装）的底层计算库 -->
 <script src="./js/spectral.min.js"></script>
 
-
 <!-- 6. 编程语言语法高亮扩展全家桶（注意：prism-c 必须在 cpp 之前引入） -->
 <script src="./js/prism-java.min.js"></script>
 <script src="./js/prism-bash.min.js"></script>
@@ -1200,53 +1360,51 @@
 <script src="./js/prism-json.js"></script>
 
 
-
-
 <!-- 👇 恢复：移动端侧边栏强制保持展开拦截脚本 👇 -->
 <script>
-  (function() {
-    document.addEventListener('click', function(e) {
-      if (window.innerWidth > 768) return;
+    (function () {
+        document.addEventListener('click', function (e) {
+            if (window.innerWidth > 768) return;
 
-      // 如果点的是悬浮小圆圈，正常放行
-      if (e.target.closest('.sidebar-toggle')) return;
+            // 如果点的是悬浮小圆圈，正常放行
+            if (e.target.closest('.sidebar-toggle')) return;
 
-      const isSidebarOpen = document.body.classList.contains('close');
+            const isSidebarOpen = document.body.classList.contains('close');
 
-      // 只要侧边栏是开着的，不管点什么，0.01秒后强行给它加回展开类名，死活不让它收缩
-      if (isSidebarOpen) {
-        setTimeout(function() {
-          document.body.classList.add('close');
-        }, 10);
-      }
-    }, true);
-  })();
+            // 只要侧边栏是开着的，不管点什么，0.01秒后强行给它加回展开类名，死活不让它收缩
+            if (isSidebarOpen) {
+                setTimeout(function () {
+                    document.body.classList.add('close');
+                }, 10);
+            }
+        }, true);
+    })();
 </script>
 
 <!-- 👇 修复：合并并清理唯一有效的跳转主站特效脚本 👇 -->
 <script>
-  document.addEventListener('click', function(e) {
-    // 兼容处理：检查点击的是否是我们自定义的 span，或者 Docsify 外层生成的标题容器
-    const trigger = e.target.closest('.reboot-trigger') || e.target.closest('.sidebar h1');
+    document.addEventListener('click', function (e) {
+        // 兼容处理：检查点击的是否是我们自定义的 span，或者 Docsify 外层生成的标题容器
+        const trigger = e.target.closest('.reboot-trigger') || e.target.closest('.sidebar h1');
 
-    if (trigger) {
-      // 阻止默认跳转行为
-      e.preventDefault();
+        if (trigger) {
+            // 阻止默认跳转行为
+            e.preventDefault();
 
-      // 把 appContainer 指向整个 body 节点
-      const appContainer = document.body;
+            // 把 appContainer 指向整个 body 节点
+            const appContainer = document.body;
 
-      // 1. 触发关机动画：瞬间压扁整个网页屏幕
-      appContainer.classList.remove('crt-turn-on');
-      appContainer.classList.add('crt-turn-off');
+            // 1. 触发关机动画：瞬间压扁整个网页屏幕
+            appContainer.classList.remove('crt-turn-on');
+            appContainer.classList.add('crt-turn-off');
 
-      // 2. 等待关机动画快结束、屏幕完全黑掉时（约 400ms），执行外部网页跳转
-      setTimeout(() => {
-        // 直接跳往主站域名
-        window.location.href = 'https://xn--udsye.art/';
-      }, 400);
-    }
-  });
+            // 2. 等待关机动画快结束、屏幕完全黑掉时（约 400ms），执行外部网页跳转
+            setTimeout(() => {
+                // 直接跳往主站域名
+                window.location.href = 'https://xn--udsye.art/';
+            }, 400);
+        }
+    });
 </script>
 </body>
 </html>
