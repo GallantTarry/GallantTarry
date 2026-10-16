@@ -311,14 +311,14 @@ HTML（HyperText Markup Language，超文本标记语言，现行标准为 **HTM
 .h5-path-sep{color:#64748b;font-size:11px;user-select:none;}
 .h5-grid{display:grid;grid-template-columns:1.15fr 1fr 1fr;gap:14px;margin-bottom:14px;}
 @media(max-width:860px){.h5-grid{grid-template-columns:1fr;}}
-.h5-panel{background:rgba(15,23,42,0.65);border:1px solid rgba(148,163,184,0.16);border-radius:10px;padding:12px;display:flex;flex-direction:column;gap:8px;}
+.h5-panel{background:rgba(15,23,42,0.65);border:1px solid rgba(148,163,184,0.16);border-radius:10px;padding:12px;display:flex;flex-direction:column;gap:8px;min-width:0;}
 .h5-panel-head{display:flex;justify-content:space-between;align-items:center;font-size:12px;font-weight:700;letter-spacing:0.4px;padding-bottom:8px;border-bottom:1px solid rgba(148,163,184,0.12);}
 .h5-tag-code{color:#fb923c;}
 .h5-tag-tree{color:#38bdf8;}
 .h5-tag-wire{color:#34d399;}
 .h5-sub{font-size:11px;color:#94a3b8;font-weight:400;}
-.h5-code-list{display:flex;flex-direction:column;gap:2.5px;font-family:"JetBrains Mono",Consolas,monospace;font-size:11.5px;}
-.h5-code-line{display:flex;align-items:center;padding:3px 7px;border-radius:6px;color:#94a3b8;transition:all 0.18s ease;cursor:pointer;}
+.h5-code-list{display:flex;flex-direction:column;gap:2.5px;font-family:"JetBrains Mono",Consolas,monospace;font-size:11.5px;overflow-x:auto;}
+.h5-code-line{display:flex;align-items:center;padding:3px 7px;border-radius:6px;color:#94a3b8;transition:all 0.18s ease;cursor:pointer;white-space:pre;}
 .h5-code-line:hover{background:rgba(148,163,184,0.08);}
 .h5-code-line.h5-line-active{background:rgba(249,115,22,0.18);color:#ffedd5;border-left:3px solid #f97316;font-weight:600;}
 .h5-ln{width:20px;color:#64748b;font-size:10.5px;user-select:none;flex-shrink:0;}
@@ -327,7 +327,7 @@ HTML（HyperText Markup Language，超文本标记语言，现行标准为 **HTM
 .h5-tnode{background:rgba(30,41,59,0.75);border:1px solid rgba(148,163,184,0.2);border-left:3px solid #38bdf8;border-radius:7px;padding:7px 9px;font-family:"JetBrains Mono",Consolas,monospace;font-size:12px;transition:all 0.22s ease;cursor:pointer;}
 .h5-tnode:hover{border-color:#38bdf8;}
 .h5-tnode.h5-tnode-hi{border-color:#fbbf24;border-left:3px solid #fbbf24;background:rgba(251,191,36,0.1);box-shadow:0 0 12px rgba(251,191,36,0.2);}
-.h5-tnode-row{display:flex;justify-content:space-between;align-items:center;gap:6px;}
+.h5-tnode-row{display:flex;justify-content:space-between;align-items:center;gap:6px;flex-wrap:wrap;}
 .h5-tnode-name{color:#f8fafc;font-weight:700;}
 .h5-tnode-badge{font-size:10.5px;padding:1px 6px;border-radius:4px;background:rgba(15,23,42,0.8);color:#38bdf8;border:1px solid rgba(56,189,248,0.25);}
 .h5-tnode-badge.h5-b-meta{color:#a78bfa;border-color:rgba(167,139,250,0.3);}
@@ -337,10 +337,10 @@ HTML（HyperText Markup Language，超文本标记语言，现行标准为 **HTM
 .h5-w-box{border:1px solid rgba(148,163,184,0.25);background:rgba(30,41,59,0.7);border-radius:6px;padding:7px 9px;cursor:pointer;transition:all 0.2s ease;position:relative;}
 .h5-w-box:hover{border-color:#34d399;background:rgba(52,211,153,0.08);}
 .h5-w-box.h5-w-active{border:1.5px solid #fbbf24;background:rgba(251,191,36,0.12);box-shadow:0 0 14px rgba(251,191,36,0.22);}
-.h5-w-head{display:flex;justify-content:space-between;align-items:center;font-family:"JetBrains Mono",Consolas,monospace;font-size:11.5px;font-weight:700;color:#e2e8f0;}
+.h5-w-head{display:flex;justify-content:space-between;align-items:center;font-family:"JetBrains Mono",Consolas,monospace;font-size:11.5px;font-weight:700;color:#e2e8f0;gap:4px;flex-wrap:wrap;}
 .h5-w-role{font-size:10px;font-weight:400;color:#94a3b8;background:rgba(15,23,42,0.75);padding:1px 5px;border-radius:4px;}
 .h5-w-sub{font-size:11px;color:#94a3b8;margin-top:3px;}
-.h5-w-main-grid{display:grid;grid-template-columns:1.6fr 1fr;gap:6px;margin-top:6px;}
+.h5-w-main-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:6px;margin-top:6px;}
 .h5-w-sec{margin-top:5px;padding:4px 6px;border-radius:4px;background:rgba(15,23,42,0.65);border:1px solid rgba(148,163,184,0.18);font-size:10.5px;color:#cbd5e1;font-family:"JetBrains Mono",Consolas,monospace;}
 .h5-meta-bar{background:rgba(15,23,42,0.8);border:1px solid rgba(148,163,184,0.18);border-radius:8px;padding:9px 12px;margin-bottom:12px;font-size:12px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
 .h5-meta-label{color:#94a3b8;font-weight:600;}
@@ -390,99 +390,99 @@ HTML（HyperText Markup Language，超文本标记语言，现行标准为 **HTM
 <script id="h5-script-src">
 (function(){
   var codeLines = [
-    {ln:1, text:"\x3c!DOCTYPE html\x3e", step:0},
-    {ln:2, text:"\x3chtml lang=\"zh-CN\"\x3e", step:0},
-    {ln:3, text:"\x3chead\x3e\x3cmeta charset=\"UTF-8\"\x3e\x3ctitle\x3e站点\x3c/title\x3e\x3c/head\x3e", step:0},
-    {ln:4, text:"\x3cbody\x3e", step:0},
-    {ln:5, text:"  \x3cheader\x3e", step:1},
-    {ln:6, text:"    \x3ch1\x3eLogo\x3c/h1\x3e \x3cnav\x3e\x3ca href=\"#\"\x3e首页\x3c/a\x3e\x3c/nav\x3e", step:1},
-    {ln:7, text:"  \x3c/header\x3e", step:1},
-    {ln:8, text:"  \x3cmain\x3e", step:2},
-    {ln:9, text:"    \x3carticle\x3e", step:3},
-    {ln:10, text:"      \x3ch2\x3e文章标题\x3c/h2\x3e\x3csection\x3e\x3cp\x3e正文...\x3c/p\x3e\x3c/section\x3e", step:3},
-    {ln:11, text:"    \x3c/article\x3e", step:3},
-    {ln:12, text:"    \x3caside\x3e\x3ch3\x3e目录与标签\x3c/h3\x3e\x3c/aside\x3e", step:4},
-    {ln:13, text:"  \x3c/main\x3e", step:2},
-    {ln:14, text:"  \x3cfooter\x3e\x3cp\x3e&copy; 2026 版权信息\x3c/p\x3e\x3c/footer\x3e", step:5},
-    {ln:15, text:"\x3c/body\x3e\x3c/html\x3e", step:0}
+    {ln:1, text:"&lt;!DOCTYPE html&gt;", step:0},
+    {ln:2, text:"&lt;html lang=\"zh-CN\"&gt;", step:0},
+    {ln:3, text:"&lt;head&gt;&lt;meta charset=\"UTF-8\"&gt;&lt;title&gt;站点&lt;/title&gt;&lt;/head&gt;", step:0},
+    {ln:4, text:"&lt;body&gt;", step:0},
+    {ln:5, text:"  &lt;header&gt;", step:1},
+    {ln:6, text:"    &lt;h1&gt;Logo&lt;/h1&gt; &lt;nav&gt;&lt;a href=\"#\"&gt;首页&lt;/a&gt;&lt;/nav&gt;", step:1},
+    {ln:7, text:"  &lt;/header&gt;", step:1},
+    {ln:8, text:"  &lt;main&gt;", step:2},
+    {ln:9, text:"    &lt;article&gt;", step:3},
+    {ln:10, text:"      &lt;h2&gt;文章标题&lt;/h2&gt;&lt;section&gt;&lt;p&gt;正文...&lt;/p&gt;&lt;/section&gt;", step:3},
+    {ln:11, text:"    &lt;/article&gt;", step:3},
+    {ln:12, text:"    &lt;aside&gt;&lt;h3&gt;目录与标签&lt;/h3&gt;&lt;/aside&gt;", step:4},
+    {ln:13, text:"  &lt;/main&gt;", step:2},
+    {ln:14, text:"  &lt;footer&gt;&lt;p&gt;&amp;copy; 2026 版权信息&lt;/p&gt;&lt;/footer&gt;", step:5},
+    {ln:15, text:"&lt;/body&gt;&lt;/html&gt;", step:0}
   ];
   var stages = [
     {
-      title:"1. 文档根节点与元数据区 (\x3chtml\x3e / \x3chead\x3e / \x3cbody\x3e)",
+      title:"1. 文档根节点与元数据区 (<html> / <head> / <body>)",
       badge:"Document Root · 元数据与容器",
       path:["Document","html (lang=zh-CN)","head + body"],
       metas:["DOM 接口: HTMLHtmlElement / HTMLHeadElement","head 默认样式: display: none (不可见)","body 默认样式: display: block"],
       desc:"浏览器解析 HTML 时首先识别 !DOCTYPE html 以启用标准渲染模式。html 是整棵 DOM 树的根元素（document.documentElement），其下分出两个直接子节点：head 负责提供给浏览器和搜索引擎的字符集、视口与标题元数据（不在页面渲染）；body 则承载所有可见视图节点。",
       tree:[
         {indent:0, name:"Document", badge:"Root Node", bCls:"", desc:"浏览器文档对象模型顶层入口", hi:false, step:0},
-        {indent:1, name:"\x3chtml lang=\"zh-CN\"\x3e", badge:"Element", bCls:"", desc:"根元素 · 包含 head 与 body 两个子分支", hi:true, step:0},
-        {indent:2, name:"\x3chead\x3e", badge:"Metadata (display:none)", bCls:"h5-b-meta", desc:"子节点: \x3cmeta charset=\"UTF-8\"\x3e, \x3ctitle\x3e", hi:true, step:0},
-        {indent:2, name:"\x3cbody\x3e", badge:"Viewport Root (block)", bCls:"h5-b-leaf", desc:"可见视图根节点 · 挂载 header / main / footer", hi:true, step:0}
+        {indent:1, name:"&lt;html lang=\"zh-CN\"&gt;", badge:"Element", bCls:"", desc:"根元素 · 包含 head 与 body 两个子分支", hi:true, step:0},
+        {indent:2, name:"&lt;head&gt;", badge:"Metadata (display:none)", bCls:"h5-b-meta", desc:"子节点: &lt;meta charset=\"UTF-8\"&gt;, &lt;title&gt;", hi:true, step:0},
+        {indent:2, name:"&lt;body&gt;", badge:"Viewport Root (block)", bCls:"h5-b-leaf", desc:"可见视图根节点 · 挂载 header / main / footer", hi:true, step:0}
       ]
     },
     {
-      title:"2. 顶部通栏与核心导航 (\x3cheader\x3e + \x3cnav\x3e)",
+      title:"2. 顶部通栏与核心导航 (<header> + <nav>)",
       badge:"ARIA Landmark: banner / navigation",
       path:["Document","html","body","header","h1 + nav"],
       metas:["盒模型: display: block (独占一行)","无障碍角色: role=\"banner\" & role=\"navigation\"","SEO 权重: h1 主标题 + 核心站点内链"],
-      desc:"\x3cheader\x3e 用于定义页面或章节的引导性头部区域，通常包含站点主标题 \x3ch1\x3e 与主导航 \x3cnav\x3e。\x3cnav\x3e 专用于包裹核心导航链接组（如顶部菜单、侧边目录），屏幕阅读器可据此直接提取页面导航快捷跳转列表。",
+      desc:"<header> 用于定义页面或章节的引导性头部区域，通常包含站点主标题 <h1> 与主导航 <nav>。<nav> 专用于包裹核心导航链接组（如顶部菜单、侧边目录），屏幕阅读器可据此直接提取页面导航快捷跳转列表。",
       tree:[
-        {indent:0, name:"\x3cbody\x3e", badge:"Parent", bCls:"", desc:"包含 3 个顶层语义子区块", hi:false, step:0},
-        {indent:1, name:"\x3cheader\x3e", badge:"Landmark: banner", bCls:"", desc:"页面顶部区域 (body 的第 1 个子元素)", hi:true, step:1},
-        {indent:2, name:"\x3ch1\x3e\"Logo\"\x3c/h1\x3e", badge:"Heading Level 1", bCls:"h5-b-leaf", desc:"包含 TextNode 文本节点 · 页面最高权重标题", hi:true, step:1},
-        {indent:2, name:"\x3cnav\x3e ➔ \x3ca href=\"#\"\x3e", badge:"Landmark: navigation", bCls:"h5-b-leaf", desc:"导航容器与行内超链接节点 (inline)", hi:true, step:1}
+        {indent:0, name:"&lt;body&gt;", badge:"Parent", bCls:"", desc:"包含 3 个顶层语义子区块", hi:false, step:0},
+        {indent:1, name:"&lt;header&gt;", badge:"Landmark: banner", bCls:"", desc:"页面顶部区域 (body 的第 1 个子元素)", hi:true, step:1},
+        {indent:2, name:"&lt;h1&gt;\"Logo\"&lt;/h1&gt;", badge:"Heading Level 1", bCls:"h5-b-leaf", desc:"包含 TextNode 文本节点 · 页面最高权重标题", hi:true, step:1},
+        {indent:2, name:"&lt;nav&gt; ➔ &lt;a href=\"#\"&gt;", badge:"Landmark: navigation", bCls:"h5-b-leaf", desc:"导航容器与行内超链接节点 (inline)", hi:true, step:1}
       ]
     },
     {
-      title:"3. 页面唯一核心主体区 (\x3cmain\x3e)",
+      title:"3. 页面唯一核心主体区 (<main>)",
       badge:"ARIA Landmark: main (全局唯一)",
       path:["Document","html","body","main","article + aside"],
       metas:["盒模型: display: block","无障碍角色: role=\"main\" (Skip-to-content 锚点)","语法约束: 每个页面仅限出现 1 个可见 main"],
-      desc:"\x3cmain\x3e 代表当前文档独一无二的核心主体内容（排除跨页面重复的顶部导航栏、版权页脚等）。一个 HTML 文档中绝不能出现多个可见的 \x3cmain\x3e 标签，它是无障碍辅助技术“跳过导航直达正文”的核心定位点。",
+      desc:"<main> 代表当前文档独一无二的核心主体内容（排除跨页面重复的顶部导航栏、版权页脚等）。一个 HTML 文档中绝不能出现多个可见的 <main> 标签，它是无障碍辅助技术“跳过导航直达正文”的核心定位点。",
       tree:[
-        {indent:0, name:"\x3cbody\x3e", badge:"Parent", bCls:"", desc:"父级容器", hi:false, step:0},
-        {indent:1, name:"\x3cheader\x3e ... \x3c/header\x3e", badge:"prevElementSibling", bCls:"h5-b-meta", desc:"前一个兄弟节点", hi:false, step:1},
-        {indent:1, name:"\x3cmain\x3e", badge:"Landmark: main", bCls:"", desc:"核心内容容器 · 统筹正文 article 与侧栏 aside", hi:true, step:2},
-        {indent:2, name:"Children: [\x3carticle\x3e, \x3caside\x3e]", badge:"2 Child Elements", bCls:"h5-b-leaf", desc:"点击下方子区块可继续向下钻取 DOM 树", hi:true, step:3}
+        {indent:0, name:"&lt;body&gt;", badge:"Parent", bCls:"", desc:"父级容器", hi:false, step:0},
+        {indent:1, name:"&lt;header&gt; ... &lt;/header&gt;", badge:"prevElementSibling", bCls:"h5-b-meta", desc:"前一个兄弟节点", hi:false, step:1},
+        {indent:1, name:"&lt;main&gt;", badge:"Landmark: main", bCls:"", desc:"核心内容容器 · 统筹正文 article 与侧栏 aside", hi:true, step:2},
+        {indent:2, name:"Children: [&lt;article&gt;, &lt;aside&gt;]", badge:"2 Child Elements", bCls:"h5-b-leaf", desc:"点击下方子区块可继续向下钻取 DOM 树", hi:true, step:3}
       ]
     },
     {
-      title:"4. 独立文章与主题章节 (\x3carticle\x3e + \x3csection\x3e)",
+      title:"4. 独立文章与主题章节 (<article> + <section>)",
       badge:"ARIA Role: article / region",
       path:["Document","html","body","main","article","h2 + section"],
-      metas:["盒模型: display: block","核心区别: article 可独立分发，section 按主题分节","嵌套禁忌: \x3cp\x3e 段落内严禁嵌套 \x3cdiv\x3e 或 \x3csection\x3e"],
-      desc:"\x3carticle\x3e 表示一段独立完整、可单独抽离分发的内容块（如博客正文、新闻报道、论坛帖子）；\x3csection\x3e 则用于将内容按主题划分为多个章节（通常内部包含 \x3ch2\x3e/\x3ch3\x3e 标题）。若仅为了挂载 CSS 样式而无语义主题，应使用 \x3cdiv\x3e。",
+      metas:["盒模型: display: block","核心区别: article 可独立分发，section 按主题分节","嵌套禁忌: &lt;p&gt; 段落内严禁嵌套 &lt;div&gt; 或 &lt;section&gt;"],
+      desc:"<article> 表示一段独立完整、可单独抽离分发的内容块（如博客正文、新闻报道、论坛帖子）；<section> 则用于将内容按主题划分为多个章节（通常内部包含 <h2>/<h3> 标题）。若仅为了挂载 CSS 样式而无语义主题，应使用 <div>。",
       tree:[
-        {indent:0, name:"\x3cmain\x3e", badge:"Parent", bCls:"", desc:"主体容器", hi:false, step:2},
-        {indent:1, name:"\x3carticle\x3e", badge:"Self-contained", bCls:"", desc:"独立完整文章节点 (main.firstElementChild)", hi:true, step:3},
-        {indent:2, name:"\x3ch2\x3e\"文章标题\"\x3c/h2\x3e", badge:"Heading Level 2", bCls:"h5-b-meta", desc:"文章主标题节点", hi:true, step:3},
-        {indent:2, name:"\x3csection\x3e ➔ \x3cp\x3e\"正文...\"\x3c/p\x3e", badge:"Thematic Section", bCls:"h5-b-leaf", desc:"主题章节容器与段落叶子节点", hi:true, step:3}
+        {indent:0, name:"&lt;main&gt;", badge:"Parent", bCls:"", desc:"主体容器", hi:false, step:2},
+        {indent:1, name:"&lt;article&gt;", badge:"Self-contained", bCls:"", desc:"独立完整文章节点 (main.firstElementChild)", hi:true, step:3},
+        {indent:2, name:"&lt;h2&gt;\"文章标题\"&lt;/h2&gt;", badge:"Heading Level 2", bCls:"h5-b-meta", desc:"文章主标题节点", hi:true, step:3},
+        {indent:2, name:"&lt;section&gt; ➔ &lt;p&gt;\"正文...\"&lt;/p&gt;", badge:"Thematic Section", bCls:"h5-b-leaf", desc:"主题章节容器与段落叶子节点", hi:true, step:3}
       ]
     },
     {
-      title:"5. 侧边辅助信息栏 (\x3caside\x3e)",
+      title:"5. 侧边辅助信息栏 (<aside>)",
       badge:"ARIA Landmark: complementary",
       path:["Document","html","body","main","aside","h3"],
       metas:["盒模型: display: block (常配合 Flex/Grid 并排)","无障碍角色: role=\"complementary\"","典型用途: 文章目录树 (TOC)、标签云、相关推荐"],
-      desc:"\x3caside\x3e 用于承载与主内容间接相关的辅助信息。在 DOM 树中它与 \x3carticle\x3e 互为兄弟节点（Sibling），在视觉布局上通常借助 CSS Flexbox 或 Grid 排布在主文章的右侧或左侧。",
+      desc:"<aside> 用于承载与主内容间接相关的辅助信息。在 DOM 树中它与 <article> 互为兄弟节点（Sibling），在视觉布局上通常借助 CSS Flexbox 或 Grid 排布在主文章的右侧或左侧。",
       tree:[
-        {indent:0, name:"\x3cmain\x3e", badge:"Parent", bCls:"", desc:"主体容器", hi:false, step:2},
-        {indent:1, name:"\x3carticle\x3e ... \x3c/article\x3e", badge:"prevElementSibling", bCls:"h5-b-meta", desc:"左侧主文章兄弟节点", hi:false, step:3},
-        {indent:1, name:"\x3caside\x3e", badge:"Landmark: complementary", bCls:"", desc:"侧边辅助栏节点 (main.lastElementChild)", hi:true, step:4},
-        {indent:2, name:"\x3ch3\x3e\"目录与标签\"\x3c/h3\x3e", badge:"Heading Level 3", bCls:"h5-b-leaf", desc:"侧边栏小标题与目录列表节点", hi:true, step:4}
+        {indent:0, name:"&lt;main&gt;", badge:"Parent", bCls:"", desc:"主体容器", hi:false, step:2},
+        {indent:1, name:"&lt;article&gt; ... &lt;/article&gt;", badge:"prevElementSibling", bCls:"h5-b-meta", desc:"左侧主文章兄弟节点", hi:false, step:3},
+        {indent:1, name:"&lt;aside&gt;", badge:"Landmark: complementary", bCls:"", desc:"侧边辅助栏节点 (main.lastElementChild)", hi:true, step:4},
+        {indent:2, name:"&lt;h3&gt;\"目录与标签\"&lt;/h3&gt;", badge:"Heading Level 3", bCls:"h5-b-leaf", desc:"侧边栏小标题与目录列表节点", hi:true, step:4}
       ]
     },
     {
-      title:"6. 页面底部版权与备案区 (\x3cfooter\x3e)",
+      title:"6. 页面底部版权与备案区 (<footer>)",
       badge:"ARIA Landmark: contentinfo",
       path:["Document","html","body","footer","p (&copy;)"],
-      metas:["盒模型: display: block","无障碍角色: role=\"contentinfo\"","字符实体: &copy; 渲染为 © 版权符号"],
-      desc:"\x3cfooter\x3e 位于 \x3cbody\x3e 末尾（或某个 \x3carticle\x3e 底部），用于存放版权声明（使用字符实体 &copy;）、开源协议、备案号及联系方式。它与 \x3cheader\x3e、\x3cmain\x3e 共同构成清晰的三段式文档大纲。",
+      metas:["盒模型: display: block","无障碍角色: role=\"contentinfo\"","字符实体: &amp;copy; 渲染为 © 版权符号"],
+      desc:"<footer> 位于 <body> 末尾（或某个 <article> 底部），用于存放版权声明（使用字符实体 &copy;）、开源协议、备案号及联系方式。它与 <header>、<main> 共同构成清晰的三段式文档大纲。",
       tree:[
-        {indent:0, name:"\x3cbody\x3e", badge:"Parent", bCls:"", desc:"可见视图根节点", hi:false, step:0},
-        {indent:1, name:"\x3cmain\x3e ... \x3c/main\x3e", badge:"prevElementSibling", bCls:"h5-b-meta", desc:"上方主体区域兄弟节点", hi:false, step:2},
-        {indent:1, name:"\x3cfooter\x3e", badge:"Landmark: contentinfo", bCls:"", desc:"页面尾部节点 (body.lastElementChild)", hi:true, step:5},
-        {indent:2, name:"\x3cp\x3e\"© 2026 版权信息\"\x3c/p\x3e", badge:"Text + Entity", bCls:"h5-b-leaf", desc:"解析字符实体 &copy; 为文本节点", hi:true, step:5}
+        {indent:0, name:"&lt;body&gt;", badge:"Parent", bCls:"", desc:"可见视图根节点", hi:false, step:0},
+        {indent:1, name:"&lt;main&gt; ... &lt;/main&gt;", badge:"prevElementSibling", bCls:"h5-b-meta", desc:"上方主体区域兄弟节点", hi:false, step:2},
+        {indent:1, name:"&lt;footer&gt;", badge:"Landmark: contentinfo", bCls:"", desc:"页面尾部节点 (body.lastElementChild)", hi:true, step:5},
+        {indent:2, name:"&lt;p&gt;\"© 2026 版权信息\"&lt;/p&gt;", badge:"Text + Entity", bCls:"h5-b-leaf", desc:"解析字符实体 &amp;copy; 为文本节点", hi:true, step:5}
       ]
     }
   ];
@@ -524,23 +524,23 @@ HTML（HyperText Markup Language，超文本标记语言，现行标准为 **HTM
     document.getElementById("h5-tree-box").innerHTML = treeHtml;
     var wireHtml = "";
     wireHtml += "\x3cdiv class=\"h5-w-box"+(idx===0?" h5-w-active":"")+"\" onclick=\"window.__h5Go(0,event)\"\x3e";
-    wireHtml += "\x3cdiv class=\"h5-w-head\"\x3e\x3cspan\x3e\x3chtml\x3e ➔ \x3cbody\x3e 文档视口容器\x3c/span\x3e\x3cspan class=\"h5-w-role\"\x3e\x3chead\x3e 元数据已隐藏\x3c/span\x3e\x3c/div\x3e\x3c/div\x3e";
+    wireHtml += "\x3cdiv class=\"h5-w-head\"\x3e\x3cspan\x3e&lt;html&gt; ➔ &lt;body&gt; 文档视口容器\x3c/span\x3e\x3cspan class=\"h5-w-role\"\x3e&lt;head&gt; 元数据已隐藏\x3c/span\x3e\x3c/div\x3e\x3c/div\x3e";
     wireHtml += "\x3cdiv class=\"h5-w-box"+(idx===1?" h5-w-active":"")+"\" onclick=\"window.__h5Go(1,event)\"\x3e";
-    wireHtml += "\x3cdiv class=\"h5-w-head\"\x3e\x3cspan\x3e\x3cheader\x3e 顶部通栏\x3c/span\x3e\x3cspan class=\"h5-w-role\"\x3ebanner + \x3cnav\x3e\x3c/span\x3e\x3c/div\x3e";
-    wireHtml += "\x3cdiv class=\"h5-w-sub\"\x3e[\x3ch1\x3e Logo] ── [\x3cnav\x3e 首页 | 归档 | 关于]\x3c/div\x3e\x3c/div\x3e";
+    wireHtml += "\x3cdiv class=\"h5-w-head\"\x3e\x3cspan\x3e&lt;header&gt; 顶部通栏\x3c/span\x3e\x3cspan class=\"h5-w-role\"\x3ebanner + &lt;nav&gt;\x3c/span\x3e\x3c/div\x3e";
+    wireHtml += "\x3cdiv class=\"h5-w-sub\"\x3e[&lt;h1&gt; Logo] ── [&lt;nav&gt; 首页 | 归档 | 关于]\x3c/div\x3e\x3c/div\x3e";
     wireHtml += "\x3cdiv class=\"h5-w-box"+(idx===2?" h5-w-active":"")+"\" onclick=\"window.__h5Go(2,event)\"\x3e";
-    wireHtml += "\x3cdiv class=\"h5-w-head\"\x3e\x3cspan\x3e\x3cmain\x3e 核心主体容器\x3c/span\x3e\x3cspan class=\"h5-w-role\"\x3erole=\"main\"\x3c/span\x3e\x3c/div\x3e";
+    wireHtml += "\x3cdiv class=\"h5-w-head\"\x3e\x3cspan\x3e&lt;main&gt; 核心主体容器\x3c/span\x3e\x3cspan class=\"h5-w-role\"\x3erole=\"main\"\x3c/span\x3e\x3c/div\x3e";
     wireHtml += "\x3cdiv class=\"h5-w-main-grid\"\x3e";
     wireHtml += "\x3cdiv class=\"h5-w-box"+(idx===3?" h5-w-active":"")+"\" onclick=\"window.__h5Go(3,event)\"\x3e";
-    wireHtml += "\x3cdiv class=\"h5-w-head\"\x3e\x3cspan\x3e\x3carticle\x3e\x3c/span\x3e\x3cspan class=\"h5-w-role\"\x3e独立文章\x3c/span\x3e\x3c/div\x3e";
-    wireHtml += "\x3cdiv class=\"h5-w-sec\"\x3e\x3ch2\x3e 标题 + \x3csection\x3e 章节段落\x3c/div\x3e\x3c/div\x3e";
+    wireHtml += "\x3cdiv class=\"h5-w-head\"\x3e\x3cspan\x3e&lt;article&gt;\x3c/span\x3e\x3cspan class=\"h5-w-role\"\x3e独立文章\x3c/span\x3e\x3c/div\x3e";
+    wireHtml += "\x3cdiv class=\"h5-w-sec\"\x3e&lt;h2&gt; 标题 + &lt;section&gt; 章节段落\x3c/div\x3e\x3c/div\x3e";
     wireHtml += "\x3cdiv class=\"h5-w-box"+(idx===4?" h5-w-active":"")+"\" onclick=\"window.__h5Go(4,event)\"\x3e";
-    wireHtml += "\x3cdiv class=\"h5-w-head\"\x3e\x3cspan\x3e\x3caside\x3e\x3c/span\x3e\x3cspan class=\"h5-w-role\"\x3e侧边栏\x3c/span\x3e\x3c/div\x3e";
+    wireHtml += "\x3cdiv class=\"h5-w-head\"\x3e\x3cspan\x3e&lt;aside&gt;\x3c/span\x3e\x3cspan class=\"h5-w-role\"\x3e侧边栏\x3c/span\x3e\x3c/div\x3e";
     wireHtml += "\x3cdiv class=\"h5-w-sec\"\x3eTOC 目录 / 标签云\x3c/div\x3e\x3c/div\x3e";
     wireHtml += "\x3c/div\x3e\x3c/div\x3e";
     wireHtml += "\x3cdiv class=\"h5-w-box"+(idx===5?" h5-w-active":"")+"\" onclick=\"window.__h5Go(5,event)\"\x3e";
-    wireHtml += "\x3cdiv class=\"h5-w-head\"\x3e\x3cspan\x3e\x3cfooter\x3e 页面底部页脚\x3c/span\x3e\x3cspan class=\"h5-w-role\"\x3econtentinfo\x3c/span\x3e\x3c/div\x3e";
-    wireHtml += "\x3cdiv class=\"h5-w-sub\"\x3e\x3cp\x3e © 2026 版权信息与备案号\x3c/div\x3e\x3c/div\x3e";
+    wireHtml += "\x3cdiv class=\"h5-w-head\"\x3e\x3cspan\x3e&lt;footer&gt; 页面底部页脚\x3c/span\x3e\x3cspan class=\"h5-w-role\"\x3econtentinfo\x3c/span\x3e\x3c/div\x3e";
+    wireHtml += "\x3cdiv class=\"h5-w-sub\"\x3e&lt;p&gt; © 2026 版权信息与备案号\x3c/div\x3e\x3c/div\x3e";
     document.getElementById("h5-wire-box").innerHTML = wireHtml;
     var metaHtml = "\x3cspan class=\"h5-meta-label\"\x3e节点属性与规范：\x3c/span\x3e";
     for(var m=0; m!==st.metas.length; m++){
