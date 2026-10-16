@@ -1,4 +1,4 @@
-# vue基础语法
+# Vue.js基础语法
 
 
 Vue（目前主流标准为 **Vue 3 组合式 API / Composition API**）是一套用于构建用户界面的渐进式前端框架。它的核心设计理念是**声明式渲染（Declarative Rendering）**与**细粒度响应式系统（Reactivity System）**——开发者只需维护数据状态（State），视图（DOM）会在数据变化时自动同步更新。

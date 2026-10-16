@@ -435,19 +435,69 @@
       border: 1px solid rgba(255,255,255,0.05) !important;
     }
 
+    /* ====== 代码块与 VS Code Dark+ 满血语法高亮修复 ====== */
     .markdown-section pre {
-      background-color: #0d0d0f !important; 
+      position: relative;
+      background-color: #0d0d0f !important;
       border: 1px solid var(--border-color) !important;
       border-radius: 12px !important;
-      padding: 20px !important;
+      padding: 38px 20px 20px 20px !important; /* 顶部留出语言标签空间 */
       margin: 24px 0;
+      overflow-x: auto;
     }
+
+    /* 左上角自动显示语言名称角标 (如 JAVA / C / GO / PYTHON) */
+    .markdown-section pre[data-lang]::before {
+      content: attr(data-lang);
+      position: absolute;
+      top: 8px;
+      left: 16px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--theme-color);
+      font-family: 'JetBrains Mono', Consolas, monospace;
+      opacity: 0.85;
+    }
+
     .markdown-section pre code {
-      background-color: transparent !important; 
+      background-color: transparent !important;
       border: none !important;
       padding: 0 !important;
-      color: #d4d4d8 !important; 
+      color: #9cdcfe !important; /* 默认变量名采用 VS Code 浅晶蓝，不再是一片惨白 */
+      font-family: 'JetBrains Mono', Consolas, 'Courier New', monospace !important;
+      font-size: 14px !important;
+      line-height: 1.65 !important;
     }
+
+    /* 强制覆盖 vue.css 的残缺 Token 颜色，还原正宗 VS Code Dark+ 层次感 */
+    .markdown-section pre .token.comment,
+    .markdown-section pre .token.prolog,
+    .markdown-section pre .token.doctype { color: #6a9955 !important; font-style: italic; }
+    .markdown-section pre .token.keyword,
+    .markdown-section pre .token.boolean,
+    .markdown-section pre .token.null { color: #569cd6 !important; font-weight: 600; }
+    .markdown-section pre .token.control,
+    .markdown-section pre .token.directive,
+    .markdown-section pre .token.important,
+    .markdown-section pre .token.atrule { color: #c586c0 !important; } /* return/if/#include/@Override 紫粉色 */
+    .markdown-section pre .token.string,
+    .markdown-section pre .token.char,
+    .markdown-section pre .token.attr-value { color: #ce9178 !important; } /* 字符串暖橙色 */
+    .markdown-section pre .token.number { color: #b5cea8 !important; } /* 数字浅豆绿 */
+    .markdown-section pre .token.function,
+    .markdown-section pre .token.method { color: #dcdcaa !important; } /* 函数与方法调用明黄色 */
+    .markdown-section pre .token.class-name,
+    .markdown-section pre .token.builtin,
+    .markdown-section pre .token.type-definition { color: #4ec9b0 !important; } /* 类名/结构体/类型青翠色 */
+    .markdown-section pre .token.annotation,
+    .markdown-section pre .token.decorator,
+    .markdown-section pre .token.macro { color: #dcdcaa !important; } /* Java 注解 / Python 装饰器 */
+    .markdown-section pre .token.operator,
+    .markdown-section pre .token.punctuation { color: #d4d4d4 !important; background: transparent !important; }
+    .markdown-section pre .token.tag { color: #569cd6 !important; }
+    .markdown-section pre .token.attr-name { color: #9cdcfe !important; }
 
     /* ========================================= */
     /* ====== 5. 表格：完美包裹适配移动端 ====== */
@@ -896,6 +946,19 @@
     if (e.key === 'Enter') checkPassword();
   });
 
+  window.updateSidebarLock = function() {
+    const isUnlocked = sessionStorage.getItem('personal_unlocked') === 'true';
+    document.querySelectorAll('.sidebar-nav li').forEach(function(li) {
+      if (li.innerHTML.includes('个人创作')) {
+        if (isUnlocked) {
+          li.innerHTML = li.innerHTML.replace(/🔒/g, '🔓');
+        } else {
+          li.innerHTML = li.innerHTML.replace(/🔓/g, '🔒');
+        }
+      }
+    });
+  };
+
   function checkPassword() {
     const input = document.getElementById('auth-input').value;
     const errorMsg = document.getElementById('auth-error');
@@ -1007,6 +1070,26 @@
               }
             });
 
+            // === 新增：修复 Prism 语法高亮类名断层与 Vue/C 语言二次渲染 ===
+            if (window.Prism) {
+              // 让 ```vue 代码块直接继承 HTML/Markup 混合高亮能力
+              if (!Prism.languages.vue) {
+                Prism.languages.vue = Prism.languages.markup;
+              }
+              document.querySelectorAll('.markdown-section pre[data-lang]').forEach(function(pre) {
+                var lang = pre.getAttribute('data-lang') || 'text';
+                pre.classList.add('language-' + lang);
+                var code = pre.querySelector('code');
+                if (code) {
+                  code.classList.add('language-' + lang);
+                  // 如果动态加载了语言包，确保重新分词染色
+                  if (Prism.languages[lang] && !code.querySelector('.token')) {
+                    Prism.highlightElement(code);
+                  }
+                }
+              });
+            }
+
             // === 4. 页面内容滚动渐显特效 ===
             var observer = new IntersectionObserver(function(entries, obs) {
               entries.forEach(function(entry) {
@@ -1105,6 +1188,19 @@
 
 <!-- 11. Spectral.js 色彩物理混合库：你用来模拟真实颜料混合（K-M 理论封装）的底层计算库 -->
 <script src="./js/spectral.min.js"></script>
+
+
+<!-- 6. 编程语言语法高亮扩展全家桶（注意：prism-c 必须在 cpp 之前引入） -->
+<script src="./js/prism-java.min.js"></script>
+<script src="./js/prism-bash.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-c.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-go.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-python.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-sql.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-json.min.js"></script>
+
+
+
 
 <!-- 👇 恢复：移动端侧边栏强制保持展开拦截脚本 👇 -->
 <script>
