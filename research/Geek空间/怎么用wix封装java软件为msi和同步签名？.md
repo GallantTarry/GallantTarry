@@ -63,22 +63,36 @@ jpackage --type app-image --name ToolKit --app-version 1.9.6 --input "C:\Users\w
 
 这个时候复制粘贴是不行的，需要强行将锁住的文件另存为一个新文件，假设文件在我刚刚应用镜像目录里面也就是C:\Users\w1961\Desktop\image_out\ToolKit\ToolKit.exe
 这个文件，我们通过管理员命令
+
+> 👇在桌面生成复件指令如下
+
 ```cmd
 copy "C:\Users\w1961\Desktop\image_out\ToolKit\ToolKit.exe" "C:\Users\w1961\Desktop\ToolKit_temp.exe"
 ```
-这时候你的桌面就会多一个ToolKit_temp.exe，这个时候再改名，然后签名，然后替换进去就行了。
+
+> 👇这时候你的桌面就会多一个ToolKit_temp.exe，这个时候再改名，然后签名，然后替换进去就行了。
+
 ```cmd
 "C:\Program Files (x86)\Windows Kits\10\bin\10.0.26100.0\x64\signtool.exe" sign /f "C:\Users\w1961\Desktop\tukuai.pfx" /p "574185" /tr "http://timestamp.digicert.com" /td sha256 /fd sha256 "C:\Users\w1961\Desktop\ToolKit.exe"
 
 ```
-输入上面的代码对桌面的运行文件进行签名，然后替换。那么现在进行打包，准备好软件图标ico，因为我把ico在编译时放到了wixtest里面，那么app里面确实是有一个ico的，这是很不好的重复，那么这个时候您就可以把app里面的ico放到桌面上，输入以下代码。
+
+> 👇那么现在进行打包，准备好软件图标ico，因为我把ico在编译时放到了wixtest里面，那么app里面确实是有一个ico的，这是很不好的重复，那么这个时候您就可以把app里面的ico放到桌面上，输入以下代码。
+
 ```IDE
 jpackage --type msi --app-image "C:\Users\w1961\Desktop\image_out\ToolKit" --name ToolKit --app-version 1.9.6 --dest "C:\Users\w1961\Desktop" --icon "C:\Users\w1961\Desktop\logo.ico" --win-dir-chooser --win-shortcut --win-menu
 ```
 
-这行指令的意思是：**使用 `jpackage` 工具，将你刚才生成的免安装目录（App Image）直接封装并打包成一个标准的 Windows `.msi` 安装包。**
 
-  
+> 临时插入我在1.9.7版本打包的的心得，里面附加一句--vendor "土块"，控制面板才会出现作者是土块，这和软件本身的自签名没什么关系。  在最后加上 --verbose可以查看详细输出日志
+
+```
+jpackage --type msi --app-image "C:\Users\w1961\Desktop\image_out\ToolKit" --name ToolKit --app-version 1.9.7 --dest "C:\Users\w1961\Desktop" --icon "C:\Users\w1961\Desktop\logo.ico" --vendor "土块"  --win-dir-chooser --win-shortcut --win-menu --verbose 
+```
+
+
+
+这行指令的意思是：**使用 `jpackage` 工具，将你刚才生成的免安装目录（App Image）直接封装并打包成一个标准的 Windows `.msi` 安装包。**
 
 让我们同样把这段命令拆解开来看看每个参数的含义：
 
@@ -122,13 +136,11 @@ jpackage --type msi --app-image "C:\Users\w1961\Desktop\image_out\ToolKit" --nam
     
 - **`--win-menu`**：在 Windows 的“开始”菜单中也自动添加程序的快捷启动方式。
 
+> 那么还没有结束，到这里您还要给安装包也签个名，这样就很完美了。如果想要删除直接点击msi卸载即可，如果不小心删除了msi，也可以从命令面板进行卸载。
+
+```cmd
+"C:\Program Files (x86)\Windows Kits\10\bin\10.0.26100.0\x64\signtool.exe" sign /f "C:\Users\w1961\Desktop\tukuai.pfx" /p "574185" /tr "http://timestamp.digicert.com" /td sha256 /fd sha256 "C:\Users\w1961\Desktop\ToolKit-1.9..msi"
 ```
-"C:\Program Files (x86)\Windows Kits\10\bin\10.0.26100.0\x64\signtool.exe" sign /f "C:\Users\w1961\Desktop\tukuai.pfx" /p "574185" /tr "http://timestamp.digicert.com" /td sha256 /fd sha256 "C:\Users\w1961\Desktop\ToolKit-1.9.6.msi"
-```
-
-
-
-那么还没有结束，到这里您还要给安装包也签个名，这样就很完美了。如果想要删除直接点击msi卸载即可，如果不小心删除了msi，也可以从命令面板进行卸载。
 
 那么这里要补充一个很重要的踩坑点，当你第一次编译的时候比如我的openssh服务，他是在目录下的，但是当他被打包成可执行文件目录时候他就因为打包指令被放到app目录里面了，所以在编译代码的时候要考虑到这一点，如果要调用工具，目录下app文件下调用，或者您可以手动删除然后在目录下放一个这种脱裤子的方法再穿上......。
 
