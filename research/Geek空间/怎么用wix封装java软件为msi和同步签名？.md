@@ -5,7 +5,7 @@
 首先还是要站在巨人的肩膀上，下载最稳定的wix314成熟版本 安装完后要配置一下环境变量 在 Windows 搜索“编辑系统环境变量” -> “环境变量” -> 双击系统变量中的 `Path` -> 点击“新建”，将 WiX 的可执行目录（默认一般为 `C:\Program Files (x86)\WiX Toolset v3.14\bin`）添加进去，保存后重新打开终端测试。
 那么要配合jpackage这个命令进行，这是jdk的一个工具，理论来说如果您的电脑配置了环境变量就不需要打开IDE，直接在终端输入即可。
 
-那么配置好了环境变量后呢，我们就可以对我们的软件进行打包了，软件都有一个启动类，比如说我的toolkit软件就有一个启动类叫做MainLauncher，那么您打开您的目录，src/main/java/shaoxia/MainLauncher，软件很智能，但是只能智能到java目录下了，也就是说我的主启动类是shaoxia/MainLauncher，首先我先去桌面上新建一个叫testwix的文件夹，然后把我的胖jar工件ToolKit.jar放到里面，顺带用上我的ico图标也就是logo.ico，然后带上我的engines，也就是我的openssh内置服务，这也突出了一个安装的好处，以前我们用自解压临时目录，特别难找目录下文件，用可怕的正则去用户电脑目录里搜索ssh，现在我们直接在代码里面写好，然后当把项目生成为一个免安装的独立运行目录的时候给他塞进去，这样，一个内置服务就好了！
+那么配置好了环境变量后呢，我们就可以对我们的软件进行打包了，软件都有一个启动类，比如说我的toolkit软件就有一个启动类叫做MainLauncher，那么您打开您的目录，src/main/java/shaoxia/MainLauncher，软件很智能，但是只能智能到java目录下了，也就是说我的主启动类是shaoxia/MainLauncher，首先我先去桌面上新建一个叫testwix的文件夹，然后把我的胖jar工件ToolKit.jar放到里面，顺带用上我的ico图标也就是logo.ico，然后带上我的engines，也就是我的openssh内置服务，这也突出了一个安装的好处，以前我们用自解压临时目录，特别难找目录下文件，用可怕的正则去用户电脑目录里搜索ssh，现在我们直接在代码里面写好，然后当把项目生成为一个免安装的独立运行目录的时候给他塞进去，这样，一个内置服务就好了！(修正，你完全可以编译后在app里塞入engines)
 
 ![testwix免安装独立运行目录准备](../../media/testwix免安装独立运行目录准备.png)
 
@@ -139,7 +139,7 @@ jpackage --type msi --app-image "C:\Users\w1961\Desktop\image_out\ToolKit" --nam
 > 那么还没有结束，到这里您还要给安装包也签个名，这样就很完美了。如果想要删除直接点击msi卸载即可，如果不小心删除了msi，也可以从命令面板进行卸载。
 
 ```cmd
-"C:\Program Files (x86)\Windows Kits\10\bin\10.0.26100.0\x64\signtool.exe" sign /f "C:\Users\w1961\Desktop\tukuai.pfx" /p "574185" /tr "http://timestamp.digicert.com" /td sha256 /fd sha256 "C:\Users\w1961\Desktop\ToolKit-1.9..msi"
+"C:\Program Files (x86)\Windows Kits\10\bin\10.0.26100.0\x64\signtool.exe" sign /f "C:\Users\w1961\Desktop\tukuai.pfx" /p "574185" /tr "http://timestamp.digicert.com" /td sha256 /fd sha256 "C:\Users\w1961\Desktop\ToolKit-1.9.7.msi"
 ```
 
 那么这里要补充一个很重要的踩坑点，当你第一次编译的时候比如我的openssh服务，他是在目录下的，但是当他被打包成可执行文件目录时候他就因为打包指令被放到app目录里面了，所以在编译代码的时候要考虑到这一点，如果要调用工具，目录下app文件下调用，或者您可以手动删除然后在目录下放一个这种脱裤子的方法再穿上......。
@@ -159,3 +159,192 @@ String enginePath = System.getProperty("user.dir")
         + File.separator + "openssh"
         + File.separator + "ssh.exe";
 ```
+
+---
+
+那么上文说的还是较乱的，其实原理就是 打包成启动文件🔜签名🔜打包成msi🔜安装。还是挺简单的大体思路，然后上文乱就乱在我在启动文件的时候往里面塞入engines，然后编译成msi后目录改变为app目录下牢记这一点就行了。
+那么下文我要说的可能会比较复杂，如果是自己的文件建议还是跟着ai教学一步步创造wix内置配置文件指定目录，这里我就直接自己写了。
+
+1.还是打包成绿色启动文件签名塞入可运行.exe文件，这一步很重要，因为如果用临时文件，极有可能被当成套壳病毒查杀了，一定要注意安全，也就是源目录的resources千万不要放任何exe，针对于java程序而言。
+
+```IDE
+jpackage --type app-image --name ToolKit --app-version 1.9.7 --input "C:\Users\w1961\Desktop\testwix" --main-jar ToolKit.jar --main-class shaoxia.MainLauncher --dest "C:\Users\w1961\Desktop\image_out" --icon "C:\Users\w1961\Desktop\testwix\logo.ico"
+```
+2.exe签名塞入转换
+```cmd
+copy "C:\Users\w1961\Desktop\image_out\ToolKit\ToolKit.exe" "C:\Users\w1961\Desktop\ToolKit_temp.exe"
+```
+```cmd
+"C:\Program Files (x86)\Windows Kits\10\bin\10.0.26100.0\x64\signtool.exe" sign /f "C:\Users\w1961\Desktop\tukuai.pfx" /p "574185" /tr "http://timestamp.digicert.com" /td sha256 /fd sha256 "C:\Users\w1961\Desktop\ToolKit.exe"
+
+```
+并且在这一步在app下塞入文件。
+
+3.好重要的就是这里，好玩的来了，假设我希望给自己来点不一样的我就要去自定义一些图片，那么这里我费了很大的劲去改底层配置文件，我想说的是如果您用的是不同的jdk版本或者不同的wix版本，听兄弟一句劝，直接用大语言模型一直问问到底就行了...
+我在桌面ctrl shift n新建一个文件夹命名叫wix_resources，我在里面放入了dialog.bmp背景图和banner.bmp，那么这里你可以修图，不过我还是建议您直接用sharex截取固定尺寸的png，然后用转换工具给他转换了，因为我用ps修图到导出的时候居然tm的没有bmp，我真的服了，微软自带的画图好像有。
+然后新建main.wxs文件，其实他的意思就是说固定为自定义图片路径打包的时候带上它就行了。
+
+
+```main.wxs
+<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"
+     xmlns:util="http://schemas.microsoft.com/wix/UtilExtension">
+
+  <?ifdef JpIsSystemWide ?>
+    <?define JpInstallScope="perMachine"?>
+  <?else?>
+    <?define JpInstallScope="perUser"?>
+  <?endif?>
+
+  <?define JpProductLanguage=1033 ?>
+  <?define JpInstallerVersion=200 ?>
+  <?define JpCompressedMsi=yes ?>
+
+  <?include $(var.JpConfigDir)/overrides.wxi ?>
+
+  <?ifdef JpAllowUpgrades ?>
+    <?define JpUpgradeVersionOnlyDetectUpgrade="no"?>
+  <?else?>
+    <?define JpUpgradeVersionOnlyDetectUpgrade="yes"?>
+  <?endif?>
+  <?ifdef JpAllowDowngrades ?>
+    <?define JpUpgradeVersionOnlyDetectDowngrade="no"?>
+  <?else?>
+    <?define JpUpgradeVersionOnlyDetectDowngrade="yes"?>
+  <?endif?>
+
+  <Product
+    Id="$(var.JpProductCode)"
+    Name="$(var.JpAppName)"
+    Language="$(var.JpProductLanguage)"
+    Version="$(var.JpAppVersion)"
+    Manufacturer="$(var.JpAppVendor)"
+    UpgradeCode="$(var.JpProductUpgradeCode)">
+
+    <Package
+      Description="$(var.JpAppDescription)"
+      Manufacturer="$(var.JpAppVendor)"
+      InstallerVersion="$(var.JpInstallerVersion)"
+      Compressed="$(var.JpCompressedMsi)"
+      InstallScope="$(var.JpInstallScope)" Platform="x64"
+    />
+
+    <Media Id="1" Cabinet="Data.cab" EmbedCab="yes" />
+
+<WixVariable Id="WixUIBannerBmp" Value="C:\Users\w1961\Desktop\wix_resources\banner.bmp" />
+<WixVariable Id="WixUIDialogBmp" Value="C:\Users\w1961\Desktop\wix_resources\dialog.bmp" />
+
+    <Upgrade Id="$(var.JpProductUpgradeCode)">
+      <UpgradeVersion
+        OnlyDetect="$(var.JpUpgradeVersionOnlyDetectUpgrade)"
+        Property="JP_UPGRADABLE_FOUND"
+        Maximum="$(var.JpAppVersion)"
+        MigrateFeatures="yes"
+        IncludeMaximum="$(var.JpUpgradeVersionOnlyDetectUpgrade)" />
+      <UpgradeVersion
+        OnlyDetect="$(var.JpUpgradeVersionOnlyDetectDowngrade)"
+        Property="JP_DOWNGRADABLE_FOUND"
+        Minimum="$(var.JpAppVersion)"
+        MigrateFeatures="yes"
+        IncludeMinimum="$(var.JpUpgradeVersionOnlyDetectDowngrade)" />
+    </Upgrade>
+
+    <?ifndef JpAllowUpgrades ?>
+    <CustomAction Id="JpDisallowUpgrade" Error="!(loc.DisallowUpgradeErrorMessage)" />
+    <?endif?>
+    <?ifndef JpAllowDowngrades ?>
+    <CustomAction Id="JpDisallowDowngrade" Error="!(loc.DowngradeErrorMessage)" />
+    <?endif?>
+
+    <Binary Id="JpCaDll" SourceFile="wixhelper.dll"/>
+
+    <CustomAction Id="JpFindRelatedProducts" BinaryKey="JpCaDll" DllEntry="FindRelatedProductsEx" />
+
+    <!-- Standard required root -->
+    <Directory Id="TARGETDIR" Name="SourceDir"/>
+
+    <Feature Id="DefaultFeature" Title="!(loc.MainFeatureTitle)" Level="1">
+      <ComponentGroupRef Id="Shortcuts"/>
+      <ComponentGroupRef Id="Files"/>
+      <ComponentGroupRef Id="FileAssociations"/>
+    </Feature>
+
+    <CustomAction Id="JpSetARPINSTALLLOCATION" Property="ARPINSTALLLOCATION" Value="[INSTALLDIR]" />
+    <CustomAction Id="JpSetARPCOMMENTS" Property="ARPCOMMENTS" Value="$(var.JpAppDescription)" />
+    <CustomAction Id="JpSetARPCONTACT" Property="ARPCONTACT" Value="$(var.JpAppVendor)" />
+    <CustomAction Id="JpSetARPSIZE" Property="ARPSIZE" Value="$(var.JpAppSizeKb)" />
+
+    <?ifdef JpHelpURL ?>
+      <CustomAction Id="JpSetARPHELPLINK" Property="ARPHELPLINK" Value="$(var.JpHelpURL)" />
+    <?endif?>
+
+    <?ifdef JpAboutURL ?>
+      <CustomAction Id="JpSetARPURLINFOABOUT" Property="ARPURLINFOABOUT" Value="$(var.JpAboutURL)" />
+    <?endif?>
+
+    <?ifdef JpUpdateURL ?>
+      <CustomAction Id="JpSetARPURLUPDATEINFO" Property="ARPURLUPDATEINFO" Value="$(var.JpUpdateURL)" />
+    <?endif?>
+
+    <?ifdef JpIcon ?>
+    <Property Id="ARPPRODUCTICON" Value="JpARPPRODUCTICON"/>
+    <Icon Id="JpARPPRODUCTICON" SourceFile="$(var.JpIcon)"/>
+    <?endif?>
+
+    <UIRef Id="JpUI"/>
+
+    <InstallExecuteSequence>
+      <Custom Action="JpSetARPINSTALLLOCATION" After="CostFinalize">Not Installed</Custom>
+      <Custom Action="JpSetARPCOMMENTS" After="CostFinalize">Not Installed</Custom>
+      <Custom Action="JpSetARPCONTACT" After="CostFinalize">Not Installed</Custom>
+      <Custom Action="JpSetARPSIZE" After="CostFinalize">Not Installed</Custom>
+      <?ifdef JpHelpURL ?>
+        <Custom Action="JpSetARPHELPLINK" After="CostFinalize">Not Installed</Custom>
+      <?endif?>
+      <?ifdef JpAboutURL ?>
+        <Custom Action="JpSetARPURLINFOABOUT" After="CostFinalize">Not Installed</Custom>
+      <?endif?>
+      <?ifdef JpUpdateURL ?>
+        <Custom Action="JpSetARPURLUPDATEINFO" After="CostFinalize">Not Installed</Custom>
+      <?endif?>
+
+      <?ifndef JpAllowUpgrades ?>
+      <Custom Action="JpDisallowUpgrade" After="JpFindRelatedProducts">JP_UPGRADABLE_FOUND</Custom>
+      <?endif?>
+      <?ifndef JpAllowDowngrades ?>
+      <Custom Action="JpDisallowDowngrade" After="JpFindRelatedProducts">JP_DOWNGRADABLE_FOUND</Custom>
+      <?endif?>
+      <RemoveExistingProducts Before="CostInitialize"/>
+      <Custom Action="JpFindRelatedProducts" After="FindRelatedProducts"/>
+    </InstallExecuteSequence>
+
+    <InstallUISequence>
+      <Custom Action="JpFindRelatedProducts" After="FindRelatedProducts"/>
+    </InstallUISequence>
+
+  </Product>
+</Wix>
+```
+
+然后执行
+
+```IDE
+jpackage --type msi --app-image "C:\Users\w1961\Desktop\image_out\ToolKit" --name ToolKit --app-version 1.9.7 --dest "C:\Users\w1961\Desktop" --icon "C:\Users\w1961\Desktop\logo.ico" --vendor "土块" --win-dir-chooser --win-shortcut --win-menu --resource-dir "C:\Users\w1961\Desktop\wix_resources" --verbose
+```
+
+注意看--resource-dir "C:\Users\w1961\Desktop\wix_resources"就是指定自定义目录了，总而言之我想起某位大佬说的话，人生苦短，如果只是做一个软件，还是学python吧，因为python本身就是c的快捷语言，cpython，然后他的支持者又特别多，java只是一个静态语言，不管是抽取jre，还是编译，真的是一个混沌巨兽。它主要还是用于后端服务代码，因为他在后端层面是非常完善稳定的，但是在就软件开发这个角度来说，在ai发展和智能体跑一切的今天，java真的不再适合作为软件开发代码。我做ToolKit也半年多了，我今天回首看，一路走来，确实没什么问题是解决不了的，但是如果从现在看起点，我觉得我只需要充值个会员，图片拿给他看，然后用智能体跑个7749天，似乎也能大差不差，但是我确实是一点点手改的，配合我的gemini美国大豆包熬过了很多岁月，人们往往很在意快，很在意结果，包括以前的我也是，我特别想立刻做出一个软件来一战成名，就是因为着急，所以软件修修补补了很长时间，我认为有些东西是快不了的，感情，成长，读书等，即使我写了很多文章，但是我只是精简我的经验，您读到也可能觉得，我靠写的啥玩意，好了废话少说了，如果用一句话来表达当下的感受就是，欲速不达，求真求实。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
