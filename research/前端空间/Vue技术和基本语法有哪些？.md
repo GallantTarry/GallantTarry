@@ -263,7 +263,7 @@ const totalPrice = computed(() => {
 **如果是 Vue 2 风格（经典 data 结构）：**
 
   
-```代码段
+```vue
 <script>
 export default {
   data() {
@@ -280,7 +280,7 @@ export default {
 **如果是 Vue 3 早期标准写法（标准的 setup 函数）：**
 
 
-```代码段
+```vue
 <script>
 import { ref } from 'vue'
 
