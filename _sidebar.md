@@ -156,6 +156,7 @@
     * [命题逻辑（Propositional Logic）与谓词逻辑（Predicate Logic）](research/%E7%A6%BB%E6%95%A3%E7%A9%BA%E9%97%B4/%E5%91%BD%E9%A2%98%E9%80%BB%E8%BE%91%EF%BC%88Propositional%20Logic%EF%BC%89%E4%B8%8E%E8%B0%93%E8%AF%8D%E9%80%BB%E8%BE%91%EF%BC%88Predicate%20Logic%EF%BC%89.md)
     * [程序离散数学学习方向](research/%E7%A6%BB%E6%95%A3%E7%A9%BA%E9%97%B4/%E7%A8%8B%E5%BA%8F%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6%E5%AD%A6%E4%B9%A0%E6%96%B9%E5%90%91.md)
 * 科学空间
+    * [一切上升者必汇合](research/%E7%A7%91%E5%AD%A6%E7%A9%BA%E9%97%B4/%E4%B8%80%E5%88%87%E4%B8%8A%E5%8D%87%E8%80%85%E5%BF%85%E6%B1%87%E5%90%88.md)
     * [什么是涌现？](research/%E7%A7%91%E5%AD%A6%E7%A9%BA%E9%97%B4/%E4%BB%80%E4%B9%88%E6%98%AF%E6%B6%8C%E7%8E%B0%EF%BC%9F.md)
     * [什么是熵增？](research/%E7%A7%91%E5%AD%A6%E7%A9%BA%E9%97%B4/%E4%BB%80%E4%B9%88%E6%98%AF%E7%86%B5%E5%A2%9E%EF%BC%9F.md)
     * [科学划界与知识增长的理想标准是什么？](research/%E7%A7%91%E5%AD%A6%E7%A9%BA%E9%97%B4/%E7%A7%91%E5%AD%A6%E5%88%92%E7%95%8C%E4%B8%8E%E7%9F%A5%E8%AF%86%E5%A2%9E%E9%95%BF%E7%9A%84%E7%90%86%E6%83%B3%E6%A0%87%E5%87%86%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F.md)
