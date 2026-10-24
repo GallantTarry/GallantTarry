@@ -3,6 +3,7 @@
 * Geek空间
     * [3D领域的文件格式有哪些？](research/Geek%E7%A9%BA%E9%97%B4/3D%E9%A2%86%E5%9F%9F%E7%9A%84%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F.md)
     * [AVIF文件格式是什么？](research/Geek%E7%A9%BA%E9%97%B4/AVIF%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F.md)
+    * [CDN加速代理商有哪些？](research/Geek%E7%A9%BA%E9%97%B4/CDN%E5%8A%A0%E9%80%9F%E4%BB%A3%E7%90%86%E5%95%86%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F.md)
     * [DHCP分配的IPv4开头不一样是为什么？](research/Geek%E7%A9%BA%E9%97%B4/DHCP%E5%88%86%E9%85%8D%E7%9A%84IPv4%E5%BC%80%E5%A4%B4%E4%B8%8D%E4%B8%80%E6%A0%B7%E6%98%AF%E4%B8%BA%E4%BB%80%E4%B9%88%EF%BC%9F.md)
     * [donut.c 旋转甜甜圈](research/Geek%E7%A9%BA%E9%97%B4/donut.c%20%E6%97%8B%E8%BD%AC%E7%94%9C%E7%94%9C%E5%9C%88.md)
     * [Electron与Node.js是什么？](research/Geek%E7%A9%BA%E9%97%B4/Electron%E4%B8%8ENode.js%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F.md)
@@ -57,6 +58,7 @@
 * 前端空间
     * [CDN是什么？怎么下载到本地？](research/%E5%89%8D%E7%AB%AF%E7%A9%BA%E9%97%B4/CDN%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F%E6%80%8E%E4%B9%88%E4%B8%8B%E8%BD%BD%E5%88%B0%E6%9C%AC%E5%9C%B0%EF%BC%9F.md)
     * [cookie是存在本地的吗？他是什么文件？](research/%E5%89%8D%E7%AB%AF%E7%A9%BA%E9%97%B4/cookie%E6%98%AF%E5%AD%98%E5%9C%A8%E6%9C%AC%E5%9C%B0%E7%9A%84%E5%90%97%EF%BC%9F%E4%BB%96%E6%98%AF%E4%BB%80%E4%B9%88%E6%96%87%E4%BB%B6%EF%BC%9F.md)
+    * [min.js 和普通的 .js有什么区别？](research/%E5%89%8D%E7%AB%AF%E7%A9%BA%E9%97%B4/min.js%20%E5%92%8C%E6%99%AE%E9%80%9A%E7%9A%84%20.js%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F.md)
     * [Service Worker (服务工作线程) 脚本](research/%E5%89%8D%E7%AB%AF%E7%A9%BA%E9%97%B4/Service%20Worker%20(%E6%9C%8D%E5%8A%A1%E5%B7%A5%E4%BD%9C%E7%BA%BF%E7%A8%8B)%20%E8%84%9A%E6%9C%AC.md)
     * [setup()、return、onMounted()是什么？](research/%E5%89%8D%E7%AB%AF%E7%A9%BA%E9%97%B4/setup()%E3%80%81return%E3%80%81onMounted()%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F.md)
     * [SVG是什么？](research/%E5%89%8D%E7%AB%AF%E7%A9%BA%E9%97%B4/SVG%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F.md)
@@ -213,6 +215,7 @@
     * [王立群读孟子-强势由人](research/%E9%9F%B3%E9%A2%91%E7%A9%BA%E9%97%B4/%E7%8E%8B%E7%AB%8B%E7%BE%A4%E8%AF%BB%E5%AD%9F%E5%AD%90-%E5%BC%BA%E5%8A%BF%E7%94%B1%E4%BA%BA.md)
     * [答案在风中飘](research/%E9%9F%B3%E9%A2%91%E7%A9%BA%E9%97%B4/%E7%AD%94%E6%A1%88%E5%9C%A8%E9%A3%8E%E4%B8%AD%E9%A3%98.md)
     * [罗素给世界的留言](research/%E9%9F%B3%E9%A2%91%E7%A9%BA%E9%97%B4/%E7%BD%97%E7%B4%A0%E7%BB%99%E4%B8%96%E7%95%8C%E7%9A%84%E7%95%99%E8%A8%80.md)
+    * [陈丹青谈画画](research/%E9%9F%B3%E9%A2%91%E7%A9%BA%E9%97%B4/%E9%99%88%E4%B8%B9%E9%9D%92%E8%B0%88%E7%94%BB%E7%94%BB.md)
 * 🔒个人创作
     * [MD可视化图形兼容需求提示词](research/%F0%9F%94%92%E4%B8%AA%E4%BA%BA%E5%88%9B%E4%BD%9C/MD%E5%8F%AF%E8%A7%86%E5%8C%96%E5%9B%BE%E5%BD%A2%E5%85%BC%E5%AE%B9%E9%9C%80%E6%B1%82%E6%8F%90%E7%A4%BA%E8%AF%8D.md)
     * [《人类行为与心智优化的底层逻辑：基于认知神经科学与行为经济学的解析》](research/%F0%9F%94%92%E4%B8%AA%E4%BA%BA%E5%88%9B%E4%BD%9C/%E3%80%8A%E4%BA%BA%E7%B1%BB%E8%A1%8C%E4%B8%BA%E4%B8%8E%E5%BF%83%E6%99%BA%E4%BC%98%E5%8C%96%E7%9A%84%E5%BA%95%E5%B1%82%E9%80%BB%E8%BE%91%EF%BC%9A%E5%9F%BA%E4%BA%8E%E8%AE%A4%E7%9F%A5%E7%A5%9E%E7%BB%8F%E7%A7%91%E5%AD%A6%E4%B8%8E%E8%A1%8C%E4%B8%BA%E7%BB%8F%E6%B5%8E%E5%AD%A6%E7%9A%84%E8%A7%A3%E6%9E%90%E3%80%8B.md)
