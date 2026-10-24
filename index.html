@@ -30,8 +30,12 @@
     <!-- 6. APlayer 音乐播放器样式：让网页里嵌入的音频播放条拥有精致的现代 UI 界面 -->
     <link rel="stylesheet" href="./css/APlayer.min.css">
 
+    <link rel="stylesheet" href="./css/tukuai-audio.css">
+
     <!-- 7. DPlayer 视频播放器样式：美化网页视频播放器的控制面板、全屏按钮等外观 -->
     <link rel="stylesheet" href="./css/DPlayer.min.css">
+
+    <link rel="stylesheet" href="./css/tukuai-player.css">
 
     <!-- 8. Viewer.js 图片查看器样式：为点击文章图片后弹出的全屏相册、缩放和工具栏提供美化支持 -->
     <link rel="stylesheet" href="./css/viewer.min.css">
@@ -1525,6 +1529,11 @@
 
                 // === 1. 全局自动修复加粗与代码块嵌套的 Bug ===
                 hook.beforeEach(function (content) {
+
+                    content = content.replace(/@\[audio\]\((.*?),\s*(.*?),\s*(.*?),\s*(.*?)\)/g,
+                        '<tukuai-audio url="$1" name="$2" artist="$3" cover="$4"></tukuai-audio>');
+                    // 新增：自动将 @[video](视频地址) 转换为 <tukuai-player> 标签
+                    content = content.replace(/@\[video\]\((.*?)\)/g, '<tukuai-player url="$1"></tukuai-player>');
                     return content.replace(/\*\*\`(.*?)\`\*\*/g, '<strong><code>$1</code></strong>');
                 });
 
@@ -1691,6 +1700,8 @@
 <!-- 1. 网页视频播放器：支持 MP4、HLS 等格式，用来在网页里看视频 -->
 <script src="./js/DPlayer.min.js"></script>
 
+<script src="./js/tukuai-player.js"></script>
+
 <!-- 2. Docsify 核心框架：整个文档站点的灵魂引擎，负责动态加载 Markdown、路由跳转 -->
 <script src="./js/docsify@4.js"></script>
 
@@ -1721,6 +1732,8 @@
 
 <!-- 10. 网页音乐播放器 APlayer：用来在网页里塞入精美的音频播放条 -->
 <script src="./js/APlayer.min.js"></script>
+
+<script src="./js/tukuai-audio.js"></script>
 
 <!-- 11. Spectral.js 色彩物理混合库：你用来模拟真实颜料混合（K-M 理论封装）的底层计算库 -->
 <script src="./js/spectral.min.js"></script>

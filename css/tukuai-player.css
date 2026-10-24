@@ -1,0 +1,156 @@
+/* ========================================================= */
+/* ====== 土块专属定制：极客暗黑 & 温柔幻彩 双主题流光 DPlayer ====== */
+/* ========================================================= */
+
+.dplayer-menu,
+.dplayer-full {
+    display: none !important;
+}
+
+/* 1. 极客暗黑模式 (默认) */
+.tukuai-video-wrapper {
+    position: relative;
+    padding: 12px;
+    border-radius: 24px;
+    background: linear-gradient(135deg, rgba(24, 24, 27, 0.75) 0%, rgba(15, 20, 30, 0.85) 100%);
+    backdrop-filter: blur(24px) saturate(160%);
+    -webkit-backdrop-filter: blur(24px) saturate(160%);
+    border: 1px solid rgba(16, 185, 129, 0.28);
+    border-top: 1px solid rgba(255, 255, 255, 0.22);
+    box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.8),
+    0 0 40px rgba(16, 185, 129, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    margin: 2.5rem auto;
+    max-width: 850px;
+    transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.tukuai-video-wrapper:hover {
+    transform: translateY(-4px);
+    border-color: rgba(16, 185, 129, 0.5);
+    box-shadow: 0 35px 65px -15px rgba(0, 0, 0, 0.9),
+    0 0 50px rgba(16, 185, 129, 0.24),
+    inset 0 1px 0 rgba(255, 255, 255, 0.14);
+}
+
+/* 底部环境呼吸流光 */
+.tukuai-video-glow {
+    position: absolute;
+    bottom: -15px;
+    left: 10%;
+    right: 10%;
+    height: 30px;
+    background: linear-gradient(90deg, #10b981, #06b6d4, #3b82f6);
+    filter: blur(48px);
+    opacity: 0.38;
+    z-index: 1;
+    pointer-events: none;
+    transition: all 0.35s ease;
+}
+
+.tukuai-video-wrapper:hover .tukuai-video-glow {
+    opacity: 0.55;
+    filter: blur(55px);
+}
+
+/* 播放器内胆容器 */
+.tukuai-player-core,
+#tukuai-player {
+    border-radius: 16px;
+    overflow: hidden;
+    background-color: #000;
+    position: relative;
+    z-index: 10;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+/* DPlayer 进度条与音量条：翠绿到电光蓝渐变 */
+.tukuai-player-core .dplayer-played,
+.tukuai-player-core .dplayer-volume-bar-inner,
+#tukuai-player .dplayer-played,
+#tukuai-player .dplayer-volume-bar-inner {
+    background: linear-gradient(90deg, #10b981, #06b6d4, #3b82f6) !important;
+}
+
+.tukuai-player-core .dplayer-thumb,
+#tukuai-player .dplayer-thumb {
+    background: #10b981 !important;
+    border: 2px solid #ffffff !important;
+    box-shadow: 0 0 10px rgba(16, 185, 129, 0.9) !important;
+    margin-top: -6px !important;  /* 👈 加在这一行下面 */
+}
+
+/* 2. 温柔幻彩白昼模式 (body.theme-light) 自动适配 */
+body.theme-light .tukuai-video-wrapper {
+    background: linear-gradient(135deg, rgba(255, 245, 250, 0.85) 0%, rgba(243, 238, 255, 0.85) 50%, rgba(240, 253, 250, 0.85) 100%);
+    border: 1px solid rgba(244, 114, 182, 0.38);
+    border-top: 1px solid rgba(255, 255, 255, 0.95);
+    box-shadow: 0 24px 48px -12px rgba(167, 139, 250, 0.22),
+    0 8px 24px rgba(236, 72, 153, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95);
+}
+
+body.theme-light .tukuai-video-wrapper:hover {
+    border-color: rgba(236, 72, 153, 0.6);
+    box-shadow: 0 30px 56px -12px rgba(236, 72, 153, 0.28),
+    0 12px 30px rgba(139, 92, 246, 0.18),
+    inset 0 1px 0 #ffffff;
+}
+
+body.theme-light .tukuai-video-glow {
+    background: linear-gradient(90deg, #ec4899, #8b5cf6, #06b6d4);
+    opacity: 0.32;
+}
+
+body.theme-light .tukuai-video-wrapper:hover .tukuai-video-glow {
+    opacity: 0.48;
+}
+
+body.theme-light .tukuai-player-core,
+body.theme-light #tukuai-player {
+    box-shadow: 0 8px 24px rgba(139, 92, 246, 0.2);
+}
+
+body.theme-light .tukuai-player-core .dplayer-played,
+body.theme-light .tukuai-player-core .dplayer-volume-bar-inner,
+body.theme-light #tukuai-player .dplayer-played,
+body.theme-light #tukuai-player .dplayer-volume-bar-inner {
+    background: linear-gradient(90deg, #ec4899, #8b5cf6, #06b6d4) !important;
+}
+
+body.theme-light .tukuai-player-core .dplayer-thumb,
+body.theme-light #tukuai-player .dplayer-thumb {
+    background: #ec4899 !important;
+    border: 2px solid #ffffff !important;
+    box-shadow: 0 0 10px rgba(236, 72, 153, 0.85) !important;
+    margin-top: -6px !important;  /* 👈 加在这一行下面 */
+}
+
+/* 3. 手机端与小屏响应式适配 */
+@media screen and (max-width: 768px) {
+    .tukuai-video-wrapper {
+        padding: 6px;
+        border-radius: 16px;
+        margin: 1.25rem 0;
+    }
+    .tukuai-video-wrapper:hover {
+        transform: none;
+    }
+    .tukuai-player-core,
+    #tukuai-player {
+        border-radius: 12px;
+    }
+    .tukuai-video-glow {
+        bottom: -10px;
+        height: 20px;
+        filter: blur(32px);
+    }
+    .tukuai-player-core .dplayer-controller,
+    #tukuai-player .dplayer-controller {
+        padding: 0 10px !important;
+    }
+    .tukuai-player-core .dplayer-bar-wrap,
+    #tukuai-player .dplayer-bar-wrap {
+        padding: 8px 0 !important;
+    }
+}
