@@ -3,7 +3,6 @@
 * Geek空间
     * [3D领域的文件格式有哪些？](research/Geek%E7%A9%BA%E9%97%B4/3D%E9%A2%86%E5%9F%9F%E7%9A%84%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F.md)
     * [AVIF文件格式是什么？](research/Geek%E7%A9%BA%E9%97%B4/AVIF%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F.md)
-    * [CDN加速代理商有哪些？](research/Geek%E7%A9%BA%E9%97%B4/CDN%E5%8A%A0%E9%80%9F%E4%BB%A3%E7%90%86%E5%95%86%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F.md)
     * [DHCP分配的IPv4开头不一样是为什么？](research/Geek%E7%A9%BA%E9%97%B4/DHCP%E5%88%86%E9%85%8D%E7%9A%84IPv4%E5%BC%80%E5%A4%B4%E4%B8%8D%E4%B8%80%E6%A0%B7%E6%98%AF%E4%B8%BA%E4%BB%80%E4%B9%88%EF%BC%9F.md)
     * [donut.c 旋转甜甜圈](research/Geek%E7%A9%BA%E9%97%B4/donut.c%20%E6%97%8B%E8%BD%AC%E7%94%9C%E7%94%9C%E5%9C%88.md)
     * [Electron与Node.js是什么？](research/Geek%E7%A9%BA%E9%97%B4/Electron%E4%B8%8ENode.js%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F.md)
@@ -20,6 +19,7 @@
     * [json是什么？](research/Geek%E7%A9%BA%E9%97%B4/json%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F.md)
     * [Markdown 语法如何使用？](research/Geek%E7%A9%BA%E9%97%B4/Markdown%20%E8%AF%AD%E6%B3%95%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%EF%BC%9F.md)
     * [PySide6单文件打包方法和丢失依赖解决方法](research/Geek%E7%A9%BA%E9%97%B4/PySide6%E5%8D%95%E6%96%87%E4%BB%B6%E6%89%93%E5%8C%85%E6%96%B9%E6%B3%95%E5%92%8C%E4%B8%A2%E5%A4%B1%E4%BE%9D%E8%B5%96%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95.md)
+    * [Resend 无服务架构](research/Geek%E7%A9%BA%E9%97%B4/Resend%20%E6%97%A0%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%84.md)
     * [static 修饰的静态变量运行后在jvm哪里？](research/Geek%E7%A9%BA%E9%97%B4/static%20%E4%BF%AE%E9%A5%B0%E7%9A%84%E9%9D%99%E6%80%81%E5%8F%98%E9%87%8F%E8%BF%90%E8%A1%8C%E5%90%8E%E5%9C%A8jvm%E5%93%AA%E9%87%8C%EF%BC%9F.md)
     * [WebDAV是啥？](research/Geek%E7%A9%BA%E9%97%B4/WebDAV%E6%98%AF%E5%95%A5%EF%BC%9F.md)
     * [WebStorm 在前端开发领域的核心优势是什么？](research/Geek%E7%A9%BA%E9%97%B4/WebStorm%20%E5%9C%A8%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E9%A2%86%E5%9F%9F%E7%9A%84%E6%A0%B8%E5%BF%83%E4%BC%98%E5%8A%BF%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F.md)
@@ -35,6 +35,7 @@
     * [什么是计算机的前后端技术？](research/Geek%E7%A9%BA%E9%97%B4/%E4%BB%80%E4%B9%88%E6%98%AF%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E5%89%8D%E5%90%8E%E7%AB%AF%E6%8A%80%E6%9C%AF%EF%BC%9F.md)
     * [什么是路径、环境变量、正则表达式？](research/Geek%E7%A9%BA%E9%97%B4/%E4%BB%80%E4%B9%88%E6%98%AF%E8%B7%AF%E5%BE%84%E3%80%81%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E3%80%81%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%EF%BC%9F.md)
     * [前后端文件命名都要遵守什么样的规范？](research/Geek%E7%A9%BA%E9%97%B4/%E5%89%8D%E5%90%8E%E7%AB%AF%E6%96%87%E4%BB%B6%E5%91%BD%E5%90%8D%E9%83%BD%E8%A6%81%E9%81%B5%E5%AE%88%E4%BB%80%E4%B9%88%E6%A0%B7%E7%9A%84%E8%A7%84%E8%8C%83%EF%BC%9F.md)
+    * [多 CDN 加速架构与分流方案全解](research/Geek%E7%A9%BA%E9%97%B4/%E5%A4%9A%20CDN%20%E5%8A%A0%E9%80%9F%E6%9E%B6%E6%9E%84%E4%B8%8E%E5%88%86%E6%B5%81%E6%96%B9%E6%A1%88%E5%85%A8%E8%A7%A3.md)
     * [如何下载youtube的视频？](research/Geek%E7%A9%BA%E9%97%B4/%E5%A6%82%E4%BD%95%E4%B8%8B%E8%BD%BDyoutube%E7%9A%84%E8%A7%86%E9%A2%91%EF%BC%9F.md)
     * [如何从临时启动器到原生桌面应用体验的封装？](research/Geek%E7%A9%BA%E9%97%B4/%E5%A6%82%E4%BD%95%E4%BB%8E%E4%B8%B4%E6%97%B6%E5%90%AF%E5%8A%A8%E5%99%A8%E5%88%B0%E5%8E%9F%E7%94%9F%E6%A1%8C%E9%9D%A2%E5%BA%94%E7%94%A8%E4%BD%93%E9%AA%8C%E7%9A%84%E5%B0%81%E8%A3%85%EF%BC%9F.md)
     * [如何借用代码？](research/Geek%E7%A9%BA%E9%97%B4/%E5%A6%82%E4%BD%95%E5%80%9F%E7%94%A8%E4%BB%A3%E7%A0%81%EF%BC%9F.md)
