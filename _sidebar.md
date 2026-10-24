@@ -20,6 +20,7 @@
     * [Markdown 语法如何使用？](research/Geek%E7%A9%BA%E9%97%B4/Markdown%20%E8%AF%AD%E6%B3%95%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%EF%BC%9F.md)
     * [PySide6单文件打包方法和丢失依赖解决方法](research/Geek%E7%A9%BA%E9%97%B4/PySide6%E5%8D%95%E6%96%87%E4%BB%B6%E6%89%93%E5%8C%85%E6%96%B9%E6%B3%95%E5%92%8C%E4%B8%A2%E5%A4%B1%E4%BE%9D%E8%B5%96%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95.md)
     * [Resend 无服务架构](research/Geek%E7%A9%BA%E9%97%B4/Resend%20%E6%97%A0%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%84.md)
+    * [resources里面为什么不能放exe可执行文件？](research/Geek%E7%A9%BA%E9%97%B4/resources%E9%87%8C%E9%9D%A2%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E8%83%BD%E6%94%BEexe%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6%EF%BC%9F.md)
     * [static 修饰的静态变量运行后在jvm哪里？](research/Geek%E7%A9%BA%E9%97%B4/static%20%E4%BF%AE%E9%A5%B0%E7%9A%84%E9%9D%99%E6%80%81%E5%8F%98%E9%87%8F%E8%BF%90%E8%A1%8C%E5%90%8E%E5%9C%A8jvm%E5%93%AA%E9%87%8C%EF%BC%9F.md)
     * [WebDAV是啥？](research/Geek%E7%A9%BA%E9%97%B4/WebDAV%E6%98%AF%E5%95%A5%EF%BC%9F.md)
     * [WebStorm 在前端开发领域的核心优势是什么？](research/Geek%E7%A9%BA%E9%97%B4/WebStorm%20%E5%9C%A8%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E9%A2%86%E5%9F%9F%E7%9A%84%E6%A0%B8%E5%BF%83%E4%BC%98%E5%8A%BF%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F.md)
