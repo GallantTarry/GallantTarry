@@ -407,7 +407,38 @@
             background-color: rgba(251, 207, 232, 0.45) !important;
             color: #be185d !important;
         }
+        /* 8. 白昼版选中文本高光、复制成功按钮、搜索高亮与长按光环补全 */
+        body.theme-light ::selection,
+        body.theme-light::selection {
+            background: rgba(244, 114, 182, 0.28) !important;
+            color: #9d174d !important;
+            text-shadow: none !important;
+        }
+        body.theme-light ::-moz-selection,
+        body.theme-light::-moz-selection {
+            background: rgba(244, 114, 182, 0.28) !important;
+            color: #9d174d !important;
+            text-shadow: none !important;
+        }
 
+        /* 代码块点击 Copy 成功后的粉紫糖果反馈 */
+        body.theme-light .docsify-copy-code-button.success {
+            background: linear-gradient(135deg, rgba(251, 207, 232, 0.85), rgba(221, 214, 254, 0.85)) !important;
+            color: #be185d !important;
+            border-color: #f472b6 !important;
+            box-shadow: 0 2px 10px rgba(236, 72, 153, 0.2) !important;
+        }
+
+        /* 搜索框结果匹配关键字：修正绿底为樱花粉底 */
+        body.theme-light .sidebar .search em {
+            color: #db2777 !important;
+            background: rgba(244, 114, 182, 0.2) !important;
+        }
+
+        /* 长按右下角圆点蓄力：修正内圈绿光为粉紫呼吸光环 */
+        body.theme-light .sidebar-toggle.long-pressing {
+            box-shadow: 0 0 0 6px rgba(244, 114, 182, 0.35), 0 0 24px #ec4899 !important;
+        }
         @media screen and (max-width: 768px) {
             body.theme-light .markdown-section {
                 background: transparent !important;
