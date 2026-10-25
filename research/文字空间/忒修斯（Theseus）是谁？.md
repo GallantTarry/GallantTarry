@@ -69,6 +69,3 @@
 > 
 > 这个悖论至今仍是探讨“身份认同”与“连续性”的核心哲学问题。
 
----
-
-<tukuai-player url="media/videos/忒修斯与牛头怪弥诺陶洛斯.mp4" title="忒修斯与牛头怪弥诺陶洛斯"></tukuai-player>
