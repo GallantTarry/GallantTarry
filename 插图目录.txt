@@ -6,4 +6,16 @@
 网址插入
 *https://ghproxy.net/* 
 
-[Markdown 探索与实践 - DIYgod](https://diygod.cc/unified-markdown/)
+视频插入
+<tukuai-player url="media/videos/乔布斯在斯坦福大学毕业典礼上的演讲.mp4" title="乔布斯在斯坦福大学毕业典礼上的演讲"></tukuai-player>
+
+
+音频插入
+
+<tukuai-audio
+url="media/music/Blowin.mp3"
+name="答案在风中飘"
+artist="Bob Dylan"
+cover="media/music/Blowin.jpg">
+</tukuai-audio>
+
