@@ -33,9 +33,8 @@
 
   
 
-Bash
 
-```
+```bash
 sudo apt update
 sudo apt install openssh-server -y
 ```
@@ -50,9 +49,8 @@ _(在此过程中可能需要输入您的 Ubuntu 用户 `gallanttarry` 的登录
 
   
 
-Bash
 
-```
+```bash
 sudo service ssh start
 ```
 
@@ -218,9 +216,8 @@ gallanttarry@AK47:~$ ip a
 
   
 
-Bash
 
-```
+```bash
 ssh gallanttarry@127.0.0.1
 ```
 

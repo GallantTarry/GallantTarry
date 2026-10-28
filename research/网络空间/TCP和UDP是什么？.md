@@ -74,7 +74,6 @@ HTTPS 并不是用来替代 TCP 的，而是 TCP 的“大客户”。HTTPS 位�
 
   
 
-Java
 
 ```java
 import java.net.DatagramPacket;
@@ -109,7 +108,6 @@ public class UdpSender {
 
   
 
-Java
 
 ```java
 import java.net.DatagramPacket;
@@ -150,9 +148,8 @@ public class UdpReceiver {
 
   
 
-Java
 
-```
+```java
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -194,9 +191,8 @@ public class TcpServer {
 
   
 
-Java
 
-```
+```java
 import java.io.*;
 import java.net.Socket;
 

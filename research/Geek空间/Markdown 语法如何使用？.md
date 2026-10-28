@@ -27,9 +27,8 @@ type nul > 你的文件名.md
 
   
 
-PowerShell
 
-```
+```powershell
 New-Item 你的文件名.md
 ```
 
@@ -89,9 +88,8 @@ Obsidian 是一件非常趁手的知识管理兵器，它的语法大部分遵�
 
   
 
-Markdown
 
-```
+```markdown
 # 一级标题
 ## 二级标题
 ### 三级标题
@@ -123,9 +121,8 @@ Obsidian 支持标准的文本修饰，其中高亮是其非常实用的特色�
     
       
     
-    Markdown
     
-    ```
+    ```markdown
     - 第一项
     - 第二项
       - 子项 (按 Tab 缩进)
@@ -135,9 +132,8 @@ Obsidian 支持标准的文本修饰，其中高亮是其非常实用的特色�
     
       
     
-    Markdown
     
-    ```
+    ```markdown
     1. 第一步：初始化环境
     2. 第二步：配置依赖
     ```
@@ -146,9 +142,8 @@ Obsidian 支持标准的文本修饰，其中高亮是其非常实用的特色�
     
       
     
-    Markdown
     
-    ```
+    ```markdown
     - [ ] 未完成的任务
     - [x] 已完成的任务
     ```
@@ -170,9 +165,8 @@ Obsidian 支持标准的文本修饰，其中高亮是其非常实用的特色�
     
       
     
-    Java
     
-    ```
+    ```java
     @RestController
     @RequestMapping("/api")
     public class TestController {
@@ -195,9 +189,8 @@ Obsidian 支持标准的文本修饰，其中高亮是其非常实用的特色�
     
       
     
-    Markdown
     
-    ```
+    ```markdown
     > [!warning] 注意
     > 这里的数据库连接需要隔离，否则会报错。
     
@@ -212,9 +205,8 @@ Obsidian 支持标准的文本修饰，其中高亮是其非常实用的特色�
     
       
     
-    Markdown
     
-    ```
+    ```markdown
     [[另一篇笔记的名称]]
     [[笔记名称#某个特定的标题]]
     ```
@@ -223,9 +215,8 @@ Obsidian 支持标准的文本修饰，其中高亮是其非常实用的特色�
     
       
     
-    Markdown
     
-    ```
+    ```markdown
     [链接显示的文字](https://www.example.com)
     ```
     
@@ -236,9 +227,8 @@ Obsidian 支持标准的文本修饰，其中高亮是其非常实用的特色�
 
   
 
-Markdown
 
-```
+```markdown
 ---
 ```
 
@@ -306,9 +296,8 @@ Markdown 本身只是一种纯文本格式，但在你阅读它时（比如在�
 
   
 
-Plaintext
 
-```
+```plaintext
 public class Test {
     // 这是一个测试方法
     public static void main(String[] args) {
@@ -322,7 +311,6 @@ public class Test {
 
   
 
-Java
 
 ```java
 public class Test {

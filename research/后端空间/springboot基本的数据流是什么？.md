@@ -63,9 +63,8 @@ public class UserController {
 
   
 
-Java
 
-```
+```java
 @Autowired
 private UserService userService;
 ```
@@ -92,9 +91,8 @@ private UserService userService;
 
   
 
-Java
 
-```
+```java
 // 等价于你手写了这行代码：
 UserService userService = new UserServiceImpl();
 ```

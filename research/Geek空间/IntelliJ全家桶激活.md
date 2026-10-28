@@ -69,9 +69,8 @@
 
   
 
-JSON
 
-```
+```json
 {
   "licenseeName": "货多多科技工作室",
   "products": [

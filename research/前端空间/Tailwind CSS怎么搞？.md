@@ -35,9 +35,8 @@
 
   
 
-PowerShell
 
-```
+```powershell
 Remove-Item -Force package.json
 Remove-Item -Force package-lock.json
 Remove-Item -Recurse -Force node_modules
@@ -59,9 +58,8 @@ _(Mac/Linux 用户请将 `Remove-Item -Force` 替换为 `rm -rf`)_
 
   
 
-PowerShell
 
-```
+```powershell
 # 1. 自动生成 package.json
 npm init -y
 
@@ -79,9 +77,8 @@ _(顺利的话，终端会提示 `added 60+ packages`，这意味着核心引擎
 
   
 
-PowerShell
 
-```
+```powershell
 npx tailwindcss init
 ```
 
@@ -93,9 +90,8 @@ npx tailwindcss init
 
   
 
-JavaScript
 
-```
+```javascript
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   // 核心：告诉 Tailwind 去哪里扫描你写在 class 里的类名
@@ -118,9 +114,8 @@ module.exports = {
 
   
 
-CSS
 
-```
+```css
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -132,9 +127,8 @@ CSS
 
   
 
-PowerShell
 
-```
+```powershell
 npx tailwindcss -i ./input.css -o ./css/output.css --watch
 ```
 
@@ -169,9 +163,8 @@ npx tailwindcss -i ./input.css -o ./css/output.css --watch
     
       
     
-    HTML
     
-    ```
+    ```html
     <link href="./css/output.css" rel="stylesheet">
     ```
     

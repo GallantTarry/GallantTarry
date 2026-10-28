@@ -32,9 +32,8 @@ JSON 的语法极其简洁，仅支持以下 **6 种基本数据类型**：
 
   
 
-JSON
 
-```
+```json
 {
   "stringKey": "hello",
   "numberKey": 42,

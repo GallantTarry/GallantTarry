@@ -70,9 +70,8 @@
 
   
 
-Java
 
-```
+```java
 Integer x = 100;
 Integer y = 100;
 System.out.println(x == y); // 结果为 true。因为 100 在缓存范围内，x和y指向了内存中同一个对象。

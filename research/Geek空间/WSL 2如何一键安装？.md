@@ -25,9 +25,8 @@
     
 2. 直接输入这行命令并回车：
     
-    PowerShell
     
-    ```
+    ```powershell
     wsl --install
     ```
     
@@ -104,9 +103,8 @@
     
 2. 直接输入三个字母的召唤咒语：
     
-    PowerShell
     
-    ```
+    ```powershell
     wsl
     ```
     

@@ -94,9 +94,8 @@
 
 **第一步：删掉（或注释掉）这套旧装备**
 
-XML
 
-```
+```xml
 <dependency>
     <groupId>org.mybatis.spring.boot</groupId>
     <artifactId>mybatis-spring-boot-starter</artifactId>
@@ -106,9 +105,8 @@ XML
 
 **第二步：换上新装备**
 
-XML
 
-```
+```xml
 <dependency>
     <groupId>com.baomidou</groupId>
     <artifactId>mybatis-plus-boot-starter</artifactId>

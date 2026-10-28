@@ -82,9 +82,8 @@
 
   
 
-PowerShell
 
-```
+```powershell
 ipconfig /all
 ```
 

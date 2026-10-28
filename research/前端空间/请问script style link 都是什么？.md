@@ -33,9 +33,8 @@
     
       
     
-    HTML
     
-    ```
+    ```html
     <!-- 引入外部 JS 文件 -->
     <script src="./js/vue.global.js"></script>
     
@@ -64,9 +63,8 @@
     
       
     
-    HTML
     
-    ```
+    ```html
     <style>
         body {
             background-color: #050505; /* 让整个页面背景变成炫酷的纯黑 */
@@ -105,9 +103,8 @@
     
       
     
-    HTML
     
-    ```
+    ```html
     <!-- 1. 引入外部的 CSS 样式表 -->
     <link rel="stylesheet" href="style.css">
     

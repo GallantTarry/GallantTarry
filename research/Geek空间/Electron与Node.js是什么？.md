@@ -133,9 +133,8 @@
 
   
 
-Plaintext
 
-```
+```plaintext
 Tangram_OS/
 │
 ├── package.json           # 项目配置文件

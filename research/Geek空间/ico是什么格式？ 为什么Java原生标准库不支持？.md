@@ -115,9 +115,8 @@ Java 为了保持标准库的通用性和轻量化，官方只原生支持了全
     
       
     
-    Java
     
-    ```
+    ```java
     // Swing 示例
     Image icon = Toolkit.getDefaultToolkit().getImage("icon.png");
     frame.setIconImage(icon);

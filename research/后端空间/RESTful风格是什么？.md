@@ -71,9 +71,8 @@ RESTful 风格其实是一场“从混乱走向秩序”的接口革命。
 
 少侠，请直接看这段代码，这是后端开发每天都要写无数遍的“标准起手式”：
 
-Java
 
-```
+```java
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 

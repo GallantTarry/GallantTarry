@@ -50,9 +50,8 @@ public class UserRequest {
 }
 ```
 
-Java
 
-```
+```java
 @RestController
 public class UserController {
 
@@ -72,9 +71,8 @@ Lombok 实际上是一个编译期的代码生成工具。当你加上 `@Data` �
 
 如果没有 Lombok，哪怕只有两个字段，你的类也要写这么长：
 
-Java
 
-```
+```java
 public class UserEntity {
     private String username;
     private Integer age;
@@ -114,9 +112,8 @@ public class UserEntity {
 
 只需要一个 `@Data` 注解，上面那几十行代码在编译后都会自动生成：
 
-Java
 
-```
+```java
 import lombok.Data;
 
 @Data // 这个注解相当于同时加上了 @Getter, @Setter, @ToString, @EqualsAndHashCode, @RequiredArgsConstructor

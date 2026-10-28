@@ -31,9 +31,8 @@ DataGrip 和你刚才在 IDEA 里使用的 Database 数据库面板其实使用�
     
 2. **编写语句**：在控制台中直接编写标准的 `CREATE TABLE` 语句。例如：
     
-    SQL
     
-    ```
+    ```sql
     CREATE TABLE sys_role (
         id INT AUTO_INCREMENT PRIMARY KEY COMMENT '角色ID',
         role_name VARCHAR(50) NOT NULL COMMENT '角色名称',

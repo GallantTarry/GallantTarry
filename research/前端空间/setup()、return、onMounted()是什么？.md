@@ -76,9 +76,8 @@
 
   
 
-JavaScript
 
-```
+```javascript
 // 【引入技术】从 Vue 仓库里拿出我们要用的工具
 const { ref, onMounted } = Vue;
 
