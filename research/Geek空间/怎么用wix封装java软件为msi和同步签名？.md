@@ -98,7 +98,7 @@ jpackage --type msi --app-image "C:\Users\w1961\Desktop\image_out\ToolKit" --nam
 
 
 
-这行指令的意思是：**使用 `jpackage` 工具，将你刚才生成的免安装目录（App Image）直接封装并打包成一个标准的 Windows `.msi` 安装包。**
+这行指令的意思是：**使用 `jpackage` 工具，将前一步生成的免安装目录（App Image）直接封装并打包成一个标准的 Windows `.msi` 安装包。**
 
 让我们同样把这段命令拆解开来看看每个参数的含义：
 

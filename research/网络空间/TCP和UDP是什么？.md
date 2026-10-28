@@ -86,7 +86,7 @@ public class UdpSender {
         DatagramSocket socket = new DatagramSocket();
         socket.setBroadcast(true); // 允许发广播大喇叭
 
-        String msg = "我是少侠的电脑，寻找局域网设备！";
+        String msg = "我是客户端节点，寻找局域网设备！";
         byte[] data = msg.getBytes("UTF-8");
 
         // 目标设为全局广播地址，端口设为 8888 暗号

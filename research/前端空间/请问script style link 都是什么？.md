@@ -40,7 +40,7 @@
     
     <!-- 或者直接在标签内写 JS 代码 -->
     <script>
-        console.log("少侠好！");
+        console.log("Hello World!");
     </script>
     ```
     
@@ -91,7 +91,7 @@
         
           
         
-    - 引入网站的标签页小图标（Favicon，正如你代码里写的那样）。
+    - 引入网站的标签页小图标（Favicon）。
         
           
         

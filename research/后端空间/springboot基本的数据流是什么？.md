@@ -150,7 +150,7 @@ UserService userService = new UserServiceImpl();
 
 ### 第 4 步：父类将任务移交给 Mapper (Mapper 层)
 
-在 MP 官方的 `ServiceImpl` 源码里，确实存在一个写好的 `save` 方法。这个方法内部大意的逻辑是： `return baseMapper.insert(entity);` 因为它知道自己不负责连数据库，所以它把任务推给了 `baseMapper`。由于你刚才在继承时，把 `UserMapper` 作为泛型传给了它，所以这里的指令就变成了：呼叫 `UserMapper` 去执行 `insert(user)`！
+在 MP 官方的 `ServiceImpl` 源码里，确实存在一个写好的 `save` 方法。这个方法内部大意的逻辑是： `return baseMapper.insert(entity);` 因为它知道自己不负责连数据库，所以它把任务推给了 `baseMapper`。由于继承时把 `UserMapper` 作为泛型传入，因此底层会直接调用 `UserMapper` 去执行 `insert(user)`。
 
   
 

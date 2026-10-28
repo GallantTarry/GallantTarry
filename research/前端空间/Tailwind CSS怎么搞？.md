@@ -132,7 +132,7 @@ module.exports = {
 npx tailwindcss -i ./input.css -o ./css/output.css --watch
 ```
 
-- **`-i ./input.css`**：读取你刚才建好的源文件。
+- **`-i ./input.css`**：读取新建的源文件。
     
       
     

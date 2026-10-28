@@ -279,6 +279,6 @@ const response = await fetch(workerUrl, {
 
 **它们怎么串起来的？**
 
-- **前端（HTML/Vue）：** 负责在页面上弹出一个好看的毛玻璃输入框，收集少侠想说的话，然后向 `[https://api.xn--udsye.art](https://api.xn--udsye.art)` 发起一次 `POST` 请求。
+- **前端（HTML/Vue）：** 负责在页面上弹出一个好看的毛玻璃输入框，收集用户留言内容，然后向 `[https://api.xn--udsye.art](https://api.xn--udsye.art)` 发起一次 `POST` 请求。
     
 - **后端（Cloudflare Worker）：** 也就是我们前面讨论的那段 JavaScript 脚本。它刚好守候在 `api.xn--udsye.art` 这个域名后面，接住前端发来的留言，再转交给 Resend 投递到你的邮箱。
