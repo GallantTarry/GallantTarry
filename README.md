@@ -67,25 +67,25 @@
       <span class="tk-quest-num">[01]</span>
       <b class="tk-quest-title">Indie Game Dev</b>
       <span class="tk-quest-arrow">→</span>
-      <span class="tk-quest-desc">Clod ＆ Gold 土块与金苹果</span>
+      <span class="tk-quest-desc">Clod ＆ Gold</span>
     </div>
     <div class="tk-quest-item">
       <span class="tk-quest-num">[02]</span>
-      <b class="tk-quest-title">Desktop Artifacts</b>
+      <b class="tk-quest-title">DesktopArtifacts</b>
       <span class="tk-quest-arrow">→</span>
-      <span class="tk-quest-desc">继续深造</span>
+      <span class="tk-quest-desc">桌面开发</span>
     </div>
     <div class="tk-quest-item">
       <span class="tk-quest-num">[03]</span>
       <b class="tk-quest-title">Network & Cloud</b>
       <span class="tk-quest-arrow">→</span>
-      <span class="tk-quest-desc">网络架构学习</span>
+      <span class="tk-quest-desc">涉足网络</span>
     </div>
     <div class="tk-quest-item">
       <span class="tk-quest-num">[04]</span>
       <b class="tk-quest-title">Captain's Dream</b>
       <span class="tk-quest-arrow">→</span>
-      <span class="tk-quest-desc">船长之梦</span>
+      <span class="tk-quest-desc">学习英文</span>
     </div>
   </div>
   <div class="tk-badges">
