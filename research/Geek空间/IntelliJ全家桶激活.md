@@ -8,7 +8,7 @@
 
 2.  PowerShell(管理员)注意是终端管理员模式!
 
-3.  复制以下**激活命令** irm ckey.run|iex 到 PowerShell 中并回车，一定要回车，继续回车（建议复制，避免手动输入错误）
+3.  复制以下**激活命令** irm ckey.run|iex 到 PowerShell 中并回车，一定要回车，继续回车(建议复制，避免手动输入错误)
 
 4.  具体操作如下图
 
@@ -35,15 +35,15 @@
 
 ### 1. 远程脚本下载与执行 (`irm ... | iex`)
 
-- **`irm`**（`Invoke-RestMethod`）：PowerShell 的网络请求命令，用来从服务器（`ckey.run`）下载一段写好的 PowerShell 自动化脚本。
+- **`irm`**(`Invoke-RestMethod`)：PowerShell 的网络请求命令，用来从服务器(`ckey.run`)下载一段写好的 PowerShell 自动化脚本。
     
       
     
-- **`| iex`**（`Invoke-Expression`）：管道符 `|` 把下载下来的脚本直接传递给 `iex` 运行。
+- **`| iex`**(`Invoke-Expression`)：管道符 `|` 把下载下来的脚本直接传递给 `iex` 运行。
     
       
     
-- **脚本的作用**：在管理员权限下，该脚本会自动寻找到本地安装的 IntelliJ IDEA 路径，修改其启动配置文件（`idea64.exe.vmoptions`），在其中注入一个 Java 动态代理补丁（类似于 `ja-netfilter`）或向系统/软件写入伪造的根证书（如代码末尾证书中的 `JetProfile CA`）。
+- **脚本的作用**：在管理员权限下，该脚本会自动寻找到本地安装的 IntelliJ IDEA 路径，修改其启动配置文件(`idea64.exe.vmoptions`)，在其中注入一个 Java 动态代理补丁(类似于 `ja-netfilter`)或向系统/软件写入伪造的根证书(如代码末尾证书中的 `JetProfile CA`)。
     
       
     
@@ -93,7 +93,7 @@
     
       
     
-2. **后门隐患**：注入的 Java Agent 补丁有能力读取或拦截 IDEA 运行时的所有内存数据（包括代码、数据库连接密码等）。
+2. **后门隐患**：注入的 Java Agent 补丁有能力读取或拦截 IDEA 运行时的所有内存数据(包括代码、数据库连接密码等)。
     
       
     

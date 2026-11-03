@@ -1,17 +1,17 @@
 # Golang基础语法
 
-Go 语言（Golang）是由 Google 设计的静态强类型、编译型系统编程语言。它融合了 C 语言的高效执行性能与现代动态语言的开发效率，彻底摒弃了头文件、复杂的类继承体系、指针算术运算以及异常抛出（`try-catch`）机制，围绕**极简语法、组合优于继承、显式错误处理**与**原生 CSP 并发模型**构建了独特的工程体系。
+Go 语言(Golang)是由 Google 设计的静态强类型、编译型系统编程语言。它融合了 C 语言的高效执行性能与现代动态语言的开发效率，彻底摒弃了头文件、复杂的类继承体系、指针算术运算以及异常抛出(`try-catch`)机制，围绕**极简语法、组合优于继承、显式错误处理**与**原生 CSP 并发模型**构建了独特的工程体系。
 
 ---
 
 ## 1. 程序基本结构、包管理与可见性规则
 
-Go 程序通过包（Package）组织代码。任何可独立编译运行的可执行程序，都必须包含一个声明为 `package main` 的源文件，且其中有且仅有一个无参数、无返回值的 `main()` 入口函数。
+Go 程序通过包(Package)组织代码。任何可独立编译运行的可执行程序，都必须包含一个声明为 `package main` 的源文件，且其中有且仅有一个无参数、无返回值的 `main()` 入口函数。
 
 ```go
 package main // 1. 包声明：可执行程序入口必须为 main 包
 
-import ( // 2. 批量导入标准库或第三方包（未使用的包会导致编译直接报错）
+import ( // 2. 批量导入标准库或第三方包(未使用的包会导致编译直接报错)
 	"fmt"
 	"strings"
 )
@@ -19,38 +19,38 @@ import ( // 2. 批量导入标准库或第三方包（未使用的包会导致�
 // 3. 入口函数：左大括号 { 必须与 func 同行，绝不能单独另起一行！
 func main() {
 	msg := strings.ToUpper("hello, golang!")
-	fmt.Println(msg) // 语句末尾无需加分号（编译器会自动插入）
+	fmt.Println(msg) // 语句末尾无需加分号(编译器会自动插入)
 }
 
 ```
 
 ### 核心语法铁律
 
-* **首字母大小写决定访问权限（无 `public` / `private` 关键字）**：
-* **首字母大写**（如 `User`、`PrintLine`）：代表**公开导出（Exported / Public）**，可被其他包导入访问。
-* **首字母小写**（如 `user`、`parseData`）：代表**包内私有（Unexported / Package-private）**，仅限当前包内部的文件访问。
+* **首字母大小写决定访问权限(无 `public` / `private` 关键字)**：
+* **首字母大写**(如 `User`、`PrintLine`)：代表**公开导出(Exported / Public)**，可被其他包导入访问。
+* **首字母小写**(如 `user`、`parseData`)：代表**包内私有(Unexported / Package-private)**，仅限当前包内部的文件访问。
 
 
-* **零容忍的编译器检查**：定义了却未使用的局部变量、导入了却未使用的 `import` 包，在 Go 中不是警告（Warning），而是直接阻断编译的**语法错误（Error）**。
+* **零容忍的编译器检查**：定义了却未使用的局部变量、导入了却未使用的 `import` 包，在 Go 中不是警告(Warning)，而是直接阻断编译的**语法错误(Error)**。
 
 ---
 
 ## 2. 数据类型、零值机制与变量常量
 
-Go 是严格的静态类型语言，**完全禁止任何形式的隐式类型转换**（即便将 `int32` 赋值给 `int64`，也必须显式写成 `int64(x)`）。
+Go 是严格的静态类型语言，**完全禁止任何形式的隐式类型转换**(即便将 `int32` 赋值给 `int64`，也必须显式写成 `int64(x)`)。
 
-### 基本数据类型与默认零值（Zero Value）
+### 基本数据类型与默认零值(Zero Value)
 
 与 C 语言未初始化局部变量会产生随机“垃圾值”不同，Go 语言拥有安全的**零值机制**：任何变量声明后若未显式赋值，编译器会自动将其内存清零并赋予确定的默认零值：
 
 | 类型分类 | 具体关键字 | 占用空间与底层说明 | 默认零值 | `fmt.Printf` 常用占位符 |
 | --- | --- | --- | --- | --- |
-| **布尔型** | `bool` | 1 字节（仅限 `true` / `false`，不可与数字互转） | `false` | `%t` |
-| **平台相关整型** | `int` / `uint` | 32位系统占 4 字节，**64位系统占 8 字节**（最常用） | `0` | `%d` (十进制) / `%x` (十六进制) |
-| **固定宽度整型** | `int8`, `int16`, `int32`, `int64` | 分别占 1、2、4、8 字节（带 `u` 前缀为无符号型） | `0` | `%d` |
-| **字符/字节型** | **`byte`** / **`rune`** | `byte` 是 `uint8` 别名（ASCII）；**`rune` 是 `int32` 别名（代表一个 UTF-8 Unicode 字符）** | `0` | `%c` (字符) / `%U` (Unicode码) |
-| **浮点型** | `float32` / `float64` | 分别占 4 字节、8 字节（浮点字面量默认为 `float64`） | `0.0` | `%f` / `%.2f` |
-| **字符串** | `string` | 底层为不可变的 UTF-8 字节序列（双引号或反引号包裹） | `""` (空串) | `%s` / `%q` (带引号) |
+| **布尔型** | `bool` | 1 字节(仅限 `true` / `false`，不可与数字互转) | `false` | `%t` |
+| **平台相关整型** | `int` / `uint` | 32位系统占 4 字节，**64位系统占 8 字节**(最常用) | `0` | `%d` (十进制) / `%x` (十六进制) |
+| **固定宽度整型** | `int8`, `int16`, `int32`, `int64` | 分别占 1、2、4、8 字节(带 `u` 前缀为无符号型) | `0` | `%d` |
+| **字符/字节型** | **`byte`** / **`rune`** | `byte` 是 `uint8` 别名(ASCII)；**`rune` 是 `int32` 别名(代表一个 UTF-8 Unicode 字符)** | `0` | `%c` (字符) / `%U` (Unicode码) |
+| **浮点型** | `float32` / `float64` | 分别占 4 字节、8 字节(浮点字面量默认为 `float64`) | `0.0` | `%f` / `%.2f` |
+| **字符串** | `string` | 底层为不可变的 UTF-8 字节序列(双引号或反引号包裹) | `""` (空串) | `%s` / `%q` (带引号) |
 | **引用/复合型** | 指针 `*T`, `slice`, `map`, `chan`, `func`, `interface` | 指针、切片、映射、通道、函数与接口类型 | **`nil`** | `%p` (内存地址) / `%+v` (结构明细) |
 
 ### 变量声明的四种方式与 `iota` 常量生成器
@@ -60,7 +60,7 @@ package main
 
 import "fmt"
 
-// 1. 包级全局变量：必须使用 var 关键字（不支持 := 短声明）
+// 1. 包级全局变量：必须使用 var 关键字(不支持 := 短声明)
 var globalVersion string = "v1.0.0"
 
 // 2. 常量与 iota 枚举自增器：在 const 块中，iota 从 0 开始每新增一行自动 +1
@@ -75,13 +75,13 @@ func main() {
 	// 方式一：标准完整声明
 	var age int = 25
 
-	// 方式二：零值声明（自动初始化为 0）
+	// 方式二：零值声明(自动初始化为 0)
 	var count int
 
-	// 方式三：短变量声明（函数内最常用，自动推导类型，左侧至少有一个新变量）
+	// 方式三：短变量声明(函数内最常用，自动推导类型，左侧至少有一个新变量)
 	name, isReady := "GoEngine", true
 
-	// 方式四：多行原始字符串（使用反引号 ` 包裹，不解析转义符，适合写 SQL / JSON / 正则）
+	// 方式四：多行原始字符串(使用反引号 ` 包裹，不解析转义符，适合写 SQL / JSON / 正则)
 	rawJSON := `{"env": "prod", "port": 8080}`
 
 	fmt.Printf("age=%d, count=%d, name=%s, ready=%t, json=%s\n", age, count, name, isReady, rawJSON)
@@ -91,12 +91,12 @@ func main() {
 
 ---
 
-## 3. 指针与内存安全（Pointers & Escape Analysis）
+## 3. 指针与内存安全(Pointers & Escape Analysis)
 
-Go 保留了类似 C 语言的指针（Pointer）来直接操作内存地址、避免大结构体拷贝，但为了彻底杜绝内存越界安全隐患，做了两项重大改进：
+Go 保留了类似 C 语言的指针(Pointer)来直接操作内存地址、避免大结构体拷贝，但为了彻底杜绝内存越界安全隐患，做了两项重大改进：
 
 1. **禁止指针算术运算**：不能对普通指针执行 `p++` 或 `p + 4` 等地址偏移计算。
-2. **编译器逃逸分析（Escape Analysis）**：在 C 语言中，函数返回局部变量的栈地址（`return &local`）会导致致命的悬空指针；而在 Go 语言中，编译器会自动分析变量作用域——一旦发现局部变量的地址被返回到函数外部，**会自动将该变量分配到堆（Heap）上**，并由垃圾回收器（GC）自动管理生命周期。
+2. **编译器逃逸分析(Escape Analysis)**：在 C 语言中，函数返回局部变量的栈地址(`return &local`)会导致致命的悬空指针；而在 Go 语言中，编译器会自动分析变量作用域——一旦发现局部变量的地址被返回到函数外部，**会自动将该变量分配到堆(Heap)上**，并由垃圾回收器(GC)自动管理生命周期。
 
 ```go
 func createScore(val int) *int {
@@ -117,7 +117,7 @@ func main() {
 
 Go 的流程控制极为精炼：**条件表达式两侧不需要加圆括号 `()**`，且允许在 `if`、`switch` 判断前直接内联一条局部变量初始化语句。
 
-### 条件分支（`if-else` 与 `switch`）
+### 条件分支(`if-else` 与 `switch`)
 
 ```go
 // 1. 带初始化短语句的 if：变量 err 的作用域仅限当前 if-else 代码块内部，干净无污染
@@ -127,7 +127,7 @@ if n, err := parseData("1024"); err != nil {
 	fmt.Println("解析成功:", n)
 }
 
-// 2. 无需 break 的 switch：Go 的 case 默认自动阻断，不会穿透（如需强制穿透需写 fallthrough）
+// 2. 无需 break 的 switch：Go 的 case 默认自动阻断，不会穿透(如需强制穿透需写 fallthrough)
 score := 88
 switch { // 省略 switch 后的变量，相当于 switch true，可直接写范围条件替代繁琐的 if-else
 case score >= 90:
@@ -152,7 +152,7 @@ for i := 0; i != 5; i++ {
 	}
 }
 
-// 2. 省略首尾语句（等价于其他语言的 while 循环）
+// 2. 省略首尾语句(等价于其他语言的 while 循环)
 retry := 3
 for retry != 0 {
 	retry--
@@ -160,7 +160,7 @@ for retry != 0 {
 
 // 3. 无限死循环：直接写 for { ... }，配合 break 或 return 退出
 
-// 4. for-range 迭代：遍历切片、Map 或 UTF-8 字符串（按 Unicode 字符 rune 遍历而非单字节）
+// 4. for-range 迭代：遍历切片、Map 或 UTF-8 字符串(按 Unicode 字符 rune 遍历而非单字节)
 words := []string{"Go", "Rust", "C"}
 for index, value := range words { // 如不需要索引，可用空白标识符 _ 忽略：for _, value := range words
 	fmt.Printf("[%d] = %s\n", index, value)
@@ -170,16 +170,16 @@ for index, value := range words { // 如不需要索引，可用空白标识符 
 
 ---
 
-## 5. 核心复合容器：数组、切片（Slice）与映射（Map）
+## 5. 核心复合容器：数组、切片(Slice)与映射(Map)
 
-### 数组（Array） vs 切片（Slice）
+### 数组(Array) vs 切片(Slice)
 
 这是 Go 语言最核心的内存设计之一：
 
-| 对比维度 | 数组（Array：`[N]T`） | 切片（Slice：`[]T`，工程绝对主力） |
+| 对比维度 | 数组(Array：`[N]T`) | 切片(Slice：`[]T`，工程绝对主力) |
 | --- | --- | --- |
-| **类型与长度** | 长度固定且**属于类型的一部分**（`[3]int` 与 `[4]int` 是完全不同的类型） | 长度动态可变，类型仅与元素类型相关 |
-| **底层结构** | 一段连续的元素内存块 | 24 字节的描述符结构体（`ptr` 底层数组指针 + `len` 长度 + `cap` 容量） |
+| **类型与长度** | 长度固定且**属于类型的一部分**(`[3]int` 与 `[4]int` 是完全不同的类型) | 长度动态可变，类型仅与元素类型相关 |
+| **底层结构** | 一段连续的元素内存块 | 24 字节的描述符结构体(`ptr` 底层数组指针 + `len` 长度 + `cap` 容量) |
 | **赋值与传参语义** | **纯值类型拷贝**：将数组赋给新变量或传入函数，会**完整复制整块数组内存** | **轻量引用头拷贝**：仅复制 24 字节的 `SliceHeader`，**共享同一块底层数组内存** |
 
 ```go
@@ -188,30 +188,30 @@ package main
 import "fmt"
 
 func main() {
-	// 1. 使用 make 预分配切片：长度为 2，底层数组预留容量为 4（避免高频扩容拷贝）
+	// 1. 使用 make 预分配切片：长度为 2，底层数组预留容量为 4(避免高频扩容拷贝)
 	s1 := make([]int, 2, 4)
 	s1[0], s1[1] = 10, 20
 
-	// 2. 动态追加元素（append）：当追加后长度未超过 cap 时，直接覆盖底层数组空闲槽位
+	// 2. 动态追加元素(append)：当追加后长度未超过 cap 时，直接覆盖底层数组空闲槽位
 	s2 := append(s1, 30) // 此时 s1 与 s2 仍共享同一个底层数组！
 
-	// 3. 切片截取 s[low:high]（左闭右开区间，包含 low 不包含 high）
+	// 3. 切片截取 s[low:high](左闭右开区间，包含 low 不包含 high)
 	sub := s2[1:3] // 截取索引 1 和 2，sub 为 [20, 30]，同样共享底层数组
 	sub[0] = 999   // 注意：修改 sub[0] 会同步导致 s1[1] 和 s2[1] 变成 999！
 
-	// 4. 当 append 超出容量 cap 时，Go 会自动申请一块新的（通常 2 倍大小）底层数组并把旧数据拷贝过去
+	// 4. 当 append 超出容量 cap 时，Go 会自动申请一块新的(通常 2 倍大小)底层数组并把旧数据拷贝过去
 	s3 := append(s2, 40, 50) // 触发扩容，s3 指向全新的底层数组，与 s1/s2 彻底解绑
 	fmt.Println(s1, s2, s3)
 }
 
 ```
 
-### 映射（`map[K]V`）
+### 映射(`map[K]V`)
 
-Go 内置哈希表 `map` 是无序的键值对集合。**声明后的零值 `map` 为 `nil`，必须通过 `make` 或字面量初始化后才能写入数据**（向 `nil` map 写入会直接触发运行时 `panic`）：
+Go 内置哈希表 `map` 是无序的键值对集合。**声明后的零值 `map` 为 `nil`，必须通过 `make` 或字面量初始化后才能写入数据**(向 `nil` map 写入会直接触发运行时 `panic`)：
 
 ```go
-// 1. 初始化 Map（推荐用 make(map[string]int, 预估容量)）
+// 1. 初始化 Map(推荐用 make(map[string]int, 预估容量))
 ports := map[string]int{
 	"http":  80,
 	"https": 443,
@@ -220,14 +220,14 @@ ports := map[string]int{
 // 2. 新增或修改
 ports["ssh"] = 22
 
-// 3. "Comma-ok" 惯用法：安全判断某个 Key 是否存在（直接读取不存在的 Key 会返回零值 0）
+// 3. "Comma-ok" 惯用法：安全判断某个 Key 是否存在(直接读取不存在的 Key 会返回零值 0)
 if port, exists := ports["mysql"]; exists {
 	fmt.Println("MySQL 端口:", port)
 } else {
 	fmt.Println("未配置 MySQL 端口")
 }
 
-// 4. 删除键值对（即使 key 不存在也是安全的无操作）
+// 4. 删除键值对(即使 key 不存在也是安全的无操作)
 delete(ports, "http")
 
 ```
@@ -236,7 +236,7 @@ delete(ports, "http")
 
 ## 6. 函数、多返回值与 `defer` 延迟机制
 
-Go 语言中的函数是一等公民（可作为参数传递或作为返回值构成闭包），并原生支持**多返回值**与 **`defer` 资源清理栈**。
+Go 语言中的函数是一等公民(可作为参数传递或作为返回值构成闭包)，并原生支持**多返回值**与 **`defer` 资源清理栈**。
 
 ```go
 package main
@@ -262,7 +262,7 @@ func readFileHeader(path string) error {
 		return err
 	}
 	// 打开资源后紧跟一行 defer 关闭资源，绝不会因为后续分支过多而漏关文件或死锁！
-	// 若有多个 defer，按“后进先出（LIFO 栈）”顺序逆序执行
+	// 若有多个 defer，按“后进先出(LIFO 栈)”顺序逆序执行
 	defer file.Close()
 
 	buf := make([]byte, 16)
@@ -275,18 +275,18 @@ func readFileHeader(path string) error {
 
 ---
 
-## 7. 结构体（`struct`）、方法接收者与隐式接口
+## 7. 结构体(`struct`)、方法接收者与隐式接口
 
-Go 语言没有 `class` 关键字，也不支持 `extends` 继承，而是通过**为结构体绑定方法**与匿名字段组合（Composition）来实现面向对象设计。
+Go 语言没有 `class` 关键字，也不支持 `extends` 继承，而是通过**为结构体绑定方法**与匿名字段组合(Composition)来实现面向对象设计。
 
-### 结构体定义与值/指针接收者（Receiver）
+### 结构体定义与值/指针接收者(Receiver)
 
 ```go
 package main
 
 import "fmt"
 
-// 1. 定义结构体（支持附加反引号 Struct Tag，常用于 JSON 序列化或数据库 ORM 映射）
+// 1. 定义结构体(支持附加反引号 Struct Tag，常用于 JSON 序列化或数据库 ORM 映射)
 type Server struct {
 	Host string `json:"host"`
 	Port int    `json:"port"`
@@ -304,9 +304,9 @@ func (s *Server) UpdatePort(newPort int) {
 
 ```
 
-### 鸭子类型接口（Duck Typing `interface`）
+### 鸭子类型接口(Duck Typing `interface`)
 
-在 Java 中实现接口必须显式声明 `implements`；而在 Go 语言中，**接口实现是完全隐式（非侵入式）的**——只要一个结构体实现了接口所要求的全部方法签名，它就自动实现了该接口：
+在 Java 中实现接口必须显式声明 `implements`；而在 Go 语言中，**接口实现是完全隐式(非侵入式)的**——只要一个结构体实现了接口所要求的全部方法签名，它就自动实现了该接口：
 
 ```go
 // 定义一个插件接口契约
@@ -315,7 +315,7 @@ type Plugin interface {
 	Run() error
 }
 
-// 定义一个日志插件结构体（无需任何 implements 声明）
+// 定义一个日志插件结构体(无需任何 implements 声明)
 type LoggerPlugin struct{}
 
 func (l *LoggerPlugin) Name() string { return "Logger" }
@@ -327,13 +327,13 @@ func (l *LoggerPlugin) Run() error   { return nil }
 
 ---
 
-## 8. 原生并发原语（Goroutine、Channel 与 Select）
+## 8. 原生并发原语(Goroutine、Channel 与 Select)
 
-并发是 Go 语言的王牌特性。不同于传统语言依赖笨重的操作系统线程（每个线程占用数 MB 栈内存）和复杂的锁机制，Go 采用 **CSP（通信顺序进程）模型**，提倡“不要通过共享内存来通信，而要通过通信来共享内存”。
+并发是 Go 语言的王牌特性。不同于传统语言依赖笨重的操作系统线程(每个线程占用数 MB 栈内存)和复杂的锁机制，Go 采用 **CSP(通信顺序进程)模型**，提倡“不要通过共享内存来通信，而要通过通信来共享内存”。
 
-* **`go` 关键字（Goroutine 协程）**：在任意函数调用前加上 `go` 即可启动一个用户态轻量级协程，初始栈内存仅 **2KB**，由 Go Runtime 的 GMP 调度器在少量内核线程上高效多路复用，单机可轻松并发数十万个 Goroutine。
-* **`chan`（Channel 通道）**：协程之间安全传递数据的类型化管道，内置并发同步机制。
-* **无缓冲通道** `make(chan int)`：发送与接收必须同时就绪（同步阻塞握手）。
+* **`go` 关键字(Goroutine 协程)**：在任意函数调用前加上 `go` 即可启动一个用户态轻量级协程，初始栈内存仅 **2KB**，由 Go Runtime 的 GMP 调度器在少量内核线程上高效多路复用，单机可轻松并发数十万个 Goroutine。
+* **`chan`(Channel 通道)**：协程之间安全传递数据的类型化管道，内置并发同步机制。
+* **无缓冲通道** `make(chan int)`：发送与接收必须同时就绪(同步阻塞握手)。
 * **有缓冲通道** `make(chan int, 10)`：缓冲区未满时发送不阻塞，未空时接收不阻塞。
 
 
@@ -380,9 +380,9 @@ func main() {
 
 ---
 
-## Go 切片（Slice）底层内存结构与扩容机制交互演示
+## Go 切片(Slice)底层内存结构与扩容机制交互演示
 
-在 Go 语言日常开发中，**切片共享底层数组导致的数据意外篡改**与`append` 触发扩容后的内存分离是最核心的底层机制。每个切片变量在栈上都是一个 24 字节的 `runtime.slice` 结构体（包含 `array` 指针、`len` 长度、`cap` 容量）。通过下方交互式状态机，你可以逐步检视切片从初始化、子切片截取、共享内存修改到跨容量翻倍扩容的完整内存演变过程：
+在 Go 语言日常开发中，**切片共享底层数组导致的数据意外篡改**与`append` 触发扩容后的内存分离是最核心的底层机制。每个切片变量在栈上都是一个 24 字节的 `runtime.slice` 结构体(包含 `array` 指针、`len` 长度、`cap` 容量)。通过下方交互式状态机，你可以逐步检视切片从初始化、子切片截取、共享内存修改到跨容量翻倍扩容的完整内存演变过程：
 
 <div id="gos-demo-root">
 <style>
@@ -505,7 +505,7 @@ func main() {
       title:"Step 1：执行 make([]int, 2, 4) 初始化切片与底层数组",
       badge:"make 预分配 · 零值初始化",
       badgeCls:"gos-st-cyan",
-      desc:"调用 make([]int, 2, 4) 时，Go 先在堆区分配一个长度为 4 的连续整型数组（首地址 0xC0000100，全部自动清零为 0），随后在栈上创建 24 字节的 runtime.slice 结构体 s1：array 指向 0xC0000100，有效长度 len=2，总容量 cap=4。",
+      desc:"调用 make([]int, 2, 4) 时，Go 先在堆区分配一个长度为 4 的连续整型数组(首地址 0xC0000100，全部自动清零为 0)，随后在栈上创建 24 字节的 runtime.slice 结构体 s1：array 指向 0xC0000100，有效长度 len=2，总容量 cap=4。",
       links:["栈 s1.array ──\x3e 堆数组首地址 0xC0000100","s1 可直接读写索引 [0..1]，槽位 [2..3] 为预留空闲容量"],
       hdrs:[
         {name:"s1 (runtime.slice)", stackAddr:"栈 0x7FFF0100", ptr:"0xC0000100", len:"2", cap:"4", hi:true, warn:false, note:"✔ 初始状态: s1 = [0, 0]"}
@@ -550,10 +550,10 @@ func main() {
       ]
     },
     {
-      title:"Step 3：截取子切片 s2 := s1[1:3]（零拷贝共享底层数组）",
+      title:"Step 3：截取子切片 s2 := s1[1:3](零拷贝共享底层数组)",
       badge:"内存共享 · 指针偏移",
       badgeCls:"gos-st-amber",
-      desc:"执行 s1[1:3]（左闭右开区间，取索引 1 和 2）不会复制底层数组！Go 仅在栈上新建一个 SliceHeader s2：其 array 指针偏移指向原底层数组索引 [1] 的地址 (0xC0000108)，长度 len = 3-1 = 2，容量 cap = 原cap(4) - 起始索引(1) = 3。",
+      desc:"执行 s1[1:3](左闭右开区间，取索引 1 和 2)不会复制底层数组！Go 仅在栈上新建一个 SliceHeader s2：其 array 指针偏移指向原底层数组索引 [1] 的地址 (0xC0000108)，长度 len = 3-1 = 2，容量 cap = 原cap(4) - 起始索引(1) = 3。",
       links:["s1.array ──\x3e 0xC0000100 (槽位[0])","s2.array ──\x3e 0xC0000108 (槽位[1]，与 s1 共享同一块底层数组)"],
       hdrs:[
         {name:"s1 (runtime.slice)", stackAddr:"栈 0x7FFF0100", ptr:"0xC0000100", len:"2", cap:"4", hi:false, warn:false, note:"s1 视图: [10, 20]"},
@@ -578,7 +578,7 @@ func main() {
       title:"Step 4：修改 s2[0] = 99 引发共享内存连锁篡改陷阱",
       badge:"高频踩坑：s1[1] 被连带修改！",
       badgeCls:"gos-st-rose",
-      desc:"因为 s2.array 指向 0xC0000108（即原底层数组的槽位 [1]），修改 s2[0] = 99 会直接改写 0xC0000108 处的内存值。结果导致原本毫不知情的 s1[1] 也同步从 20 变成了 99！若需彻底隔离，应使用 copy() 函数或克隆切片。",
+      desc:"因为 s2.array 指向 0xC0000108(即原底层数组的槽位 [1])，修改 s2[0] = 99 会直接改写 0xC0000108 处的内存值。结果导致原本毫不知情的 s1[1] 也同步从 20 变成了 99！若需彻底隔离，应使用 copy() 函数或克隆切片。",
       links:["写入 s2[0] ──\x3e 改写共享地址 0xC0000108 ──\x3e s1[1] 被连带篡改为 99！"],
       hdrs:[
         {name:"s1 (runtime.slice)", stackAddr:"栈 0x7FFF0100", ptr:"0xC0000100", len:"2", cap:"4", hi:false, warn:true, note:"⚠️ 受连锁影响: s1 变成了 [10, 99]"},
@@ -600,10 +600,10 @@ func main() {
       ]
     },
     {
-      title:"Step 5：容量内追加 s2 = append(s2, 30)（原地覆盖空闲槽位）",
+      title:"Step 5：容量内追加 s2 = append(s2, 30)(原地覆盖空闲槽位)",
       badge:"未超容量 cap · 原地追加",
       badgeCls:"gos-st-amber",
-      desc:"此时 s2 的 len=2、cap=3，还剩 1 个空闲容量槽位（底层数组索引 [3]）。调用 append(s2, 30) 不会触发内存重新分配，而是直接将 30 写入底层数组的槽位 [3]，并返回更新了 len=3 的新 SliceHeader 赋给 s2。",
+      desc:"此时 s2 的 len=2、cap=3，还剩 1 个空闲容量槽位(底层数组索引 [3])。调用 append(s2, 30) 不会触发内存重新分配，而是直接将 30 写入底层数组的槽位 [3]，并返回更新了 len=3 的新 SliceHeader 赋给 s2。",
       links:["s2.len (2) \x3c s2.cap (3) ──\x3e 直接向原底层数组槽位 [3] 写入 30","s2.len 更新为 3，s2.cap 仍为 3 (容量已满)"],
       hdrs:[
         {name:"s1 (runtime.slice)", stackAddr:"栈 0x7FFF0100", ptr:"0xC0000100", len:"2", cap:"4", hi:false, warn:false, note:"s1 视图仍为: [10, 99]"},
@@ -628,7 +628,7 @@ func main() {
       title:"Step 6：超容量追加 s2 = append(s2, 40) 触发 2 倍扩容与内存解绑",
       badge:"runtime.growslice · 搬迁新数组并解绑",
       badgeCls:"gos-st-green",
-      desc:"因 s2 的 len(3) 已等于 cap(3)，再次 append(s2, 40) 会触发运行时扩容函数 runtime.growslice：Go 在堆上开辟一块容量翻倍（cap=6）的新底层数组 (0xC0000200)，将 s2 原有的 [99, 0, 30] 拷贝过去并追加 40，最后将 s2.array 指向新地址。至此 s1 与 s2 彻底解绑，互不影响！",
+      desc:"因 s2 的 len(3) 已等于 cap(3)，再次 append(s2, 40) 会触发运行时扩容函数 runtime.growslice：Go 在堆上开辟一块容量翻倍(cap=6)的新底层数组 (0xC0000200)，将 s2 原有的 [99, 0, 30] 拷贝过去并追加 40，最后将 s2.array 指向新地址。至此 s1 与 s2 彻底解绑，互不影响！",
       links:["s1.array ──\x3e 仍指向旧数组 0xC0000100","s2.array ──\x3e 迁移至新分配的 2 倍容量数组 0xC0000200 (彻底解除共享)"],
       hdrs:[
         {name:"s1 (保留旧数组引用)", stackAddr:"栈 0x7FFF0100", ptr:"0xC0000100", len:"2", cap:"4", hi:false, warn:false, note:"仍指向旧数组 #1: [10, 99]"},

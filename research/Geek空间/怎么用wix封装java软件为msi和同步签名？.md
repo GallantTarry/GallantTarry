@@ -8,7 +8,7 @@
 
 而且随着微软 Windows 安全机制的不断升级，虽然我们常说“魔高一尺，道高一丈”，黑科技绕过法对短期维护来说或许有效，但想真正做成一套产品——不说适配所有系统，仅仅就 x64 的 Windows 桌面端而言——正规安装绝对是最成熟、最稳定、最安全的一套方案了。那么本文将提供 WiX 工具针对 Windows 桌面端软件的安装包制作教程，摒除一切黑科技，走科班与当今最成熟的体系与方法。
 
-首先还是要站在巨人的肩膀上，下载最稳定的 WiX 3.14 成熟版本。安装完成后需要配置一下系统环境变量：在 Windows 搜索“编辑系统环境变量” -> 点击“环境变量” -> 双击系统变量中的 `Path` -> 点击“新建”，将 WiX 的可执行目录（默认一般为 `C:\Program Files (x86)\WiX Toolset v3.14\bin`）添加进去，保存后重新打开终端测试。
+首先还是要站在巨人的肩膀上，下载最稳定的 WiX 3.14 成熟版本。安装完成后需要配置一下系统环境变量：在 Windows 搜索“编辑系统环境变量” -> 点击“环境变量” -> 双击系统变量中的 `Path` -> 点击“新建”，将 WiX 的可执行目录(默认一般为 `C:\Program Files (x86)\WiX Toolset v3.14\bin`)添加进去，保存后重新打开终端测试。
 
 接下来要配合 `jpackage` 命令进行操作，这是 JDK 自带的一个打包工具。理论上只要您的电脑配置好了环境变量，就不需要打开 IDE，直接在终端输入即可。
 
@@ -21,7 +21,7 @@
 jpackage --type app-image --name ToolKit --app-version 1.9.6 --input "C:\Users\w1961\Desktop\testwix" --main-jar ToolKit.jar --main-class shaoxia.MainLauncher --dest "C:\Users\w1961\Desktop\image_out" --icon "C:\Users\w1961\Desktop\testwix\logo.ico"
 ```
 
-这行 `jpackage` 命令的意思是：**使用 JDK 自带的打包工具，将你的 Java 项目生成一个免安装的独立运行目录（App Image）**。
+这行 `jpackage` 命令的意思是：**使用 JDK 自带的打包工具，将你的 Java 项目生成一个免安装的独立运行目录(App Image)**。
 
   
 
@@ -33,11 +33,11 @@ jpackage --type app-image --name ToolKit --app-version 1.9.6 --input "C:\Users\w
     
       
     
-- **`--type app-image`**：指定打包类型为“应用镜像目录”（也就是生成一个可以直接双击运行、包含完整环境的文件夹，而不是直接生成安装包）。
+- **`--type app-image`**：指定打包类型为“应用镜像目录”(也就是生成一个可以直接双击运行、包含完整环境的文件夹，而不是直接生成安装包)。
     
       
     
-- **`--name ToolKit`**：设定生成程序的名称。（这一步决定了最后的软件名称和快捷方式名称，一定要尤为关注一下。）
+- **`--name ToolKit`**：设定生成程序的名称。(这一步决定了最后的软件名称和快捷方式名称，一定要尤为关注一下。)
     
       
     
@@ -53,7 +53,7 @@ jpackage --type app-image --name ToolKit --app-version 1.9.6 --input "C:\Users\w
     
       
     
-- **`--main-class shaoxia.MainLauncher`**：指定程序的启动入口类（即 `main` 函数所在的类）。
+- **`--main-class shaoxia.MainLauncher`**：指定程序的启动入口类(即 `main` 函数所在的类)。
     
       
     
@@ -98,7 +98,7 @@ jpackage --type msi --app-image "C:\Users\w1961\Desktop\image_out\ToolKit" --nam
 
 
 
-这行指令的意思是：**使用 `jpackage` 工具，将前一步生成的免安装目录（App Image）直接封装并打包成一个标准的 Windows `.msi` 安装包。**
+这行指令的意思是：**使用 `jpackage` 工具，将前一步生成的免安装目录(App Image)直接封装并打包成一个标准的 Windows `.msi` 安装包。**
 
 让我们同样把这段命令拆解开来看看每个参数的含义：
 
@@ -116,7 +116,7 @@ jpackage --type msi --app-image "C:\Users\w1961\Desktop\image_out\ToolKit" --nam
     
       
     
-- **`--name ToolKit`**：指定安装包在系统中显示的软件名称。（这里的名称最终还是根据第一次打包的独立运行目录决定的。）
+- **`--name ToolKit`**：指定安装包在系统中显示的软件名称。(这里的名称最终还是根据第一次打包的独立运行目录决定的。)
     
       
     
@@ -132,7 +132,7 @@ jpackage --type msi --app-image "C:\Users\w1961\Desktop\image_out\ToolKit" --nam
     
       
     
-- **`--win-dir-chooser`**：在安装向导中弹出一个步骤，允许用户自己选择安装到哪个盘（例如 D 盘）。
+- **`--win-dir-chooser`**：在安装向导中弹出一个步骤，允许用户自己选择安装到哪个盘(例如 D 盘)。
     
       
     

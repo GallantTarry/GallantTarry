@@ -5,8 +5,8 @@
 我在PySide6里创作我的PyKuai时候遇到一个问题，这是一个很简单的脚本启动器，就是一个框子，里面去读取脚本文件夹里的脚本，且保存一个json到电脑里，保存您的收藏。
 
 那么Pyside6打包有很多种：  
-***方案一：PyInstaller（最简单快捷，新手首选）***  
-***方案二：Nuitka（进阶推荐，体积小、运行快、防反编译）***  
+***方案一：PyInstaller(最简单快捷，新手首选)***  
+***方案二：Nuitka(进阶推荐，体积小、运行快、防反编译)***  
 ***附带一个“小白神器”：Auto-py-to-exe***
 
 我这里介绍方案一，最简单的方法，先安装一下依赖。
@@ -46,13 +46,13 @@ pyinstaller --noconfirm --onefile --windowed --icon "imgs/BlackHole.ico" --add-d
 - **`-i "imgs/script.ico"`**：**图标注入**。给生成的 `.exe` 披上你专属的极客外衣。
 
 
-- **`--add-data "源路径;目标路径"`**：**资源挂载**。这一步极其关键，它会把你的外部子脚本（`Scripts`）、外部二进制工具（`tools` 里的 `UnRAR.exe`）以及图片资源（`imgs`）全部强制打包塞进最后的 `.exe` 肚子里。
+- **`--add-data "源路径;目标路径"`**：**资源挂载**。这一步极其关键，它会把你的外部子脚本(`Scripts`)、外部二进制工具(`tools` 里的 `UnRAR.exe`)以及图片资源(`imgs`)全部强制打包塞进最后的 `.exe` 肚子里。
 
 
 
 ### ⚠️ 打包前最后确认清单：
 
-1. **环境准备**：确保你当前运行这条命令的 Python 环境里，已经安装了 `pyinstaller`，以及程序需要的所有底层库（比如 `pandas`, `PySide6`, `opencv-python`, `img2pdf`, `rarfile`, `Pillow`，特别是之前漏掉的 **`openpyxl`**）。
+1. **环境准备**：确保你当前运行这条命令的 Python 环境里，已经安装了 `pyinstaller`，以及程序需要的所有底层库(比如 `pandas`, `PySide6`, `opencv-python`, `img2pdf`, `rarfile`, `Pillow`，特别是之前漏掉的 **`openpyxl`**)。
 
 
 2. **强制导包**：确保在 `PyKuai.py` 的最顶部，已经写好了针对这些外部库的占位 `import` 语句，防止 PyInstaller 漏抓动态依赖。
@@ -63,7 +63,7 @@ pyinstaller --noconfirm --onefile --windowed --icon "imgs/BlackHole.ico" --add-d
 
 ## 二、我之前遇到的问题
 
-那么这里我主要还是讲怎么打包，和配置依赖时遇到的问题，曾今我使用的是不在主类里写全import比如v1.2.0版本之前，我打包是这样做的（👇这是一个随便的案例）直接在终端所在文件夹输入
+那么这里我主要还是讲怎么打包，和配置依赖时遇到的问题，曾今我使用的是不在主类里写全import比如v1.2.0版本之前，我打包是这样做的(👇这是一个随便的案例)直接在终端所在文件夹输入
 
 ```cmd  
 pyinstaller -F -w -i "imgs/script.ico" --add-data "Scripts;Scripts" --add-data "tools;tools" --add-data "imgs;imgs" --hidden-import pandas --hidden-import cv2 --hidden-import numpy --hidden-import img2pdf --hidden-import keyboard --hidden-import rarfile --hidden-import PIL --hidden-import openpyxl PyKuai.py  
@@ -83,12 +83,12 @@ pyinstaller -F -w -i "imgs/script.ico" --add-data "Scripts;Scripts" --add-data "
 以下是你**可以全部删除**的编译生成文件：
 
 
-### 🗑️ 放心删除（全都是打包产生的临时垃圾）
+### 🗑️ 放心删除(全都是打包产生的临时垃圾)
 
 1. **`build` 文件夹**：PyInstaller 打包时产生的临时工作缓存，打完包就没用了，直接删。
 
 
-2. **`PyKuai.spec` 文件**：PyInstaller 自动生成的配置清单，直接删（下次打包它会自动重新生成）。
+2. **`PyKuai.spec` 文件**：PyInstaller 自动生成的配置清单，直接删(下次打包它会自动重新生成)。
 
 
 3. **`PyKuai.build` 文件夹**：之前用 Nuitka 打包时留下的临时缓存，删！
@@ -101,7 +101,7 @@ pyinstaller -F -w -i "imgs/script.ico" --add-data "Scripts;Scripts" --add-data "
 
 
 
-### 📦 关于最终的 `.exe` 成品（注意提取）
+### 📦 关于最终的 `.exe` 成品(注意提取)
 
 在截图中，我有看到两个与成品有关的地方：
 
@@ -113,21 +113,21 @@ pyinstaller -F -w -i "imgs/script.ico" --add-data "Scripts;Scripts" --add-data "
 
 
 
-### 🛡️ 绝对不能碰的代码与资源（你的核心资产）
+### 🛡️ 绝对不能碰的代码与资源(你的核心资产)
 
 为了防误删，最后再确认一下，下面这些是你的**核心源码和环境，千万别删**：
 
 
-- `.venv`（虚拟环境目录）
+- `.venv`(虚拟环境目录)
 
 
-- `Scripts`、`imgs`、`tools`（你辛辛苦苦写的卡带脚本和资源）
+- `Scripts`、`imgs`、`tools`(你辛辛苦苦写的卡带脚本和资源)
 
 
-- `PyKuai.py`、`build_auto.py`（主程序源码）
+- `PyKuai.py`、`build_auto.py`(主程序源码)
 
 
-- `.pykuai_auth`、`.pykuai_fav.json`（你软件生成的配置和收藏夹数据）
+- `.pykuai_auth`、`.pykuai_fav.json`(你软件生成的配置和收藏夹数据)
 
 
 

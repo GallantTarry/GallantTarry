@@ -4,19 +4,19 @@ Java 是一门强类型、面向对象的编程语言，语法风格承袭自 C 
 
 ## 1. 程序基本结构与入口
 
-Java 中几乎所有代码都必须定义在类（Class）内部。一个标准的源文件结构由包声明、导入语句、类定义和主方法组成：
+Java 中几乎所有代码都必须定义在类(Class)内部。一个标准的源文件结构由包声明、导入语句、类定义和主方法组成：
 
   
 
 
 
 ```Java
-package com.example.demo; // 1. 包声明（必须在有效代码第一行）
+package com.example.demo; // 1. 包声明(必须在有效代码第一行)
 
-import java.util.Scanner; // 2. 引入外部类（java.lang 包下的类默认自动引入）
+import java.util.Scanner; // 2. 引入外部类(java.lang 包下的类默认自动引入)
 
 /**
- * 3. 类定义：public 类的名称必须与文件名（HelloWorld.java）完全一致
+ * 3. 类定义：public 类的名称必须与文件名(HelloWorld.java)完全一致
  */
 public class HelloWorld {
 
@@ -27,37 +27,37 @@ public class HelloWorld {
 }
 ```
 
-- **命名规范**：类名使用大驼峰（`UpperCamelCase`），方法名和变量名使用小驼峰（`lowerCamelCase`），常量全大写加下划线（`MAX_VALUE`）。
+- **命名规范**：类名使用大驼峰(`UpperCamelCase`)，方法名和变量名使用小驼峰(`lowerCamelCase`)，常量全大写加下划线(`MAX_VALUE`)。
     
       
     
-- **现代化简化（Java 21+）**：在现代 JDK 版本中，支持隐式类和简化的实例主方法，开发小型脚本时可直接写 `void main() { System.out.println("Hello"); }`。
+- **现代化简化(Java 21+)**：在现代 JDK 版本中，支持隐式类和简化的实例主方法，开发小型脚本时可直接写 `void main() { System.out.println("Hello"); }`。
     
       
     
 
 ## 2. 数据类型、变量与常量
 
-Java 的数据类型严格分为两大类：**基本数据类型（Primitive Types）**和**引用数据类型（Reference Types）**。
+Java 的数据类型严格分为两大类：**基本数据类型(Primitive Types)**和**引用数据类型(Reference Types)**。
 
   
 
 ### 八大基本数据类型
 
-基本类型直接存储数据值，分配在栈内存（或随对象存储在堆中），没有方法可调用：
+基本类型直接存储数据值，分配在栈内存(或随对象存储在堆中)，没有方法可调用：
 
   
 
-|**分类**|**类型关键字**|**占用空间**|**默认值（成员变量）**|**字面量书写示例与说明**|
+|**分类**|**类型关键字**|**占用空间**|**默认值(成员变量)**|**字面量书写示例与说明**|
 |---|---|---|---|---|
-|**整型**|`byte`|1 字节 (8位)|`0`|`byte b = 127;`（范围 -128 到 127）|
+|**整型**|`byte`|1 字节 (8位)|`0`|`byte b = 127;`(范围 -128 到 127)|
 |**整型**|`short`|2 字节 (16位)|`0`|`short s = 32000;`|
-|**整型**|`int`|4 字节 (32位)|`0`|`int i = 100_000;`（整型默认类型，支持下划线分隔）|
-|**整型**|`long`|8 字节 (64位)|`0L`|`long l = 10000000000L;`（末尾必须加 `L`）|
-|**浮点型**|`float`|4 字节 (32位)|`0.0f`|`float f = 3.14f;`（末尾必须加 `f`）|
-|**浮点型**|`double`|8 字节 (64位)|`0.0d`|`double d = 3.14159;`（浮点默认类型）|
-|**字符型**|`char`|2 字节 (16位)|`'\u0000'`|`char c = 'A';`（采用 UTF-16 编码，单引号包裹）|
-|**布尔型**|`boolean`|视 JVM 实现|`false`|`boolean flag = true;`（仅限 `true` 或 `false`，不可用 0/1 替代）|
+|**整型**|`int`|4 字节 (32位)|`0`|`int i = 100_000;`(整型默认类型，支持下划线分隔)|
+|**整型**|`long`|8 字节 (64位)|`0L`|`long l = 10000000000L;`(末尾必须加 `L`)|
+|**浮点型**|`float`|4 字节 (32位)|`0.0f`|`float f = 3.14f;`(末尾必须加 `f`)|
+|**浮点型**|`double`|8 字节 (64位)|`0.0d`|`double d = 3.14159;`(浮点默认类型)|
+|**字符型**|`char`|2 字节 (16位)|`'\u0000'`|`char c = 'A';`(采用 UTF-16 编码，单引号包裹)|
+|**布尔型**|`boolean`|视 JVM 实现|`false`|`boolean flag = true;`(仅限 `true` 或 `false`，不可用 0/1 替代)|
 
 ### 变量声明与常量
 
@@ -66,9 +66,9 @@ Java 的数据类型严格分为两大类：**基本数据类型（Primitive Typ
 ```Java
 // 1. 显式类型声明
 int age = 25;
-String name = "Java"; // String 属于引用类型（类），用双引号包裹
+String name = "Java"; // String 属于引用类型(类)，用双引号包裹
 
-// 2. 局部变量类型推导（Java 10+ 引入，仅限方法内的局部变量）
+// 2. 局部变量类型推导(Java 10+ 引入，仅限方法内的局部变量)
 var list = new java.util.ArrayList<String>(); 
 
 // 3. 常量声明：使用 final 关键字，赋值后不可修改
@@ -77,11 +77,11 @@ final double PI = 3.1415926;
 
 ### 类型转换
 
-- **隐式转换（自动扩容）**：小范围类型自动转为大范围类型（如 `byte` 转 `short` 转 `int` 转 `long` 转 `float` 转 `double`）。
+- **隐式转换(自动扩容)**：小范围类型自动转为大范围类型(如 `byte` 转 `short` 转 `int` 转 `long` 转 `float` 转 `double`)。
     
       
     
-- **显式转换（强制转型）**：大范围转小范围需要加上括号，可能损失精度或溢出：
+- **显式转换(强制转型)**：大范围转小范围需要加上括号，可能损失精度或溢出：
     
       
     
@@ -97,11 +97,11 @@ final double PI = 3.1415926;
 
 ### 核心运算符
 
-- **算术运算**：`+`、`-`、`*`、`/`（整数相除直接舍弃小数）、`%`（取模）、`++`、`--`。
+- **算术运算**：`+`、`-`、`*`、`/`(整数相除直接舍弃小数)、`%`(取模)、`++`、`--`。
     
       
     
-- **关系与逻辑**：`==`、`!=`、大于、小于，以及**短路逻辑运算符** `&&`（与）、`||`（或）、`!`（非）。
+- **关系与逻辑**：`==`、`!=`、大于、小于，以及**短路逻辑运算符** `&&`(与)、`||`(或)、`!`(非)。
     
       
     
@@ -109,14 +109,14 @@ final double PI = 3.1415926;
     
       
     
-- **位运算符**：`&`、`|`、`^`（异或）、`~`（取反）、左移与右移运算符。
+- **位运算符**：`&`、`|`、`^`(异或)、`~`(取反)、左移与右移运算符。
     
       
     
 
-### 字符串（`String`）核心准则
+### 字符串(`String`)核心准则
 
-Java 中的 `String` 是**不可变对象（Immutable）**，每次拼接都会生成新对象（高频拼接建议使用 `StringBuilder`）：
+Java 中的 `String` 是**不可变对象(Immutable)**，每次拼接都会生成新对象(高频拼接建议使用 `StringBuilder`)：
 
   
 
@@ -132,7 +132,7 @@ boolean isSameRef = (s1 == s2); // false
 // 正确做法：使用 equals() 比较字符串的内容值
 boolean isSameContent = s1.equals(s2); // true
 
-// 多行文本块（Text Blocks，Java 15+）：无需转义换行和双引号
+// 多行文本块(Text Blocks，Java 15+)：无需转义换行和双引号
 String json = """
         {
             "language": "Java",
@@ -143,9 +143,9 @@ String json = """
 
 ## 4. 流程控制语句
 
-### 条件分支（`if-else` 与 `switch`）
+### 条件分支(`if-else` 与 `switch`)
 
-除了传统的 `if - else if - else`，现代 Java（Java 14+）大幅强化了 `switch`，支持箭头语法并可直接作为表达式返回值，彻底避免了忘写 `break` 导致的穿透问题：
+除了传统的 `if - else if - else`，现代 Java(Java 14+)大幅强化了 `switch`，支持箭头语法并可直接作为表达式返回值，彻底避免了忘写 `break` 导致的穿透问题：
 
   
 
@@ -154,7 +154,7 @@ String json = """
 ```Java
 String day = "MONDAY";
 
-// 现代 Switch 表达式（自带阻断，无需写 break）
+// 现代 Switch 表达式(自带阻断，无需写 break)
 String type = switch (day) {
     case "MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY" -> "工作日";
     case "SATURDAY", "SUNDAY" -> "周末";
@@ -165,7 +165,7 @@ String type = switch (day) {
 };
 ```
 
-### 循环结构（`for`、`while`、`do-while`）
+### 循环结构(`for`、`while`、`do-while`)
 
 
 
@@ -178,7 +178,7 @@ for (int i = 0; i < nums.length; i++) {
     System.out.println(nums[i]);
 }
 
-// 2. 增强型 for-each 循环（遍历数组或集合首选）
+// 2. 增强型 for-each 循环(遍历数组或集合首选)
 for (int num : nums) {
     System.out.println(num);
 }
@@ -190,7 +190,7 @@ while (count > 0) {
 }
 ```
 
-## 5. 数组（Arrays）
+## 5. 数组(Arrays)
 
 Java 的数组是固定长度的容器，一旦创建长度不可更改，分配在堆内存中，通过 `.length` 属性获取长度：
 
@@ -199,10 +199,10 @@ Java 的数组是固定长度的容器，一旦创建长度不可更改，分配
 
 
 ```Java
-// 1. 静态初始化（声明同时赋值）
+// 1. 静态初始化(声明同时赋值)
 int[] scores = {95, 88, 76, 100};
 
-// 2. 动态初始化（指定长度，元素初始化为对应类型的默认值）
+// 2. 动态初始化(指定长度，元素初始化为对应类型的默认值)
 String[] names = new String[5]; // 默认全是 null
 names[0] = "Alice";
 
@@ -215,7 +215,7 @@ int[][] matrix = {
 
 ## 6. 方法定义与重载
 
-Java 中的函数统称为**方法（Method）**，必须定义在类内部。Java 参数传递只有**值传递**（基本类型传递值的副本，引用类型传递内存地址引用的副本）。
+Java 中的函数统称为**方法(Method)**，必须定义在类内部。Java 参数传递只有**值传递**(基本类型传递值的副本，引用类型传递内存地址引用的副本)。
 
   
 
@@ -229,12 +229,12 @@ public class Calculator {
         return a + b;
     }
 
-    // 方法重载（Overloading）：方法名相同，但参数个数或类型不同（与返回值无关）
+    // 方法重载(Overloading)：方法名相同，但参数个数或类型不同(与返回值无关)
     public double add(double a, double b) {
         return a + b;
     }
 
-    // 可变参数（Varargs）：本质是数组，必须放在参数列表最后一位
+    // 可变参数(Varargs)：本质是数组，必须放在参数列表最后一位
     public int sumAll(int... numbers) {
         int total = 0;
         for (int n : numbers) {
@@ -245,7 +245,7 @@ public class Calculator {
 }
 ```
 
-## 7. 面向对象核心语法（OOP）
+## 7. 面向对象核心语法(OOP)
 
 ### 类、构造器与封装
 
@@ -253,10 +253,10 @@ public class Calculator {
 
   
 
-|**修饰符**|**当前类内部**|**同一个包（Package）**|**不同包的子类**|**全局任意位置**|
+|**修饰符**|**当前类内部**|**同一个包(Package)**|**不同包的子类**|**全局任意位置**|
 |---|---|---|---|---|
 |`private`|可访问|不可|不可|不可|
-|缺省（不写）|可访问|可访问|不可|不可|
+|缺省(不写)|可访问|可访问|不可|不可|
 |`protected`|可访问|可访问|可访问|不可|
 |`public`|可访问|可访问|可访问|可访问|
 
@@ -268,7 +268,7 @@ public class User {
     private String username;
     private int age;
 
-    // 构造方法（Constructor）：方法名与类名相同，无返回值类型
+    // 构造方法(Constructor)：方法名与类名相同，无返回值类型
     public User(String username, int age) {
         this.username = username; // this 指向当前实例对象
         this.age = age;
@@ -288,7 +288,7 @@ public class User {
 ```
 
 
-> **数据载体类（`record`，Java 16+）**：如果一个类仅用于保存不可变数据，一行代码即可自动生成构造器、`getter`、`equals()`、`hashCode()` 和 `toString()`：
+> **数据载体类(`record`，Java 16+)**：如果一个类仅用于保存不可变数据，一行代码即可自动生成构造器、`getter`、`equals()`、`hashCode()` 和 `toString()`：
 > 
 >   
 > 
@@ -300,14 +300,14 @@ public class User {
 
 ### 继承、接口与多态
 
-Java 的类只支持**单继承**（`extends`），但支持实现**多个接口**（`implements`）。
+Java 的类只支持**单继承**(`extends`)，但支持实现**多个接口**(`implements`)。
 
   
 
 
 
 ```Java
-// 定义接口（规范契约）
+// 定义接口(规范契约)
 public interface Flyable {
     void fly(); // 默认是 public abstract
     
@@ -349,7 +349,7 @@ public class Bird extends Animal implements Flyable {
 
 ## 8. 异常处理机制
 
-Java 将异常视为对象（全部继承自 `Throwable`），分为必须显式处理的**受检异常（Checked Exception，如 `IOException`）**和运行期才暴露的**运行时异常（RuntimeException，如 `NullPointerException`）**。
+Java 将异常视为对象(全部继承自 `Throwable`)，分为必须显式处理的**受检异常(Checked Exception，如 `IOException`)**和运行期才暴露的**运行时异常(RuntimeException，如 `NullPointerException`)**。
 
 
 
@@ -369,14 +369,14 @@ public class ExceptionDemo {
     }
 
     public void readFile(String path) {
-        // try-with-resources 语法（Java 7+）：括号内的资源会在代码块结束时自动关闭，无需手写 finally 关闭流
+        // try-with-resources 语法(Java 7+)：括号内的资源会在代码块结束时自动关闭，无需手写 finally 关闭流
         try (BufferedReader br = new BufferedReader(new FileReader(path))) {
             System.out.println(br.readLine());
         } catch (IOException e) {
-            // 捕获并处理异常（支持用 | 同时捕获多种异常）
+            // 捕获并处理异常(支持用 | 同时捕获多种异常)
             System.err.println("文件读取失败: " + e.getMessage());
         } finally {
-            // 无论是否发生异常都会执行的收尾逻辑（除非 JVM 退出）
+            // 无论是否发生异常都会执行的收尾逻辑(除非 JVM 退出)
             System.out.println("读取流程结束");
         }
     }

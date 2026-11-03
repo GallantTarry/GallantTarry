@@ -1,6 +1,6 @@
 # 🌐 多 CDN 加速架构与分流方案全解
 
-> **核心结论：** Cloudflare 只是众多 CDN 中最知名（且免费额度最良心）的一家，绝不是唯一选择；而且一个域名完全可以同时结合多个 CDN 进行加速（业内称为 **Multi-CDN 多 CDN 架构** 或 **动静分离加速**）。
+> **核心结论：** Cloudflare 只是众多 CDN 中最知名(且免费额度最良心)的一家，绝不是唯一选择；而且一个域名完全可以同时结合多个 CDN 进行加速(业内称为 **Multi-CDN 多 CDN 架构** 或 **动静分离加速**)。
 
 ---
 
@@ -10,8 +10,8 @@
 
 | CDN 类型 | 代表服务商 | 核心特点与适用场景 |
 | :--- | :--- | :--- |
-| **① 全站综合 CDN**（与 Cloudflare 同类） | **国内：** 阿里云 CDN、腾讯云 EdgeOne、又拍云、七牛云 / **海外：** AWS CloudFront、Fastly（GitHub 底层御用）、Akamai | 接管域名的 DNS 解析或 CNAME，给整个网站（HTML、接口、静态资源）做缓存加速与安全防护。国内厂商在国内访问极快（通常仅需几毫秒），但要求域名完成 ICP 备案且按流量计费。 |
-| **② 前端公共静态 CDN**（免绑域名，拿来即用） | **全球：** **jsDelivr**、**unpkg**、**cdnjs** / **国内：** BootCDN、字节跳动静态资源库、Zstatic | 专门用来免费加速开源库（如 Vue、字体库）或你发布在 GitHub / npm 上的 `.min.js` 和 `.css` 文件。无需配置自己的域名，直接在 HTML 的 `script` 或 `link` 标签里引用即可。 |
+| **① 全站综合 CDN**(与 Cloudflare 同类) | **国内：** 阿里云 CDN、腾讯云 EdgeOne、又拍云、七牛云 / **海外：** AWS CloudFront、Fastly(GitHub 底层御用)、Akamai | 接管域名的 DNS 解析或 CNAME，给整个网站(HTML、接口、静态资源)做缓存加速与安全防护。国内厂商在国内访问极快(通常仅需几毫秒)，但要求域名完成 ICP 备案且按流量计费。 |
+| **② 前端公共静态 CDN**(免绑域名，拿来即用) | **全球：** **jsDelivr**、**unpkg**、**cdnjs** / **国内：** BootCDN、字节跳动静态资源库、Zstatic | 专门用来免费加速开源库(如 Vue、字体库)或你发布在 GitHub / npm 上的 `.min.js` 和 `.css` 文件。无需配置自己的域名，直接在 HTML 的 `script` 或 `link` 标签里引用即可。 |
 | **③ 云存储/图床专属 CDN** | 阿里云 OSS + CDN、腾讯云 COS、Cloudflare R2 | 专门用于存放并加速网站里的高清大图、音频、视频、软件安装包等大体积文件，避免拖慢主站加载速度。 |
 
 ---
@@ -20,29 +20,29 @@
 
 **完全可以，而且这是成熟网站非常推崇的做法。** 实现“一个网站享有多重加速”有 **3 种主流方案**，可以根据需求单独或叠加使用：
 
-#### 方案 1：网页与静态资源分流（Cloudflare + 公共 CDN）
+#### 方案 1：网页与静态资源分流(Cloudflare + 公共 CDN)
 这是个人开发者和独立站点最省心、零成本的组合方式：
-* **主域名（网页框架）：** 主站域名依然托管在 **Cloudflare** 上，负责加速 `index.html` 和整体路由。
-* **外部静态资源（JS/CSS/字体）：** 页面里引用的第三方库（或者自己打包发布到 GitHub / npm 的 `.min.js` 组件），直接通过 **jsDelivr** 或 **cdnjs** 的链接引入。
+* **主域名(网页框架)：** 主站域名依然托管在 **Cloudflare** 上，负责加速 `index.html` 和整体路由。
+* **外部静态资源(JS/CSS/字体)：** 页面里引用的第三方库(或者自己打包发布到 GitHub / npm 的 `.min.js` 组件)，直接通过 **jsDelivr** 或 **cdnjs** 的链接引入。
 * **效果：** 访客打开网页时，浏览器会同时向 Cloudflare 和 jsDelivr 发起并发下载，互不抢占带宽。
 
-#### 方案 2：子域名职责拆分（不同子域名走不同 CDN）
+#### 方案 2：子域名职责拆分(不同子域名走不同 CDN)
 同一个主域名下，可以为不同的二级子域名配置不同的 `CNAME` 记录，指向不同的 CDN 服务商：
-* 主站 `example.com` 走 **Cloudflare**（享受免费防护与全球访问）；
-* 静态资源站 `static.example.com` 或 `img.example.com` 指向 **腾讯云 EdgeOne / 阿里云 CDN** 或专属图床 CDN（专门加速大体积图片、音视频或二进制安装包）。
+* 主站 `example.com` 走 **Cloudflare**(享受免费防护与全球访问)；
+* 静态资源站 `static.example.com` 或 `img.example.com` 指向 **腾讯云 EdgeOne / 阿里云 CDN** 或专属图床 CDN(专门加速大体积图片、音视频或二进制安装包)。
 
-#### 方案 3：DNS 分线路智能解析（同一个域名，国内外双 CDN）
-如果希望访客输入**完全相同的域名**，但在国内和国外都能获得极致速度，可以通过支持“分线路解析”的 DNS 服务商（如 DNSPod、阿里云云解析、华为云 DNS）配合 CNAME 接入实现：
+#### 方案 3：DNS 分线路智能解析(同一个域名，国内外双 CDN)
+如果希望访客输入**完全相同的域名**，但在国内和国外都能获得极致速度，可以通过支持“分线路解析”的 DNS 服务商(如 DNSPod、阿里云云解析、华为云 DNS)配合 CNAME 接入实现：
 * **境外访客**访问 `example.com` 时，DNS 自动将其指向 **Cloudflare** 节点；
-* **国内访客**访问 `example.com` 时，DNS 自动将其指向 **阿里云 / 腾讯云 CDN** 节点（完美解决 Cloudflare 在国内晚高峰偶尔绕路美西、延迟偏高的问题）。
+* **国内访客**访问 `example.com` 时，DNS 自动将其指向 **阿里云 / 腾讯云 CDN** 节点(完美解决 Cloudflare 在国内晚高峰偶尔绕路美西、延迟偏高的问题)。
 
 ---
 
 ### 三、 避坑提醒：切勿“套娃式”串联两个 CDN
 
-虽然一个域名可以组合多个 CDN，但**千万不要把两个全站 CDN 首尾串联在一起**（例如：让用户先连国内某 CDN，该 CDN 再把开启了“小黄云”代理的 Cloudflare 当成源站去拉取数据）。这种“套两层 CDN”的做法百害而无一利：
+虽然一个域名可以组合多个 CDN，但**千万不要把两个全站 CDN 首尾串联在一起**(例如：让用户先连国内某 CDN，该 CDN 再把开启了“小黄云”代理的 Cloudflare 当成源站去拉取数据)。这种“套两层 CDN”的做法百害而无一利：
 
-1. **引发重定向死循环：** 两家 CDN 的 SSL/TLS 加密模式（如 Flexible 与 Full）一旦不匹配，网页会直接报 `ERR_TOO_MANY_REDIRECTS` 打不开。
+1. **引发重定向死循环：** 两家 CDN 的 SSL/TLS 加密模式(如 Flexible 与 Full)一旦不匹配，网页会直接报 `ERR_TOO_MANY_REDIRECTS` 打不开。
 2. **变成“减速器”：** 缓存未命中时，请求需要经历“用户 ➔ CDN A ➔ CDN B ➔ 源站”多层跨网握手，延迟反而翻倍。
 3. **防火墙误封：** 后一层 CDN 的 WAF 会把前一层 CDN 的回源节点 IP 当成恶意刷流量的攻击者直接拉黑，导致全站瘫痪。
 
@@ -236,7 +236,7 @@
 </div>
 <div class="tk-meta-card">
 <div class="tk-meta-h">⚙️ DNS 解析配置方法</div>
-<p class="tk-meta-p">在 Cloudflare DNS 面板中将静态子域名设为<strong>仅 DNS（灰色云朵）</strong>并指向其他 CDN：</p>
+<p class="tk-meta-p">在 Cloudflare DNS 面板中将静态子域名设为<strong>仅 DNS(灰色云朵)</strong>并指向其他 CDN：</p>
 <code class="tk-meta-code">CNAME | static | xxx.cdn.dnsv1.com | 仅DNS(灰云)</code>
 </div>
 <div class="tk-meta-card">
@@ -345,7 +345,7 @@
 <div class="tk-meta-grid">
 <div class="tk-meta-card">
 <div class="tk-meta-h" style="color:#f87171">❌ 致命问题 1：重定向死循环</div>
-<p class="tk-meta-p">若前置 CDN 回源走 HTTP，而后置 Cloudflare 开启了强制 HTTPS（或 Flexible 模式），会瞬间触发 <code>ERR_TOO_MANY_REDIRECTS</code> 无限重定向崩溃。</p>
+<p class="tk-meta-p">若前置 CDN 回源走 HTTP，而后置 Cloudflare 开启了强制 HTTPS(或 Flexible 模式)，会瞬间触发 <code>ERR_TOO_MANY_REDIRECTS</code> 无限重定向崩溃。</p>
 </div>
 <div class="tk-meta-card">
 <div class="tk-meta-h" style="color:#f87171">❌ 致命问题 2：越加速越慢</div>

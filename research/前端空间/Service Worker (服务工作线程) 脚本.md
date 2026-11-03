@@ -18,7 +18,7 @@ self.addEventListener('fetch', event => {
     const req = event.request;
     const url = new URL(req.url);
 
-    // 【补丁2】排除跨域、浏览器插件、以及统计探针（谷歌分析、不蒜子等），让它们直接走网络
+    // 【补丁2】排除跨域、浏览器插件、以及统计探针(谷歌分析、不蒜子等)，让它们直接走网络
     if (req.method !== 'GET' ||
         url.protocol.startsWith('chrome-extension') ||
         url.hostname.includes('google-analytics.com') ||
@@ -134,11 +134,11 @@ F12可见Tukuai OS 核心管家已接管系统. 作用域: https://gallanttarry.
     
       
     
-- **探针与跨域放行：** 脚本会识别并放行所有非 `GET` 请求，以及谷歌分析（Google Analytics）、不蒜子（busuanzi）和浏览器插件的请求。这意味着网站的访问量统计数据会直接走真实网络，保证统计的准确性，不被本地缓存干扰。
+- **探针与跨域放行：** 脚本会识别并放行所有非 `GET` 请求，以及谷歌分析(Google Analytics)、不蒜子(busuanzi)和浏览器插件的请求。这意味着网站的访问量统计数据会直接走真实网络，保证统计的准确性，不被本地缓存干扰。
     
       
     
-- **策略 A（针对 HTML 网页）：网络优先，缓存兜底**
+- **策略 A(针对 HTML 网页)：网络优先，缓存兜底**
     
       
     
@@ -151,7 +151,7 @@ F12可见Tukuai OS 核心管家已接管系统. 作用域: https://gallanttarry.
         
           
         
-- **策略 B（针对 游戏 ROM、音乐、字体、模拟器内核）：绝对缓存优先**
+- **策略 B(针对 游戏 ROM、音乐、字体、模拟器内核)：绝对缓存优先**
     
       
     
@@ -164,7 +164,7 @@ F12可见Tukuai OS 核心管家已接管系统. 作用域: https://gallanttarry.
         
           
         
-- **策略 C（针对 普通 JS、CSS、图片）：异步热更新**
+- **策略 C(针对 普通 JS、CSS、图片)：异步热更新**
     
       
     
@@ -178,4 +178,4 @@ F12可见Tukuai OS 核心管家已接管系统. 作用域: https://gallanttarry.
           
         
 
-这段代码（`tukuai-smart-cache`）本质上是为了将普通的静态网页升级为具备极速响应和弱网/无网生存能力的现代化 PWA (Progressive Web App)。
+这段代码(`tukuai-smart-cache`)本质上是为了将普通的静态网页升级为具备极速响应和弱网/无网生存能力的现代化 PWA (Progressive Web App)。

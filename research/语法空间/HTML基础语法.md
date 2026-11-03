@@ -1,12 +1,12 @@
 # HTML基础语法
 
-HTML（HyperText Markup Language，超文本标记语言，现行标准为 **HTML5**）是构建网页结构的基石。它不是一门具有逻辑控制流（如循环、判断）的编程语言，而是一门**声明式标记语言**——通过嵌套的标签（Tags）将纯文本转化为浏览器可解析的 **DOM 树（文档对象模型，Document Object Model）**，从而定义网页的内容层级与语义含义。
+HTML(HyperText Markup Language，超文本标记语言，现行标准为 **HTML5**)是构建网页结构的基石。它不是一门具有逻辑控制流(如循环、判断)的编程语言，而是一门**声明式标记语言**——通过嵌套的标签(Tags)将纯文本转化为浏览器可解析的 **DOM 树(文档对象模型，Document Object Model)**，从而定义网页的内容层级与语义含义。
 
 ---
 
 ## 1. 标准文档骨架与 `<head>` 核心配置
 
-一个符合现代工程规范的 HTML5 文档由文档类型声明（`DOCTYPE`）、根元素 `<html>`、头部元数据区 `<head>` 和可见内容区 `<body>` 四部分组成：
+一个符合现代工程规范的 HTML5 文档由文档类型声明(`DOCTYPE`)、根元素 `<html>`、头部元数据区 `<head>` 和可见内容区 `<body>` 四部分组成：
 
 ```html
 <!DOCTYPE html>
@@ -19,7 +19,7 @@ HTML（HyperText Markup Language，超文本标记语言，现行标准为 **HTM
   <!-- 2. 移动端响应式视口设置：宽度自适应设备屏幕，初始缩放比例为 1.0 -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <!-- 3. 页面描述与关键词（用于 SEO 搜索引擎优化） -->
+  <!-- 3. 页面描述与关键词(用于 SEO 搜索引擎优化) -->
   <meta name="description" content="HTML5 基础语法与语义化标签指南" />
   
   <!-- 4. 浏览器标签页标题与图标 -->
@@ -41,9 +41,9 @@ HTML（HyperText Markup Language，超文本标记语言，现行标准为 **HTM
 ```
 
 * **`<script>` 加载策略对比**：
-* **默认（无属性）**：会阻塞 HTML 解析，下载并立即执行脚本，容易导致首屏白屏。
-* **`defer`（推荐首选）**：脚本在后台并行下载，不阻塞 HTML 解析，且严格保证在 **DOM 树构建完成之后、`DOMContentLoaded` 事件之前**按声明顺序执行。
-* **`async`**：并行下载，下载完成后**立即中断 HTML 解析**并执行，不保证多个脚本的执行顺序（适合完全独立的第三方统计脚本）。
+* **默认(无属性)**：会阻塞 HTML 解析，下载并立即执行脚本，容易导致首屏白屏。
+* **`defer`(推荐首选)**：脚本在后台并行下载，不阻塞 HTML 解析，且严格保证在 **DOM 树构建完成之后、`DOMContentLoaded` 事件之前**按声明顺序执行。
+* **`async`**：并行下载，下载完成后**立即中断 HTML 解析**并执行，不保证多个脚本的执行顺序(适合完全独立的第三方统计脚本)。
 
 
 
@@ -51,59 +51,59 @@ HTML（HyperText Markup Language，超文本标记语言，现行标准为 **HTM
 
 ## 2. 元素解构、空元素与全局属性
 
-### 双标签与空元素（自闭合标签）
+### 双标签与空元素(自闭合标签)
 
-* **常规容器元素（双标签）**：由起始标签、内容与闭合标签组成，如 `<a href="[https://example.com](https://example.com)">链接文本</a>`。
-* **空元素（Void Elements / 单标签）**：不包含任何子节点或文本内容，仅靠自身属性发挥作用。常见空元素包括：
-* `<br>`（换行）、`<hr>`（水平分割线）
-* `<img>`（图像）、`<input>`（表单输入框）
-* `<meta>`（元信息）、`<link>`（外部资源链接）
+* **常规容器元素(双标签)**：由起始标签、内容与闭合标签组成，如 `<a href="[https://example.com](https://example.com)">链接文本</a>`。
+* **空元素(Void Elements / 单标签)**：不包含任何子节点或文本内容，仅靠自身属性发挥作用。常见空元素包括：
+* `<br>`(换行)、`<hr>`(水平分割线)
+* `<img>`(图像)、`<input>`(表单输入框)
+* `<meta>`(元信息)、`<link>`(外部资源链接)
 
 
 
-### 通用全局属性（Global Attributes）
+### 通用全局属性(Global Attributes)
 
 以下属性可用于**几乎所有** HTML 标签上：
 
 | 全局属性名 | 核心作用与工程规范 | 代码示例 |
 | --- | --- | --- |
 | `id` | 文档内**全局唯一**标识符，用于锚点跳转、JS 精准获取或 `<label>` 关联 | `<section id="about-me">` |
-| `class` | 样式类名（可指定多个，用空格分隔），供 CSS 选择器或 JS 批量操作 | `<div class="card card-dark">` |
-| `style` | 内联 CSS 样式（优先级极高，工程中建议优先使用外部 class 维护） | `<p style="color: #38bdf8;">` |
+| `class` | 样式类名(可指定多个，用空格分隔)，供 CSS 选择器或 JS 批量操作 | `<div class="card card-dark">` |
+| `style` | 内联 CSS 样式(优先级极高，工程中建议优先使用外部 class 维护) | `<p style="color: #38bdf8;">` |
 | `data-*` | **自定义数据属性**，用于在 DOM 节点上安全挂载业务数据，JS 通过 `el.dataset` 读取 | `<li data-user-id="1024" data-role="admin">` |
-| `title` | 鼠标悬停在元素上时显示的原生提示文本（Tooltip） | `<abbr title="超文本标记语言">HTML</abbr>` |
-| `hidden` | 布尔属性，写上即隐藏该元素（类似 `display: none`） | `<div hidden>暂不显示的内容</div>` |
+| `title` | 鼠标悬停在元素上时显示的原生提示文本(Tooltip) | `<abbr title="超文本标记语言">HTML</abbr>` |
+| `hidden` | 布尔属性，写上即隐藏该元素(类似 `display: none`) | `<div hidden>暂不显示的内容</div>` |
 
 ---
 
-## 3. 块级元素（Block）与内联元素（Inline）
+## 3. 块级元素(Block)与内联元素(Inline)
 
-在默认文档流（Normal Flow）中，HTML 元素按视觉排版特性分为两大阵营：
+在默认文档流(Normal Flow)中，HTML 元素按视觉排版特性分为两大阵营：
 
-| 对比维度 | 块级元素（Block-level Elements） | 内联/行内元素（Inline Elements） | 行内块元素（Inline-block） |
+| 对比维度 | 块级元素(Block-level Elements) | 内联/行内元素(Inline Elements) | 行内块元素(Inline-block) |
 | --- | --- | --- | --- |
 | **换行特性** | **独占一行**，前后自动换行，自上而下垂直堆叠 | **不换行**，与其他内联元素从左到右并排同行显示 | **不换行**，同行并排显示 |
 | **默认宽度** | 默认撑满父容器的 **100% 宽度** | 宽度完全由**内部文本或内容撑开** | 宽度由内容或显式设置的宽高决定 |
 | **宽高与边距** | 可自由设置 `width`、`height` 以及上下左右的 `margin` / `padding` | **设置 `width`、`height` 无效**；垂直方向的 `margin-top/bottom` 无效 | **可正常设置** `width`、`height` 及四个方向的内外边距 |
 | **典型代表** | `<div>`, `<p>`, `<h1>`~`<h6>`, `<ul>`, `<li>`, `<section>`, `<form>` | `<span>`, `<a>`, `<strong>`, `<em>`, `<code>`, `<label>` | `<img>`, `<input>`, `<button>`, `<select>` |
 
-> **嵌套规范提示**：块级元素可以包含块级元素和内联元素（**特例**：段落标签 `<p>` 内部绝不能嵌套 `<div>` 等块级元素，否则浏览器会自动把 `<p>` 提前截断成两个空标签）；内联元素通常只应包含文本或其他内联元素（HTML5 允许 `<a>` 标签包裹块级元素以实现整卡点击）。
+> **嵌套规范提示**：块级元素可以包含块级元素和内联元素(**特例**：段落标签 `<p>` 内部绝不能嵌套 `<div>` 等块级元素，否则浏览器会自动把 `<p>` 提前截断成两个空标签)；内联元素通常只应包含文本或其他内联元素(HTML5 允许 `<a>` 标签包裹块级元素以实现整卡点击)。
 
 ---
 
-## 4. HTML5 语义化布局标签（Semantic HTML）
+## 4. HTML5 语义化布局标签(Semantic HTML)
 
-早期网页排版习惯用满屏的 `<div class="header">`、`<div class="nav">`（俗称“Div 汤”）。HTML5 引入了专用**语义化结构标签**——它们在默认视觉表现上与 `<div>` 完全一样（都是块级容器），但能让搜索引擎爬虫（SEO）、屏幕阅读器（无障碍访问 A11y）以及开发者一眼看懂页面结构：
+早期网页排版习惯用满屏的 `<div class="header">`、`<div class="nav">`(俗称“Div 汤”)。HTML5 引入了专用**语义化结构标签**——它们在默认视觉表现上与 `<div>` 完全一样(都是块级容器)，但能让搜索引擎爬虫(SEO)、屏幕阅读器(无障碍访问 A11y)以及开发者一眼看懂页面结构：
 
 | 语义化标签 | 结构职责与适用场景 | 使用约束与建议 |
 | --- | --- | --- |
-| `<header>` | 页面顶部通栏头部，或某个独立文章/区块的头部（通常含 Logo、主标题） | 一个页面可出现多次（如页面级 Header 和文章级 Header） |
-| `<nav>` | 核心导航链接区域（顶部菜单栏、侧边目录树、面包屑导航） | 仅包裹核心导航组，无需包裹页脚所有的零散外链 |
+| `<header>` | 页面顶部通栏头部，或某个独立文章/区块的头部(通常含 Logo、主标题) | 一个页面可出现多次(如页面级 Header 和文章级 Header) |
+| `<nav>` | 核心导航链接区域(顶部菜单栏、侧边目录树、面包屑导航) | 仅包裹核心导航组，无需包裹页脚所有的零散外链 |
 | `<main>` | 当前页面**独一无二的核心主体内容区** | **每个页面仅限出现一次**，且不应包含侧边栏或公共导航栏 |
-| `<article>` | **可独立分发、自成一体的完整内容块**（如一篇博客文章、一条论坛帖子、一张商品卡片） | 拿出来放到别的网站依然语义完整时，优先用 `<article>` |
-| `<section>` | 文档中按主题划分的通用功能章节（通常内部带有一个 `<h2>`/`<h3>` 标题） | 如果仅仅是为了加 CSS 样式而没有任何语义主题，请继续用 `<div>` |
-| `<aside>` | 与周边主内容间接相关的辅助区域（如文章侧边栏目录、推荐阅读、广告栏） | 可置于 `<main>` 内部或外部 |
-| `<footer>` | 页面底部页脚或某个章节的尾部（通常含版权声明、备案号、作者信息） | 支持页面级或 `<article>` 级使用 |
+| `<article>` | **可独立分发、自成一体的完整内容块**(如一篇博客文章、一条论坛帖子、一张商品卡片) | 拿出来放到别的网站依然语义完整时，优先用 `<article>` |
+| `<section>` | 文档中按主题划分的通用功能章节(通常内部带有一个 `<h2>`/`<h3>` 标题) | 如果仅仅是为了加 CSS 样式而没有任何语义主题，请继续用 `<div>` |
+| `<aside>` | 与周边主内容间接相关的辅助区域(如文章侧边栏目录、推荐阅读、广告栏) | 可置于 `<main>` 内部或外部 |
+| `<footer>` | 页面底部页脚或某个章节的尾部(通常含版权声明、备案号、作者信息) | 支持页面级或 `<article>` 级使用 |
 
 ---
 
@@ -112,14 +112,14 @@ HTML（HyperText Markup Language，超文本标记语言，现行标准为 **HTM
 ### 文本排版与语义内联标签
 
 ```html
-<!-- 1. 六级标题：h1 权重最高（每个页面建议仅保留一个 h1），h6 最低 -->
+<!-- 1. 六级标题：h1 权重最高(每个页面建议仅保留一个 h1)，h6 最低 -->
 <h1>一级主标题</h1>
 <h2>二级章节标题</h2>
 
 <!-- 2. 段落与语义化强调 -->
 <p>
-  这是一段普通文本，其中包含<strong>重要性极高的加粗文本（strong）</strong>，
-  以及表示<em>语气重读的斜体文本（em）</em>。
+  这是一段普通文本，其中包含<strong>重要性极高的加粗文本(strong)</strong>，
+  以及表示<em>语气重读的斜体文本(em)</em>。
   行内代码使用 <code>const x = 10;</code>，快捷键使用 <kbd>Ctrl + S</kbd>。
 </p>
 
@@ -130,7 +130,7 @@ HTML（HyperText Markup Language，超文本标记语言，现行标准为 **HTM
 
 ```
 
-### 三大列表结构（`<ul>`、`<ol>`、`<dl>`）
+### 三大列表结构(`<ul>`、`<ol>`、`<dl>`)
 
 ```html
 <!-- 1. 无序列表 (Unordered List)：直接子元素只能是 li -->
@@ -155,15 +155,15 @@ HTML（HyperText Markup Language，超文本标记语言，现行标准为 **HTM
 
 ```
 
-### 超链接（`<a>`）与多媒体（`<img>`、`<video>`、`<audio>`）
+### 超链接(`<a>`)与多媒体(`<img>`、`<video>`、`<audio>`)
 
 ```html
 <!-- 1. 超链接：新窗口打开外部链接时，务必加上 rel="noopener noreferrer" 防止新页面通过 window.opener 劫持原页面 -->
 <a href="https://developer.mozilla.org" target="_blank" rel="noopener noreferrer">
-  访问 MDN 文档（新标签页安全打开）
+  访问 MDN 文档(新标签页安全打开)
 </a>
 
-<!-- 页面内锚点跳转（跳转到 id="footer-sec" 的元素） -->
+<!-- 页面内锚点跳转(跳转到 id="footer-sec" 的元素) -->
 <a href="#footer-sec">跳至页脚</a>
 
 <!-- 2. 图像标签：alt 为图片加载失败时的替代文本；loading="lazy" 开启浏览器原生懒加载；显式声明宽高可防止页面布局偏移 (CLS) -->
@@ -184,11 +184,11 @@ HTML（HyperText Markup Language，超文本标记语言，现行标准为 **HTM
 
 ---
 
-## 6. 数据表格（`<table>`）与表单交互（`<form>`）
+## 6. 数据表格(`<table>`)与表单交互(`<form>`)
 
 ### 结构化表格
 
-现代 HTML 表格强调将表头（`<thead>`）、表体（`<tbody>`）和表尾汇总（`<tfoot>`）显式分离，支持通过 `colspan`（跨列合并）和 `rowspan`（跨行合并）处理复杂报表：
+现代 HTML 表格强调将表头(`<thead>`)、表体(`<tbody>`)和表尾汇总(`<tfoot>`)显式分离，支持通过 `colspan`(跨列合并)和 `rowspan`(跨行合并)处理复杂报表：
 
 ```html
 <table>
@@ -220,7 +220,7 @@ HTML（HyperText Markup Language，超文本标记语言，现行标准为 **HTM
 
 ### 表单与原生表单验证
 
-表单 `<form>` 是收集用户输入并提交给后端的核心容器。**每个表单控件都必须指定 `name` 属性**（作为提交数据时的键名 Key），并推荐搭配 `<label>` 提升点击热区与可访问性：
+表单 `<form>` 是收集用户输入并提交给后端的核心容器。**每个表单控件都必须指定 `name` 属性**(作为提交数据时的键名 Key)，并推荐搭配 `<label>` 提升点击热区与可访问性：
 
 ```html
 <form action="/api/login" method="POST">
@@ -265,7 +265,7 @@ HTML（HyperText Markup Language，超文本标记语言，现行标准为 **HTM
     </select>
   </div>
 
-  <!-- 5. 按钮：表单内注意区分 type="submit"（默认，触发表单提交）与 type="button"（普通按钮，不刷新页面） -->
+  <!-- 5. 按钮：表单内注意区分 type="submit"(默认，触发表单提交)与 type="button"(普通按钮，不刷新页面) -->
   <button type="submit">立即提交</button>
   <button type="reset">重置表单</button>
 </form>
@@ -274,24 +274,24 @@ HTML（HyperText Markup Language，超文本标记语言，现行标准为 **HTM
 
 ---
 
-## 7. HTML 字符实体（Character Entities）
+## 7. HTML 字符实体(Character Entities)
 
 由于 `<`、`>`、`&` 等符号在 HTML 中具有特殊语法解析含义，若要在网页正文中原样显示这些符号，必须使用**转义字符实体**：
 
-| 显示结果 | 实体名称（推荐） | 实体编号 | 常见用途说明 |
+| 显示结果 | 实体名称(推荐) | 实体编号 | 常见用途说明 |
 | --- | --- | --- | --- |
-| `<` | `&lt;` | `&#60;` | 小于号（Less than，防止被解析为标签左尖括号） |
-| `>` | `&gt;` | `&#62;` | 大于号（Greater than） |
-| `&` | `&amp;` | `&#38;` | 与符号（Ampersand，转义实体起始符本身） |
-| `"` | `&quot;` | `&#34;` | 双引号（常用于属性值内部转义） |
-| 空格 | `&nbsp;` | `&#160;` | 不换行空格（HTML 默认会将连续多个普通空格折叠为 1 个） |
+| `<` | `&lt;` | `&#60;` | 小于号(Less than，防止被解析为标签左尖括号) |
+| `>` | `&gt;` | `&#62;` | 大于号(Greater than) |
+| `&` | `&amp;` | `&#38;` | 与符号(Ampersand，转义实体起始符本身) |
+| `"` | `&quot;` | `&#34;` | 双引号(常用于属性值内部转义) |
+| 空格 | `&nbsp;` | `&#160;` | 不换行空格(HTML 默认会将连续多个普通空格折叠为 1 个) |
 | `©` | `&copy;` | `&#169;` | 版权所有符号 |
 
 ---
 
 ## HTML5 语义化标签与 DOM 树层级映射交互演示
 
-浏览器解析 HTML 源码的过程，本质上是将**平面嵌套的标签文本**构建为一棵**层级分明的 DOM 树（Document Object Model）**，并进一步映射为页面上的**视觉布局区块**。通过下方交互工具，你可以逐步切换并检视 HTML5 语义化标签在“源码结构 ➔ DOM 节点树 ➔ 视觉区块”三者之间的实时对应关系：
+浏览器解析 HTML 源码的过程，本质上是将**平面嵌套的标签文本**构建为一棵**层级分明的 DOM 树(Document Object Model)**，并进一步映射为页面上的**视觉布局区块**。通过下方交互工具，你可以逐步切换并检视 HTML5 语义化标签在“源码结构 ➔ DOM 节点树 ➔ 视觉区块”三者之间的实时对应关系：
 
 <div id="h5-demo-root">
 <style>
@@ -412,7 +412,7 @@ HTML（HyperText Markup Language，超文本标记语言，现行标准为 **HTM
       badge:"Document Root · 元数据与容器",
       path:["Document","html (lang=zh-CN)","head + body"],
       metas:["DOM 接口: HTMLHtmlElement / HTMLHeadElement","head 默认样式: display: none (不可见)","body 默认样式: display: block"],
-      desc:"浏览器解析 HTML 时首先识别 !DOCTYPE html 以启用标准渲染模式。html 是整棵 DOM 树的根元素（document.documentElement），其下分出两个直接子节点：head 负责提供给浏览器和搜索引擎的字符集、视口与标题元数据（不在页面渲染）；body 则承载所有可见视图节点。",
+      desc:"浏览器解析 HTML 时首先识别 !DOCTYPE html 以启用标准渲染模式。html 是整棵 DOM 树的根元素(document.documentElement)，其下分出两个直接子节点：head 负责提供给浏览器和搜索引擎的字符集、视口与标题元数据(不在页面渲染)；body 则承载所有可见视图节点。",
       tree:[
         {indent:0, name:"Document", badge:"Root Node", bCls:"", desc:"浏览器文档对象模型顶层入口", hi:false, step:0},
         {indent:1, name:"&lt;html lang=\"zh-CN\"&gt;", badge:"Element", bCls:"", desc:"根元素 · 包含 head 与 body 两个子分支", hi:true, step:0},
@@ -425,7 +425,7 @@ HTML（HyperText Markup Language，超文本标记语言，现行标准为 **HTM
       badge:"ARIA Landmark: banner / navigation",
       path:["Document","html","body","header","h1 + nav"],
       metas:["盒模型: display: block (独占一行)","无障碍角色: role=\"banner\" & role=\"navigation\"","SEO 权重: h1 主标题 + 核心站点内链"],
-      desc:"<header> 用于定义页面或章节的引导性头部区域，通常包含站点主标题 <h1> 与主导航 <nav>。<nav> 专用于包裹核心导航链接组（如顶部菜单、侧边目录），屏幕阅读器可据此直接提取页面导航快捷跳转列表。",
+      desc:"<header> 用于定义页面或章节的引导性头部区域，通常包含站点主标题 <h1> 与主导航 <nav>。<nav> 专用于包裹核心导航链接组(如顶部菜单、侧边目录)，屏幕阅读器可据此直接提取页面导航快捷跳转列表。",
       tree:[
         {indent:0, name:"&lt;body&gt;", badge:"Parent", bCls:"", desc:"包含 3 个顶层语义子区块", hi:false, step:0},
         {indent:1, name:"&lt;header&gt;", badge:"Landmark: banner", bCls:"", desc:"页面顶部区域 (body 的第 1 个子元素)", hi:true, step:1},
@@ -438,7 +438,7 @@ HTML（HyperText Markup Language，超文本标记语言，现行标准为 **HTM
       badge:"ARIA Landmark: main (全局唯一)",
       path:["Document","html","body","main","article + aside"],
       metas:["盒模型: display: block","无障碍角色: role=\"main\" (Skip-to-content 锚点)","语法约束: 每个页面仅限出现 1 个可见 main"],
-      desc:"<main> 代表当前文档独一无二的核心主体内容（排除跨页面重复的顶部导航栏、版权页脚等）。一个 HTML 文档中绝不能出现多个可见的 <main> 标签，它是无障碍辅助技术“跳过导航直达正文”的核心定位点。",
+      desc:"<main> 代表当前文档独一无二的核心主体内容(排除跨页面重复的顶部导航栏、版权页脚等)。一个 HTML 文档中绝不能出现多个可见的 <main> 标签，它是无障碍辅助技术“跳过导航直达正文”的核心定位点。",
       tree:[
         {indent:0, name:"&lt;body&gt;", badge:"Parent", bCls:"", desc:"父级容器", hi:false, step:0},
         {indent:1, name:"&lt;header&gt; ... &lt;/header&gt;", badge:"prevElementSibling", bCls:"h5-b-meta", desc:"前一个兄弟节点", hi:false, step:1},
@@ -451,7 +451,7 @@ HTML（HyperText Markup Language，超文本标记语言，现行标准为 **HTM
       badge:"ARIA Role: article / region",
       path:["Document","html","body","main","article","h2 + section"],
       metas:["盒模型: display: block","核心区别: article 可独立分发，section 按主题分节","嵌套禁忌: &lt;p&gt; 段落内严禁嵌套 &lt;div&gt; 或 &lt;section&gt;"],
-      desc:"<article> 表示一段独立完整、可单独抽离分发的内容块（如博客正文、新闻报道、论坛帖子）；<section> 则用于将内容按主题划分为多个章节（通常内部包含 <h2>/<h3> 标题）。若仅为了挂载 CSS 样式而无语义主题，应使用 <div>。",
+      desc:"<article> 表示一段独立完整、可单独抽离分发的内容块(如博客正文、新闻报道、论坛帖子)；<section> 则用于将内容按主题划分为多个章节(通常内部包含 <h2>/<h3> 标题)。若仅为了挂载 CSS 样式而无语义主题，应使用 <div>。",
       tree:[
         {indent:0, name:"&lt;main&gt;", badge:"Parent", bCls:"", desc:"主体容器", hi:false, step:2},
         {indent:1, name:"&lt;article&gt;", badge:"Self-contained", bCls:"", desc:"独立完整文章节点 (main.firstElementChild)", hi:true, step:3},
@@ -464,7 +464,7 @@ HTML（HyperText Markup Language，超文本标记语言，现行标准为 **HTM
       badge:"ARIA Landmark: complementary",
       path:["Document","html","body","main","aside","h3"],
       metas:["盒模型: display: block (常配合 Flex/Grid 并排)","无障碍角色: role=\"complementary\"","典型用途: 文章目录树 (TOC)、标签云、相关推荐"],
-      desc:"<aside> 用于承载与主内容间接相关的辅助信息。在 DOM 树中它与 <article> 互为兄弟节点（Sibling），在视觉布局上通常借助 CSS Flexbox 或 Grid 排布在主文章的右侧或左侧。",
+      desc:"<aside> 用于承载与主内容间接相关的辅助信息。在 DOM 树中它与 <article> 互为兄弟节点(Sibling)，在视觉布局上通常借助 CSS Flexbox 或 Grid 排布在主文章的右侧或左侧。",
       tree:[
         {indent:0, name:"&lt;main&gt;", badge:"Parent", bCls:"", desc:"主体容器", hi:false, step:2},
         {indent:1, name:"&lt;article&gt; ... &lt;/article&gt;", badge:"prevElementSibling", bCls:"h5-b-meta", desc:"左侧主文章兄弟节点", hi:false, step:3},
@@ -477,7 +477,7 @@ HTML（HyperText Markup Language，超文本标记语言，现行标准为 **HTM
       badge:"ARIA Landmark: contentinfo",
       path:["Document","html","body","footer","p (&copy;)"],
       metas:["盒模型: display: block","无障碍角色: role=\"contentinfo\"","字符实体: &amp;copy; 渲染为 © 版权符号"],
-      desc:"<footer> 位于 <body> 末尾（或某个 <article> 底部），用于存放版权声明（使用字符实体 &copy;）、开源协议、备案号及联系方式。它与 <header>、<main> 共同构成清晰的三段式文档大纲。",
+      desc:"<footer> 位于 <body> 末尾(或某个 <article> 底部)，用于存放版权声明(使用字符实体 &copy;)、开源协议、备案号及联系方式。它与 <header>、<main> 共同构成清晰的三段式文档大纲。",
       tree:[
         {indent:0, name:"&lt;body&gt;", badge:"Parent", bCls:"", desc:"可见视图根节点", hi:false, step:0},
         {indent:1, name:"&lt;main&gt; ... &lt;/main&gt;", badge:"prevElementSibling", bCls:"h5-b-meta", desc:"上方主体区域兄弟节点", hi:false, step:2},

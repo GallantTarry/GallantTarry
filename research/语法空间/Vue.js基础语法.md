@@ -1,13 +1,13 @@
 # Vue.js基础语法
 
 
-Vue（目前主流标准为 **Vue 3 组合式 API / Composition API**）是一套用于构建用户界面的渐进式前端框架。它的核心设计理念是**声明式渲染（Declarative Rendering）**与**细粒度响应式系统（Reactivity System）**——开发者只需维护数据状态（State），视图（DOM）会在数据变化时自动同步更新。
+Vue(目前主流标准为 **Vue 3 组合式 API / Composition API**)是一套用于构建用户界面的渐进式前端框架。它的核心设计理念是**声明式渲染(Declarative Rendering)**与**细粒度响应式系统(Reactivity System)**——开发者只需维护数据状态(State)，视图(DOM)会在数据变化时自动同步更新。
 
   
 
-## 1. 单文件组件结构（SFC 与 `<script setup>`）
+## 1. 单文件组件结构(SFC 与 `<script setup>`)
 
-Vue 工程化开发采用 `.vue` 单文件组件（Single-File Component），将一个组件的**逻辑（Script）**、模板（Template）**和**样式（Style）封装在同一个文件中。现代 Vue 3 默认推荐使用 `<script setup>` 语法糖，无需手动 `return` 变量即可在模板中直接使用：
+Vue 工程化开发采用 `.vue` 单文件组件(Single-File Component)，将一个组件的**逻辑(Script)**、模板(Template)**和**样式(Style)封装在同一个文件中。现代 Vue 3 默认推荐使用 `<script setup>` 语法糖，无需手动 `return` 变量即可在模板中直接使用：
 
   
 
@@ -15,7 +15,7 @@ Vue 工程化开发采用 `.vue` 单文件组件（Single-File Component），�
 
 ```
 <script setup>
-// 1. 逻辑层：引入 API、定义响应式数据与函数（顶层变量自动暴露给模板）
+// 1. 逻辑层：引入 API、定义响应式数据与函数(顶层变量自动暴露给模板)
 import { ref } from 'vue'
 
 const count = ref(0)
@@ -41,21 +41,21 @@ const increment = () => {
 </style>
 ```
 
-## 2. 响应式状态核心（`ref` 与 `reactive`）
+## 2. 响应式状态核心(`ref` 与 `reactive`)
 
-在 Vue 3 中，普通的 JavaScript 变量修改后不会触发界面重绘，必须使用响应式 API 包装数据（底层基于 ES6 `Proxy` 实现拦截）。
+在 Vue 3 中，普通的 JavaScript 变量修改后不会触发界面重绘，必须使用响应式 API 包装数据(底层基于 ES6 `Proxy` 实现拦截)。
 
   
 
 ### `ref` 与 `reactive` 对比
 
-|**特性维度**|**ref()（推荐首选）**|**reactive()**|
+|**特性维度**|**ref()(推荐首选)**|**reactive()**|
 |---|---|---|
-|**适用数据类型**|**任意类型**（基本类型 `number`/`string`/`boolean` 及对象、数组）|**仅限引用类型**（`Object`、`Array`、`Map`、`Set`）|
-|**JS 中读写方式**|必须通过 **`.value`** 属性读写（如 `count.value++`）|直接读写属性（如 `state.count++`），无需 `.value`|
-|**模板中读取方式**|**自动解包**，直接写 `{{ count }}`（无需写 `.value`）|直接写 `{{ state.count }}`|
-|**重新赋整个值**|支持（`userRef.value = newUser` 仍保持响应性）|**不支持直接替换引用**（`state = newState` 会丢失响应性）|
-|**解构赋值影响**|配合 `toRefs` 使用|直接 ES6 解构（`const { a } = state`）会**丢失响应性**|
+|**适用数据类型**|**任意类型**(基本类型 `number`/`string`/`boolean` 及对象、数组)|**仅限引用类型**(`Object`、`Array`、`Map`、`Set`)|
+|**JS 中读写方式**|必须通过 **`.value`** 属性读写(如 `count.value++`)|直接读写属性(如 `state.count++`)，无需 `.value`|
+|**模板中读取方式**|**自动解包**，直接写 `{{ count }}`(无需写 `.value`)|直接写 `{{ state.count }}`|
+|**重新赋整个值**|支持(`userRef.value = newUser` 仍保持响应性)|**不支持直接替换引用**(`state = newState` 会丢失响应性)|
+|**解构赋值影响**|配合 `toRefs` 使用|直接 ES6 解构(`const { a } = state`)会**丢失响应性**|
 
 
 
@@ -80,7 +80,7 @@ const { username, rememberMe } = toRefs(form)
 </script>
 ```
 
-## 3. 模板语法与核心指令（Directives）
+## 3. 模板语法与核心指令(Directives)
 
 Vue 指令是带有 `v-` 前缀的特殊 HTML 属性，用于将数据状态响应式地作用于 DOM。
 
@@ -90,11 +90,11 @@ Vue 指令是带有 `v-` 前缀的特殊 HTML 属性，用于将数据状态响�
 
 |**指令全称**|**简写形式**|**核心用途**|**代码示例**|
 |---|---|---|---|
-|**文本插值**|`{{ }}`|将数据作为纯文本渲染到标签内部（支持简单 JS 表达式）|`<span>{{ price * 0.8 }}</span>`|
-|`v-bind`|**`:`**|动态绑定 HTML 属性（如 `src`、`class`、`style`、`disabled`）|`<img :src="avatarUrl" :alt="name" />`|
+|**文本插值**|`{{ }}`|将数据作为纯文本渲染到标签内部(支持简单 JS 表达式)|`<span>{{ price * 0.8 }}</span>`|
+|`v-bind`|**`:`**|动态绑定 HTML 属性(如 `src`、`class`、`style`、`disabled`)|`<img :src="avatarUrl" :alt="name" />`|
 |`v-on`|**`@`**|绑定 DOM 事件监听器|`<button @click="handleSave">保存</button>`|
 |`v-model`|无|表单元素或自定义组件的**双向数据绑定**|`<input v-model.trim="keyword" />`|
-|`v-html`|无|渲染原始 HTML 字符串（注意防范 XSS 注入）|`<div v-html="rawHtmlContent"></div>`|
+|`v-html`|无|渲染原始 HTML 字符串(注意防范 XSS 注入)|`<div v-html="rawHtmlContent"></div>`|
 
 ### 动态 Class 与 Style 绑定以及修饰符
 
@@ -122,18 +122,18 @@ Vue 指令是带有 `v-` 前缀的特殊 HTML 属性，用于将数据状态响�
     
       
     
-- **`v-show`**：无论条件真假，元素始终被渲染，仅通过切换 CSS 的 `display: none` 控制显隐；初始渲染开销高，适合需要**高频切换**显隐的场景（如悬浮窗、Tab 面板）。
+- **`v-show`**：无论条件真假，元素始终被渲染，仅通过切换 CSS 的 `display: none` 控制显隐；初始渲染开销高，适合需要**高频切换**显隐的场景(如悬浮窗、Tab 面板)。
     
       
     
 
 ### 列表渲染：`v-for` 与 `:key`
 
-使用 `v-for` 遍历数组或对象时，**必须绑定唯一且稳定的 `:key` 属性**（通常使用数据项的唯一 `id`，尽量避免使用可能会发生增删移位的数组索引 `index`），以便 Vue 的虚拟 DOM Diff 算法精准复用节点。
+使用 `v-for` 遍历数组或对象时，**必须绑定唯一且稳定的 `:key` 属性**(通常使用数据项的唯一 `id`，尽量避免使用可能会发生增删移位的数组索引 `index`)，以便 Vue 的虚拟 DOM Diff 算法精准复用节点。
 
   
 
-> **语法红线**：永远不要在同一个元素上同时使用 `v-if` 和 `v-for`（在 Vue 3 中 `v-if` 的优先级高于 `v-for`，会导致 `v-if` 无法访问 `v-for` 的循环变量而报错）。应在外层包裹一层 `<template v-for="...">` 或提前用计算属性过滤数组。
+> **语法红线**：永远不要在同一个元素上同时使用 `v-if` 和 `v-for`(在 Vue 3 中 `v-if` 的优先级高于 `v-for`，会导致 `v-if` 无法访问 `v-for` 的循环变量而报错)。应在外层包裹一层 `<template v-for="...">` 或提前用计算属性过滤数组。
 > 
 >   
 
@@ -150,7 +150,7 @@ Vue 指令是带有 `v-` 前缀的特殊 HTML 属性，用于将数据状态响�
 </template>
 ```
 
-## 5. 计算属性（`computed`）与侦听器（`watch`）
+## 5. 计算属性(`computed`)与侦听器(`watch`)
 
 ### 计算属性 `computed`
 
@@ -167,14 +167,14 @@ import { ref, computed } from 'vue'
 const firstName = ref('张')
 const lastName = ref('三')
 
-// 只读计算属性（返回值为一个计算 ref）
+// 只读计算属性(返回值为一个计算 ref)
 const fullName = computed(() => `${firstName.value}${lastName.value}`)
 </script>
 ```
 
 ### 侦听器 `watch` 与 `watchEffect`
 
-当需要在**数据变化时执行“副作用”操作**（如发起异步网络请求、操作本地存储 `localStorage`、防抖搜索）时，使用侦听器：
+当需要在**数据变化时执行“副作用”操作**(如发起异步网络请求、操作本地存储 `localStorage`、防抖搜索)时，使用侦听器：
 
   
 
@@ -192,14 +192,14 @@ watch(searchQuery, (newVal, oldVal) => {
   console.log(`搜索词从 "${oldVal}" 变为 "${newVal}"`)
 })
 
-// 2. watchEffect：立即执行一次函数，并自动追踪函数内部用到的所有响应式变量（如此处的 searchQuery 和 page）
+// 2. watchEffect：立即执行一次函数，并自动追踪函数内部用到的所有响应式变量(如此处的 searchQuery 和 page)
 watchEffect(() => {
   console.log(`自动触发请求：搜索=${searchQuery.value}, 页码=${page.value}`)
 })
 </script>
 ```
 
-## 6. 组件通信（Props、Emits 与 `defineModel`）
+## 6. 组件通信(Props、Emits 与 `defineModel`)
 
 Vue 组件树遵循**单向数据流**原则：父组件通过 **Props** 向下传递数据，子组件通过 **Emits** 向上触发事件通知父组件修改数据；或者使用 Vue 3.4+ 引入的 **`defineModel`** 直接实现父子双向绑定。
 
@@ -210,7 +210,7 @@ Vue 组件树遵循**单向数据流**原则：父组件通过 **Props** 向下�
 ```
 <!-- 子组件：UserCard.vue -->
 <script setup>
-// 1. 接收父组件传入的 Props（编译宏无需 import）
+// 1. 接收父组件传入的 Props(编译宏无需 import)
 const props = defineProps({
   title: { type: String, required: true },
   count: { type: Number, default: 0 }
@@ -251,7 +251,7 @@ const keyword = defineModel({ type: String, default: '' })
 </template>
 ```
 
-## 7. 组件生命周期钩子（Lifecycle Hooks）
+## 7. 组件生命周期钩子(Lifecycle Hooks)
 
 每个 Vue 组件实例从创建、挂载到 DOM、更新再到销毁，都会经历一系列生命周期阶段。在 `<script setup>` 中，生命周期钩子以 `onXxx` 函数的形式按需引入调用：
 
@@ -259,13 +259,13 @@ const keyword = defineModel({ type: String, default: '' })
 
 |**生命周期阶段**|**组合式 API 钩子函数**|**触发时机与典型工程用途**|
 |---|---|---|
-|**创建阶段**|`<script setup>` 顶层代码|组件实例初始化即执行（替代了 Vue 2 的 `beforeCreate` 和 `created`）|
+|**创建阶段**|`<script setup>` 顶层代码|组件实例初始化即执行(替代了 Vue 2 的 `beforeCreate` 和 `created`)|
 |**挂载前**|`onBeforeMount()`|模板已完成编译，但尚未挂载到真实 DOM 树上|
-|**挂载完成**|**`onMounted()`**|**最常用**：真实 DOM 已渲染完毕，可在此发起首屏接口请求、操作 DOM 引用或初始化图表（如 D3/ECharts）|
+|**挂载完成**|**`onMounted()`**|**最常用**：真实 DOM 已渲染完毕，可在此发起首屏接口请求、操作 DOM 引用或初始化图表(如 D3/ECharts)|
 |**更新前**|`onBeforeUpdate()`|响应式状态已改变，即将重新渲染虚拟 DOM 之前|
-|**更新完成**|`onUpdated()`|数据变化导致的真实 DOM 重新渲染已完成（切勿在此无条件修改响应式数据，否则会导致死循环）|
+|**更新完成**|`onUpdated()`|数据变化导致的真实 DOM 重新渲染已完成(切勿在此无条件修改响应式数据，否则会导致死循环)|
 |**卸载前**|`onBeforeUnmount()`|组件实例即将被销毁前，组件依然完全可用|
-|**卸载完成**|**`onUnmounted()`**|**最常用**：组件已从 DOM 移除，必须在此**清理定时器（`clearInterval`）、解绑全局事件监听器或断开 WebSocket**，防止内存泄漏|
+|**卸载完成**|**`onUnmounted()`**|**最常用**：组件已从 DOM 移除，必须在此**清理定时器(`clearInterval`)、解绑全局事件监听器或断开 WebSocket**，防止内存泄漏|
 
 
 
@@ -273,7 +273,7 @@ const keyword = defineModel({ type: String, default: '' })
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
 
-const inputRef = ref(null) // 模板引用（Template Ref）：变量名需与模板中的 ref="inputRef" 一致
+const inputRef = ref(null) // 模板引用(Template Ref)：变量名需与模板中的 ref="inputRef" 一致
 let timer = null
 
 onMounted(() => {
@@ -295,7 +295,7 @@ onUnmounted(() => {
 
 ## Vue 3 响应式依赖追踪与生命周期流转交互演示
 
-为了直观理解 Vue 3 是如何将 **`<script setup>` 初始化**、**Proxy 依赖收集（Track）**、**状态变更派发更新（Trigger）**、**虚拟 DOM 比对（Patch）** 与 **生命周期钩子** 串联起来的，你可以通过下方交互式状态机逐步查看组件从挂载到更新再到卸载的完整底层链路：
+为了直观理解 Vue 3 是如何将 **`<script setup>` 初始化**、**Proxy 依赖收集(Track)**、**状态变更派发更新(Trigger)**、**虚拟 DOM 比对(Patch)** 与 **生命周期钩子** 串联起来的，你可以通过下方交互式状态机逐步查看组件从挂载到更新再到卸载的完整底层链路：
 
 
 <div id="v3-demo-root">
@@ -434,7 +434,7 @@ onUnmounted(() => {
         title:"阶段 1：执行 \x3cscript setup\x3e 初始化响应式状态",
         badge:"Creation · 响应式包装",
         badgeCls:"v3-st-blue",
-        desc:"组件实例创建后立即执行 \x3cscript setup\x3e 顶层代码。调用 ref(0) 会实例化一个 RefImpl 对象，内部包含 _value: 0 以及一个空的依赖集合 dep (Set)。此时模板尚未编译挂载，真实 DOM 还不存在（值为 null）。",
+        desc:"组件实例创建后立即执行 \x3cscript setup\x3e 顶层代码。调用 ref(0) 会实例化一个 RefImpl 对象，内部包含 _value: 0 以及一个空的依赖集合 dep (Set)。此时模板尚未编译挂载，真实 DOM 还不存在(值为 null)。",
         links:["ref(0) ──\x3e 实例化 RefImpl { _value: 0, dep: Set(0) }","注册生命周期回调函数 (onMounted / onUpdated / onUnmounted)"],
         react:[
           {tag:"RefImpl 实例", title:"count", key:"count.value", val:"0", pillCls:"v3-pill", hi:true, warn:false, note:"⚡ 已包装 getter / setter 响应式拦截器"},
@@ -450,7 +450,7 @@ onUnmounted(() => {
         title:"阶段 2：onBeforeMount 与首次渲染依赖收集 (track)",
         badge:"Track · 建立依赖订阅",
         badgeCls:"v3-st-amber",
-        desc:"触发 onBeforeMount 后，Vue 启动组件的 ReactiveEffect（渲染副作用函数）执行首次模板渲染。当读取 {{ count }} 时触发 RefImpl 的 getter，底层调用 track(count, 'value')，将当前组件的渲染 Effect 精确存入 count.dep 集合中。",
+        desc:"触发 onBeforeMount 后，Vue 启动组件的 ReactiveEffect(渲染副作用函数)执行首次模板渲染。当读取 {{ count }} 时触发 RefImpl 的 getter，底层调用 track(count, 'value')，将当前组件的渲染 Effect 精确存入 count.dep 集合中。",
         links:["执行 render() 读取 count.value","触发 getter ──\x3e 调用 track()","count.dep.add(componentRenderEffect)"],
         react:[
           {tag:"RefImpl 实例", title:"count (Getter 触发)", key:"count.value", val:"0", pillCls:"v3-pill-green", hi:false, warn:false, note:""},
@@ -466,7 +466,7 @@ onUnmounted(() => {
         title:"阶段 3：真实 DOM 挂载完成并触发 onMounted",
         badge:"Mounted · 视图可交互",
         badgeCls:"v3-st-green",
-        desc:"虚拟 DOM (VNode) 已通过宿主环境 API (document.createElement / insertBefore) 渲染为浏览器真实 DOM 节点。紧接着执行 onMounted 钩子——这是获取模板引用 (ref=\"el\")、初始化第三方图表（如 D3 / ECharts）或发起首屏接口请求的最佳时机。",
+        desc:"虚拟 DOM (VNode) 已通过宿主环境 API (document.createElement / insertBefore) 渲染为浏览器真实 DOM 节点。紧接着执行 onMounted 钩子——这是获取模板引用 (ref=\"el\")、初始化第三方图表(如 D3 / ECharts)或发起首屏接口请求的最佳时机。",
         links:["patch(null, initialVNode) ──\x3e 挂载真实 DOM","触发 onMounted() 钩子 ──\x3e 组件进入稳定交互态"],
         react:[
           {tag:"RefImpl 实例", title:"count", key:"count.value", val:String(cVal), pillCls:"v3-pill-green", hi:false, warn:false, note:""},
@@ -482,7 +482,7 @@ onUnmounted(() => {
         title:"阶段 4：状态变更触发 setter 拦截与派发更新 (trigger)",
         badge:"Trigger · 异步缓冲队列",
         badgeCls:"v3-st-amber",
-        desc:"用户点击按钮执行 count.value++，触发 RefImpl 的 setter 拦截器。Vue 将新值写入 _value 后调用 trigger(count, 'value')，从 count.dep 中取出订阅的 RenderEffect 推入 Scheduler 的 nextTick 微任务队列（多次同步修改会被合并去重，只渲染一次）。",
+        desc:"用户点击按钮执行 count.value++，触发 RefImpl 的 setter 拦截器。Vue 将新值写入 _value 后调用 trigger(count, 'value')，从 count.dep 中取出订阅的 RenderEffect 推入 Scheduler 的 nextTick 微任务队列(多次同步修改会被合并去重，只渲染一次)。",
         links:["count.value++ 触发 setter","调用 trigger(count) 通知 count.dep","queueJob(RenderEffect) 推入微任务队列","触发 onBeforeUpdate()"],
         react:[
           {tag:"RefImpl 实例", title:"count (Setter 触发)", key:"count.value", val:String(nextVal), pillCls:"v3-pill-amber", hi:true, note:"⚡ 值已更新，触发 trigger() 广播"},
@@ -498,7 +498,7 @@ onUnmounted(() => {
         title:"阶段 5：Virtual DOM Diff 比对、靶向补丁与 onUpdated",
         badge:"Patch · 靶向更新完成",
         badgeCls:"v3-st-green",
-        desc:"微任务队列执行组件重渲染，生成新的 VNode 树。借助编译期注入的 PatchFlag (1 /* TEXT */)，Vue 跳过静态属性比对，直接定位到动态文本节点修改 textContent，随后触发 onUpdated 钩子（切勿在 onUpdated 中无条件修改状态，否则会引发无限更新死循环）。",
+        desc:"微任务队列执行组件重渲染，生成新的 VNode 树。借助编译期注入的 PatchFlag (1 /* TEXT */)，Vue 跳过静态属性比对，直接定位到动态文本节点修改 textContent，随后触发 onUpdated 钩子(切勿在 onUpdated 中无条件修改状态，否则会引发无限更新死循环)。",
         links:["执行新 render() 生成 New VNode","patch(oldVNode, newVNode) 识别 PatchFlag: 1","el.textContent = \"计数: " + nextVal + "\"","触发 onUpdated()"],
         react:[
           {tag:"RefImpl 实例", title:"count", key:"count.value", val:String(nextVal), pillCls:"v3-pill-green", hi:false, warn:false, note:""},
@@ -514,7 +514,7 @@ onUnmounted(() => {
         title:"阶段 6：组件卸载 (onUnmounted) 与副作用清理",
         badge:"Unmounted · 内存回收",
         badgeCls:"v3-st-rose",
-        desc:"当组件因 v-if=\"false\" 或路由切换被移除时，依次触发 onBeforeUnmount 与 onUnmounted。Vue 会自动停止组件内部的 ReactiveEffect、computed 与 watch 依赖订阅（effect.stop()），移除真实 DOM，并执行开发者在 onUnmounted 中注册的定时器/全局事件清理逻辑。",
+        desc:"当组件因 v-if=\"false\" 或路由切换被移除时，依次触发 onBeforeUnmount 与 onUnmounted。Vue 会自动停止组件内部的 ReactiveEffect、computed 与 watch 依赖订阅(effect.stop())，移除真实 DOM，并执行开发者在 onUnmounted 中注册的定时器/全局事件清理逻辑。",
         links:["触发 onBeforeUnmount()","effect.stop() 清空 count.dep 订阅引用","移除真实 DOM 节点","触发 onUnmounted() 清理定时器"],
         react:[
           {tag:"RefImpl 实例", title:"count", key:"Status", val:"等待 GC 垃圾回收", pillCls:"v3-pill-rose", hi:false, warn:true, note:""},

@@ -35,7 +35,7 @@ public class UserController {
 
 那么回到之前学的 A接口 a 是变量声明    遥控器 接口引用a需要指向对象
 
-在 Java 里有一条铁律：**接口（Interface）永远、永远、永远不能用来直接造对象！** 如果你敢在代码里写 `new UserService()`，Java 编译器会直接给你亮红灯报错。
+在 Java 里有一条铁律：**接口(Interface)永远、永远、永远不能用来直接造对象！** 如果你敢在代码里写 `new UserService()`，Java 编译器会直接给你亮红灯报错。
 
 
 因为接口只是一张“图纸”、一份“说明书”、一个空壳的“遥控器”，它里面没有任何具体的实现逻辑，你怎么可能把一张图纸变成一台真正的机器呢？
@@ -55,11 +55,11 @@ public class UserController {
 
   
 
-**第一步：大厨在后厨登记（造出真实对象）** 你去看一眼你的 `UserServiceImpl.java` 文件，它的类名正上方写着一个 **`@Service`** 注解。 这个注解就是在向 Spring 框架大喊：“系统启动的时候，请帮我把 `UserServiceImpl` 这个类 **`new`** 出一个真实的实体对象，并保存在你的内存仓库里！” 所以，**真正被造出来的对象，是实现类 `UserServiceImpl`，而不是接口。**
+**第一步：大厨在后厨登记(造出真实对象)** 你去看一眼你的 `UserServiceImpl.java` 文件，它的类名正上方写着一个 **`@Service`** 注解。 这个注解就是在向 Spring 框架大喊：“系统启动的时候，请帮我把 `UserServiceImpl` 这个类 **`new`** 出一个真实的实体对象，并保存在你的内存仓库里！” 所以，**真正被造出来的对象，是实现类 `UserServiceImpl`，而不是接口。**
 
   
 
-**第二步：服务员在前台要人（声明接口变量）** 在你的 `UserController.java` 里，你写了这样两行：
+**第二步：服务员在前台要人(声明接口变量)** 在你的 `UserController.java` 里，你写了这样两行：
 
   
 
@@ -69,11 +69,11 @@ public class UserController {
 private UserService userService;
 ```
 
-这里的 `UserService userService` 仅仅是你拿出了一个**空的万能遥控器（变量声明）**，目前它里面什么都没有。
+这里的 `UserService userService` 仅仅是你拿出了一个**空的万能遥控器(变量声明)**，目前它里面什么都没有。
 
   
 
-**第三步：Spring 自动牵线搭桥（@Autowired 的魔法）**
+**第三步：Spring 自动牵线搭桥(@Autowired 的魔法)**
 
 你头顶上的 **`@Autowired`** 发挥作用了！它像是一个智能红娘，它的潜台词是：“Spring 大哥，我这里需要一个能满足 `UserService` 接口标准的真实对象，你仓库里有吗？给我拿过来用！”
 
@@ -81,13 +81,13 @@ private UserService userService;
 
 此时，Spring 去仓库里一翻，发现：“哎，正好刚才那个贴着 `@Service` 的 `UserServiceImpl` 对象，就是实现了 `UserService` 接口的！”
 
-于是，Spring 自动把后台造好的 `UserServiceImpl` 真实对象，塞进（赋值）了你前台声明的 `userService` 遥控器里。
+于是，Spring 自动把后台造好的 `UserServiceImpl` 真实对象，塞进(赋值)了你前台声明的 `userService` 遥控器里。
 
   
 
 ### 用最原始的 Java 代码还原真相
 
-如果把 Spring Boot 施加的 `@Service` 和 `@Autowired` 魔法全部撤掉，让你自己手写，这几行代码其实等价于咱们最开始聊的“接口引用指向实现类对象”（多态）：
+如果把 Spring Boot 施加的 `@Service` 和 `@Autowired` 魔法全部撤掉，让你自己手写，这几行代码其实等价于咱们最开始聊的“接口引用指向实现类对象”(多态)：
 
   
 
@@ -101,16 +101,16 @@ UserService userService = new UserServiceImpl();
 
   
 
-- 左边的 `UserService` 是接口声明（遥控器）。
+- 左边的 `UserService` 是接口声明(遥控器)。
     
       
     
-- 右边的 `new UserServiceImpl()` 才是真正造出来的对象（电视机）。
+- 右边的 `new UserServiceImpl()` 才是真正造出来的对象(电视机)。
     
       
     
 
-所以，**并不是接口造了对象，而是 Spring 框架默默地帮你造了一个实现类的对象，并自动把它挂在了接口变量的名下！** 这种设计模式在开发中有一个极其著名的名字，叫做 **IoC（控制反转）**，也就是你不再亲自去 `new` 对象了，统统交由 Spring 框架来帮你控制和匹配。
+所以，**并不是接口造了对象，而是 Spring 框架默默地帮你造了一个实现类的对象，并自动把它挂在了接口变量的名下！** 这种设计模式在开发中有一个极其著名的名字，叫做 **IoC(控制反转)**，也就是你不再亲自去 `new` 对象了，统统交由 Spring 框架来帮你控制和匹配。
 
 ---
 
@@ -123,7 +123,7 @@ UserService userService = new UserServiceImpl();
   
 ### 第 1 步：前端发请求与 JSON 翻译 (Controller 层)
 
-1. 前端（比如一个注册页面）打包了一份包含新用户信息的 JSON 数据发送给后端。
+1. 前端(比如一个注册页面)打包了一份包含新用户信息的 JSON 数据发送给后端。
     
       
     
@@ -199,7 +199,7 @@ public Result<String> deleteUser(@PathVariable Long id) {
 ```
   
 
-你之所以在自己的代码里找不到 `removeById(id)` 这个方法到底是怎么实现的，是因为**你把写代码的脏活儿全部“外包”给了 MyBatis-Plus（MP）的官方父类。**
+你之所以在自己的代码里找不到 `removeById(id)` 这个方法到底是怎么实现的，是因为**你把写代码的脏活儿全部“外包”给了 MyBatis-Plus(MP)的官方父类。**
 
   
   
@@ -253,7 +253,7 @@ public Result<String> deleteUser(@PathVariable Long id) {
 
 ### 第 5 步：生成 SQL 并发给 MySQL
 
-结合上面的所有线索，MP 在内存里瞬间自动拼接出了一条原生 SQL 语句： `DELETE FROM sys_user WHERE id = ?` （这里的 `?` 就是你从 Controller 传进来的那个 `id` 值）。
+结合上面的所有线索，MP 在内存里瞬间自动拼接出了一条原生 SQL 语句： `DELETE FROM sys_user WHERE id = ?` (这里的 `?` 就是你从 Controller 传进来的那个 `id` 值)。
 
   
 

@@ -1,6 +1,6 @@
 # @RequestBody在Springboot中到底干了什么？
 
-在 Spring Boot 开发中，`@RequestBody` 默认就是使用 **Jackson** 这个强大的库来将前端传来的 JSON 字符串反序列化（转换）为 Java 对象的。
+在 Spring Boot 开发中，`@RequestBody` 默认就是使用 **Jackson** 这个强大的库来将前端传来的 JSON 字符串反序列化(转换)为 Java 对象的。
 
 在这个转换过程中，Jackson 底层确实**非常依赖** Java 对象的**无参构造方法**和 **Setter 方法**。
 
@@ -19,7 +19,7 @@
 }
 ```
 
-如果你不使用 Lombok，你的接收类（DTO 或 Entity）以及 Controller 大概是这样的。看代码里的注释，这就是 Jackson 默默为你做的事情：
+如果你不使用 Lombok，你的接收类(DTO 或 Entity)以及 Controller 大概是这样的。看代码里的注释，这就是 Jackson 默默为你做的事情：
 
 
 
@@ -67,7 +67,7 @@ public class UserController {
 
 Lombok 实际上是一个编译期的代码生成工具。当你加上 `@Data` 注解时，它会在你编译代码的时候，**自动帮你把上面那一堆繁琐的代码“塞”进 class 文件里**。
 
-#### 1. 使用 Lombok 之前的实体类（又臭又长）
+#### 1. 使用 Lombok 之前的实体类(又臭又长)
 
 如果没有 Lombok，哪怕只有两个字段，你的类也要写这么长：
 
@@ -108,7 +108,7 @@ public class UserEntity {
 }
 ```
 
-#### 2. 使用 Lombok 之后的实体类（清爽干净）
+#### 2. 使用 Lombok 之后的实体类(清爽干净)
 
 只需要一个 `@Data` 注解，上面那几十行代码在编译后都会自动生成：
 
@@ -125,4 +125,4 @@ public class UserEntity {
 
 **总结来说：**
 
-`@RequestBody` 背后的 Jackson 需要标准的 JavaBean 规范（也就是要靠无参构造创建对象，靠 Setter 填入数据）。而 Lombok 的 `@Data` 就是用来帮你自动生成这些符合规范的、重复枯燥的 Getter/Setter 模板代码，让你的精力集中在业务和数据结构设计上。
+`@RequestBody` 背后的 Jackson 需要标准的 JavaBean 规范(也就是要靠无参构造创建对象，靠 Setter 填入数据)。而 Lombok 的 `@Data` 就是用来帮你自动生成这些符合规范的、重复枯燥的 Getter/Setter 模板代码，让你的精力集中在业务和数据结构设计上。

@@ -1,18 +1,18 @@
 # Python基础语法
 
-Python 是一门解释型、动态强类型、多范式（面向对象、函数式、过程式）的高级编程语言。它的设计哲学浓缩在《Python 之禅》（`import this`）中——**“优雅、明确、简单”**。与 C、Java、Go 使用大括号 `{}` 划分代码块不同，Python 采用强制缩进（Indentation）**来定义语法层级，并建立在**“万物皆对象（Everything is an Object）”的底层引用模型之上。
+Python 是一门解释型、动态强类型、多范式(面向对象、函数式、过程式)的高级编程语言。它的设计哲学浓缩在《Python 之禅》(`import this`)中——**“优雅、明确、简单”**。与 C、Java、Go 使用大括号 `{}` 划分代码块不同，Python 采用强制缩进(Indentation)**来定义语法层级，并建立在**“万物皆对象(Everything is an Object)”的底层引用模型之上。
 
 ---
 
 ## 1. 程序基本结构、缩进规则与模块入口
 
-Python 源文件以 `.py`（或无控制台窗口的 `.pyw`）为扩展名，无需定义特定类即可从上至下顺序执行，但工程规范通常使用 `if __name__ == "__main__":` 作为脚本主入口。
+Python 源文件以 `.py`(或无控制台窗口的 `.pyw`)为扩展名，无需定义特定类即可从上至下顺序执行，但工程规范通常使用 `if __name__ == "__main__":` 作为脚本主入口。
 
 ```python
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-模块文档字符串（Docstring）：可通过 __doc__ 属性读取
+模块文档字符串(Docstring)：可通过 __doc__ 属性读取
 """
 
 import os                  # 1. 导入标准库模块
@@ -33,7 +33,7 @@ if __name__ == "__main__":
 
 ### 核心语法铁律
 
-* **冒号与 4 空格缩进**：所有代码块（`if`、`for`、`def`、`class`、`try`、`with`）均以英文冒号 `:` 引导，下一行必须统一缩进（PEP 8 官方规范强制推荐 **4 个空格**，严禁将 Tab 与空格混用，否则直接抛出 `IndentationError`）。
+* **冒号与 4 空格缩进**：所有代码块(`if`、`for`、`def`、`class`、`try`、`with`)均以英文冒号 `:` 引导，下一行必须统一缩进(PEP 8 官方规范强制推荐 **4 个空格**，严禁将 Tab 与空格混用，否则直接抛出 `IndentationError`)。
 * **`__name__` 内置变量机制**：当直接通过 `python main.py` 运行文件时，解释器会将该文件的 `__name__` 设为 `"__main__"`；当该文件作为模块被其他文件 `import` 导入时，`__name__` 则是它自身的文件名。
 
 ---
@@ -42,34 +42,34 @@ if __name__ == "__main__":
 
 Python 是**动态强类型语言**：
 
-* **动态**：变量本身没有固定类型（无需声明类型），变量名只是贴在内存对象上的**标签（Name Binding）**，随时可以改贴到不同类型的对象上。
-* **强类型**：不同类型之间不会发生隐式胡乱转换（例如 `"Age: " + 25` 会直接抛出 `TypeError`，必须显式写 `str(25)`）。
+* **动态**：变量本身没有固定类型(无需声明类型)，变量名只是贴在内存对象上的**标签(Name Binding)**，随时可以改贴到不同类型的对象上。
+* **强类型**：不同类型之间不会发生隐式胡乱转换(例如 `"Age: " + 25` 会直接抛出 `TypeError`，必须显式写 `str(25)`)。
 
-### 可变对象（Mutable）vs 不可变对象（Immutable）
+### 可变对象(Mutable)vs 不可变对象(Immutable)
 
 这是理解 Python 内存模型与传参行为的灵魂分类：
 
 | 可变性分类 | 核心内置类型 | 字面量与初始化示例 | 内存修改特性与底层说明 |
 | --- | --- | --- | --- |
-| **不可变类型 (Immutable)** | `int`（任意精度整型） | `x = 100_000_000` | 原地不可修改；对变量执行 `x += 1` 本质是在内存中**创建新对象**并让变量名重新指向新地址 |
-| **不可变类型 (Immutable)** | `float`、`bool`、`NoneType` | `pi = 3.14`、`flag = True`、` empty = None` | `bool` 是 `int` 的子类（`True == 1`）；空值统一用单例对象 `None` 表示 |
-| **不可变类型 (Immutable)** | `str`（Unicode 字符串） | `s = "Hello"` 或多行 `"""..."""` | 任何字符串拼接、替换都会生成全新的 `str` 对象 |
-| **不可变类型 (Immutable)** | `tuple`（元组）、`bytes` | `pt = (10, 20)`、`b = b"raw"` | 一旦创建，元素引用不可增删替换（因此不可变类型均可作为 `dict` 的 Key） |
-| **可变类型 (Mutable)** | `list`（列表） | `items = [1, "a", True]` | 动态数组，支持原地增删改（`append`、`pop`），**内存地址 `id()` 保持不变** |
-| **可变类型 (Mutable)** | `dict`（字典） | `user = {"id": 1, "name": "Admin"}` | 哈希键值对映射（Python 3.7+ 保证按**插入顺序**有序排列） |
-| **可变类型 (Mutable)** | `set`（集合） | `tags = {"go", "python"}`（空集必须用 `set()`） | 无序、自动去重的哈希集合，支持交集 `&`、并集 ` |
+| **不可变类型 (Immutable)** | `int`(任意精度整型) | `x = 100_000_000` | 原地不可修改；对变量执行 `x += 1` 本质是在内存中**创建新对象**并让变量名重新指向新地址 |
+| **不可变类型 (Immutable)** | `float`、`bool`、`NoneType` | `pi = 3.14`、`flag = True`、` empty = None` | `bool` 是 `int` 的子类(`True == 1`)；空值统一用单例对象 `None` 表示 |
+| **不可变类型 (Immutable)** | `str`(Unicode 字符串) | `s = "Hello"` 或多行 `"""..."""` | 任何字符串拼接、替换都会生成全新的 `str` 对象 |
+| **不可变类型 (Immutable)** | `tuple`(元组)、`bytes` | `pt = (10, 20)`、`b = b"raw"` | 一旦创建，元素引用不可增删替换(因此不可变类型均可作为 `dict` 的 Key) |
+| **可变类型 (Mutable)** | `list`(列表) | `items = [1, "a", True]` | 动态数组，支持原地增删改(`append`、`pop`)，**内存地址 `id()` 保持不变** |
+| **可变类型 (Mutable)** | `dict`(字典) | `user = {"id": 1, "name": "Admin"}` | 哈希键值对映射(Python 3.7+ 保证按**插入顺序**有序排列) |
+| **可变类型 (Mutable)** | `set`(集合) | `tags = {"go", "python"}`(空集必须用 `set()`) | 无序、自动去重的哈希集合，支持交集 `&`、并集 ` |
 
-### 多重赋值、序列解包与类型注解（Type Hints）
+### 多重赋值、序列解包与类型注解(Type Hints)
 
 ```python
-# 1. 链式赋值与一行交换变量（无需临时变量 temp，底层自动元组打包与解包）
+# 1. 链式赋值与一行交换变量(无需临时变量 temp，底层自动元组打包与解包)
 a, b = 10, 20
 a, b = b, a  # 交换后 a=20, b=10
 
 # 2. 星号 * 扩展解包：自动收集剩余元素为 list
 first, *middle, last = [1, 2, 3, 4, 5]  # first=1, middle=[2, 3, 4], last=5
 
-# 3. 现代类型注解（Type Hints，Python 3.10+ 支持直接用 | 表示联合类型）
+# 3. 现代类型注解(Type Hints，Python 3.10+ 支持直接用 | 表示联合类型)
 # 注解不强制影响运行期性能，但能大幅增强 IDE (PyCharm/VS Code) 的智能补全与静态检查
 count: int = 0
 nickname: str | None = None
@@ -83,15 +83,15 @@ scores: list[float] = [98.5, 87.0]
 
 ### 核心特殊运算符
 
-* **算术运算**：`/` 永远执行**真除法**（返回 `float`，如 `5 / 2` 得 `2.5`）；`**//` 执行向下取整整除（`5 // 2` 得 `2`）；`**` 表示幂运算（`2 ** 10` 得 `1024`）。
-* **逻辑运算**：使用英文单词 **`and`**、**`or`**、**`not`**（而非 `&&`、`||`、`!`），支持短路求值并返回实际决定结果的那个操作数（如 `name = input_name or "默认名称"`）。
-* **身份 vs 值相等（`is` vs `==`）**：
+* **算术运算**：`/` 永远执行**真除法**(返回 `float`，如 `5 / 2` 得 `2.5`)；`**//` 执行向下取整整除(`5 // 2` 得 `2`)；`**` 表示幂运算(`2 ** 10` 得 `1024`)。
+* **逻辑运算**：使用英文单词 **`and`**、**`or`**、**`not`**(而非 `&&`、`||`、`!`)，支持短路求值并返回实际决定结果的那个操作数(如 `name = input_name or "默认名称"`)。
+* **身份 vs 值相等(`is` vs `==`)**：
 * **`==`**：调用对象的 `__eq__()` 方法，比较两个对象存储的**内容值是否相等**。
-* **`is` / `is not**`：比较两个变量是否指向**同一块内存地址**（即 `id(a) == id(b)`）。**工程规范：判断是否为 `None` 时，必须使用 `if x is None:**`。
+* **`is` / `is not**`：比较两个变量是否指向**同一块内存地址**(即 `id(a) == id(b)`)。**工程规范：判断是否为 `None` 时，必须使用 `if x is None:**`。
 
 
-* **成员运算符（`in` / `not in`）**：检查元素是否存在于序列、字典 Key 或集合中（在 `set` 和 `dict` 中查找的时间复杂度为 $O(1)$）。
-* **海象运算符（`:=`，Python 3.8+）**：在表达式内部同时完成变量赋值与返回值判断：
+* **成员运算符(`in` / `not in`)**：检查元素是否存在于序列、字典 Key 或集合中(在 `set` 和 `dict` 中查找的时间复杂度为 $O(1)$)。
+* **海象运算符(`:=`，Python 3.8+)**：在表达式内部同时完成变量赋值与返回值判断：
 ```python
 # 在判断长度的同时将计算结果赋给变量 n，避免调用两次 len(data)
 if (n := len(data)) != 0:
@@ -101,16 +101,16 @@ if (n := len(data)) != 0:
 
 
 
-### 字符串 `f-string` 格式化（Python 3.6+ 标准首选）
+### 字符串 `f-string` 格式化(Python 3.6+ 标准首选)
 
 ```python
 name = "TaskEngine"
 progress = 0.8567
 
-# 1. 基础插值与格式控制（:.2% 自动转为保留两位小数的百分比）
+# 1. 基础插值与格式控制(:.2% 自动转为保留两位小数的百分比)
 print(f"[{name}] 当前进度: {progress:.2%}")  # 输出: [TaskEngine] 当前进度: 85.67%
 
-# 2. 自记录调试语法（Python 3.8+）：在变量或表达式后加 =，自动打印“表达式=结果”
+# 2. 自记录调试语法(Python 3.8+)：在变量或表达式后加 =，自动打印“表达式=结果”
 x, y = 12, 30
 print(f"{x + y = }")  # 输出: x + y = 42
 
@@ -123,7 +123,7 @@ win_path = r"C:\Users\Admin\Desktop\config.json"
 
 ## 4. 流程控制与结构化模式匹配
 
-### 真假值判定规则（Truthiness）
+### 真假值判定规则(Truthiness)
 
 Python 中任何对象都可直接用于 `if` 或 `while` 条件判断。以下值会被自动判定为 **`False`**，其余一切对象均为 `True`：
 
@@ -131,10 +131,10 @@ Python 中任何对象都可直接用于 `if` 或 `while` 条件判断。以下�
 * 数值零：`0`、`0.0`、`0j`
 * **任何长度为 0 的空容器**：`""`、`[]`、`()`、`{}`、`set()`
 
-### 分支判断与 `match-case` 模式匹配（Python 3.10+）
+### 分支判断与 `match-case` 模式匹配(Python 3.10+)
 
 ```python
-# 1. 标准 if - elif - else（注意 Python 中写作 elif 而非 else if）
+# 1. 标准 if - elif - else(注意 Python 中写作 elif 而非 else if)
 status_code = 200
 if status_code == 200:
     msg = "OK"
@@ -146,7 +146,7 @@ else:
 # 2. 三元条件表达式：真值结果 if 条件 else 假值结果
 label = "已激活" if is_active else "未激活"
 
-# 3. 结构化模式匹配 match-case（远强于传统的 switch，支持直接解构元组、列表与字典结构）
+# 3. 结构化模式匹配 match-case(远强于传统的 switch，支持直接解构元组、列表与字典结构)
 command = ("MOVE", 100, 250)
 match command:
     case ("QUIT",):
@@ -160,13 +160,13 @@ match command:
 
 ```
 
-### 循环结构与高阶迭代工具（`enumerate`、`zip`、`for-else`）
+### 循环结构与高阶迭代工具(`enumerate`、`zip`、`for-else`)
 
 ```python
 names = ["Alice", "Bob", "Charlie"]
 roles = ["Admin", "Dev", "Tester"]
 
-# 1. enumerate()：同时优雅获取索引与元素值（告别 range(len(names))）
+# 1. enumerate()：同时优雅获取索引与元素值(告别 range(len(names)))
 for idx, name in enumerate(names, start=1):
     print(f"{idx}. {name}")
 
@@ -175,7 +175,7 @@ for name, role in zip(names, roles):
     print(f"{name} -> {role}")
 
 # 3. Python 独有的 for-else 语法：
-# 只有当循环【自然正常结束】（中途没有触发过 break）时，才会执行 else 块！
+# 只有当循环【自然正常结束】(中途没有触发过 break)时，才会执行 else 块！
 for item in [2, 4, 6, 8]:
     if item == 5:
         print("找到目标 5")
@@ -187,23 +187,23 @@ else:
 
 ---
 
-## 5. 切片（Slicing）与推导式（Comprehensions）
+## 5. 切片(Slicing)与推导式(Comprehensions)
 
 ### 通用序列切片语法：`seq[start:stop:step]`
 
-适用于 `list`、`str`、`tuple`，遵循**左闭右开**原则（包含 `start`，不包含 `stop`），支持负数索引（`-1` 代表最后一个元素）：
+适用于 `list`、`str`、`tuple`，遵循**左闭右开**原则(包含 `start`，不包含 `stop`)，支持负数索引(`-1` 代表最后一个元素)：
 
 ```python
 nums = [0, 10, 20, 30, 40, 50]
 
-sub1 = nums[1:4]    # [10, 20, 30]（索引 1 到 3）
-sub2 = nums[:3]     # [0, 10, 20]（从头截取前 3 个）
-sub3 = nums[-2:]    # [40, 50]（截取最后 2 个）
-rev  = nums[::-1]   # [50, 40, 30, 20, 10, 0]（步长为 -1，一行代码优雅反转序列）
+sub1 = nums[1:4]    # [10, 20, 30](索引 1 到 3)
+sub2 = nums[:3]     # [0, 10, 20](从头截取前 3 个)
+sub3 = nums[-2:]    # [40, 50](截取最后 2 个)
+rev  = nums[::-1]   # [50, 40, 30, 20, 10, 0](步长为 -1，一行代码优雅反转序列)
 
 ```
 
-### 推导式与生成器表达式（Pythonic 精髓）
+### 推导式与生成器表达式(Pythonic 精髓)
 
 用一行声明式语法替代繁琐的 `for` 循环加 `append`：
 
@@ -214,7 +214,7 @@ squares = [x ** 2 for x in range(10) if x % 2 == 0]  # [0, 4, 16, 36, 64]
 # 2. 字典推导式 (Dict Comprehension)：快速构建或反转键值对
 word_lengths = {w: len(w) for w in ["go", "java", "python"]}  # {'go': 2, 'java': 4, 'python': 6}
 
-# 3. 生成器表达式 (Generator Expression)：用圆括号 () 包裹，惰性求值（按需逐个计算，几乎不占内存）
+# 3. 生成器表达式 (Generator Expression)：用圆括号 () 包裹，惰性求值(按需逐个计算，几乎不占内存)
 total = sum(x * x for x in range(1_000_000))
 
 ```
@@ -225,9 +225,9 @@ total = sum(x * x for x in range(1_000_000))
 
 ### 参数形态与默认参数大坑
 
-Python 函数支持位置参数、默认参数、可变位置参数（`*args`，打包为元组）与可变关键字参数（`**kwargs`，打包为字典）。
+Python 函数支持位置参数、默认参数、可变位置参数(`*args`，打包为元组)与可变关键字参数(`**kwargs`，打包为字典)。
 
-> **高频踩坑警告（切勿使用可变对象作为默认参数！）**：
+> **高频踩坑警告(切勿使用可变对象作为默认参数！)**：
 > Python 函数的默认参数**只在 `def` 语句被加载定义时求值一次**，而非每次调用时重新创建。如果写成 `def add_item(val, items=[]):`，多次调用不传 `items` 会共享并累加同一个列表！正确写法是用 `None` 占位：
 
 ```python
@@ -247,9 +247,9 @@ log_event("CLICK", 102, 240, user="admin", retry=False)
 
 ```
 
-### 匿名函数（`lambda`）与装饰器（`@decorator`）
+### 匿名函数(`lambda`)与装饰器(`@decorator`)
 
-装饰器本质上是一个**接收函数作为参数、并返回增强后新函数的高阶闭包**，常用于日志记录、权限校验、耗时统计与缓存（如标准库自带的 `@functools.lru_cache`）：
+装饰器本质上是一个**接收函数作为参数、并返回增强后新函数的高阶闭包**，常用于日志记录、权限校验、耗时统计与缓存(如标准库自带的 `@functools.lru_cache`)：
 
 ```python
 import time
@@ -280,20 +280,20 @@ def heavy_compute(n: int) -> int:
 
 ---
 
-## 7. 面向对象（OOP）、魔术方法与 `@dataclass`
+## 7. 面向对象(OOP)、魔术方法与 `@dataclass`
 
-Python 的类支持多继承（方法解析顺序遵循 C3 线性化 MRO 算法），所有实例方法的第一个参数必须显式声明为 **`self`**（指向当前实例本身）。
+Python 的类支持多继承(方法解析顺序遵循 C3 线性化 MRO 算法)，所有实例方法的第一个参数必须显式声明为 **`self`**(指向当前实例本身)。
 
-### 标准类定义與双下划线魔术方法（Dunder Methods）
+### 标准类定义與双下划线魔术方法(Dunder Methods)
 
 ```python
 class Vector:
-    # 1. 构造初始化方法（对应 new 之后的属性绑定）
+    # 1. 构造初始化方法(对应 new 之后的属性绑定)
     def __init__(self, x: float, y: float) -> None:
         self.x = x
         self._y = y  # 单下划线前缀 _y：约定俗成的受保护属性；双下划线 __y 会触发名称改写 (Name Mangling)
 
-    # 2. 使用 @property 将方法伪装成只读属性（优雅替代传统 Java 的 getY()）
+    # 2. 使用 @property 将方法伪装成只读属性(优雅替代传统 Java 的 getY())
     @property
     def y(self) -> float:
         return self._y
@@ -308,9 +308,9 @@ class Vector:
 
 ```
 
-### 现代数据类 `@dataclass`（Python 3.7+）
+### 现代数据类 `@dataclass`(Python 3.7+)
 
-如果一个类主要用于封装数据状态（类似 Java 的 `record` 或 Go 的 `struct`），使用 `@dataclass` 装饰器即可自动生成 `__init__`、`__repr__` 和 `__eq__`：
+如果一个类主要用于封装数据状态(类似 Java 的 `record` 或 Go 的 `struct`)，使用 `@dataclass` 装饰器即可自动生成 `__init__`、`__repr__` 和 `__eq__`：
 
 ```python
 from dataclasses import dataclass, field
@@ -330,7 +330,7 @@ print(cfg)  # 自动输出: ServerConfig(host='127.0.0.1', port=9000, tags=[])
 
 ## 8. 异常处理与 `with` 上下文管理器
 
-### 完整异常捕获结构（`try - except - else - finally`）
+### 完整异常捕获结构(`try - except - else - finally`)
 
 ```python
 try:
@@ -348,9 +348,9 @@ finally:
 
 ```
 
-### `with` 上下文管理器（自动资源释放）
+### `with` 上下文管理器(自动资源释放)
 
-读写文件、获取线程锁（`threading.Lock`）或管理数据库连接时，**务必使用 `with` 语句**（底层自动调用对象的 `__enter__` 和 `__exit__` 方法），即便代码块中途抛出异常，也能百分之百保证文件流或锁被安全关闭释放：
+读写文件、获取线程锁(`threading.Lock`)或管理数据库连接时，**务必使用 `with` 语句**(底层自动调用对象的 `__enter__` 和 `__exit__` 方法)，即便代码块中途抛出异常，也能百分之百保证文件流或锁被安全关闭释放：
 
 ```python
 # 自动管理文件打开与关闭，无需手动写 f.close()
@@ -363,9 +363,9 @@ with open("data.txt", mode="r", encoding="utf-8") as f:
 
 ## Python “万物皆对象”引用模型与深浅拷贝交互演示
 
-Python 初学者与进阶开发者最容易踩坑的地方，在于混淆了“变量重绑定（Rebinding）”**与**“原地修改（In-place Mutation）”**，以及嵌套容器的**直接赋值、浅拷贝（`copy.copy`）与深拷贝（`copy.deepcopy`）。
+Python 初学者与进阶开发者最容易踩坑的地方，在于混淆了“变量重绑定(Rebinding)”**与**“原地修改(In-place Mutation)”**，以及嵌套容器的**直接赋值、浅拷贝(`copy.copy`)与深拷贝(`copy.deepcopy`)。
 
-在 Python 中，变量本身不存储数据，只存储指向堆内存中 `PyObject` 对象的引用（内存地址 `id()`）。通过下方的交互式状态机，你可以逐步追踪不可变对象与可变嵌套列表在 6 个阶段中的真实内存引用拓扑演变：
+在 Python 中，变量本身不存储数据，只存储指向堆内存中 `PyObject` 对象的引用(内存地址 `id()`)。通过下方的交互式状态机，你可以逐步追踪不可变对象与可变嵌套列表在 6 个阶段中的真实内存引用拓扑演变：
 
 <div id="py-demo-root">
 <style>
@@ -469,10 +469,10 @@ Python 初学者与进阶开发者最容易踩坑的地方，在于混淆了“�
   ];
   var stages = [
     {
-      title:"Step 1：执行 x = 100; y = x（不可变对象共享引用）",
+      title:"Step 1：执行 x = 100; y = x(不可变对象共享引用)",
       badge:"Immutable · 共享内存地址",
       badgeCls:"py-st-blue",
-      desc:"在 Python 中，x = 100 会在堆上创建一个 int 类型的 PyObject 对象（假设地址为 id: 0x10A0，值为 100，引用计数 refcnt: 1）。接着执行 y = x 时，并没有复制数值 100，而是让变量名 y 贴向同一个对象，refcnt 变为 2。此时 x is y 为 True。",
+      desc:"在 Python 中，x = 100 会在堆上创建一个 int 类型的 PyObject 对象(假设地址为 id: 0x10A0，值为 100，引用计数 refcnt: 1)。接着执行 y = x 时，并没有复制数值 100，而是让变量名 y 贴向同一个对象，refcnt 变为 2。此时 x is y 为 True。",
       links:["x ──\x3e 0x10A0 (int: 100)","y ──\x3e 0x10A0 (int: 100)","x is y ➔ True"],
       ns:[
         {name:"x", val:"0x10A0 (int: 100)", hi:true},
@@ -483,10 +483,10 @@ Python 初学者与进阶开发者最容易踩坑的地方，在于混淆了“�
       ]
     },
     {
-      title:"Step 2：执行 x += 1（不可变对象的重绑定 Rebinding）",
+      title:"Step 2：执行 x += 1(不可变对象的重绑定 Rebinding)",
       badge:"Rebinding · 不可变对象原地不可改",
       badgeCls:"py-st-amber",
-      desc:"因为 int 是不可变对象（Immutable），x += 1 无法修改 0x10A0 里面的值。Python 解释器在堆上开辟了一个全新对象 101（地址 id: 0x10A8，refcnt: 1），并将变量名 x 的标签重新绑定到 0x10A8。而变量 y 仍然安静地指向 0x10A0 (100)。",
+      desc:"因为 int 是不可变对象(Immutable)，x += 1 无法修改 0x10A0 里面的值。Python 解释器在堆上开辟了一个全新对象 101(地址 id: 0x10A8，refcnt: 1)，并将变量名 x 的标签重新绑定到 0x10A8。而变量 y 仍然安静地指向 0x10A0 (100)。",
       links:["x ──\x3e 0x10A8 (int: 101，标签已重绑定)","y ──\x3e 0x10A0 (int: 100，保持不变)"],
       ns:[
         {name:"x", val:"0x10A8 (int: 101)", hi:true},
@@ -498,7 +498,7 @@ Python 初学者与进阶开发者最容易踩坑的地方，在于混淆了“�
       ]
     },
     {
-      title:"Step 3：创建嵌套列表并执行 b = a（可变列表别名 Aliasing）",
+      title:"Step 3：创建嵌套列表并执行 b = a(可变列表别名 Aliasing)",
       badge:"Mutable Aliasing · 引用复制",
       badgeCls:"py-st-blue",
       desc:"执行 a = [10, [20, 30]] 在堆上创建了外层 list (id: 0x2000) 和嵌套的内层 list (id: 0x2050)。执行 b = a 时，仅仅把外层容器的引用复制了一份给 b。此时 a 和 b 指向完全相同的内存，修改任何一处都会互相影响。",
@@ -513,7 +513,7 @@ Python 初学者与进阶开发者最容易踩坑的地方，在于混淆了“�
       ]
     },
     {
-      title:"Step 4：执行 c = a.copy()（浅拷贝触发 Shallow Copy）",
+      title:"Step 4：执行 c = a.copy()(浅拷贝触发 Shallow Copy)",
       badge:"Shallow Copy · 仅克隆外层容器",
       badgeCls:"py-st-amber",
       desc:"调用 a.copy() 或 list(a) 会进行浅拷贝：Python 在堆上开辟了一个全新的外层列表对象 (id: 0x3000)，因此 a is c 为 False。但是，浅拷贝【仅仅复制了外层容器的元素引用】，嵌套的内层列表仍然指向同一个旧地址 0x2050！",
@@ -530,7 +530,7 @@ Python 初学者与进阶开发者最容易踩坑的地方，在于混淆了“�
       ]
     },
     {
-      title:"Step 5：执行 c[1].append(40)（浅拷贝的连锁污染陷阱）",
+      title:"Step 5：执行 c[1].append(40)(浅拷贝的连锁污染陷阱)",
       badge:"Shallow Copy Trap · 连锁修改污染",
       badgeCls:"py-st-rose",
       desc:"通过 c[1].append(40) 原地修改内层列表时，由于 0x2050 是共享的，内层列表变成了 [20, 30, 40]。结果导致 a[1] 和 b[1] 的内容也莫名其妙地被篡改了！这就是浅拷贝在处理嵌套可变对象时最容易踩的高频大坑。",
@@ -547,7 +547,7 @@ Python 初学者与进阶开发者最容易踩坑的地方，在于混淆了“�
       ]
     },
     {
-      title:"Step 6：执行 d = copy.deepcopy(a)（深拷贝递归克隆彻底隔离）",
+      title:"Step 6：执行 d = copy.deepcopy(a)(深拷贝递归克隆彻底隔离)",
       badge:"Deep Copy · 递归克隆完全隔离",
       badgeCls:"py-st-green",
       desc:"调用 copy.deepcopy(a) 会启动递归遍历：不仅克隆外层列表 (id: 0x4000)，还会把所有嵌套的内层可变对象在堆上逐层完整复制出一份全新对象 (id: 0x4050)。此时对 d 的任何修改都与 a、b、c 毫无关系，实现了 100% 的内存隔离安全。",

@@ -3,7 +3,7 @@
 <tukuai-player url="media/videos/生活的秘密.mp4" title="生活的秘密"></tukuai-player>
 
 
-这段著名的独白出自1994年圣克拉拉谷历史协会（Santa Clara Valley Historical Association）对乔布斯的一次采访。在这一分多钟里，他分享了他对“生活真相”的顿悟，这也是他一生中最常被引用的核心哲学之一。
+这段著名的独白出自1994年圣克拉拉谷历史协会(Santa Clara Valley Historical Association)对乔布斯的一次采访。在这一分多钟里，他分享了他对“生活真相”的顿悟，这也是他一生中最常被引用的核心哲学之一。
 
   
 
