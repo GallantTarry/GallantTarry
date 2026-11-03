@@ -1,4 +1,4 @@
-# Coldplay
+# Yellow
 
 <tukuai-player url="media/videos/Yellow.mp4" title="Yellow"></tukuai-player>
 
