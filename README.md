@@ -9,16 +9,16 @@
       <p class="tk-prologue-quote">"Technology is essentially a vessel; what truly gives it a soul is your creative intent."</p>
       <ul class="tk-prologue-list">
         <li class="tk-prologue-item" style="border-left: 2px solid #10b981;">
-          <b>第九艺术</b><span class="tk-prologue-divider">|</span>在电子游戏的叙事中寻找逻辑闭环。
+          <b>第九艺术</b><span class="tk-prologue-divider">|</span>借虚拟的世界，自洽现实的逻辑。
         </li>
         <li class="tk-prologue-item" style="border-left: 2px solid #a78bfa;">
-          <b>音符画布</b><span class="tk-prologue-divider">|</span>在乐理与体积之间寻找美的诠释定义。
+          <b>音符画布</b><span class="tk-prologue-divider">|</span>用流动的声形，锚定静止的美学。
         </li>
         <li class="tk-prologue-item" style="border-left: 2px solid #0ea5e9;">
-          <b>水下放空</b><span class="tk-prologue-divider">|</span>肉体是灵魂的奴隶。
+          <b>水下放空</b><span class="tk-prologue-divider">|</span>卸沉重的肉身，赦免被困的灵魂。
         </li>
         <li class="tk-prologue-item" style="border-left: 2px solid #f59e0b;">
-          <b>极客时刻</b><span class="tk-prologue-divider">|</span>寻找下一个点燃香烟的借口。
+          <b>极客时刻</b><span class="tk-prologue-divider">|</span>穿透无边长夜，借个点烟的理由。
         </li>
       </ul>
     </div>
