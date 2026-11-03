@@ -848,18 +848,27 @@
             overflow-x: auto;
         }
 
+        /* 1. 新增：必须强制外层 pre 标签也允许换行，并关闭它的水平滚动条 */
+        .markdown-section pre {
+            white-space: pre-wrap !important;
+            word-break: break-all !important;
+            overflow-x: hidden !important; /* 彻底隐藏底部横向滚动条 */
+        }
+
+        /* 2. 你原有的 code 标签样式调整 */
         .markdown-section pre code {
             background-color: transparent !important;
             border: none !important;
             padding: 0 !important;
-            color: #e4e4e7 !important; /* 普通变量与标识符改为星光亮白，告别全篇发蓝 */
+            color: #e4e4e7 !important;
             font-family: 'JetBrains Mono', Consolas, 'Courier New', monospace !important;
             font-size: 14px !important;
             line-height: 1.65 !important;
-            /* 仅在显示时折行，保留源码缩进、换行和复制内容 */
+
+            /* 核心换行控制 */
             white-space: pre-wrap !important;
-            overflow-wrap: anywhere;
-            word-break: normal;
+            overflow-wrap: anywhere !important;
+            word-break: break-all !important; /* 【关键修改】将 normal 改为 break-all，强制长字符串折行 */
         }
 
         /* 1. 注释：柔和橄榄绿 */
