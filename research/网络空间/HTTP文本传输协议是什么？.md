@@ -4,9 +4,7 @@
 
 当前端代码发出一个请求，在网线的底层，它其实是一段纯文本。一个完整的 HTTP 请求报文长这样：
 
-HTTP
-
-```
+```HTTP
 POST /api/users HTTP/1.1
 Host: www.example.com
 Content-Type: application/json
