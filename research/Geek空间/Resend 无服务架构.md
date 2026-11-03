@@ -14,7 +14,7 @@
 
 当用户在你的网站前端(例如前端小人处的留言弹窗)写下一段话并点击发送时，后台其实经历了一场严密的接力协作：
 
-![网络设备图](../../media/Resend无服务架构.png)
+![Resend无服务架构](../../media/Resend无服务架构.png)
 
 ```mermaid
 sequenceDiagram
