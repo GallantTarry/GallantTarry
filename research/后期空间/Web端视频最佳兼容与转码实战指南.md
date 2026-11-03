@@ -168,9 +168,9 @@ def optimize_video(folder, filename, target_max_mb=98.0):
     size_mb = os.path.getsize(src) / (1024 * 1024)
     tmp_out = os.path.join(folder, f"_opt_{filename}")
     dur = get_video_duration(src)
-
+    
     print(f"\n[处理中] {filename} | 原始大小: {size_mb:.2f}MB | 时长: {dur/60:.1f}分钟")
-
+    
     # 构建基础转码命令
     cmd = [
         FFMPEG, '-y', '-i', src,
@@ -182,14 +182,14 @@ def optimize_video(folder, filename, target_max_mb=98.0):
         '-c:a', 'aac',
         '-movflags', '+faststart'
     ]
-
+    
     # 策略判断：如果文件本身超大或时长很长，开启精准控容
     if size_mb > target_max_mb and dur > 0:
         target_bits = 95.0 * 1024 * 1024 * 8  # 瞄准 95MB
         audio_kbps = 64 if dur > 1800 else 96
         total_kbps = (target_bits / dur) / 1000
         video_kbps = max(int((total_kbps * 0.98) - audio_kbps), 100)
-
+        
         cmd.extend([
             '-b:v', f'{video_kbps}k',
             '-maxrate', f'{int(video_kbps * 1.3)}k',
@@ -200,9 +200,9 @@ def optimize_video(folder, filename, target_max_mb=98.0):
     else:
         # 普通文件采用优质恒定画质 (CRF)
         cmd.extend(['-preset', 'fast', '-crf', '22', '-b:a', '128k'])
-
+        
     cmd.append(tmp_out)
-
+    
     # 执行转码
     res = subprocess.run(cmd, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     if res.returncode == 0 and os.path.exists(tmp_out):

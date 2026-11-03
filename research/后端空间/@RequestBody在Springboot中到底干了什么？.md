@@ -43,7 +43,7 @@ public class UserRequest {
     public void setAge(Integer age) {
         this.age = age;
     }
-
+    
     // (Getter 方法在反序列化时通常用不到，但如果要把对象转换回 JSON 传给前端，Jackson 就会调用 Getter)
     public String getUsername() { return username; }
     public Integer getAge() { return age; }

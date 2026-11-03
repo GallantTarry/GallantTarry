@@ -5,13 +5,13 @@
 ### 1. 转换链接格式
 
 - **原始链接**：`[https://www.youtube.com/watch?v=wZOcZ1IfJQ4&t=4303s](https://www.youtube.com/watch?v=wZOcZ1IfJQ4&t=4303s)`
-
+    
 - **提取参数**：视频 ID 是 `wZOcZ1IfJQ4`，时间戳是 `4303` 秒。
-
+    
 - **转换为嵌入格式**：将 `watch?v=` 换成 `embed/`，并将时间参数 `t=4303s` 转换为 YouTube 嵌入专属的 `start=4303` 参数：
-
+    
     `[https://www.youtube.com/embed/wZOcZ1IfJQ4?start=4303](https://www.youtube.com/embed/wZOcZ1IfJQ4?start=4303)`
-
+    
 
 ### 2. 修改你的 HTML 模块代码
 

@@ -28,19 +28,19 @@ sequenceDiagram
 
     User->>Front: 1. 提交留言内容与附件
     Front->>Worker: 2. HTTPS POST 请求(发往自定义域名 api.土块.art)
-
+    
     rect rgb(20, 25, 35)
         Note over Worker: 边缘函数被瞬间唤醒<br/>提取数据并组装 Payload
     end
-
+    
     Worker->>Resend: 3. 携带 API Key 调用 https://api.resend.com/emails
-
+    
     rect rgb(20, 25, 35)
         Note over Resend: Resend 校验 API Key 成功<br/>接管投递任务，生成加密数字签名
     end
-
+    
     Resend->>Gmail: 4. 代表你的域名发起底层 SMTP 投递 (From: admin@土块.art)
-
+    
     critical 5. Gmail 收到信件后启动安全审查(反向核验 DNS)
         Gmail->>DNS: 查 resend._domainkey 的 TXT(核对公钥验签 DKIM)
         DNS-->>Gmail: 签名匹配，内容未被篡改 ✅
@@ -49,7 +49,7 @@ sequenceDiagram
         Gmail->>DNS: 查 send.土块.art 的 MX(确认退信通道正常)
         DNS-->>Gmail: 退信路由合法有效 ✅
     end
-
+    
     Gmail->>Gmail: 6. 防伪鉴权全部通过，放入正式收件箱 📥
     Resend-->>Worker: 7. 返回 200 OK 与投递 ID
     Worker-->>Front: 8. 响应 success: true，页面弹出发送成功提示

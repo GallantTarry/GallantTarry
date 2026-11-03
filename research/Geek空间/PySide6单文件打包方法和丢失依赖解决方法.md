@@ -16,7 +16,7 @@ pip install pyinstaller
 ```  
 
 这是针对我的简单的PyKuai文件目录的打包方式。  
-
+ 
 ![Python文件目录](../../media/Python文件目录.png)
 
 ```cmd  

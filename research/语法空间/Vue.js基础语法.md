@@ -3,13 +3,13 @@
 
 Vue(目前主流标准为 **Vue 3 组合式 API / Composition API**)是一套用于构建用户界面的渐进式前端框架。它的核心设计理念是**声明式渲染(Declarative Rendering)**与**细粒度响应式系统(Reactivity System)**——开发者只需维护数据状态(State)，视图(DOM)会在数据变化时自动同步更新。
 
-
+  
 
 ## 1. 单文件组件结构(SFC 与 `<script setup>`)
 
 Vue 工程化开发采用 `.vue` 单文件组件(Single-File Component)，将一个组件的**逻辑(Script)**、模板(Template)**和**样式(Style)封装在同一个文件中。现代 Vue 3 默认推荐使用 `<script setup>` 语法糖，无需手动 `return` 变量即可在模板中直接使用：
 
-
+  
 
 
 
@@ -45,7 +45,7 @@ const increment = () => {
 
 在 Vue 3 中，普通的 JavaScript 变量修改后不会触发界面重绘，必须使用响应式 API 包装数据(底层基于 ES6 `Proxy` 实现拦截)。
 
-
+  
 
 ### `ref` 与 `reactive` 对比
 
@@ -84,7 +84,7 @@ const { username, rememberMe } = toRefs(form)
 
 Vue 指令是带有 `v-` 前缀的特殊 HTML 属性，用于将数据状态响应式地作用于 DOM。
 
-
+  
 
 ### 常用指令速查表
 
@@ -119,19 +119,19 @@ Vue 指令是带有 `v-` 前缀的特殊 HTML 属性，用于将数据状态响�
 ### 条件渲染：`v-if` vs `v-show`
 
 - **`v-if` / `v-else-if` / `v-else`**：**真正的条件挂载与销毁**。条件为假时，DOM 节点根本不会存在于页面中；切换开销高，适合运行期很少改变的条件。
-
-
-
+    
+      
+    
 - **`v-show`**：无论条件真假，元素始终被渲染，仅通过切换 CSS 的 `display: none` 控制显隐；初始渲染开销高，适合需要**高频切换**显隐的场景(如悬浮窗、Tab 面板)。
-
-
-
+    
+      
+    
 
 ### 列表渲染：`v-for` 与 `:key`
 
 使用 `v-for` 遍历数组或对象时，**必须绑定唯一且稳定的 `:key` 属性**(通常使用数据项的唯一 `id`，尽量避免使用可能会发生增删移位的数组索引 `index`)，以便 Vue 的虚拟 DOM Diff 算法精准复用节点。
 
-
+  
 
 > **语法红线**：永远不要在同一个元素上同时使用 `v-if` 和 `v-for`(在 Vue 3 中 `v-if` 的优先级高于 `v-for`，会导致 `v-if` 无法访问 `v-for` 的循环变量而报错)。应在外层包裹一层 `<template v-for="...">` 或提前用计算属性过滤数组。
 > 
@@ -156,7 +156,7 @@ Vue 指令是带有 `v-` 前缀的特殊 HTML 属性，用于将数据状态响�
 
 当一个数据依赖于其他响应式数据计算得出时，应使用 `computed`。它具备**缓存机制**：只有当其依赖的响应式状态发生改变时才会重新计算，否则多次访问直接返回缓存结果。
 
-
+  
 
 
 
@@ -176,7 +176,7 @@ const fullName = computed(() => `${firstName.value}${lastName.value}`)
 
 当需要在**数据变化时执行“副作用”操作**(如发起异步网络请求、操作本地存储 `localStorage`、防抖搜索)时，使用侦听器：
 
-
+  
 
 
 
@@ -203,7 +203,7 @@ watchEffect(() => {
 
 Vue 组件树遵循**单向数据流**原则：父组件通过 **Props** 向下传递数据，子组件通过 **Emits** 向上触发事件通知父组件修改数据；或者使用 Vue 3.4+ 引入的 **`defineModel`** 直接实现父子双向绑定。
 
-
+  
 
 
 
@@ -237,7 +237,7 @@ const keyword = defineModel({ type: String, default: '' })
 
 父组件调用该子组件时：
 
-
+  
 
 
 ```
@@ -255,7 +255,7 @@ const keyword = defineModel({ type: String, default: '' })
 
 每个 Vue 组件实例从创建、挂载到 DOM、更新再到销毁，都会经历一系列生命周期阶段。在 `<script setup>` 中，生命周期钩子以 `onXxx` 函数的形式按需引入调用：
 
-
+  
 
 |**生命周期阶段**|**组合式 API 钩子函数**|**触发时机与典型工程用途**|
 |---|---|---|

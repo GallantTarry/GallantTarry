@@ -23,44 +23,44 @@ jpackage --type app-image --name ToolKit --app-version 1.9.6 --input "C:\Users\w
 
 这行 `jpackage` 命令的意思是：**使用 JDK 自带的打包工具，将你的 Java 项目生成一个免安装的独立运行目录(App Image)**。
 
-
+  
 
 为了让你一目了然，我们可以把这段代码拆解开来看看每个参数的具体含义：
 
-
+  
 
 - **`jpackage`**：JDK 14 及以上版本自带的官方桌面程序打包工具。
-
-
-
+    
+      
+    
 - **`--type app-image`**：指定打包类型为“应用镜像目录”(也就是生成一个可以直接双击运行、包含完整环境的文件夹，而不是直接生成安装包)。
-
-
-
+    
+      
+    
 - **`--name ToolKit`**：设定生成程序的名称。(这一步决定了最后的软件名称和快捷方式名称，一定要尤为关注一下。)
-
-
-
+    
+      
+    
 - **`--app-version 1.9.6`**：设定当前程序的版本号为 `1.9.6`。
-
-
-
+    
+      
+    
 - **`--input "C:\Users\w1961\Desktop\testwix"`**：指定输入文件夹，告诉打包工具去哪里寻找你的 `ToolKit.jar` 以及内置的 `engines` 等素材。
-
-
-
+    
+      
+    
 - **`--main-jar ToolKit.jar`**：指定主程序的 JAR 包文件名。
-
-
-
+    
+      
+    
 - **`--main-class shaoxia.MainLauncher`**：指定程序的启动入口类(即 `main` 函数所在的类)。
-
-
-
+    
+      
+    
 - **`--dest "C:\Users\w1961\Desktop\image_out"`**：指定输出文件夹，打包好的最终文件夹会存放在桌面的 `image_out` 目录下。
-
-
-
+    
+      
+    
 - **`--icon "C:\Users\w1961\Desktop\testwix\logo.ico"`**：为生成的程序指定一个自定义的 `.ico` 图标。
 
 ![image_out免安装独立运行生成后文件夹](../../media/image_out免安装独立运行生成后文件夹.png)
@@ -102,44 +102,44 @@ jpackage --type msi --app-image "C:\Users\w1961\Desktop\image_out\ToolKit" --nam
 
 让我们同样把这段命令拆解开来看看每个参数的含义：
 
-
+  
 
 - **`jpackage`**：JDK 自带的桌面应用打包工具。
-
-
-
+    
+      
+    
 - **`--type msi`**：指定最终打包输出的文件格式为 Windows 的 `.msi` 安装包。
-
-
-
+    
+      
+    
 - **`--app-image "C:\Users\w1961\Desktop\image_out\ToolKit"`**：告诉打包工具，直接拿桌面上已经生成好的 `ToolKit` 运行目录作为打包的素材源。
-
-
-
+    
+      
+    
 - **`--name ToolKit`**：指定安装包在系统中显示的软件名称。(这里的名称最终还是根据第一次打包的独立运行目录决定的。)
-
-
-
+    
+      
+    
 - **`--app-version 1.9.6`**：指定安装包的版本号为 `1.9.6`。
-
-
-
+    
+      
+    
 - **`--dest "C:\Users\w1961\Desktop"`**：指定最终生成的 `.msi` 安装文件输出保存到你的桌面上。
-
-
-
+    
+      
+    
 - **`--icon "C:\Users\w1961\Desktop\logo.ico"`**：为这个安装包及安装后的程序指定自定义的图标。
-
-
-
+    
+      
+    
 - **`--win-dir-chooser`**：在安装向导中弹出一个步骤，允许用户自己选择安装到哪个盘(例如 D 盘)。
-
-
-
+    
+      
+    
 - **`--win-shortcut`**：安装完成后，自动在桌面上创建带有你自定义图标的 `.exe` 快捷方式。
-
-
-
+    
+      
+    
 - **`--win-menu`**：在 Windows 的“开始”菜单中也自动添加程序的快捷启动方式。
 
 > 那么还没有结束，到这里您还要给安装包也签个名，这样就很完美了。如果想要删除直接点击msi卸载即可，如果不小心删除了msi，也可以从命令面板进行卸载。
