@@ -1,0 +1,245 @@
+/* Mermaid cards share the site's dark / body.theme-light theme switch.
+ * Keep graph colors in variables so the renderer can also theme SVG internals.
+ */
+:root {
+    --mermaid-font: 'Inter', -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    --mermaid-bg: #131316;
+    --mermaid-text: #e4e4e7;
+    --mermaid-muted: #a1a1aa;
+    --mermaid-primary: #123c33;
+    --mermaid-primary-border: #34d399;
+    --mermaid-secondary: #25233f;
+    --mermaid-secondary-border: #a78bfa;
+    --mermaid-tertiary: #193044;
+    --mermaid-tertiary-border: #7dd3fc;
+    --mermaid-line: #a1a1aa;
+    --mermaid-label-bg: #202024;
+    --mermaid-cluster: #1c1e22;
+    --mermaid-cluster-border: #52525b;
+    --mermaid-card-border: rgba(52, 211, 153, 0.2);
+    --mermaid-card-highlight: rgba(16, 185, 129, 0.05);
+    --mermaid-card-shadow: 0 8px 24px rgba(0, 0, 0, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.035);
+    --mermaid-focus: #34d399;
+    --mermaid-error-color: #fda4af;
+}
+
+body.theme-light {
+    --mermaid-bg: #fcf8fc;
+    --mermaid-text: #3b3054;
+    --mermaid-muted: #756582;
+    --mermaid-primary: #fce7f3;
+    --mermaid-primary-border: #db2777;
+    --mermaid-secondary: #ede9fe;
+    --mermaid-secondary-border: #8b5cf6;
+    --mermaid-tertiary: #e0f2fe;
+    --mermaid-tertiary-border: #0284c7;
+    --mermaid-line: #847091;
+    --mermaid-label-bg: #fff8fc;
+    --mermaid-cluster: #f5f0fa;
+    --mermaid-cluster-border: #c4b5d4;
+    --mermaid-card-border: rgba(244, 114, 182, 0.3);
+    --mermaid-card-highlight: rgba(216, 180, 254, 0.12);
+    --mermaid-card-shadow: 0 8px 24px rgba(139, 92, 246, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    --mermaid-focus: #db2777;
+    --mermaid-error-color: #be123c;
+}
+
+.markdown-section .mermaid-card {
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 0;
+    margin: 28px 0;
+    padding: 8px;
+    color: var(--mermaid-text);
+    background: linear-gradient(135deg, var(--mermaid-card-highlight), transparent 65%), var(--mermaid-bg);
+    border: 1px solid var(--mermaid-card-border);
+    border-radius: 16px;
+    box-shadow: var(--mermaid-card-shadow);
+    font-family: var(--mermaid-font);
+    font-size: 14px;
+    line-height: 1.5;
+    text-align: left;
+    text-shadow: none;
+    letter-spacing: normal;
+}
+
+.markdown-section .mermaid-card .mermaid-diagram {
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 0;
+    padding: 20px 16px;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
+    border-radius: 10px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--mermaid-cluster-border) transparent;
+}
+
+.markdown-section .mermaid-card .mermaid-diagram:focus-visible,
+.markdown-section .mermaid-card .mermaid-source > summary:focus-visible {
+    outline: 2px solid var(--mermaid-focus);
+    outline-offset: 2px;
+}
+
+.markdown-section .mermaid-card .mermaid-diagram::-webkit-scrollbar {
+    height: 8px;
+}
+
+.markdown-section .mermaid-card .mermaid-diagram::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.markdown-section .mermaid-card .mermaid-diagram::-webkit-scrollbar-thumb {
+    background: var(--mermaid-cluster-border);
+    border: 2px solid var(--mermaid-bg);
+    border-radius: 8px;
+}
+
+/* The renderer supplies the SVG's natural pixel width. Scroll large diagrams
+ * instead of shrinking Chinese labels to an unreadable size on narrow screens.
+ */
+.markdown-section .mermaid-card .mermaid-diagram > svg {
+    display: block;
+    max-width: none !important;
+    height: auto;
+    margin: 0 auto;
+}
+
+/* Article typography also matches HTML inside SVG foreignObject labels.
+ * Reset only typography; preserve Mermaid's and authors' node/edge colors.
+ */
+body .markdown-section .mermaid-card .mermaid-diagram :is(p, strong, em, b, i) {
+    color: inherit !important;
+    text-shadow: none !important;
+    letter-spacing: normal;
+}
+
+body .markdown-section .mermaid-card .mermaid-diagram p {
+    margin: 0 !important;
+    padding: 0 !important;
+    font-family: inherit !important;
+    font-size: inherit !important;
+    line-height: 1.5 !important;
+}
+
+body .markdown-section .mermaid-card .mermaid-diagram :is(ul, ol) {
+    margin: 0 !important;
+    padding-left: 1.2em !important;
+}
+
+body .markdown-section .mermaid-card .mermaid-diagram :is(ul, ol) > li {
+    margin: 0 !important;
+    color: inherit !important;
+    font-size: inherit !important;
+    line-height: 1.5 !important;
+}
+
+body .markdown-section .mermaid-card .mermaid-diagram code {
+    margin: 0 !important;
+    padding: 0 0.15em !important;
+    color: inherit !important;
+    background: transparent !important;
+    border: 0 !important;
+    border-radius: 0;
+    font-size: 0.95em !important;
+}
+
+.markdown-section .mermaid-card .mermaid-status,
+.markdown-section .mermaid-card .mermaid-error {
+    margin: 0;
+    padding: 12px 16px;
+    color: var(--mermaid-muted) !important;
+    font-family: var(--mermaid-font);
+    font-size: 13px;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+.markdown-section .mermaid-card.is-loading .mermaid-status {
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.markdown-section .mermaid-card.is-loading .mermaid-status::before {
+    content: '';
+    flex: 0 0 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--mermaid-focus);
+}
+
+.markdown-section .mermaid-card.is-error {
+    border-color: var(--mermaid-error-color);
+}
+
+body .markdown-section .mermaid-card .mermaid-error {
+    color: var(--mermaid-error-color) !important;
+}
+
+.markdown-section .mermaid-card .mermaid-source {
+    margin: 4px 12px 12px;
+    color: var(--mermaid-muted);
+    font-size: 13px;
+}
+
+.markdown-section .mermaid-card .mermaid-source > summary {
+    width: fit-content;
+    padding: 6px 0;
+    color: var(--mermaid-muted);
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.markdown-section .mermaid-card .mermaid-source > summary:hover {
+    color: var(--mermaid-focus);
+}
+
+body .markdown-section .mermaid-card .mermaid-source pre {
+    margin: 8px 0 0 !important;
+    padding: 14px !important;
+    overflow: auto;
+    color: var(--mermaid-text) !important;
+    background: var(--mermaid-label-bg) !important;
+    border: 1px solid var(--mermaid-card-border) !important;
+    border-radius: 8px !important;
+    box-shadow: none !important;
+    white-space: pre;
+    text-align: left;
+}
+
+body .markdown-section .mermaid-card .mermaid-source pre code {
+    display: block;
+    padding: 0 !important;
+    color: var(--mermaid-text) !important;
+    background: transparent !important;
+    border: 0 !important;
+    font-size: 13px !important;
+    line-height: 1.6 !important;
+    white-space: pre;
+    overflow-wrap: normal;
+    word-break: normal;
+}
+
+.markdown-section .mermaid-card [hidden] {
+    display: none !important;
+}
+
+@media (max-width: 600px) {
+    .markdown-section .mermaid-card {
+        margin: 22px 0;
+        padding: 4px;
+        border-radius: 12px;
+    }
+
+    .markdown-section .mermaid-card .mermaid-diagram {
+        padding: 16px 8px;
+    }
+
+    .markdown-section .mermaid-card .mermaid-source {
+        margin-right: 8px;
+        margin-left: 8px;
+    }
+}
