@@ -1,12 +1,12 @@
 # Java基础语法
-  
+
 Java 是一门强类型、面向对象的编程语言，语法风格承袭自 C 和 C++，但移除了头文件、指针运算和显式内存释放等复杂特性，强调严谨的结构与跨平台安全性。
 
 ## 1. 程序基本结构与入口
 
 Java 中几乎所有代码都必须定义在类(Class)内部。一个标准的源文件结构由包声明、导入语句、类定义和主方法组成：
 
-  
+
 
 
 
@@ -28,25 +28,25 @@ public class HelloWorld {
 ```
 
 - **命名规范**：类名使用大驼峰(`UpperCamelCase`)，方法名和变量名使用小驼峰(`lowerCamelCase`)，常量全大写加下划线(`MAX_VALUE`)。
-    
-      
-    
+
+
+
 - **现代化简化(Java 21+)**：在现代 JDK 版本中，支持隐式类和简化的实例主方法，开发小型脚本时可直接写 `void main() { System.out.println("Hello"); }`。
-    
-      
-    
+
+
+
 
 ## 2. 数据类型、变量与常量
 
 Java 的数据类型严格分为两大类：**基本数据类型(Primitive Types)**和**引用数据类型(Reference Types)**。
 
-  
+
 
 ### 八大基本数据类型
 
 基本类型直接存储数据值，分配在栈内存(或随对象存储在堆中)，没有方法可调用：
 
-  
+
 
 |**分类**|**类型关键字**|**占用空间**|**默认值(成员变量)**|**字面量书写示例与说明**|
 |---|---|---|---|---|
@@ -78,47 +78,47 @@ final double PI = 3.1415926;
 ### 类型转换
 
 - **隐式转换(自动扩容)**：小范围类型自动转为大范围类型(如 `byte` 转 `short` 转 `int` 转 `long` 转 `float` 转 `double`)。
-    
-      
-    
+
+
+
 - **显式转换(强制转型)**：大范围转小范围需要加上括号，可能损失精度或溢出：
-    
-      
-    
-    
-    
+
+
+
+
+
     ```Java
     double price = 99.95;
     int truncatedPrice = (int) price; // 结果为 99，小数部分直接截断
     ```
-    
+
 
 ## 3. 运算符与字符串特性
 
 ### 核心运算符
 
 - **算术运算**：`+`、`-`、`*`、`/`(整数相除直接舍弃小数)、`%`(取模)、`++`、`--`。
-    
-      
-    
+
+
+
 - **关系与逻辑**：`==`、`!=`、大于、小于，以及**短路逻辑运算符** `&&`(与)、`||`(或)、`!`(非)。
-    
-      
-    
+
+
+
 - **三元运算符**：`条件表达式 ? 表达式1 : 表达式2`。
-    
-      
-    
+
+
+
 - **位运算符**：`&`、`|`、`^`(异或)、`~`(取反)、左移与右移运算符。
-    
-      
-    
+
+
+
 
 ### 字符串(`String`)核心准则
 
 Java 中的 `String` 是**不可变对象(Immutable)**，每次拼接都会生成新对象(高频拼接建议使用 `StringBuilder`)：
 
-  
+
 
 
 
@@ -147,7 +147,7 @@ String json = """
 
 除了传统的 `if - else if - else`，现代 Java(Java 14+)大幅强化了 `switch`，支持箭头语法并可直接作为表达式返回值，彻底避免了忘写 `break` 导致的穿透问题：
 
-  
+
 
 
 
@@ -194,7 +194,7 @@ while (count > 0) {
 
 Java 的数组是固定长度的容器，一旦创建长度不可更改，分配在堆内存中，通过 `.length` 属性获取长度：
 
-  
+
 
 
 
@@ -217,7 +217,7 @@ int[][] matrix = {
 
 Java 中的函数统称为**方法(Method)**，必须定义在类内部。Java 参数传递只有**值传递**(基本类型传递值的副本，引用类型传递内存地址引用的副本)。
 
-  
+
 
 
 
@@ -251,7 +251,7 @@ public class Calculator {
 
 通过访问控制修饰符保护内部状态，对外暴露方法来操作数据：
 
-  
+
 
 |**修饰符**|**当前类内部**|**同一个包(Package)**|**不同包的子类**|**全局任意位置**|
 |---|---|---|---|---|
@@ -302,7 +302,7 @@ public class User {
 
 Java 的类只支持**单继承**(`extends`)，但支持实现**多个接口**(`implements`)。
 
-  
+
 
 
 
@@ -310,7 +310,7 @@ Java 的类只支持**单继承**(`extends`)，但支持实现**多个接口**(`
 // 定义接口(规范契约)
 public interface Flyable {
     void fly(); // 默认是 public abstract
-    
+
     // Java 8+ 允许接口定义带有默认实现的方法
     default void checkStatus() {
         System.out.println("状态正常");
@@ -320,11 +320,11 @@ public interface Flyable {
 // 抽象父类
 public abstract class Animal {
     protected String name;
-    
+
     public Animal(String name) {
         this.name = name;
     }
-    
+
     public abstract void makeSound(); // 抽象方法，强制子类实现
 }
 
@@ -359,7 +359,7 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class ExceptionDemo {
-    
+
     // throws 声明该方法可能向外抛出的受检异常
     public void checkAge(int age) throws IllegalArgumentException {
         if (age < 0) {

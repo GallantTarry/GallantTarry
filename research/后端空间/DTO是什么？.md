@@ -15,17 +15,17 @@
 ```Java
 public void saveUser(UserDTO dto) {
     UserEntity entity = new UserEntity();
-    
+
     // 字段名一样的，直接 get/set
     entity.setUsername(dto.getUsername());
-    
+
     // 字段名对不齐的，手动映射(比如 DTO 叫 pwd，数据库叫 password)
     entity.setPassword(dto.getPwd()); 
-    
+
     // DTO 里没有，但数据库必须有的字段，手动生成或赋默认值
     entity.setCreateTime(new Date()); 
     entity.setDelFlag(0);
-    
+
     // 最后存入数据库
     userMapper.insert(entity);
 }
@@ -46,14 +46,14 @@ public void saveUser(UserDTO dto) {
 ```Java
 public void saveUser(UserDTO dto) {
     UserEntity entity = new UserEntity();
-    
+
     // 一行代码，把所有名字、类型相同的字段全拷过去
     BeanUtils.copyProperties(dto, entity); 
-    
+
     // 剩下的那些“对不齐”的、被忽略的字段，再手动补上
     entity.setPassword(dto.getPwd());
     entity.setCreateTime(new Date());
-    
+
     userMapper.insert(entity);
 }
 ```
@@ -73,7 +73,7 @@ public void saveUser(UserDTO dto) {
 ```Java
 @Mapper(componentModel = "spring")
 public interface UserConvert {
-    
+
     // 告诉框架：把 DTO 里的 pwd 塞进 Entity 里的 password 字段
     @Mapping(source = "pwd", target = "password")
     // 忽略某些不需要拷贝的字段
@@ -90,10 +90,10 @@ public interface UserConvert {
 public void saveUser(UserDTO dto) {
     // 直接调用转换器，拿到 Entity
     UserEntity entity = userConvert.dtoToEntity(dto);
-    
+
     // 补充一些业务默认值
     entity.setCreateTime(new Date());
-    
+
     userMapper.insert(entity);
 }
 ```
@@ -105,5 +105,5 @@ public void saveUser(UserDTO dto) {
 简单来说：
 
 - 如果只有几个字段对不齐，大家通常是 **`BeanUtils` 拷贝 + 手动 set 补齐**。
-    
+
 - 如果项目极大，各种 DTO 和 Entity 互相转，大家会引入 **MapStruct** 这种专业工具来管理映射规则。

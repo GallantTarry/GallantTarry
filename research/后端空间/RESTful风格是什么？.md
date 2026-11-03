@@ -11,22 +11,22 @@ RESTful 风格其实是一场“从混乱走向秩序”的接口革命。
 那个时候，开发者把 URL 当成了“函数名”**。URL 里通常写满了**“动词 + 名词”。我们拿你的《拯救公猪》游戏来举例，如果按以前的写法，接口会长这样：
 
 - **新增公猪：** `http://localhost:8080/api/createPig` (方法：POST)
-    
+
 - **查询某只公猪：** `http://localhost:8080/api/getPigById?id=1` (方法：GET 或 POST)
-    
+
 - **查询所有公猪：** `http://localhost:8080/api/getAllPigs` (方法：GET)
-    
+
 - **修改公猪血量：** `http://localhost:8080/api/updatePigHp` (方法：POST)
-    
+
 - **删除公猪：** `http://localhost:8080/api/deletePig?id=1` (方法：GET 或 POST)
-    
+
 
 **当时的痛点(为什么不用这种方式了)：**
 
 1. **URL 数量爆炸，极度混乱：** 每一项操作都要新造一个 URL。今天叫 `createPig`，明天换个程序员可能就叫 `addPig`，后天又变成 `insertPig`，前端查接口文档能查到崩溃。
-    
+
 2. **完全无视了 HTTP 协议的自带武器：** 那时候大家基本只会用 GET 和 POST。管你是删除、修改还是查询，只要遇到传参数多一点的情况，无脑用 POST；遇到简单的，无脑用 GET。HTTP 协议里本来就有的 PUT、DELETE 全被晾在一边当摆设。
-    
+
 
 ### 二、 大厂的重型武器：SOAP(另一种极端)
 
@@ -53,11 +53,11 @@ RESTful 风格其实是一场“从混乱走向秩序”的接口革命。
 ### 四、 RESTful 为什么能一统江湖？
 
 1. **接口极度精简：** 以前 5 个不同的 URL，现在全合并成了 1 到 2 个 URL(`/api/pigs` 和 `/api/pigs/{id}`)。前端闭着眼睛都能猜到接口路径。
-    
+
 2. **语义清晰，见名知意：** 后端看到前端发来一个 `DELETE /api/pigs/99`，不用看代码就知道这是要干掉 99 号公猪，分工极其明确。
-    
+
 3. **完美契合 JSON：** 抛弃了臃肿的 XML，配合轻量级的 JSON 格式，传输速度极快。
-    
+
 
 简而言之，RESTful 风格就是**给杂乱无章的后端接口制定了一套“普通话”**。它强迫大家把业务动作收敛到 HTTP 自带的四个动词里，让整个网络请求变得优雅又干净。
 
@@ -215,7 +215,7 @@ setTimeout(function() {
   data.links.forEach(function(d) { 
     linkedByIndex[d.source + "," + d.target] = true; 
   });
-  
+
   function isConnected(a, b) {
     return linkedByIndex[a.id + "," + b.id] || linkedByIndex[b.id + "," + a.id] || a.id === b.id;
   }

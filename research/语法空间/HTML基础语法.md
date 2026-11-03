@@ -15,20 +15,20 @@ HTML(HyperText Markup Language，超文本标记语言，现行标准为 **HTML5
 <head>
   <!-- 1. 字符编码声明：必须放在 head 最顶部，防止中文乱码 -->
   <meta charset="UTF-8" />
-  
+
   <!-- 2. 移动端响应式视口设置：宽度自适应设备屏幕，初始缩放比例为 1.0 -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
+
   <!-- 3. 页面描述与关键词(用于 SEO 搜索引擎优化) -->
   <meta name="description" content="HTML5 基础语法与语义化标签指南" />
-  
+
   <!-- 4. 浏览器标签页标题与图标 -->
   <title>HTML5 核心语法指南</title>
   <link rel="icon" href="/favicon.ico" />
-  
+
   <!-- 5. 引入外部 CSS 样式表 -->
   <link rel="stylesheet" href="./style.css" />
-  
+
   <!-- 6. 引入外部 JS 脚本：defer 表示异步下载并等 DOM 解析完毕后再按序执行 -->
   <script src="./main.js" defer></script>
 </head>
