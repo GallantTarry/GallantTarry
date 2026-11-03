@@ -707,9 +707,26 @@
             margin: 2.5em 0 !important;
         }
 
+        /* 核心修复：彻底消除首尾子元素外边距，防止与 padding 叠加产生巨大空隙 */
+        .markdown-section blockquote > *:first-child {
+            margin-top: 0 !important;
+        }
+
+        .markdown-section blockquote > *:last-child {
+            margin-bottom: 0 !important;
+        }
+
         .markdown-section blockquote p {
-            margin-bottom: 0 !important; /* 消除内部段落底部多余的间距 */
+            margin: 0.6em 0 !important; /* 保持段落之间自然的微小行距 */
             color: #a1a1aa !important; /* 文字稍微调暗，与正文产生层次 */
+        }
+
+        .markdown-section blockquote p:empty {
+            display: none !important; /* 隐藏由于连续回车产生的空段落，防止顶出额外空白 */
+        }
+
+        .markdown-section blockquote blockquote {
+            margin: 0.8em 0 !important; /* 消除多层嵌套引用时多余的外边距 */
         }
 
 
