@@ -1591,14 +1591,20 @@
         plugins: [
             function (hook, vm) {
 
-                // === 1. 全局自动修复加粗与代码块嵌套的 Bug ===
+                // === 1. 全局自动修复加粗、代码块嵌套及中文标点冲突的 Bug ===
                 hook.beforeEach(function (content) {
 
                     content = content.replace(/@\[audio\]\((.*?),\s*(.*?),\s*(.*?),\s*(.*?)\)/g,
                         '<tukuai-audio url="$1" name="$2" artist="$3" cover="$4"></tukuai-audio>');
                     // 新增：自动将 @[video](视频地址) 转换为 <tukuai-player> 标签
                     content = content.replace(/@\[video\]\((.*?)\)/g, '<tukuai-player url="$1"></tukuai-player>');
-                    return content.replace(/\*\*\`(.*?)\`\*\*/g, '<strong><code>$1</code></strong>');
+                    // 修复加粗内嵌代码块 Bug
+                    content = content.replace(/\*\*`(.*?)`\*\*/g, '<strong><code>$1</code></strong>');
+                    // 修复加粗内含中文标点导致失效（如 **注意：**文字 -> <strong>$1</strong>）
+                    content = content.replace(/\*\*([^\n*]+?[、，。！？；：）】》”’—…])\*\*/g, '<strong>$1</strong>');
+                    // 修复加粗后紧贴中文标点导致失效或串味污染（如 **A(Toolkit)**、**B** -> <strong>A(Toolkit)</strong>、$2）
+                    content = content.replace(/\*\*([^\n*]+?)\*\*([、，。！？；：）】》”’—…])/g, '<strong>$1</strong>$2');
+                    return content;
                 });
 
                 hook.doneEach(function () {
