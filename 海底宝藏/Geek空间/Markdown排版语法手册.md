@@ -15,11 +15,7 @@
 
 **在 cmd 中：**
 
-  
-
-DOS
-
-```
+```cmd
 type nul > 你的文件名.md
 ```
 
@@ -51,9 +47,7 @@ New-Item 你的文件名.md
       
     
 
-DOS
-
-```
+```cmd
 reg add "HKEY_CLASSES_ROOT\.md\ShellNew" /v NullFile /f
 ```
 
