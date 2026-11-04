@@ -94,11 +94,7 @@ New-SelfSignedCertificate `
 
 使用 `signtool` 将证书印章盖在目标 `.exe` 文件上。打开终端运行以下命令：
 
-  
-
-DOS
-
-```
+```cmd
 "C:\Program Files (x86)\Windows Kits\10\bin\10.0.26100.0\x64\signtool.exe" sign /f "C:\Users\w1961\Desktop\tukuai.pfx" /p "574185" /tr "http://timestamp.digicert.com" /td sha256 /fd sha256 "C:\Users\w1961\Desktop\BlackHolev1.2.3.exe"
 ```
 
