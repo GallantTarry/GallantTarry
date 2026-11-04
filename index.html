@@ -1610,8 +1610,8 @@
                     const authContentBox = document.querySelector('.markdown-section'); // 专属命名，防止冲突
 
 
-                    // 同时兼容匹配 '个人创作' 和你可能存在的英文文件夹名 'research'
-                    // 👇 核心修复：删掉害人的 '/research'，只认准“个人创作”这四个字！
+                    // 同时兼容匹配 '个人创作' 和你可能存在的英文文件夹名 '海底宝藏'
+                    // 👇 核心修复：删掉害人的 '/海底宝藏'，只认准“个人创作”这四个字！
                     const currentPath = decodeURIComponent(vm.route.path || '');
 
                     if (currentPath.includes('个人创作')) {

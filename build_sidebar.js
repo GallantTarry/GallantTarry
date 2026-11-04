@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 // 配置扫描目录和输出文件
-const targetDir = 'research';
+const targetDir = '海底宝藏';
 const outputFile = '_sidebar.md';
 
 let sidebarContent = '* 首页\n  * [README](README.md)\n';
