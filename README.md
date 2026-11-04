@@ -94,4 +94,7 @@
     <a href="https://www.minecraft.net/"><img src="https://img.shields.io/badge/Game-Minecraft-2b6643?style=for-the-badge&logo=minecraft&logoColor=white" alt="Minecraft"/></a>
     <a href="https://space.bilibili.com/396312441"><img src="https://img.shields.io/badge/Bilibili-叫我烤地瓜-fb7299?style=for-the-badge&logo=bilibili&logoColor=white" alt="Bilibili"/></a>
   </div>
+  <p align="center" style="text-align: center; margin-top: 28px; margin-bottom: 10px; font-size: 12px; color: var(--tk-sub-color, #8a8a93); opacity: 0.85;">
+    <small>※ 提示：文章内容仅供参考，可能存在疏漏或错误，具体问题请具体分析。</small>
+  </p>
 </div>
