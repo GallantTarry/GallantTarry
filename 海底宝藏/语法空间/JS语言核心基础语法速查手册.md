@@ -160,7 +160,7 @@ const createNode = (id) => ({ id, status: "active" });
 ### 普通函数与箭头函数的本质区别(`this` 指向)
 
 1. **普通函数(`function`)**：拥有动态绑定的 `this`，**谁调用它，`this` 就指向谁**(作为对象方法调用时指向该对象，普通独立调用在严格模式下为 `undefined`，也可通过 `.call()` / `.apply()` / `.bind()` 强制改变指向)。
-2. **箭头函数(`() => {}`)**：**没有自己的 `this**`，也没有 `arguments` 对象，更不能用 `new` 实例化。它的 `this` 在定义时就已经永久确定——**直接继承外层词法作用域(Lexical Scope)的 `this**`。这使其成为定时器回调(`setTimeout`)和事件处理器的绝佳搭档。
+2. **箭头函数(`() => {}`)**：**没有自己的 `this`**，也没有 `arguments` 对象，更不能用 `new` 实例化。它的 `this` 在定义时就已经永久确定——**直接继承外层词法作用域(Lexical Scope)的 `this`**。这使其成为定时器回调(`setTimeout`)和事件处理器的绝佳搭档。
 
 ---
 
@@ -248,7 +248,7 @@ JavaScript 在浏览器和 Node.js 中都是**单线程执行**的。为了防�
 
 1. **同步调用栈(Call Stack)**：主线程从上到下立即执行的同步代码。
 2. **微任务队列(Microtask Queue · 高优先级)**：包括 **`Promise.then / catch / finally`**、`await` 恢复后的后续代码、`MutationObserver`、`queueMicrotask`。
-3. **宏任务队列(Macrotask / Task Queue · 普通优先级)**：包括 **`setTimeout` / `setInterval**`、DOM 事件回调、`MessageChannel`、I/O 回调。
+3. **宏任务队列(Macrotask / Task Queue · 普通优先级)**：包括 **`setTimeout` / `setInterval`**、DOM 事件回调、`MessageChannel`、I/O 回调。
 
 > **Event Loop 执行铁律**：
 > 主线程每执行完一个宏任务(包括初始的整段 `<script>` 同步代码)，**必须立即把当前微任务队列中的所有微任务全部清空(包含微任务执行期间新追加的微任务)**，然后才允许浏览器进行 UI 渲染，接着再去宏任务队列取出下一个宏任务执行！

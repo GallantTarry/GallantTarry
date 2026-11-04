@@ -44,7 +44,9 @@ DataGrip 和 IDEA 内置的 Database 数据库面板使用的是同一套底层�
 
 
 推荐使用第二种方式(控制台执行 DDL 语句)，既方便在脚本中统一版本管理，也能直接复用建表模板。
-下面介绍怎么用DataGrip导出我的名为shaoxia_db在数据库也就是架构下的数据库表文件。```C:\Program Files\MySQL\MySQL Server 8.4\bin ```  推荐使用**LTS 版本(长期支持版)**：比如 8.4，这里延展到推荐使用的springboot版本是
+## 数据导出实战：从 DataGrip 导出 SQL 表文件
+
+在项目开发与运维交付中，将数据库（如 `shaoxia_db`）导出为标准 `.sql` 脚本文件是数据备份与环境迁移的核心操作。导出时通常依赖本地 MySQL 安装包所附带的 `mysqldump` 工具链（推荐选用 LTS 长期支持版，常见默认路径如 `C:\Program Files\MySQL\MySQL Server 8.4\bin`）。
 
 ### 方法一：使用 MySQL 原生工具导出(推荐，包含完整结构与数据)
 

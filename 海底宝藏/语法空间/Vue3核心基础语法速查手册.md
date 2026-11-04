@@ -7,7 +7,7 @@ Vue(目前主流标准为 **Vue 3 组合式 API / Composition API**)是一套用
 
 ## 1. 单文件组件结构(SFC 与 `<script setup>`)
 
-Vue 工程化开发采用 `.vue` 单文件组件(Single-File Component)，将一个组件的**逻辑(Script)**、模板(Template)**和**样式(Style)封装在同一个文件中。现代 Vue 3 默认推荐使用 `<script setup>` 语法糖，无需手动 `return` 变量即可在模板中直接使用：
+Vue 工程化开发采用 `.vue` 单文件组件(Single-File Component)，将一个组件的**逻辑(Script)**、**模板(Template)**和**样式(Style)**封装在同一个文件中。现代 Vue 3 默认推荐使用 `<script setup>` 语法糖，无需手动 `return` 变量即可在模板中直接使用：
 
   
 
