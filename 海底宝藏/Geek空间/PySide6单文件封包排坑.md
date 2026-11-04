@@ -103,7 +103,7 @@ pyinstaller -F -w -i "imgs/script.ico" --add-data "Scripts;Scripts" --add-data "
 
 ### 📦 关于最终的 `.exe` 成品(注意提取)
 
-在截图中，我有看到两个与成品有关的地方：
+在打包输出的工程目录中，主要包含两个与成品相关的核心产物：
 
 
 - **`dist` 文件夹**：这是 PyInstaller 默认存放最终生成的 `.exe` 的地方。**你可以把里面的 `PyKuai.exe` 剪切出来放到桌面或者你想放的地方，然后把空掉的 `dist` 文件夹也删掉。**

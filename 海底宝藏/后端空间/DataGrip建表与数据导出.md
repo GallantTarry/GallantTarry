@@ -50,7 +50,7 @@ DataGrip 和 IDEA 内置的 Database 数据库面板使用的是同一套底层�
 
 这是导出整个数据库(建表语句 + 初始数据)最标准的方式。
 
-1. 在你截图中的 Database 树状视图中，**右键点击**高亮的 `shaoxia_db` 节点。
+1. 在 DataGrip 左侧 Database 树状视图中，**右键点击**目标数据库节点（如 `shaoxia_db`）。
     
 2. 在弹出的菜单中选择 **Import/Export (导入/导出)** ，然后点击 **Export with 'mysqldump' (使用 'mysqldump' 导出)** 。
     

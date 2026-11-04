@@ -23,7 +23,7 @@
 
 ### 一、 Ubuntu 端准备工作(启动 SSH 隧道)
 
-新安装的 WSL Ubuntu 系统默认通常没有启动或安装完整的 SSH 服务端，我们需要先在您的 Linux 终端(即截图中显示 `gallanttarry@AK47:~$` 的界面)中进行配置。
+新安装的 WSL Ubuntu 系统默认通常没有启动或安装完整的 SSH 服务端，我们需要先在 Linux 终端(如 WSL 提示符 `gallanttarry@AK47:~$` 所在界面)中进行配置。
 
   
 
