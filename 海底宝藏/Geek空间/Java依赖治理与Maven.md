@@ -286,9 +286,7 @@
 
 把下面的命令复制到你的终端里，并将对应的路径和名字替换成你自己的设定：
 
-DOS
-
-```
+```cmd
 mvn install:install-file -Dfile="D:\ToolKit\out\artifacts\Utils-Only.jar" -DgroupId=shaoxia.utils -DartifactId=shaoxia-ui -Dversion=1.0.0 -Dpackaging=jar
 ```
 
