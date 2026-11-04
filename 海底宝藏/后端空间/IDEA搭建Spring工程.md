@@ -10,7 +10,16 @@
 6.application.yaml
 7.MySQL Server 8.4
 
-[点击下载 MySQL 8.4.11 可视化版](https://github.com/GallantTarry/Obsidian-Vault/releases/download/v1.0.0/mysql-8.4.11-winx64.rar)密码574185一路点到底，默认用户名为root，设置密码即可 默认路径cd C:\Program Files\MySQL\MySQL Server 8.4\binmysql -uroot -p 输入密码即可继续操作
+> [!TIP]
+> **MySQL 8.4 社区版安装与初始化**：
+> - 官方下载：访问 [MySQL 官方下载中心 (Community Server)](https://dev.mysql.com/downloads/mysql/) 或 [MySQL Windows Installer](https://dev.mysql.com/downloads/installer/) 下载对应平台的安装向导。
+> - 默认超级管理员用户名为 `root`，在安装向导中设置并牢记密码。
+> - 控制台连接指令：
+>   ```bash
+>   cd "C:\Program Files\MySQL\MySQL Server 8.4\bin"
+>   mysql -uroot -p
+>   ```
+>   输入设置的密码即可登录并进行数据库操作。
 
 拓展插件
 - 1.lombok

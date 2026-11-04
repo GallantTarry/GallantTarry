@@ -16,7 +16,7 @@ GitHub 加速节点背后的技术逻辑，以及一段属于国内开源圈的�
 
   
 
-为了解决这个问题，我们在下载链接前拼接诸如 `[https://ghp.ci/](https://ghp.ci/)` 或 `[https://ghproxy.net/](https://ghproxy.net/)` 这样的前缀。然而，前几天还秒下几百兆的节点，今天可能就会甩给你一个冷冰冰的 `无法访问此网站`。
+为了解决这个问题，我们在下载链接前拼接诸如 `https://ghp.ci/` 或 `https://ghproxy.net/` 这样的前缀。然而，前几天还秒下几百兆的节点，今天可能就会甩给你一个冷冰冰的 `无法访问此网站`。
 
   
 
@@ -38,7 +38,7 @@ GitHub 加速节点背后的技术逻辑，以及一段属于国内开源圈的�
 
   
 
-当你点击 `[github.com/releases/download/](https://github.com/releases/download/)...` 时，你的请求需要跨越浩瀚的太平洋海底光缆，还要经过国内防火墙(GFW)的严格审查。由于 SNI 阻断、DNS 污染或单纯的国际出口带宽拥堵，你的连接常常被无情掐断(Connection Reset)。
+当你点击形如 `https://github.com/.../releases/download/...` 的下载链接时，你的请求需要跨越浩瀚的太平洋海底光缆，还要经过国内防火墙(GFW)的严格审查。由于 SNI 阻断、DNS 污染或单纯的国际出口带宽拥堵，你的连接常常被无情掐断(Connection Reset)。
 
   
 

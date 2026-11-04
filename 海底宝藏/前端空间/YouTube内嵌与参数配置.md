@@ -1,21 +1,21 @@
 # YouTube内嵌与参数配置
 
-比如YouTube 链接(包含 4303 秒的时间戳)适配到这个模块里，需要进行两步处理：
+将 YouTube 视频链接（包含 4303 秒的时间戳）适配到播放器模块中，需要进行两步处理：
 
 ### 1. 转换链接格式
 
-- **原始链接**：`[https://www.youtube.com/watch?v=wZOcZ1IfJQ4&t=4303s](https://www.youtube.com/watch?v=wZOcZ1IfJQ4&t=4303s)`
+- **原始链接**：`https://www.youtube.com/watch?v=wZOcZ1IfJQ4&t=4303s`
     
 - **提取参数**：视频 ID 是 `wZOcZ1IfJQ4`，时间戳是 `4303` 秒。
     
 - **转换为嵌入格式**：将 `watch?v=` 换成 `embed/`，并将时间参数 `t=4303s` 转换为 YouTube 嵌入专属的 `start=4303` 参数：
     
-    `[https://www.youtube.com/embed/wZOcZ1IfJQ4?start=4303](https://www.youtube.com/embed/wZOcZ1IfJQ4?start=4303)`
+    `https://www.youtube.com/embed/wZOcZ1IfJQ4?start=4303`
     
 
-### 2. 修改你的 HTML 模块代码
+### 2. 修改前端卡片模块代码
 
-那我我的前端项目视频代码是这样的：
+前端项目视频卡片模块代码示例如下：
 ```html
 <div class="glass-card p-3 md:p-4 flex justify-between items-center hover:bg-white/10 group transition-all">  
     <div class="flex items-center space-x-4 overflow-hidden">  
