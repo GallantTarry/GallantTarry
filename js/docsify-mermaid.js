@@ -114,6 +114,20 @@
         try {
             do {
                 completedRevision = revision;
+                // 双重兜底：若在 afterEach 阶段被其它插件（如 docsify-latex）临时遮蔽，在 DOM 阶段补全转换为卡片
+                document.querySelectorAll('.markdown-section pre').forEach(pre => {
+                    const code = pre.querySelector('code');
+                    const language = (pre.dataset.lang || '').trim().split(/\s+/)[0].toLowerCase();
+                    if (language === 'mermaid' || code?.matches('.language-mermaid, .lang-mermaid')) {
+                        const card = document.createElement('div');
+                        card.className = 'mermaid-card is-loading';
+                        card.dataset.mermaidSource = (code || pre).textContent;
+                        card.setAttribute('aria-busy', 'true');
+                        card.innerHTML = '<div class="mermaid-status" role="status">正在绘制图表…</div>' +
+                            '<div class="mermaid-diagram" tabindex="0" role="region" aria-label="Mermaid 图表，可横向滚动" hidden></div>';
+                        pre.replaceWith(card);
+                    }
+                });
                 const cards = document.querySelectorAll('.markdown-section .mermaid-card');
                 for (const card of cards) {
                     if (completedRevision !== revision) break;

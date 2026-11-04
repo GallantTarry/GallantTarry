@@ -1759,9 +1759,7 @@
     }
 </script>
 
-<!-- Mermaid 12.2.0 本地完整包与 Docsify 桥接（必须在 Docsify 核心之前注册） -->
-<script src="./js/mermaid.min.js"></script>
-<script src="./js/docsify-mermaid.js"></script>
+
 
 <!-- 必须加上这个插件，它能让 md 文件里内嵌的 script 标签生效 -->
 <script src="./js/external-script.min.js"></script>
@@ -1794,6 +1792,10 @@
 
 <!-- 3. 引入现代维护版 Docsify-LaTeX 桥接插件 -->
 <script src="./js/docsify-latex@0.js"></script>
+
+<!-- 4. Mermaid 12.2.0 本地完整包与 Docsify 桥接（在 Docsify-LaTeX 之后注册，确保代码块已完成还原） -->
+<script src="./js/mermaid.min.js"></script>
+<script src="./js/docsify-mermaid.js"></script>
 
 <!-- 5. 侧边栏折叠插件：让你的多级菜单可以点箭头展开/收起，保持页面清爽 -->
 <script src="./js/docsify-sidebar-collapse.min.js"></script>
