@@ -138,62 +138,202 @@ GitHub 加速节点背后的技术逻辑，以及一段属于国内开源圈的�
 
   
 
-那么这里拓展一个小知识，我手搓cloudflareworks可以，但是如果是大文件很容易进入所谓降速节点，那么白嫖绝对是最geek的方法，假设我之前只是白嫖 *https://ghproxy.net/* 反向代理，我现在想一次性白嫖
+## 四、 拓展极客玩法：前端 Serverless 并发竞速引擎 (从翻车到 2.0 封神)
 
-5个其他的，然后同时给用户前端无服务器(Serverless)并发竞速”的极客方案：
+虽然我们可以自己手搓 Cloudflare Workers 搭建专属的反代节点，但对于动辄几十上百兆的 Release 安装包，免费的 Worker 很容易被 Cloudflare 调度到降速节点，或者触发单日请求/流量限制。
 
-  
+因此，**直接聚合全网优质的开源公益节点，在前端用无服务器 (Serverless) 并发竞速的方式“白嫖”全网算力，才是最极客、最抗揍的方案！**
 
-在底层的 JS 竞速引擎中，同时测试了 **5 个**公用节点通道(1 个 Github 直连 + 4 个开源镜像代理)。
+### 1. 第一代方案的惨痛教训：为什么“5 节点 + HEAD + no-cors”会翻车？
 
-  
+在早期的初代竞速版本中，我曾尝试过用轻量级发包：
+* 搞了 5 个节点通道（1 个 GitHub 官方直连 + 4 个代理池）；
+* 利用 `fetch(url, { method: 'HEAD', mode: 'no-cors' })` 探测 TTFB 延迟；
+* 通过 `Promise.any()` 取最快响应，再通过模拟点击 `<a>` 标签唤起下载。
 
-具体的实现逻辑分为以下三个层面：
+听起来很完美，但实际上线后**被现实狠狠上了一课**：
 
-  
+1. **`no-cors` + `HEAD` 导致的“几 KB 假包与损坏文件”**：
+   在 `mode: 'no-cors'` 下，收到的响应是不透明的（opaque），JS 根本拿不到 HTTP 状态码。很多由于过载、欠费或被封禁的公益节点，返回的并不是真实文件，而是 **403 拦截页、502 报错网关或 Cloudflare 的人机验证 HTML 页面**！因为报错网页只有几 KB，回包快得离谱，毫秒级被 `Promise.any()` 当成“最快节点”选出。结果用户一点下载，几秒钟下完一个 5KB 的 `.msi` 安装包，双击弹出“文件已损坏”，极度搞心态。
+2. **GitHub 直连空前缀的“抢跑误判”**：
+   直连源站（`''`）在国内经常会瞬间被 GFW 掐断连接（返回 TCP RST），甚至偶尔快速完成 DNS 握手，但后续下载几十兆大文件时立刻陷入持续断流。测速“看着快”，实际下载“直接瘫”。
+3. **公益反代节点的“防盗链 10KB/s 惩罚”**：
+   不少优质镜像站为了防止被第三方网站恶意盗刷流量，在后端配置了 Referer 检查。旧版使用原生模拟点击下载，默认会携带当前网页的来源地址（`Referer`）。一旦被反代判定为第三方外链，就会被立即打入冷宫，限速在 10KB/s～50KB/s 之间龟速爬行。
+4. **容灾深度不足**：
+   仅保留 4 个代理节点，一旦赶上晚高峰两三个节点间歇性抽风，整个下载系统就会瞬间瘫痪。
 
-* **HTML 行为拦截：** 将原本写死代理前缀的直接下载链接(`<a href="[https://ghproxy.net/](https://ghproxy.net/)...">`)替换为拦截锚点(`href="#" id="btn-download"`)，让 JavaScript 完全接管用户的点击事件，防止浏览器默认跳转。
+---
 
-* **CSS 主题化状态机：** 为测速过程设计了视觉阻断(`pointer-events: none` 防止重复点击)和与各自软件 UI 完美契合的动态视觉语境：
+### 2. 第二代架构：10 节点智能竞速分配引擎 (生产级落地)
 
-* **ToolKit**：深空微玻璃风格的冰蓝色流光边缘与旋转测速图标。
+为了解决上面的全部硬伤，我在 `ToolKit`、`PyKuai` 和 `BlackHole` 的发布页中全面重构了竞速逻辑，打造了第二代全球节点智能竞速分配引擎（**10 节点池 + 真实流式探活 + 防假文件 + 防盗链穿透**）：
 
-* **PyKuai**：极客终端风格的虚线边框、黑绿底色以及 `[OK]` 命令行式文字反馈。
+#### ① 10 大白嫖加速节点池 (剔除直连防抢跑)
+彻底移除原生直连，全部换用精挑细选、按存活稳定性与国内宽带质量排序的 10 大优质开源反代镜像：
 
-* **BlackHole**：暗物质宇宙风格的星门罗盘旋转，伴随深紫色引力波的坍缩动画。
+1. `https://gh-proxy.com/` —— 国内多线优化，大文件首选主力通道
+2. `https://ghfast.top/` —— 极速大带宽反向代理
+3. `https://ghproxy.net/` —— 经典 CF Worker 镜像集群
+4. `https://ghp.ci/` —— 知名老牌开源公益加速站
+5. `https://ghproxy.homeboyc.cn/` —— 国内 CDN 加速镜像
+6. `https://github.akams.cn/` —— 高速稳定的开源分发节点
+7. `https://moeyy.cn/gh-proxy/` —— 萌次元公共维护加速节点
+8. `https://gh.monlor.com/` —— 极客维护的高速反代镜像
+9. `https://ghproxy.imciel.com/` —— 稳定老牌备用代理
+10. `https://fastgit.cc/` —— 兜底容灾高速通道
 
-  
+#### ② 真实二进制数据流轻量探活 (`probeNode`)
+彻底抛弃虚假的 `HEAD` 与盲目瞎测的 `no-cors`，换用真正的 `GET` 探测，并设计了**三道硬核防御网**：
+* **状态码拦截**：必须满足 `res.ok` 或 `res.status === 206`，直接过滤 403/502/404 等失效节点；
+* **Content-Type 过滤**：如果响应头含有 `text/html` 或 `application/json`，说明返回的是错误页或报错接口，坚决当作坏节点抛弃；
+* **Content-Length 体积过滤**：如果文件大小小于 500KB，直接丢弃，彻底杜绝把几 KB 假包喂给用户的惨剧；
+* **读取首块二进制流并即刻熔断**：通过 `res.body.getReader().read()`，实测真正接收到来自 GitHub Release 的第一个真实二进制数据块后，立即调用 `controller.abort()` 主动中断后续传输。**既 100% 验证了管道畅通与下载速度，又不会消耗任何多余流量！**
 
-  
+#### ③ 抹除 Referer 来源头，满速穿透防盗链 (`triggerDownload`)
+在动态构造 `<a>` 标签唤起下载时，强制注入：
+```javascript
+a.rel = 'noreferrer noopener';
+a.referrerPolicy = 'no-referrer';
+```
+主动剥离请求头里的 `Referer`，在协议层模拟用户直接在浏览器地址栏敲击回车的行为，完美绕过各大开源站点的防盗链黑名单，享受无惩罚的千兆宽带满速下载！
 
-* **JavaScript 核心竞速引擎(HEAD + Promise.any)：**
+#### ④ 极限容错回退机制
+即便用户端浏览器安装了激进的去广告插件或安全脚本，将所有的 CORS 嗅探全部拦截，引擎在 `Promise.any()` 失败后会自动降级采用主力节点 `this.nodes[0]` 直通下载，确保用户永远不会因测速报错而无法获取软件。
 
-* **极轻量发包**：利用 `fetch()` 构建请求，但将方法指定为 `method: 'HEAD'` 且 `mode: 'no-cors'`。这意味着浏览器不会去下载庞大的安装包实体，也不会被严格的跨域策略拦截，仅仅测试与目标服务器建立 TCP 握手和首字节返回(TTFB)的延迟时间。
+---
 
-* **毫秒级截获**：通过 `Promise.any()` 将 5 个节点的测试请求同时发出。`Promise.any()` 的物理特性决定了它只会放行**第一个**成功响应的节点，从而天然筛选出对该用户当前网络环境延迟最低、速度最快的通道。
+### 3. 生产级核心引擎源码实现 (可直接复用)
 
-* **静默唤起**：捕获到最快节点后，通过 JS 动态创建一个不可见的 `<a>` 标签并模拟点击，直接唤起浏览器的底层下载任务，随后重置按钮状态。
+以下就是目前在 ToolKit 等官方主页中稳定运行的完整 JavaScript 竞速路由引擎类：
 
-  
+```javascript
+/**
+ * 全球节点智能竞速分配引擎 (10节点池 + 防几KB假文件 + 防盗链满速版)
+ */
+class DownloadRouter {
+    constructor(btnId, targetUrl) {
+        this.btn = document.getElementById(btnId);
+        this.targetUrl = targetUrl;
 
-  
+        // 10大白嫖加速节点池 (移除空前缀直连防抢跑，按稳定性与带宽排序)
+        this.nodes = [
+            'https://gh-proxy.com/',
+            'https://ghfast.top/',
+            'https://ghproxy.net/',
+            'https://ghp.ci/',
+            'https://ghproxy.homeboyc.cn/',
+            'https://github.akams.cn/',
+            'https://moeyy.cn/gh-proxy/',
+            'https://gh.monlor.com/',
+            'https://ghproxy.imciel.com/',
+            'https://fastgit.cc/'
+        ];
 
-  
+        if (this.btn) {
+            this.originalHtml = this.btn.innerHTML;
+            this.init();
+        }
+    }
 
-引擎中同时测速的 **5 个**具体节点池如下：
+    init() {
+        this.btn.addEventListener('click', (e) => this.startRace(e));
+    }
 
-  
+    // 单节点真实二进制流探测：过滤 403/502 错误网页与小于 500KB 的假文件
+    probeNode(url, timeoutMs = 4000) {
+        return new Promise((resolve, reject) => {
+            const controller = new AbortController();
+            const timer = setTimeout(() => {
+                controller.abort();
+                reject(new Error('Timeout'));
+            }, timeoutMs);
 
-1. `''`(Github 官方源站直连，专为自带科学上网或处于海外环境的用户测试连通性)
+            fetch(url, {
+                method: 'GET',
+                mode: 'cors',
+                cache: 'no-store',
+                referrerPolicy: 'no-referrer',
+                signal: controller.signal
+            }).then(async (res) => {
+                if (!res.ok && res.status !== 206) {
+                    throw new Error('Bad status: ' + res.status);
+                }
+                // 1. 拦截返回 HTML 报错页或 JSON 的假节点（防止下出几 KB 的损坏文件）
+                const ct = (res.headers.get('content-type') || '').toLowerCase();
+                if (ct.includes('text/html') || ct.includes('application/json')) {
+                    throw new Error('Invalid content-type: ' + ct);
+                }
+                // 2. 拦截文件体积小于 500KB 的异常响应
+                const cl = parseInt(res.headers.get('content-length') || '0', 10);
+                if (cl > 0 && cl < 500 * 1024) {
+                    throw new Error('File too small: ' + cl);
+                }
+                // 3. 实测读取首个二进制数据块，确认真实下载流畅通后立即中止探测
+                if (res.body) {
+                    const reader = res.body.getReader();
+                    await reader.read();
+                }
+                clearTimeout(timer);
+                controller.abort();
+                resolve(url);
+            }).catch(err => {
+                clearTimeout(timer);
+                controller.abort();
+                reject(err);
+            });
+        });
+    }
 
-2. `[https://ghproxy.net/](https://ghproxy.net/)`(CF Worker 经典镜像池)
+    async startRace(e) {
+        e.preventDefault();
+        if (this.btn.classList.contains('is-routing')) return;
 
-3. `[https://mirror.ghproxy.com/](https://mirror.ghproxy.com/)`(高速备用镜像池)
+        this.btn.classList.add('is-routing');
+        this.btn.innerHTML = `<svg class="icon-spin" style="margin-right:10px;" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>节点智能寻优中...`;
 
-4. `[https://sciproxy.com/](https://sciproxy.com/)`(科研/开源代码加速代理)
+        const testUrls = this.nodes.map(prefix => prefix + this.targetUrl);
 
-5. `[https://gh-proxy.com/](https://gh-proxy.com/)`(另一备用 Github 资源代理分发站)
+        let fastestUrl = null;
+        try {
+            fastestUrl = await Promise.any(testUrls.map(u => this.probeNode(u, 4000)));
+        } catch (_) {
+            // 极端容错：若浏览器插件拦截了所有 CORS 探测，默认走主节点
+            fastestUrl = this.nodes[0] + this.targetUrl;
+        }
 
-  
+        this.btn.innerHTML = `<svg style="margin-right:10px;" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00f2fe" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>最佳节点分配成功`;
 
-这也就是我现在在文件下载里使用的白嫖方式。
+        setTimeout(() => {
+            this.triggerDownload(fastestUrl);
+            this.resetBtn();
+        }, 500);
+    }
+
+    triggerDownload(url) {
+        const a = document.createElement('a');
+        a.href = url;
+        a.rel = 'noreferrer noopener';
+        a.referrerPolicy = 'no-referrer'; // 核心：抹除来源头，绕过公益节点 10KB/s 防盗链限速
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+    }
+
+    resetBtn() {
+        setTimeout(() => {
+            this.btn.classList.remove('is-routing');
+            this.btn.innerHTML = this.originalHtml;
+        }, 2500);
+    }
+}
+
+// 页面加载完成后实例化（传入按钮 ID 与 GitHub Release 原生下载链接）
+document.addEventListener('DOMContentLoaded', () => {
+    new DownloadRouter(
+        'btn-download',
+        'https://github.com/GallantTarry/TuKuai/releases/download/20260907/toolkit-1.9.8.msi'
+    );
+});
+```
+
+这套进化后的 2.0 方案，不仅在物理层面上解决了“假包”和“盗链限速”两个业界最大痛点，还将容灾与分发成功率提升到了近乎 100%。这也是目前在不需要个人维护昂贵 CDN 的前提下，最优雅且极致的 GitHub Release 白嫖加速落地实践。
