@@ -5,58 +5,58 @@
 
   
 
-平时在家里或小型办公室看到的几乎都是 `192.168.x.x`，是因为家用路由器出厂默认采用了国际标准(RFC 1918)中的 **C 类私有地址**。而当你看到 DHCP 分配了 **`20` 开头**(或包含 `20`)的 IP 地址时，通常源于以下 **4 种真实场景**：
+平时在家里或小型办公室经常看到 `192.168.x.x`，是因为许多家用路由器默认采用 RFC 1918 中的这个私有地址段。当你看到 **`20` 开头**（或包含 `20`）的 IP 地址时，可以从以下四个角度排查。
 
   
 
 ## 一、 为什么常见的是 `192`，而你会遇到 `20`？
 
-### 1. 大型企业 / 国企内网的“自定义征用”(最常见原因)
+### 1. 内网地址池使用了公网地址空间
 
-在国际互联网规范(RFC 1918)中，专门划拨给局域网内部免费使用、不会在公网上路由的**标准私有 IPv4 地址**只有三大块：
+RFC 1918 划出了以下三块**标准私有 IPv4 地址**，供各个局域网重复使用。
 
   
 
-|**私网级别**|**标准地址范围**|**CIDR 掩码表示**|**典型应用环境**|
+|**私网地址块**|**标准地址范围**|**CIDR 表示**|**典型应用环境**|
 |---|---|---|---|
-|**A 类私网**|`10.0.0.0` – `10.255.255.255`|`10.0.0.0/8`|大型企业、政务内网、云厂商 VPC(可容纳 1677 万台主机)|
-|**B 类私网**|`172.16.0.0` – `172.31.255.255`|`172.16.0.0/12`|中型企业、高校校园网、Docker / WSL2 虚拟网桥、手机热点|
-|**C 类私网**|`192.168.0.0` – `192.168.255.255`|`192.168.0.0/16`|家用路由器、小型办公室局域网(单个子网常容纳 254 台主机)|
+|**10 段**|`10.0.0.0` – `10.255.255.255`|`10.0.0.0/8`|大型企业、政务内网、云厂商 VPC|
+|**172.16–31 段**|`172.16.0.0` – `172.31.255.255`|`172.16.0.0/12`|中型企业、高校校园网、Docker / WSL2 虚拟网桥、手机热点|
+|**192.168 段**|`192.168.0.0` – `192.168.255.255`|`192.168.0.0/16`|家用路由器、小型办公室局域网（常用的 `/24` 子网有 254 个普通主机地址）|
 
 **那为什么内网会出现 `20.x.x.x`？**
 
-在很多大型国企(如电力、电网、能源院所)、金融机构或高校的内部办公网中，内网与互联网要么物理隔离，要么在总出口部署了严格的 NAT(网络地址转换)和防火墙。
+一种可能是单位把公网地址空间中的某个子网用作办公网。先核对分给这个单位的地址范围和实际路由配置，才能判断这个地址在内网出现的原因。
 
-为了方便对不同楼宇、事业部或业务专网进行直观编号，网管往往会打破 RFC 1918 的限制，在核心三层交换机的 DHCP 服务里**人为划分出 `10.x.x.x`(一区/一部)、`20.x.x.x`(二区/专网)、`30.x.x.x`(三区)**。只要数据包不出单位大门(或者出大门时统一被防火墙转换成单位的公网 IP)，在内网里使用 `20.x.x.x` 完全可以正常通信。
+例如，网管若把办公室的子网设为 `20.10.1.0/24`，又把 `20.10.1.50` 放进 DHCP 地址池，接入的电脑就可能拿到这个地址。
 
   
 
-> **技术冷知识(征用公网段的副作用)：** 在真实的国际互联网上，`20.0.0.0/8` 其实是合法的**公网 IP 段**(目前绝大部分归属于 **Microsoft Azure 微软云**)。如果单位内网私自把 `20.x.x.x` 当作局域网 DHCP 下发，且这台电脑同时能上外网，那么当你想访问某台恰好是 `20.x.x.x` 的微软海外云服务器时，电脑会误以为目标在你们单位内网，导致无法访问该公网服务。
+> **公网地址重叠时会怎样？** 在上面的例子里，电脑通常会在办公室网络上直接寻找 `20.10.1.60`。如果互联网上另有服务器使用同一地址，流量就可能走错方向。具体受影响的范围取决于子网掩码和路由表。`20.0.0.0/8` 由 ARIN 管理，查询具体地址的登记信息时要看更细的分配记录。[IANA 的 IPv4 地址空间登记表](https://www.iana.org/assignments/ipv4-address-space/ipv4-address-space.xhtml)
 > 
 >   
 
 ### 2. VPN 客户端、虚拟专网或代理工具的虚拟网卡
 
-如果你在电脑上安装了企业远程办公 VPN(如深信服 EasyConnect、aTrust、OpenVPN)、异地组网工具，或者开启了代理软件的 **TUN 虚拟网卡模式**，软件会在系统中生成一张虚拟网卡，并由内置的虚拟 DHCP 服务下发一个 IP。
+如果你在电脑上安装了企业远程办公 VPN（如深信服 EasyConnect、aTrust、OpenVPN）、异地组网工具，或者开启了代理软件的 **TUN 虚拟网卡模式**，软件可能会创建虚拟网卡。它可以直接配置地址，也可以通过 DHCP 获取地址，具体取决于软件和接入方式。
 
   
 
-- 为了**防止与你本地真实的 `192.168.x.x` 或 `10.x.x.x` 局域网发生网段冲突**，许多企业 VPN 管理员或虚拟组网软件会专门将虚拟地址池设为 `20.x.x.x`、`26.x.x.x` 或 `198.18.x.x`。
+- 若只在连接 VPN 后看到 `20.x.x.x`，先查地址出现在哪张网卡，再对照 VPN 的地址池和路由。隧道与本地网络使用同一段地址时，也可能发生路由冲突。
     
       
     
 
-### 3. 云服务器或专线直接下发了真实公网 IP
+### 3. 云服务器或专线使用公网 IP
 
-如果你的运行环境不是普通家庭宽带，而是以下场景，DHCP 分配的可能就是货真价实的**公网 IP**：
+在云平台或运营商专线中，需要区分**设备网卡上的地址**与**外部访问它时使用的地址**。
 
   
 
-- **微软云(Azure)虚拟机或特定云主机**：由于微软持有整个 `20.0.0.0/8` 公网段，部分云环境或跨国企业专线会直接把 `20.x.x.x` 段下发给实例网卡。
+- **微软云（Azure）虚拟机**默认通过 DHCP 获取虚拟网络里的私有 IPv4 地址。绑定的公网 IPv4 地址由 Azure 平台做地址转换，通常在虚拟机内查看网卡时只能看到私有地址。[Azure 虚拟机网络接口文档](https://learn.microsoft.com/zh-cn/azure/virtual-network/ip-services/virtual-network-network-interface-addresses#public)
     
       
     
-- **以 `202.` / `203.` / `218.` 开头的公网地址**：中国电信、联通和教育网早期分到的大量真实公网 IPv4 地址以 `202.x.x.x`(如南京电信/教育网常见网段)或 `203.x.x.x` 开头。如果光猫处于桥接模式或接入了高校/政企固定公网端口，DHCP 下发的就是此类地址。
+- **运营商宽带或专线**也可能把获准使用的公网 IPv4 地址直接分配给接入设备。具体通过 DHCP、拨号协商还是手动配置，要看接入方式和网卡记录。即使地址以 `20.`、`202.` 或 `203.` 开头，也需要核对完整地址和接入信息。
     
       
     
@@ -67,18 +67,18 @@
 
   
 
-- **第二节是 20(`172.20.x.x`)**：这是纯正的 **B 类标准私网地址**(处于 `172.16.0.0` – `172.31.255.255` 范围内)。例如**苹果 iPhone 开启个人热点**时，DHCP 固定给电脑分配 `172.20.10.x`；Windows 上的 **WSL2 / Hyper-V 虚拟交换机**也经常自动分配 `172.20.x.x`。
+- **第二段是 20（`172.20.x.x`）** 的地址处于 `172.16.0.0` – `172.31.255.255` 的标准私网范围内。例如，连接苹果 iPhone 个人热点时可能拿到 `172.20.10.x`，WSL2 或其他虚拟网络也可能使用这个范围。
     
       
     
-- **带冒号的 `2001:` 或 `240e:` 开头(IPv6 地址)**：如果看到的是类似 `240e:3a1:...` 或 `2001:da8:...` 的地址，这是路由器通过 DHCPv6 下发的**全球公网 IPv6 地址**。国际标准规定全球单播 IPv6 地址统一以二进制 `001` 开头，换算成十六进制正好全部以 **`2`** 开头(如教育网 `2001:`、中国电信 `240e:`、中国联通 `2408:`、中国移动 `2409:`)。
+- **带冒号、以 `2001:` 或 `240e:` 开头的地址**属于 IPv6。`2000::/3` 的首个十六进制数字可以是 `2` 或 `3`。设备可通过路由器通告的前缀自动生成地址（SLAAC），也可通过 DHCPv6 或手动配置获得地址。要区分这些情况，还需查看接口配置。
     
       
     
 
-## 二、 三步快速查清这个 `20` 开头的 IP 是谁发的
+## 二、 三步排查这个 `20` 开头的 IP 是谁发的
 
-按下 `Win + R` 输入 `cmd` 打开命令提示符，执行以下命令即可瞬间破案：
+在 Windows 上按下 `Win + R`，输入 `cmd` 打开命令提示符，然后查看各张网卡的配置。
 
   
 
@@ -87,30 +87,29 @@
 ipconfig /all
 ```
 
-在输出的信息中找到带有该 `20` 开头 IP 的那张网卡，重点看三行：
+在输出中找到带有该 `20` 开头 IPv4 地址的那张网卡，重点看以下三处。
 
   
 
-1. **描述 (Description)**：如果是 `Realtek PCIe GbE` 或 `Intel Wi-Fi`，说明是物理网线或无线路由器发的；如果是 `TAP-Windows Adapter`、`Sangfor`、`Wintun`、`Hyper-V Virtual Ethernet`，说明是 VPN、代理或虚拟机生成的虚拟网卡。
+1. 先看**描述（Description）**。`Realtek PCIe GbE` 或 `Intel Wi-Fi` 通常表示物理网卡。`TAP-Windows Adapter`、`Wintun` 或 `Hyper-V Virtual Ethernet` 通常表示虚拟网卡。这个字段告诉你地址配置在哪个接口上。
     
       
     
-2. **DHCP 服务器 (DHCP Server)**：这里显示的就是给你发号的“源头设备” IP(通常就是你的默认网关，如 `20.x.x.1`)。
+2. 核对**是否启用 DHCP（DHCP Enabled）**、**DHCP 服务器（DHCP Server）**和**租约时间**。若这张网卡使用 DHCP，服务器和租约记录有助于确认分配来源。若缺少租约记录，再核对手动设置或 VPN 客户端配置。
     
       
     
-3. **默认网关 (Default Gateway)**：如果该网卡有默认网关，可以在命令行输入 `arp -a` 查看该网关 IP 对应的物理 MAC 地址，前三位厂商代码就能暴露它是华为/华三企业级交换机，还是普通家用路由器。
+3. 查看**默认网关（Default Gateway）**和**子网掩码（Subnet Mask）**。默认网关和 DHCP 服务器可以是不同的设备。要查某个 `20.x.x.x` 目标走内网、VPN 还是公网出口，可以运行 `route print -4`，核对与该目标匹配的路由及其接口。[DHCP 配置选项（RFC 2132）](https://www.rfc-editor.org/rfc/rfc2132.html)
     
       
     
 
-## 三、 交互式工具：IPv4 网段属性与 DHCP 来源鉴别器
+## 三、 交互式工具：IPv4 地址与 DHCP 配置
 
-在下方交互面板中，你可以直接点击常见的预设 IP(如 `192.168.1.100`、`20.10.1.50`、`172.20.10.2`、`100.64.1.1`)，或拖动滑块调整 IP 的四个字节，实时查看该地址在 RFC 标准中的真实身份、DHCP 下发原因及路由行为：
+选择一个示例，或拖动四个滑块调整 IPv4 地址的每一段（0–255）。面板会显示对应的八位二进制数、登记用途和常见配置方式。登记范围描述的是整块地址的用途。本机的子网掩码、DHCP 服务器和默认网关请按第二节核对。
 
+<div id="idw-open-hint">在静态 Markdown 预览中，请<a href="https://xn--9myv52d.xn--udsye.art/#/海底宝藏/Geek空间/DHCP寻址与IPv4地址池">打开文档站的这篇文章</a>使用交互面板。</div>
 
-
-<div id="ipv4-dhcp-widget" class="idw-root">
 <style>
 .idw-root {
   --idw-bg: #0f172a;
@@ -128,8 +127,6 @@ ipconfig /all
   margin: 16px 0;
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
   box-sizing: border-box;
-  user-select: none;
-  overflow: hidden;
 }
 .idw-root * {
   box-sizing: border-box;
@@ -158,14 +155,14 @@ ipconfig /all
   padding: 3px 10px;
   border-radius: 999px;
   font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
-  background: rgba(245, 158, 11, 0.15);
-  color: #f59e0b;
-  border: 1px solid rgba(245, 158, 11, 0.4);
+  background: #0f172a;
+  color: var(--idw-accent);
+  border: 1px solid var(--idw-border);
   transition: all 0.25s ease;
 }
 .idw-presets {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(140px, 100%), 1fr));
   gap: 8px;
   margin-bottom: 14px;
 }
@@ -184,7 +181,7 @@ ipconfig /all
   border-color: rgba(255, 255, 255, 0.35);
   transform: translateY(-1px);
 }
-.idw-preset-btn.active {
+.idw-preset-btn[aria-pressed="true"] {
   background: rgba(56, 189, 248, 0.14);
   border-color: var(--idw-accent);
   box-shadow: 0 0 12px rgba(56, 189, 248, 0.2);
@@ -202,503 +199,258 @@ ipconfig /all
   font-size: 11px;
   color: var(--idw-muted);
 }
-.idw-ctrl-box {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-  align-items: center;
-  justify-content: space-between;
-  background: rgba(15, 23, 42, 0.75);
-  border: 1px solid var(--idw-border);
-  border-radius: 12px;
-  padding: 14px 16px;
-  margin-bottom: 14px;
+
+.idw-root[hidden], #idw-open-hint[hidden] { display: none; }
+.idw-root .idw-p-tag { display: block; }
+.idw-root button:focus-visible, .idw-root input:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+.idw-controls { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(124px, 100%), 1fr)); gap: 8px; }
+.idw-octet, .idw-node, .idw-m-card {
+  min-width: 0; padding: 12px; border: 1px solid var(--idw-border);
+  border-radius: 10px; background: var(--idw-card);
 }
-.idw-ip-readout {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  flex-wrap: wrap;
+.idw-root .idw-octet { display: grid; gap: 3px; text-align: center; cursor: pointer; }
+.idw-label, .idw-octet-bin { color: #adbdcf; font-size: 12px; }
+.idw-octet-num, .idw-octet-bin, .idw-ip { font-family: ui-monospace, Consolas, monospace; }
+.idw-octet-num { font-size: 24px; font-weight: 700; color: var(--idw-accent); line-height: 1.2; }
+.idw-root .idw-slider {
+  display: block; width: 100%; min-width: 0; height: 22px; margin: 4px 0 0; padding: 0;
+  accent-color: var(--idw-accent); cursor: pointer;
 }
-.idw-octet-card {
-  background: rgba(30, 41, 59, 0.9);
-  border: 1px solid rgba(148, 163, 184, 0.25);
-  border-radius: 8px;
-  padding: 6px 10px;
-  text-align: center;
-  min-width: 68px;
-}
-.idw-octet-num {
-  font-size: 20px;
-  font-weight: 800;
-  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
-  color: #38bdf8;
-  line-height: 1.1;
-}
-.idw-octet-bin {
-  font-size: 9px;
-  color: #64748b;
-  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
-  margin-top: 3px;
-  letter-spacing: 0.5px;
-}
-.idw-dot-sep {
-  font-size: 20px;
-  font-weight: 800;
-  color: #64748b;
-}
-.idw-sliders {
-  flex: 1 1 280px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-.idw-slider-row {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 12px;
-}
-.idw-slider-lbl {
-  min-width: 115px;
-  color: #cbd5e1;
-  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
-}
-.idw-slider {
-  flex: 1;
-  -webkit-appearance: none;
-  appearance: none;
-  height: 6px;
-  background: rgba(148, 163, 184, 0.25);
-  border-radius: 999px;
-  outline: none;
-  cursor: pointer;
-}
-.idw-slider::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  background: #38bdf8;
-  border: 2px solid #fff;
-  cursor: pointer;
-}
-.idw-topo-wrap {
-  background: rgba(15, 23, 42, 0.65);
-  border: 1px solid var(--idw-border);
-  border-radius: 12px;
-  padding: 12px;
-  margin-bottom: 14px;
-}
-.idw-topo-title {
-  font-size: 12px;
-  color: var(--idw-muted);
-  margin-bottom: 6px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.idw-svg {
-  width: 100%;
-  height: 145px;
-  display: block;
-}
-@keyframes idwDashFlow {
-  to { stroke-dashoffset: -24; }
-}
-.idw-flow-line {
-  animation: idwDashFlow 0.9s linear infinite;
-}
-.idw-metrics {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-  gap: 10px;
-}
-.idw-m-card {
-  background: var(--idw-card);
-  border: 1px solid var(--idw-border);
-  border-radius: 10px;
-  padding: 11px 14px;
-  backdrop-filter: blur(8px);
-}
-.idw-m-lbl {
-  font-size: 11px;
-  color: var(--idw-muted);
-  margin-bottom: 4px;
-}
-.idw-m-val {
-  font-size: 14px;
-  font-weight: 700;
-  line-height: 1.35;
-}
-.idw-m-desc {
-  font-size: 12px;
-  color: #cbd5e1;
-  line-height: 1.45;
-  margin-top: 4px;
+.idw-topo-wrap { margin: 16px 0 12px; }
+.idw-topo-title { margin-bottom: 6px; color: #cbd5e1; font-size: 13px; }
+.idw-flow { display: flex; align-items: stretch; gap: 0; }
+.idw-node { flex: 1; text-align: center; overflow-wrap: anywhere; }
+.idw-node > span, .idw-node > b { display: block; }
+.idw-node > b { margin-top: 4px; color: #f8fafc; font-size: 14px; }
+.idw-node.idw-current { border-color: var(--idw-accent); }
+.idw-node .idw-ip { color: var(--idw-accent); }
+.idw-connector { align-self: center; flex: 0 1 28px; border-top: 2px dashed var(--idw-accent); }
+.idw-metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(215px, 100%), 1fr)); gap: 8px; }
+.idw-m-val { margin: 3px 0; font-weight: 700; color: var(--idw-accent); }
+.idw-m-desc { color: #d7e2ee; font-size: 13px; line-height: 1.6; }
+@media (max-width: 620px) {
+  .idw-root { padding: 12px; }
+  .idw-flow { flex-direction: column; }
+  .idw-connector { flex: none; height: 12px; border-top: 0; border-left: 2px dashed var(--idw-accent); }
 }
 </style>
-<div class="idw-header">
-  <div class="idw-title">
-    <span>🌐 IPv4 地址属性与 DHCP 拓扑诊断器</span>
+
+<div id="ipv4-dhcp-widget" class="idw-root" hidden>
+  <div class="idw-header">
+    <div class="idw-title">IPv4 地址分析</div>
+    <span class="idw-badge" id="idw-rfc-badge"></span>
   </div>
-  <span class="idw-badge" id="idw-rfc-badge">IANA Public (20.0.0.0/8)</span>
-</div>
-<div class="idw-presets" id="idw-presets"></div>
-<div class="idw-ctrl-box">
-  <div class="idw-ip-readout">
-    <div class="idw-octet-card">
-      <div class="idw-octet-num" id="idw-o1-num">20</div>
-      <div class="idw-octet-bin" id="idw-o1-bin">00010100</div>
-    </div>
-    <span class="idw-dot-sep">.</span>
-    <div class="idw-octet-card">
-      <div class="idw-octet-num" id="idw-o2-num">10</div>
-      <div class="idw-octet-bin" id="idw-o2-bin">00001010</div>
-    </div>
-    <span class="idw-dot-sep">.</span>
-    <div class="idw-octet-card">
-      <div class="idw-octet-num" id="idw-o3-num">1</div>
-      <div class="idw-octet-bin" id="idw-o3-bin">00000001</div>
-    </div>
-    <span class="idw-dot-sep">.</span>
-    <div class="idw-octet-card">
-      <div class="idw-octet-num" id="idw-o4-num">50</div>
-      <div class="idw-octet-bin" id="idw-o4-bin">00110010</div>
+  <div class="idw-presets" id="idw-presets" role="group" aria-label="示例地址"></div>
+  <div class="idw-controls">
+  <label class="idw-octet" for="idw-s1">
+    <span class="idw-label">第一段</span>
+    <span class="idw-octet-num" id="idw-o1-num">20</span>
+    <span class="idw-octet-bin" id="idw-o1-bin">00010100</span>
+    <input type="range" class="idw-slider" id="idw-s1" aria-label="IPv4 第1段" min="0" max="255" step="1" value="20">
+  </label>
+  <label class="idw-octet" for="idw-s2">
+    <span class="idw-label">第二段</span>
+    <span class="idw-octet-num" id="idw-o2-num">10</span>
+    <span class="idw-octet-bin" id="idw-o2-bin">00001010</span>
+    <input type="range" class="idw-slider" id="idw-s2" aria-label="IPv4 第2段" min="0" max="255" step="1" value="10">
+  </label>
+  <label class="idw-octet" for="idw-s3">
+    <span class="idw-label">第三段</span>
+    <span class="idw-octet-num" id="idw-o3-num">1</span>
+    <span class="idw-octet-bin" id="idw-o3-bin">00000001</span>
+    <input type="range" class="idw-slider" id="idw-s3" aria-label="IPv4 第3段" min="0" max="255" step="1" value="1">
+  </label>
+  <label class="idw-octet" for="idw-s4">
+    <span class="idw-label">第四段</span>
+    <span class="idw-octet-num" id="idw-o4-num">50</span>
+    <span class="idw-octet-bin" id="idw-o4-bin">00110010</span>
+    <input type="range" class="idw-slider" id="idw-s4" aria-label="IPv4 第4段" min="0" max="255" step="1" value="50">
+  </label>
+  </div>
+  <div class="idw-topo-wrap">
+    <div class="idw-topo-title">配置与通信范围示意</div>
+    <div class="idw-flow">
+      <div class="idw-node"><span class="idw-label">配置方式或用途</span><b id="idw-origin"></b></div>
+      <span class="idw-connector" aria-hidden="true"></span>
+      <div class="idw-node idw-current"><span class="idw-label">所选 IPv4 地址</span><b class="idw-ip" id="idw-ip"></b></div>
+      <span class="idw-connector" aria-hidden="true"></span>
+      <div class="idw-node"><span class="idw-label">通信范围</span><b id="idw-scope"></b></div>
     </div>
   </div>
-  <div class="idw-sliders">
-    <div class="idw-slider-row">
-      <span class="idw-slider-lbl">第一段 (Octet 1): <b id="idw-s1-val" style="color:#38bdf8;">20</b></span>
-      <input type="range" class="idw-slider" id="idw-s1" min="1" max="223" step="1" value="20" />
+  <div class="idw-metrics">
+    <div class="idw-m-card">
+      <div class="idw-label">地址类型</div>
+      <div class="idw-m-val" id="idw-m-cat" aria-live="polite"></div>
+      <div class="idw-m-desc" id="idw-detail"></div>
     </div>
-    <div class="idw-slider-row">
-      <span class="idw-slider-lbl">第二段 (Octet 2): <b id="idw-s2-val" style="color:#38bdf8;">10</b></span>
-      <input type="range" class="idw-slider" id="idw-s2" min="0" max="255" step="1" value="10" />
+    <div class="idw-m-card">
+      <div class="idw-label">如何核实</div>
+      <div class="idw-m-desc" id="idw-check"></div>
     </div>
-  </div>
-</div>
-<div class="idw-topo-wrap">
-  <div class="idw-topo-title">
-    <span>📡 实时 DHCP 下发路径与公网出口路由仿真</span>
-    <span id="idw-topo-status" style="font-family:monospace;color:#f59e0b;">⚠️ 内网征用公网段 · 存在同段公网遮蔽风险</span>
-  </div>
-  <svg class="idw-svg" id="idw-svg" viewBox="0 0 720 145" preserveAspectRatio="xMidYMid meet"></svg>
-</div>
-<div class="idw-metrics">
-  <div class="idw-m-card">
-    <div class="idw-m-lbl">网段真实身份判定</div>
-    <div class="idw-m-val" id="idw-m-cat" style="color:#f59e0b;">公网段被政企内网/VPN私自征用</div>
-    <div class="idw-m-desc" id="idw-m-rfc">国际登记归属 Microsoft Azure 公网段，非 RFC 1918 标准私网。</div>
-  </div>
-  <div class="idw-m-card">
-    <div class="idw-m-lbl">典型 DHCP 下发源头</div>
-    <div class="idw-m-val" id="idw-m-src" style="color:#38bdf8;">单位核心交换机 / VPN 虚拟网卡</div>
-    <div class="idw-m-desc" id="idw-m-src-desc">国企/院所常按 10/20/30 划分部门专网，或由 EasyConnect/TUN 虚拟网卡分配。</div>
-  </div>
-  <div class="idw-m-card">
-    <div class="idw-m-lbl">公网路由与冲突诊断</div>
-    <div class="idw-m-val" id="idw-m-risk" style="color:#f43f5e;">存在外网路由遮蔽 (Route Hijack)</div>
-    <div class="idw-m-desc" id="idw-m-advice">内网通信正常，但访问真实 20.x.x.x 的微软云海外服务时会被误判为内网而无法连接。</div>
   </div>
 </div>
+
 <script>
-(function() {
-  function initIDW() {
-    var root = document.getElementById("ipv4-dhcp-widget");
-    if (!root || root.dataset.idwReady === "1") return;
-    root.dataset.idwReady = "1";
-    var presets = [
-      { id: "p20", ip: [20, 10, 1, 50], tag: "政企内网/VPN征用", dot: "#f59e0b" },
-      { id: "p192", ip: [192, 168, 1, 100], tag: "C类家用默认私网", dot: "#38bdf8" },
-      { id: "p172", ip: [172, 20, 10, 2], tag: "B类私网/热点/WSL", dot: "#06b6d4" },
-      { id: "p10", ip: [10, 20, 0, 15], tag: "A类大型企业内网", dot: "#10b981" },
-      { id: "p100", ip: [100, 64, 12, 8], tag: "运营商大内网CGNAT", dot: "#a855f7" },
-      { id: "p169", ip: [169, 254, 10, 5], tag: "DHCP失败自封地址", dot: "#ef4444" }
-    ];
-    var state = { o1: 20, o2: 10, o3: 1, o4: 50, activePreset: "p20" };
-    var presetWrap = root.querySelector("#idw-presets");
-    var s1 = root.querySelector("#idw-s1");
-    var s2 = root.querySelector("#idw-s2");
-    var s1Val = root.querySelector("#idw-s1-val");
-    var s2Val = root.querySelector("#idw-s2-val");
-    var o1Num = root.querySelector("#idw-o1-num");
-    var o2Num = root.querySelector("#idw-o2-num");
-    var o3Num = root.querySelector("#idw-o3-num");
-    var o4Num = root.querySelector("#idw-o4-num");
-    var o1Bin = root.querySelector("#idw-o1-bin");
-    var o2Bin = root.querySelector("#idw-o2-bin");
-    var o3Bin = root.querySelector("#idw-o3-bin");
-    var o4Bin = root.querySelector("#idw-o4-bin");
-    var badge = root.querySelector("#idw-rfc-badge");
-    var topoStatus = root.querySelector("#idw-topo-status");
-    var svg = root.querySelector("#idw-svg");
-    var mCat = root.querySelector("#idw-m-cat");
-    var mRfc = root.querySelector("#idw-m-rfc");
-    var mSrc = root.querySelector("#idw-m-src");
-    var mSrcDesc = root.querySelector("#idw-m-src-desc");
-    var mRisk = root.querySelector("#idw-m-risk");
-    var mAdvice = root.querySelector("#idw-m-advice");
-    function toBin(n) {
-      var s = (n >>> 0).toString(2);
-      while (s.length < 8) s = "0" + s;
-      return s;
+(function () {
+  const root = document.getElementById("ipv4-dhcp-widget");
+  if (!root || root.dataset.idwReady) return;
+  const field = id => root.querySelector("#idw-" + id);
+  const kinds = {
+    public: {
+      name: "公网单播地址空间", color: "#fbbf24",
+      origin: "DHCP、手动或平台配置", scope: "取决于实际路由",
+      detail: "具体地址的登记持有人要查更细的分配记录。仅凭这个地址，无法确认它来自运营商、单位内网还是 VPN。",
+      check: "若内部网络复用了公网地址，访问重叠范围时可能走错接口。用 route print -4 核对目标匹配的路由。"
+    },
+    private: {
+      name: "RFC 1918 私有地址", color: "#67e8f9",
+      origin: "DHCP 或手动配置", scope: "局域网或互联私网",
+      detail: "家庭、企业和虚拟网络都可以重复使用这段地址。连接使用相同网段的 VPN 时，路由可能重叠。",
+      check: "要确认地址由谁分配，可在对应网卡下核对 DHCP 服务器和租约。要判断能否上网，还需检查网关及出口配置。"
+    },
+    shared: {
+      name: "运营商共享地址空间", color: "#c4b5fd",
+      origin: "运营商接入或虚拟网络", scope: "共享地址域内",
+      detail: "RFC 6598 为共享地址划出此段。一个典型场景是运营商在宽带用户与公网之间做大规模 NAT（CGNAT）。",
+      check: "先看这个地址在路由器的广域网口还是虚拟网卡上。要确认 CGNAT，可核对运营商的接入与地址转换配置。"
+    },
+    link: {
+      name: "IPv4 链路本地地址", color: "#fda4af",
+      origin: "常见于主机自动配置", scope: "同一条本地链路",
+      detail: "RFC 3927 允许主机在链路上自行选址。仅凭这一段地址，无法确认 DHCP 故障或其他网卡的联网状态。",
+      check: "若本应获得 DHCP 租约，请查看该接口的链路、DHCP 服务器与租约记录。链路本地流量只在本链路上传递。"
+    },
+    loop: {
+      name: "回环地址", color: "#86efac", origin: "本机协议栈", scope: "仅本机",
+      detail: "发往回环地址的数据留在本机。127.0.0.1 是最常见的例子。",
+      check: "排查局域网的 DHCP 时，请选择实际接入该网络的物理或虚拟网卡。"
+    },
+    docs: {
+      name: "文档示例地址", color: "#93c5fd", origin: "文档和教程中的示例", scope: "仅用于举例",
+      detail: "RFC 5737 为文档示例保留了三个地址块，可用来展示配置和数据包。",
+      check: "若在实际网卡上看到这个地址，请核对是否沿用了教程里的示例配置。"
+    },
+    bench: {
+      name: "网络基准测试地址", color: "#93c5fd", origin: "测试环境配置", scope: "基准测试网络",
+      detail: "198.18.0.0/15 用于测试网络设备的性能，覆盖 198.18 和 198.19 开头的地址。",
+      check: "如果在虚拟网卡上看到这段地址，可对照测试或代理软件的配置。"
+    },
+    multicast: {
+      name: "IPv4 组播地址", color: "#c4b5fd", origin: "组播组标识", scope: "对应组的接收者",
+      detail: "组播地址标识一组接收者。主机可以加入组播组，并保有自己的单播地址。",
+      check: "传播范围取决于所选组、协议和组播路由。检查 DHCP 租约时请查看接口的单播地址。"
+    },
+    broadcast: {
+      name: "有限广播地址", color: "#fda4af", origin: "报文目的地址", scope: "本地链路广播",
+      detail: "255.255.255.255 用于向本地链路广播。例如，客户端发起 DHCP 发现时可使用这个目的地址。",
+      check: "看抓包时要区分报文目的地址和服务器提供给客户端的租用地址。"
+    },
+    zero: {
+      name: "本网络专用地址", color: "#cbd5e1", origin: "协议保留", scope: "特定协议语境",
+      detail: "IPv4 为“本网络”保留了 0.0.0.0/8。普通主机单播地址池应避开这段地址。",
+      check: "看到 0.0.0.0 时，请先区分接口地址、报文源地址和路由表中的默认路由前缀。"
+    },
+    unspecified: {
+      name: "未指定地址", color: "#cbd5e1", origin: "主机尚未取得地址", scope: "取决于所在字段",
+      detail: "DHCP 客户端首次请求地址时可以用 0.0.0.0 作源地址。在套接字和路由表中，这个值有其他含义。",
+      check: "如果是在 route print -4 中看到 0.0.0.0/0，它表示默认路由。"
+    },
+    reserved: {
+      name: "IPv4 保留地址", color: "#cbd5e1", origin: "协议保留", scope: "保留空间",
+      detail: "IANA 将 240.0.0.0/4 列为保留空间，其中 255.255.255.255 单独定义为有限广播地址。",
+      check: "普通 DHCP 单播地址池应避开这段地址。"
+    },
+    protocol: {
+      name: "协议专用地址", color: "#93c5fd", origin: "由相应协议定义", scope: "按具体用途确定",
+      detail: "该地址块有专门的协议用途。各条目的允许用途和全球可达属性可在 IANA 登记表中查到。",
+      check: "先确认网络是否运行相应协议，再查看本地配置与路由。"
     }
-    function classify(o1, o2) {
-      if (o1 === 10) {
-        return {
-          badge: "RFC 1918 · Class A Private (10.0.0.0/8)",
-          color: "#10b981",
-          cat: "A 类标准私有地址 (RFC 1918)",
-          rfc: "专供大型局域网内部使用，单网段可容纳约 1,677 万台终端。",
-          src: "大型政企核心交换机 / 云厂商 VPC",
-          srcDesc: "大型企业总部、政务内网及阿里云/腾讯云 VPC 最主流的默认内网段。",
-          risk: "安全无冲突 · 经 NAT 正常出网",
-          riskColor: "#10b981",
-          advice: "完全符合国际标准，数据包在出口防火墙自动转换为公网 IP 访问互联网。",
-          n1Title: "企业核心交换机 DHCP",
-          n1Sub: "下发 10.0.0.0/8 池",
-          n3Title: "企业出口 NAT 网关",
-          n3Sub: "正常转发至公网",
-          statusText: "✅ 标准 A 类私网 · 内外网路由完全正常",
-          flowOk: true
-        };
-      }
-      if (o1 === 172 && o2 >= 16 && o2 <= 31) {
-        return {
-          badge: "RFC 1918 · Class B Private (172.16.0.0/12)",
-          color: "#06b6d4",
-          cat: "B 类标准私有地址 (RFC 1918)",
-          rfc: "标准私网范围严格限定在 172.16.0.0 至 172.31.255.255 之间。",
-          src: "iPhone 热点 / WSL2 / Docker 虚拟网桥",
-          srcDesc: "苹果手机热点固定分配 172.20.10.x，Hyper-V 与 Docker 也常使用该段。",
-          risk: "安全无冲突 · 虚拟/热点 NAT 转发",
-          riskColor: "#06b6d4",
-          advice: "若看到“第二节为 20”的 172.20.x.x，它是纯正的标准私网，并非公网冲突。",
-          n1Title: "手机热点 / 虚拟交换机",
-          n1Sub: "下发 172.16~31 私网池",
-          n3Title: "宿主设备 NAT 路由",
-          n3Sub: "共享宿主网络上网",
-          statusText: "✅ 标准 B 类私网 · 常见于热点与容器虚拟网络",
-          flowOk: true
-        };
-      }
-      if (o1 === 192 && o2 === 168) {
-        return {
-          badge: "RFC 1918 · Class C Private (192.168.0.0/16)",
-          color: "#38bdf8",
-          cat: "C 类标准私有地址 (RFC 1918)",
-          rfc: "全球最普及的局域网网段，每个 /24 子网可分配 254 台设备。",
-          src: "家用路由器 / 办公 Wi-Fi / 光猫",
-          srcDesc: "几乎所有消费级路由器出厂默认的 DHCP 地址池(如 192.168.1.x)。",
-          risk: "零冲突风险 · 标准家庭/办公局域网",
-          riskColor: "#10b981",
-          advice: "最标准的局域网环境，路由器通过 NAPT 端口复用让全屋设备共享宽带。",
-          n1Title: "家用路由器 / 光猫 DHCP",
-          n1Sub: "默认 192.168.x.1",
-          n3Title: "宽带出口 NAT 转换",
-          n3Sub: "正常连接互联网",
-          statusText: "✅ 标准 C 类私网 · 家用与小型办公默认配置",
-          flowOk: true
-        };
-      }
-      if (o1 === 100 && o2 >= 64 && o2 <= 127) {
-        return {
-          badge: "RFC 6598 · Carrier-Grade NAT (100.64.0.0/10)",
-          color: "#a855f7",
-          cat: "运营商级 NAT 共享地址 (CGNAT)",
-          rfc: "专为电信运营商设计的“大内网”缓冲池，避免与家用 192.168 冲突。",
-          src: "宽带运营商局端 BRAS 设备",
-          srcDesc: "光猫拨号或企业宽带接入时，由电信/联通/移动机房直接下发。",
-          risk: "上网正常 · 但无公网 IPv4 入站权限",
-          riskColor: "#f59e0b",
-          advice: "处于运营商大内网中，传统端口映射无法从外网连回，建议使用 IPv6 或 Tailscale。",
-          n1Title: "运营商机房 BRAS",
-          n1Sub: "下发 100.64.0.0/10",
-          n3Title: "运营商级 CGNAT 网关",
-          n3Sub: "多户共享公网出口",
-          statusText: "🟣 运营商级大内网 (CGNAT) · 出网正常但无独立公网 IPv4",
-          flowOk: true
-        };
-      }
-      if (o1 === 169 && o2 === 254) {
-        return {
-          badge: "RFC 3927 · Link-Local APIPA (169.254.0.0/16)",
-          color: "#ef4444",
-          cat: "链路本地自封地址 (DHCP 失败!)",
-          rfc: "当网卡开启 DHCP 却迟迟收不到任何路由器应答时，系统自动生成的临时地址。",
-          src: "本机操作系统内核兜底生成",
-          srcDesc: "并非由路由器分配，而是 Windows/macOS 在寻找 DHCP 服务器超时后的自救行为。",
-          risk: "网络中断 · 无法获取默认网关",
-          riskColor: "#ef4444",
-          advice: "请检查网线是否松动、上级交换机 VLAN 是否配置错误，或手动指定静态 IP。",
-          n1Title: "DHCP 广播请求超时",
-          n1Sub: "无服务器响应 Offer",
-          n3Title: "默认网关缺失",
-          n3Sub: "❌ 外网路由完全阻断",
-          statusText: "❌ DHCP 寻址失败 · 系统自封 169.254.x.x 无法上网",
-          flowOk: false
-        };
-      }
-      if (o1 === 127) {
-        return {
-          badge: "RFC 1122 · Loopback (127.0.0.0/8)",
-          color: "#eab308",
-          cat: "本地环回测试地址 (Loopback)",
-          rfc: "代表本机虚拟回环接口(如 127.0.0.1)，数据包不会经过物理网卡。",
-          src: "操作系统网络协议栈内置",
-          srcDesc: "用于本机前后端服务自测通信，任何外部 DHCP 均不应下发此网段。",
-          risk: "仅限本机内部闭环通信",
-          riskColor: "#eab308",
-          advice: "仅在本地进程间生效，无法用于局域网或互联网通信。",
-          n1Title: "本机 OS 协议栈",
-          n1Sub: "Loopback 环回接口",
-          n3Title: "内部内存闭环",
-          n3Sub: "不经过外部路由器",
-          statusText: "🔄 本地环回地址 · 仅用于本机内部服务调用",
-          flowOk: false
-        };
-      }
-      if (o1 === 20) {
-        return {
-          badge: "IANA Public · Microsoft Azure (20.0.0.0/8)",
-          color: "#f59e0b",
-          cat: "公网段被政企内网/VPN私自征用",
-          rfc: "20.0.0.0/8 在国际公网上合法归属于微软云 (Azure)，并非标准私有地址。",
-          src: "国企/院所内网交换机 或 VPN虚拟网卡",
-          srcDesc: "大型单位常按 10/20/30 编号划分内部专网，或由 VPN/代理 TUN 网卡下发以防冲突。",
-          risk: "同网段公网遮蔽 (遮蔽 20.x 海外云服务)",
-          riskColor: "#f43f5e",
-          advice: "可执行 ipconfig /all 查看该 IP 挂在物理网卡还是 VPN 虚拟网卡上。",
-          n1Title: "政企交换机 / VPN网卡",
-          n1Sub: "自定义 20.x.x.x 地址池",
-          n3Title: "内网专网路由 / 出口NAT",
-          n3Sub: "⚠️ 劫持同段 20.x 公网流量",
-          statusText: "⚠️ 20.x.x.x 属公网段被内网/VPN征用 · 谨防同段公网路由冲突",
-          flowOk: true
-        };
-      }
-      return {
-        badge: "IANA Global Public Unicast (" + o1 + ".0.0.0/8)",
-        color: "#f59e0b",
-        cat: "全球公网单播地址 / 非标内网池",
-        rfc: "该网段属于 IANA 分配的全球公网可路由空间，不属于 RFC 1918 私网。",
-        src: "云主机/专线直发 或 单位非标内网DHCP",
-        srcDesc: "若非云服务器或政企固定公网专线，则是单位网管在交换机里自定义了非标地址池。",
-        risk: "若在内网使用，将遮蔽同网段真实公网 IP",
-        riskColor: "#f59e0b",
-        advice: "内网自定义征用公网段会导致电脑把该段公网网站误认为内网邻居而无法打开。",
-        n1Title: "专线网关 / 非标内网DHCP",
-        n1Sub: "下发 " + o1 + "." + o2 + ".x.x",
-        n3Title: "公网直连 或 内网NAT",
-        n3Sub: "非标内网存在冲突隐患",
-        statusText: "⚠️ 全球公网地址段 · 若在局域网出现则系网管非标配置",
-        flowOk: true
-      };
-    }
-    function renderPresets() {
-      presetWrap.innerHTML = "";
-      presets.forEach(function(p) {
-        var btn = document.createElement("button");
-        btn.type = "button";
-        btn.className = "idw-preset-btn" + (state.activePreset === p.id ? " active" : "");
-        var ipStr = p.ip.join(".");
-        btn.innerHTML = '<div class="idw-p-ip"><span>' + ipStr + '</span><span style="width:8px;height:8px;border-radius:50%;background:' + p.dot + '"></span></div><div class="idw-p-tag">' + p.tag + '</div>';
-        btn.addEventListener("click", function() {
-          state.activePreset = p.id;
-          state.o1 = p.ip[0];
-          state.o2 = p.ip[1];
-          state.o3 = p.ip[2];
-          state.o4 = p.ip[3];
-          s1.value = state.o1;
-          s2.value = state.o2;
-          renderPresets();
-          updateUI();
-        });
-        presetWrap.appendChild(btn);
-      });
-    }
-    function drawTopo(info, ipStr) {
-      var c = info.color;
-      var line2Color = info.flowOk ? c : "#ef4444";
-      var dashClass = info.flowOk ? "idw-flow-line" : "";
-      var svgHtml = [];
-      svgHtml.push('<line x1="190" y1="72" x2="275" y2="72" stroke="rgba(148,163,184,0.25)" stroke-width="3" />');
-      svgHtml.push('<line x1="190" y1="72" x2="275" y2="72" stroke="' + c + '" stroke-width="3" stroke-dasharray="6 6" class="' + dashClass + '" />');
-      svgHtml.push('<line x1="445" y1="72" x2="530" y2="72" stroke="rgba(148,163,184,0.25)" stroke-width="3" />');
-      svgHtml.push('<line x1="445" y1="72" x2="530" y2="72" stroke="' + line2Color + '" stroke-width="3" stroke-dasharray="6 6" class="' + dashClass + '" />');
-      svgHtml.push('<rect x="16" y="28" width="174" height="88" rx="12" fill="rgba(30,41,59,0.9)" stroke="' + c + '" stroke-width="1.6" />');
-      svgHtml.push('<text x="103" y="55" fill="#94a3b8" font-size="11" text-anchor="middle">① DHCP 分配源头</text>');
-      svgHtml.push('<text x="103" y="77" fill="#fff" font-size="13" font-weight="bold" text-anchor="middle">' + info.n1Title + '</text>');
-      svgHtml.push('<text x="103" y="98" fill="' + c + '" font-size="11" font-family="monospace" text-anchor="middle">' + info.n1Sub + '</text>');
-      svgHtml.push('<rect x="275" y="22" width="170" height="100" rx="12" fill="rgba(15,23,42,0.95)" stroke="#38bdf8" stroke-width="2" />');
-      svgHtml.push('<text x="360" y="48" fill="#94a3b8" font-size="11" text-anchor="middle">② 本机网卡 (DHCP Client)</text>');
-      svgHtml.push('<text x="360" y="74" fill="#38bdf8" font-size="16" font-weight="bold" font-family="monospace" text-anchor="middle">' + ipStr + '</text>');
-      svgHtml.push('<text x="360" y="98" fill="#cbd5e1" font-size="11" font-family="monospace" text-anchor="middle">网关: ' + state.o1 + '.' + state.o2 + '.' + state.o3 + '.1</text>');
-      svgHtml.push('<rect x="530" y="28" width="174" height="88" rx="12" fill="rgba(30,41,59,0.9)" stroke="' + line2Color + '" stroke-width="1.6" />');
-      svgHtml.push('<text x="617" y="55" fill="#94a3b8" font-size="11" text-anchor="middle">③ 出口网关与公网路由</text>');
-      svgHtml.push('<text x="617" y="77" fill="#fff" font-size="13" font-weight="bold" text-anchor="middle">' + info.n3Title + '</text>');
-      svgHtml.push('<text x="617" y="98" fill="' + line2Color + '" font-size="11" font-family="monospace" text-anchor="middle">' + info.n3Sub + '</text>');
-      svg.innerHTML = svgHtml.join("");
-    }
-    function updateUI() {
-      var ipStr = state.o1 + "." + state.o2 + "." + state.o3 + "." + state.o4;
-      s1Val.textContent = state.o1;
-      s2Val.textContent = state.o2;
-      o1Num.textContent = state.o1;
-      o2Num.textContent = state.o2;
-      o3Num.textContent = state.o3;
-      o4Num.textContent = state.o4;
-      o1Bin.textContent = toBin(state.o1);
-      o2Bin.textContent = toBin(state.o2);
-      o3Bin.textContent = toBin(state.o3);
-      o4Bin.textContent = toBin(state.o4);
-      var info = classify(state.o1, state.o2);
-      o1Num.style.color = info.color;
-      o2Num.style.color = info.color;
-      badge.textContent = info.badge;
-      badge.style.color = info.color;
-      badge.style.borderColor = info.color;
-      badge.style.background = "rgba(15, 23, 42, 0.8)";
-      topoStatus.textContent = info.statusText;
-      topoStatus.style.color = info.color;
-      mCat.textContent = info.cat;
-      mCat.style.color = info.color;
-      mRfc.textContent = info.rfc;
-      mSrc.textContent = info.src;
-      mSrcDesc.textContent = info.srcDesc;
-      mRisk.textContent = info.risk;
-      mRisk.style.color = info.riskColor;
-      mAdvice.textContent = info.advice;
-      drawTopo(info, ipStr);
-    }
-    s1.addEventListener("input", function() {
-      state.o1 = parseInt(s1.value, 10);
-      state.activePreset = "";
-      renderPresets();
-      updateUI();
-    });
-    s2.addEventListener("input", function() {
-      state.o2 = parseInt(s2.value, 10);
-      state.activePreset = "";
-      renderPresets();
-      updateUI();
-    });
-    renderPresets();
-    updateUI();
+  };
+  function addressNumber(octets) {
+    return octets.reduce((total, octet) => total * 256 + Number(octet), 0);
   }
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", initIDW);
-  } else {
-    initIDW();
-  }
-  setTimeout(initIDW, 120);
-  if (window.$docsify && Array.isArray(window.$docsify.plugins)) {
-    window.$docsify.plugins.push(function(hook) {
-      hook.doneEach(function() { initIDW(); });
+  // 从具体地址到大块登记空间均使用 CIDR；重叠时优先匹配更长的前缀。
+  const blocks = [
+    ["0.0.0.0/8", "zero"], ["0.0.0.0/32", "unspecified"],
+    ["10.0.0.0/8", "private"], ["20.0.0.0/8", "public"],
+    ["100.64.0.0/10", "shared"], ["127.0.0.0/8", "loop"],
+    ["169.254.0.0/16", "link"], ["172.16.0.0/12", "private"],
+    ["192.0.0.0/24", "protocol", "IETF 协议分配"],
+    ["192.0.0.0/29", "protocol", "IPv4 服务连续性前缀"],
+    ["192.0.0.8/32", "protocol", "IPv4 哑地址"],
+    ["192.0.0.9/32", "protocol", "PCP 任播地址"],
+    ["192.0.0.10/32", "protocol", "TURN 任播地址"],
+    ["192.0.0.170/32", "protocol", "NAT64 / DNS64 发现"],
+    ["192.0.0.171/32", "protocol", "NAT64 / DNS64 发现"],
+    ["192.0.2.0/24", "docs"], ["192.31.196.0/24", "protocol", "AS112 服务"],
+    ["192.52.193.0/24", "protocol", "AMT 自动组播隧道"],
+    ["192.88.99.0/24", "protocol", "已弃用的 6to4 中继前缀"],
+    ["192.88.99.2/32", "protocol", "6a44 中继任播地址"],
+    ["192.168.0.0/16", "private"], ["192.175.48.0/24", "protocol", "AS112 直接委派"],
+    ["198.18.0.0/15", "bench"], ["198.51.100.0/24", "docs"], ["203.0.113.0/24", "docs"],
+    ["224.0.0.0/4", "multicast"], ["240.0.0.0/4", "reserved"], ["255.255.255.255/32", "broadcast"]
+  ].map(([cidr, kind, name]) => {
+    const [network, length] = cidr.split("/");
+    const first = addressNumber(network.split("."));
+    const size = Math.pow(2, 32 - Number(length));
+    return { cidr, kind, name, first, last: first + size - 1, size };
+  }).sort((a, b) => a.size - b.size);
+  const presets = [
+    ["20.10.1.50", "公网地址示例"], ["192.168.1.100", "家庭局域网示例"],
+    ["172.20.10.2", "热点私网示例"], ["10.20.0.15", "企业私网示例"],
+    ["100.64.12.8", "共享地址示例"], ["169.254.10.5", "链路本地示例"]
+  ];
+  const sliders = Array.from(root.querySelectorAll("input[type=range]"));
+  const buttons = presets.map(([ip, label]) => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "idw-preset-btn";
+    for (const [className, text] of [["idw-p-ip", ip], ["idw-p-tag", label]]) {
+      const span = document.createElement("span");
+      span.className = className;
+      span.textContent = text;
+      button.appendChild(span);
+    }
+    button.addEventListener("click", () => {
+      ip.split(".").forEach((value, index) => { sliders[index].value = value; });
+      update();
     });
+    field("presets").appendChild(button);
+    return button;
+  });
+  function update() {
+    const octets = sliders.map(input => Number(input.value));
+    const ip = octets.join(".");
+    const value = addressNumber(octets);
+    const block = blocks.find(entry => value >= entry.first && value <= entry.last);
+    const info = kinds[block ? block.kind : "public"];
+    const name = (block && block.name) || info.name;
+    root.style.setProperty("--idw-accent", info.color);
+    octets.forEach((octet, index) => {
+      field("o" + (index + 1) + "-num").textContent = octet;
+      field("o" + (index + 1) + "-bin").textContent = octet.toString(2).padStart(8, "0");
+    });
+    buttons.forEach((button, index) => {
+      button.setAttribute("aria-pressed", String(presets[index][0] === ip));
+    });
+    field("rfc-badge").textContent = block ? "登记范围 " + block.cidr : "一般公网单播空间";
+    field("ip").textContent = ip;
+    field("origin").textContent = info.origin;
+    field("scope").textContent = info.scope;
+    field("m-cat").textContent = name;
+    field("detail").textContent = info.detail;
+    field("check").textContent = info.check;
+    if (info === kinds.link && (octets[2] === 0 || octets[2] === 255)) {
+      field("origin").textContent = "链路本地保留子段";
+      field("detail").textContent = "RFC 3927 为未来用途保留首尾两个 /24。主机自动选址的范围是 169.254.1.0 至 169.254.254.255。";
+    }
   }
+  sliders.forEach(input => input.addEventListener("input", update));
+  update();
+  root.dataset.idwReady = "1";
+  root.hidden = false;
+  document.getElementById("idw-open-hint").hidden = true;
 })();
 </script>
-</div>
+
+地址用途可查 [IANA IPv4 特殊用途地址登记表](https://www.iana.org/assignments/iana-ipv4-special-registry/iana-ipv4-special-registry.xhtml) 和 [IPv4 组播地址登记表](https://www.iana.org/assignments/multicast-addresses/multicast-addresses.xhtml)。
