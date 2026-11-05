@@ -19,3 +19,7 @@ artist="Bob Dylan"
 cover="media/music/Blowin.jpg">
 </tukuai-audio>
 
+字数要求
+
+档标题严格处于 10～15 个字符区间
+
