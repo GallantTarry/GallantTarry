@@ -27,7 +27,8 @@
 
 不要在运行时动态解压释放，而是在打包安装包时就把它作为独立的外部文件放置：
 
-* **目录结构：**
+**目录结构：**
+
 ```text
 MyApp/
 ├── app/
@@ -35,19 +36,18 @@ MyApp/
 ├── bin/
 │   └── helper-tool.exe   <-- 静态存放在应用的固定子目录
 └── MyApp.exe
-
 ```
 
+**Java 调用方式：**
 
-* **Java 调用方式：**
-  不要从 Classpath 读取流，而是动态获取当前运行程序的主目录，通过相对路径调用：
+不要从 Classpath 读取流，而是动态获取当前运行程序的主目录，通过相对路径调用：
+
 ```java
 Path appDir = Path.of(System.getProperty("app.dir", "."));
 Path toolExe = appDir.resolve("bin").resolve("helper-tool.exe");
 
 ProcessBuilder pb = new ProcessBuilder(toolExe.toAbsolutePath().toString(), "arg1", "arg2");
 pb.start();
-
 ```
 
 

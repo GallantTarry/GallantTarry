@@ -665,6 +665,10 @@
         }
 
         /* ====== 3. 主内容区 ====== */
+        html {
+            overflow-x: hidden;
+        }
+
         main {
             padding-bottom: 80px !important;
         }
@@ -687,6 +691,11 @@
             width: 100%;
             color: var(--text-main);
             margin-bottom: 60px !important;
+            box-sizing: border-box;
+        }
+
+        .markdown-section > * {
+            max-width: 100%;
         }
 
         /* ========================================= */

@@ -158,39 +158,36 @@ user.age = 26
 
 在 `<template>` 中，Vue 提供了一套以 `v-` 开头的指令，用来将数据渲染到 HTML 上。
 
-* **文本插值(Mustache 语法)：** 用双大括号显示数据。
+**1. 文本插值(Mustache 语法)：** 用双大括号显示数据。
+
 ```html
 <p>当前数字是：{{ count }}</p>
-
 ```
 
+**2. 属性绑定(v-bind 或简写 `:`)：** 动态绑定 HTML 标签的属性(如 src、class、id 等)。
 
-* **属性绑定(v-bind 或简写 `:`)：** 动态绑定 HTML 标签的属性(如 src、class、id 等)。
 ```html
 <!-- 变量 imageURL 改变时，图片的 src 也会跟着变 -->
 <img :src="imageURL" />
 <div :class="{ active: isActive }"></div>
-
 ```
 
+**3. 事件监听(v-on 或简写 `@`)：** 绑定鼠标点击、键盘输入等事件。
 
-* **事件监听(v-on 或简写 `@`)：** 绑定鼠标点击、键盘输入等事件。
 ```html
 <button @click="count++">点击加 1</button>
 <button @click="submitData">提交</button>
-
 ```
 
+**4. 双向数据绑定(v-model)：** 主要用于表单元素。输入框的内容变了，变量的值跟着变；变量的值变了，输入框的内容也跟着变。
 
-* **双向数据绑定(v-model)：** 主要用于表单元素。输入框的内容变了，变量的值跟着变；变量的值变了，输入框的内容也跟着变。
 ```html
 <input type="text" v-model="title" />
 <p>你输入的内容是：{{ title }}</p>
-
 ```
 
+**5. 条件渲染(v-if 与 v-show)：** 控制元素的显示与隐藏。
 
-* **条件渲染(v-if 与 v-show)：** 控制元素的显示与隐藏。
 ```html
 <!-- v-if：如果为 false，该节点直接从 DOM 中删除 -->
 <p v-if="age > 18">成年人可见</p>
@@ -198,18 +195,16 @@ user.age = 26
 
 <!-- v-show：如果为 false，节点还在，只是用 CSS 隐藏 (display: none) -->
 <div v-show="isMenuOpen">下拉菜单</div>
-
 ```
 
+**6. 列表渲染(v-for)：** 用于循环遍历数组或对象，生成列表。**必须绑定唯一的 `:key`**，以便 Vue 高效追踪节点变化。
 
-* **列表渲染(v-for)：** 用于循环遍历数组或对象，生成列表。**必须绑定唯一的 `:key`**，以便 Vue 高效追踪节点变化。
 ```html
 <ul>
   <li v-for="(item, index) in items" :key="item.id">
     {{ index }} - {{ item.name }}
   </li>
 </ul>
-
 ```
 
 
