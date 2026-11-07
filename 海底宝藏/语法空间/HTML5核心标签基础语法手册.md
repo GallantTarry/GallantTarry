@@ -295,7 +295,7 @@ HTML(HyperText Markup Language，超文本标记语言，现行标准为 **HTML5
 
 <div id="h5-demo-root">
 <style>
-#h5-demo-root{box-sizing:border-box;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"JetBrains Mono",Consolas,monospace;background:linear-gradient(145deg,#0f172a 0%,#172033 100%);color:#e2e8f0;border:1px solid rgba(148,163,184,0.22);border-radius:14px;padding:18px;margin:16px 0;box-shadow:0 12px 32px rgba(0,0,0,0.38);line-height:1.5;}
+#h5-demo-root{box-sizing:border-box;container-type:inline-size;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"JetBrains Mono",Consolas,monospace;background:linear-gradient(145deg,#0f172a 0%,#172033 100%);color:#e2e8f0;border:1px solid rgba(148,163,184,0.22);border-radius:14px;padding:18px;margin:16px 0;box-shadow:0 12px 32px rgba(0,0,0,0.38);line-height:1.5;}
 #h5-demo-root *{box-sizing:border-box;}
 .h5-header{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;padding-bottom:14px;border-bottom:1px solid rgba(148,163,184,0.16);margin-bottom:12px;}
 .h5-title{font-size:16px;font-weight:700;color:#f8fafc;display:flex;align-items:center;gap:8px;}
@@ -309,9 +309,10 @@ HTML(HyperText Markup Language，超文本标记语言，现行标准为 **HTML5
 .h5-path-node{font-family:"JetBrains Mono",Consolas,monospace;padding:2px 8px;border-radius:5px;background:rgba(30,41,59,0.9);color:#cbd5e1;border:1px solid rgba(148,163,184,0.22);}
 .h5-path-node.h5-path-hi{color:#fed7aa;border-color:#fb923c;background:rgba(249,115,22,0.2);font-weight:700;}
 .h5-path-sep{color:#64748b;font-size:11px;user-select:none;}
-.h5-grid{display:grid;grid-template-columns:1.15fr 1fr 1fr;gap:14px;margin-bottom:14px;}
-@media(max-width:860px){.h5-grid{grid-template-columns:1fr;}}
-.h5-panel{background:rgba(15,23,42,0.65);border:1px solid rgba(148,163,184,0.16);border-radius:10px;padding:12px;display:flex;flex-direction:column;gap:8px;min-width:0;}
+.h5-grid{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,0.98fr) minmax(0,1.14fr);gap:12px;margin-bottom:14px;}
+@media(max-width:920px){.h5-grid{grid-template-columns:1fr;}}
+@container(max-width:780px){.h5-grid{grid-template-columns:1fr;}}
+.h5-panel{background:rgba(15,23,42,0.65);border:1px solid rgba(148,163,184,0.16);border-radius:10px;padding:11px;display:flex;flex-direction:column;gap:8px;min-width:0;overflow:hidden;}
 .h5-panel-head{display:flex;justify-content:space-between;align-items:center;font-size:12px;font-weight:700;letter-spacing:0.4px;padding-bottom:8px;border-bottom:1px solid rgba(148,163,184,0.12);}
 .h5-tag-code{color:#fb923c;}
 .h5-tag-tree{color:#38bdf8;}
@@ -333,15 +334,16 @@ HTML(HyperText Markup Language，超文本标记语言，现行标准为 **HTML5
 .h5-tnode-badge.h5-b-meta{color:#a78bfa;border-color:rgba(167,139,250,0.3);}
 .h5-tnode-badge.h5-b-leaf{color:#34d399;border-color:rgba(52,211,153,0.3);}
 .h5-tnode-desc{font-size:11px;color:#94a3b8;margin-top:3px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;}
-.h5-wire-wrap{display:flex;flex-direction:column;gap:7px;background:rgba(15,23,42,0.9);border:1px dashed rgba(148,163,184,0.25);border-radius:8px;padding:9px;}
-.h5-w-box{border:1px solid rgba(148,163,184,0.25);background:rgba(30,41,59,0.7);border-radius:6px;padding:7px 9px;cursor:pointer;transition:all 0.2s ease;position:relative;}
+.h5-wire-wrap{display:flex;flex-direction:column;gap:7px;background:rgba(15,23,42,0.9);border:1px dashed rgba(148,163,184,0.25);border-radius:8px;padding:8px;min-width:0;width:100%;}
+.h5-w-box{border:1px solid rgba(148,163,184,0.25);background:rgba(30,41,59,0.7);border-radius:6px;padding:6px 8px;cursor:pointer;transition:all 0.2s ease;position:relative;min-width:0;max-width:100%;}
 .h5-w-box:hover{border-color:#34d399;background:rgba(52,211,153,0.08);}
 .h5-w-box.h5-w-active{border:1.5px solid #fbbf24;background:rgba(251,191,36,0.12);box-shadow:0 0 14px rgba(251,191,36,0.22);}
-.h5-w-head{display:flex;justify-content:space-between;align-items:center;font-family:"JetBrains Mono",Consolas,monospace;font-size:11.5px;font-weight:700;color:#e2e8f0;gap:4px;flex-wrap:wrap;}
-.h5-w-role{font-size:10px;font-weight:400;color:#94a3b8;background:rgba(15,23,42,0.75);padding:1px 5px;border-radius:4px;}
-.h5-w-sub{font-size:11px;color:#94a3b8;margin-top:3px;}
-.h5-w-main-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:6px;margin-top:6px;}
-.h5-w-sec{margin-top:5px;padding:4px 6px;border-radius:4px;background:rgba(15,23,42,0.65);border:1px solid rgba(148,163,184,0.18);font-size:10.5px;color:#cbd5e1;font-family:"JetBrains Mono",Consolas,monospace;}
+.h5-w-head{display:flex;justify-content:space-between;align-items:center;font-family:"JetBrains Mono",Consolas,monospace;font-size:11px;font-weight:700;color:#e2e8f0;gap:3px 4px;flex-wrap:wrap;min-width:0;word-break:break-word;}
+.h5-w-role{font-size:10px;font-weight:400;color:#94a3b8;background:rgba(15,23,42,0.75);padding:1px 5px;border-radius:4px;max-width:100%;word-break:break-word;}
+.h5-w-sub{font-size:11px;color:#94a3b8;margin-top:3px;word-break:break-word;}
+.h5-w-main-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:6px;margin-top:6px;width:100%;min-width:0;}
+.h5-w-main-grid > .h5-w-box{padding:6px;}
+.h5-w-sec{margin-top:5px;padding:4px 5px;border-radius:4px;background:rgba(15,23,42,0.65);border:1px solid rgba(148,163,184,0.18);font-size:10.5px;line-height:1.35;color:#cbd5e1;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;word-break:break-word;overflow-wrap:anywhere;}
 .h5-meta-bar{background:rgba(15,23,42,0.8);border:1px solid rgba(148,163,184,0.18);border-radius:8px;padding:9px 12px;margin-bottom:12px;font-size:12px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
 .h5-meta-label{color:#94a3b8;font-weight:600;}
 .h5-meta-pill{font-family:"JetBrains Mono",Consolas,monospace;background:rgba(56,189,248,0.1);border:1px solid rgba(56,189,248,0.3);color:#bae6fd;padding:2px 8px;border-radius:5px;font-size:11.5px;}
