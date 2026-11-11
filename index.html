@@ -1772,6 +1772,28 @@
 
 <!-- 必须加上这个插件，它能让 md 文件里内嵌的 script 标签生效 -->
 <script src="./js/external-script.min.js"></script>
+<!-- 搜索索引版本联动校验：文章增删改移并重新生成侧边栏后，自动清除旧的搜索缓存 -->
+<script src="./js/search-version.js"></script>
+<script>
+    (function () {
+        var version = window.__SEARCH_VERSION__;
+        if (!version) return;
+        try {
+            var versionKey = 'site_search_version';
+            if (localStorage.getItem(versionKey) !== version) {
+                for (var i = localStorage.length - 1; i >= 0; i--) {
+                    var key = localStorage.key(i);
+                    if (key && key.indexOf('docsify.search.') === 0) {
+                        localStorage.removeItem(key);
+                    }
+                }
+                localStorage.setItem(versionKey, version);
+            }
+        } catch (e) {
+            // 忽略无痕模式或禁用 localStorage 时的存储异常
+        }
+    })();
+</script>
 <!-- Docsify 官方全文搜索插件 -->
 <script src="./js/search.min.js"></script>
 
