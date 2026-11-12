@@ -268,3 +268,248 @@ body.theme-light .tk-home {
         min-width: 120px;
     }
 }
+
+/* ====== 4. 首页 HELLO WORLD 先驱与语言拼图墙 ====== */
+.tk-hw-hero {
+    margin: 14px 0 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.tk-home .tk-hw-hero h1.tk-hero-title {
+    font-family: 'Cinzel Decorative', 'Georgia', serif !important;
+    font-size: 30px !important;
+    font-weight: 900 !important;
+    background: var(--tk-title-grad) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    text-shadow: var(--tk-title-shadow);
+    letter-spacing: 2px;
+    line-height: 1.35;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+}
+.tk-hw-stage {
+    --hw-cell: clamp(14px, 1.45vw, 19px);
+    --hw-gap: 3px;
+    position: relative;
+    margin: 26px auto 26px;
+    padding: 20px 18px;
+    max-width: 100%;
+    background: radial-gradient(ellipse at center, rgba(16, 185, 129, 0.11) 0%, rgba(24, 24, 27, 0.78) 68%);
+    border: 1px solid rgba(16, 185, 129, 0.22);
+    border-radius: 16px;
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    overflow: visible;
+}
+body.theme-light .tk-home .tk-hw-stage {
+    background: radial-gradient(ellipse at center, rgba(236, 72, 153, 0.11) 0%, rgba(255, 250, 253, 0.80) 70%);
+    border-color: rgba(244, 114, 182, 0.30);
+    box-shadow: 0 14px 36px rgba(167, 139, 250, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.88);
+}
+.tk-hw-word {
+    display: flex;
+    flex-direction: column;
+    gap: var(--hw-gap);
+}
+.tk-hw-stage > br {
+    display: none;
+}
+.tk-hw-row {
+    display: flex;
+    justify-content: center;
+    gap: var(--hw-gap);
+    line-height: 0;
+}
+.tk-hw-stage img.tk-hw-gap {
+    display: block !important;
+    width: var(--hw-cell) !important;
+    height: var(--hw-cell) !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border-radius: 4px !important;
+    box-shadow: none !important;
+    opacity: 0.42;
+    pointer-events: none;
+    transform: none !important;
+}
+.tk-hw-stage img.tk-hw-tile {
+    display: block !important;
+    width: var(--hw-cell) !important;
+    height: var(--hw-cell) !important;
+    margin: 0 !important;
+    border-radius: 4px !important;
+    box-sizing: border-box;
+    box-shadow: none !important;
+    font-size: 0;
+    color: transparent;
+    cursor: pointer;
+    transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1), filter 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.tk-hw-stage img.tk-hw-pioneer {
+    object-fit: cover;
+    object-position: center 20%;
+    padding: 0 !important;
+    background: #27272a;
+    border: 1px solid rgba(16, 185, 129, 0.36);
+    filter: grayscale(20%) contrast(1.06);
+}
+body.theme-light .tk-home .tk-hw-stage img.tk-hw-pioneer {
+    background: #ede9fe;
+    border-color: rgba(236, 72, 153, 0.36);
+}
+.tk-hw-stage img.tk-hw-lang {
+    object-fit: contain;
+    padding: 2px !important;
+    background: rgba(244, 244, 245, 0.94);
+    border: 1px solid rgba(255, 255, 255, 0.45);
+}
+body.theme-light .tk-home .tk-hw-stage img.tk-hw-lang {
+    background: rgba(255, 255, 255, 0.96);
+    border-color: rgba(167, 139, 250, 0.40);
+}
+.tk-hw-stage img.tk-hw-tile:hover {
+    transform: scale(2.3) !important;
+    z-index: 30;
+    position: relative;
+    filter: grayscale(0%) contrast(1.05);
+    border-color: #10b981;
+    box-shadow: 0 6px 22px rgba(16, 185, 129, 0.58) !important;
+}
+body.theme-light .tk-home .tk-hw-stage img.tk-hw-tile:hover {
+    border-color: #ec4899;
+    box-shadow: 0 6px 22px rgba(236, 72, 153, 0.44) !important;
+}
+.tk-hw-epigraph {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin: 4px auto 0 !important;
+    padding: 11px 26px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.08) 0%, rgba(56, 189, 248, 0.05) 100%);
+    border: 1px solid rgba(16, 185, 129, 0.28);
+    box-shadow: 0 8px 26px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+}
+.tk-hw-epigraph:hover {
+    transform: translateY(-2px);
+    border-color: rgba(16, 185, 129, 0.55);
+    box-shadow: 0 10px 30px rgba(16, 185, 129, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.14);
+}
+.tk-hw-epigraph .tk-hw-spark {
+    font-size: 11px;
+    color: #10b981;
+    opacity: 0.85;
+    flex-shrink: 0;
+}
+.tk-hw-epigraph sub {
+    font-size: inherit;
+    vertical-align: baseline;
+    line-height: 1.5;
+}
+.tk-hw-epigraph i {
+    font-family: 'Playfair Display', 'Georgia', serif;
+    font-style: italic;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1.3px;
+    background: linear-gradient(120deg, #f4f4f5 0%, #6ee7b7 52%, #38bdf8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 2px 18px rgba(16, 185, 129, 0.22);
+}
+body.theme-light .tk-home .tk-hw-epigraph {
+    background: linear-gradient(135deg, rgba(252, 231, 243, 0.72) 0%, rgba(237, 233, 254, 0.72) 100%);
+    border-color: rgba(236, 72, 153, 0.30);
+    box-shadow: 0 8px 24px rgba(167, 139, 250, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.85);
+}
+body.theme-light .tk-home .tk-hw-epigraph:hover {
+    border-color: rgba(236, 72, 153, 0.58);
+    box-shadow: 0 10px 28px rgba(236, 72, 153, 0.24), inset 0 1px 0 rgba(255, 255, 255, 0.95);
+}
+body.theme-light .tk-home .tk-hw-epigraph .tk-hw-spark {
+    color: #db2777;
+}
+body.theme-light .tk-home .tk-hw-epigraph i {
+    background: linear-gradient(120deg, #4c1d95 0%, #db2777 52%, #0284c7 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 2px 14px rgba(236, 72, 153, 0.16);
+}
+.tk-hw-tooltip {
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translate(-50%, -100%);
+    padding: 5px 10px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+    pointer-events: none;
+    opacity: 0;
+    z-index: 9999;
+    background: rgba(9, 9, 11, 0.92);
+    color: #f4f4f5;
+    border: 1px solid rgba(16, 185, 129, 0.45);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+    transition: opacity 0.14s ease;
+}
+body.theme-light .tk-home .tk-hw-tooltip {
+    background: rgba(255, 250, 253, 0.96);
+    color: #2e1065;
+    border-color: rgba(236, 72, 153, 0.45);
+    box-shadow: 0 8px 24px rgba(167, 139, 250, 0.25);
+}
+@media screen and (max-width: 1024px) {
+    .tk-hw-stage {
+        --hw-cell: 15px;
+        --hw-gap: 2.5px;
+        padding: 16px 12px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .tk-hw-hero {
+        margin: 8px 0;
+    }
+    .tk-home .tk-hw-hero h1.tk-hero-title {
+        font-size: 20px !important;
+        letter-spacing: 1px;
+    }
+    .tk-hw-stage {
+        --hw-cell: 10px;
+        --hw-gap: 1.5px;
+        margin: 18px auto;
+        padding: 12px 8px;
+        gap: 8px;
+        overflow-x: auto;
+    }
+    .tk-hw-stage img.tk-hw-gap,
+    .tk-hw-stage img.tk-hw-tile {
+        border-radius: 2.5px !important;
+    }
+    .tk-hw-stage img.tk-hw-lang {
+        padding: 1px !important;
+    }
+    .tk-hw-epigraph {
+        padding: 9px 16px;
+        gap: 8px;
+        border-radius: 16px;
+    }
+    .tk-hw-epigraph i {
+        font-size: 12px;
+        letter-spacing: 0.7px;
+    }
+}
