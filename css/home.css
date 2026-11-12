@@ -294,6 +294,7 @@ body.theme-light .tk-home {
 .tk-hw-stage {
     --hw-cell: clamp(14px, 1.45vw, 19px);
     --hw-gap: 3px;
+    box-sizing: border-box;
     position: relative;
     margin: 26px auto 26px;
     padding: 20px 18px;
@@ -475,30 +476,37 @@ body.theme-light .tk-home .tk-hw-tooltip {
 }
 @media screen and (max-width: 1024px) {
     .tk-hw-stage {
-        --hw-cell: 15px;
-        --hw-gap: 2.5px;
+        --hw-cell: clamp(11px, 1.55vw, 15px);
+        --hw-gap: 2px;
         padding: 16px 12px;
     }
 }
 @media screen and (max-width: 768px) {
     .tk-hw-hero {
         margin: 8px 0;
+        width: 100%;
     }
     .tk-home .tk-hw-hero h1.tk-hero-title {
         font-size: 20px !important;
         letter-spacing: 1px;
     }
     .tk-hw-stage {
-        --hw-cell: 10px;
-        --hw-gap: 1.5px;
+        --hw-cell: clamp(6.4px, 2vw, 13px);
+        --hw-gap: 1.2px;
+        width: 100%;
         margin: 18px auto;
-        padding: 12px 8px;
+        padding: 10px 6px;
         gap: 8px;
+        align-items: flex-start;
         overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    .tk-hw-word {
+        margin: 0 auto;
     }
     .tk-hw-stage img.tk-hw-gap,
     .tk-hw-stage img.tk-hw-tile {
-        border-radius: 2.5px !important;
+        border-radius: 2px !important;
     }
     .tk-hw-stage img.tk-hw-lang {
         padding: 1px !important;
