@@ -674,8 +674,10 @@
         }
 
         /* ====== 3. 主内容区 ====== */
-        html {
-            overflow-x: hidden;
+        /* 使用 clip 裁剪横向溢出而不产生内部滚动容器，避免 body 接管滚动导致 DPlayer/Docsify 滚动坐标错乱 */
+        html,
+        body {
+            overflow-x: clip;
         }
 
         main {
