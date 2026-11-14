@@ -1727,46 +1727,43 @@
                         observer.observe(el);
                     });
 
-                    // === 5. 图片异步加载与 Viewer.js 初始化 ===
+                    // === 5. Viewer.js 即时初始化（无需等待整页图片加载完成） ===
                     var viewerContentBox = document.querySelector('.markdown-section'); // 专属命名，彻底隔离
                     if (viewerContentBox) {
-                        var images = viewerContentBox.querySelectorAll('img:not([src^="data:image/gif"]):not([data-no-zoom])');
-                        if (images.length > 0) {
-                            var loadedCount = 0;
+                        if (viewerContentBox.viewer) {
+                            viewerContentBox.viewer.destroy();
+                        }
 
-                            function initViewer() {
-                                if (viewerContentBox.viewer) viewerContentBox.viewer.destroy();
-                                new Viewer(viewerContentBox, {
-                                    zoomable: true, movable: true, wheel: true, navbar: false, button: false,
-                                    toolbar: {
-                                        zoomIn: 1,
-                                        zoomOut: 1,
-                                        oneToOne: 1,
-                                        reset: 1,
-                                        prev: 0,
-                                        play: 0,
-                                        next: 0,
-                                        rotateLeft: 0,
-                                        rotateRight: 0,
-                                        flipHorizontal: 0,
-                                        flipVertical: 0
-                                    }
-                                });
-                            }
+                        var isZoomableImg = function (img) {
+                            if (!img) return false;
+                            var src = img.getAttribute('src') || '';
+                            if (!src || /^data:image\/gif/i.test(src)) return false;
+                            if (img.hasAttribute('data-no-zoom')) return false;
+                            if (img.style && img.style.display === 'none') return false;
+                            return true;
+                        };
 
-                            images.forEach(function (img) {
-                                if (img.complete) {
-                                    loadedCount++;
-                                    if (loadedCount === images.length) initViewer();
-                                } else {
-                                    img.addEventListener('load', function () {
-                                        loadedCount++;
-                                        if (loadedCount === images.length) initViewer();
-                                    });
-                                    img.addEventListener('error', function () {
-                                        loadedCount++;
-                                        if (loadedCount === images.length) initViewer();
-                                    });
+                        var hasZoomableImg = Array.prototype.some.call(
+                            viewerContentBox.querySelectorAll('img'),
+                            isZoomableImg
+                        );
+
+                        if (hasZoomableImg) {
+                            new Viewer(viewerContentBox, {
+                                filter: isZoomableImg,
+                                zoomable: true, movable: true, wheel: true, navbar: false, button: false,
+                                toolbar: {
+                                    zoomIn: 1,
+                                    zoomOut: 1,
+                                    oneToOne: 1,
+                                    reset: 1,
+                                    prev: 0,
+                                    play: 0,
+                                    next: 0,
+                                    rotateLeft: 0,
+                                    rotateRight: 0,
+                                    flipHorizontal: 0,
+                                    flipVertical: 0
                                 }
                             });
                         }
