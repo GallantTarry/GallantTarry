@@ -680,6 +680,16 @@
             overflow-x: clip;
         }
 
+        /* 避免 Viewer.js 给 body 加 .viewer-open (overflow: hidden) 时在 html[overflow-x: clip] 下只裁剪 body 自身，导致页面高度坍缩、scrollY 归零 */
+        html:has(> body.viewer-open) {
+            overflow: hidden !important;
+        }
+
+        body.viewer-open {
+            overflow-x: clip !important;
+            overflow-y: visible !important;
+        }
+
         main {
             padding-bottom: 80px !important;
         }
