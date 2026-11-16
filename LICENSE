@@ -1,21 +1,24 @@
-MIT License
+Copyright (c) 2026 TuKuai (GallantTarry). All rights reserved.
 
-Copyright (c) 2026 TuKuai
+This repository makes its source code, articles, notes, and original media
+publicly visible on GitHub and the hosted site solely for viewing, reading,
+learning, and technical reference.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+Except for the third-party components and media noted below, NO license or
+permission is granted to copy, modify, publish, distribute, sublicense, sell,
+mirror, or re-host any part of this site, source code, original articles,
+visualizations, photography, or original assets—for commercial or non-commercial
+purposes—without prior written permission from the copyright holder.
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+Note: Viewing and forking within GitHub remain governed by the GitHub Terms of
+Service, which does not grant any redistribution or deployment rights outside
+those platform terms.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+Third-Party Components & Assets:
+- Third-party front-end libraries and stylesheets under js/ and css/ (such as
+  Docsify and its plugins, Mermaid per js/mermaid.LICENSE, APlayer, DPlayer,
+  Chart.js, D3.js, MathJax, Prism, Viewer.js, and Spectral.js) remain subject
+  to their respective open-source licenses.
+- External linked icons/images, public-domain artworks, and any third-party
+  audio, video, or reference media files remain the property of their
+  respective copyright holders or public-domain sources.
