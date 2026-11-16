@@ -1608,11 +1608,26 @@
             hideOtherSidebarContent: false, // 搜索时是否隐藏侧边栏的其他菜单栏
         },
         // 👆 新增结束 👆
+        // 👇 新增：开启单反斜杠 \(...\) 与 \[...\] 公式支持 👇
+        latex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            displayMath: [['$$', '$$'], ['\\[', '\\]']]
+        },
+        // 👆 新增结束 👆
         plugins: [
             function (hook, vm) {
 
                 // === 1. 全局自动修复加粗、代码块嵌套及中文标点冲突的 Bug ===
                 hook.beforeEach(function (content) {
+                    // 自动兼容从 AI 复制的双反斜杠公式 \\[ ... \\] 与 \\( ... \\)（跳过代码块与行内代码）
+                    content = content.replace(/(```[\s\S]*?```|~~~[\s\S]*?~~~|`[^`\n]+`|<pre[\s\S]*?<\/pre>|<code>[\s\S]*?<\/code>)|\\\\\[([\s\S]*?)\\\\\]|\\\\\(([^\n]*?)\\\\\)/g,
+                        function (match, code, blockMath, inlineMath) {
+                            if (code) return code;
+                            if (blockMath !== undefined) return '\\[' + blockMath + '\\]';
+                            if (inlineMath !== undefined) return '\\(' + inlineMath + '\\)';
+                            return match;
+                        }
+                    );
 
                     content = content.replace(/@\[audio\]\((.*?),\s*(.*?),\s*(.*?),\s*(.*?)\)/g,
                         '<tukuai-audio url="$1" name="$2" artist="$3" cover="$4"></tukuai-audio>');
@@ -1882,12 +1897,12 @@
 <!-- 2. Docsify 核心框架：整个文档站点的灵魂引擎，负责动态加载 Markdown、路由跳转 -->
 <script src="./js/docsify@4.js"></script>
 
-<!-- 1. 配置 MathJax：开启单美元符号 $ 和双美元符号 $$ 的强力识别 -->
+<!-- 1. 配置 MathJax：开启 $ / $$ 与 \( \) / \[ \] 的强力识别 -->
 <script>
     window.MathJax = {
         tex: {
-            inlineMath: [['$', '$']],
-            displayMath: [['$$', '$$']]
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            displayMath: [['$$', '$$'], ['\\[', '\\]']]
         }
     };
 </script>
