@@ -537,3 +537,49 @@ body.theme-light .tk-home .tk-hw-tooltip {
         letter-spacing: 0.7px;
     }
 }
+
+/* ====== 5. 首页底部投稿引导卡片 ====== */
+.tk-home .tk-submit-box {
+    max-width: 720px;
+    margin: 22px auto 8px;
+    padding: 16px 22px;
+    text-align: center;
+    background: var(--tk-quest-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--tk-quest-border);
+    border-radius: 14px;
+    box-shadow: var(--tk-quest-shadow);
+    transition: border-color 0.25s ease, transform 0.25s ease;
+}
+.tk-home .tk-submit-box:hover {
+    border-color: var(--tk-quest-hover-border);
+    transform: translateY(-2px);
+}
+.tk-home .tk-submit-box p.tk-submit-text {
+    margin: 0 0 8px !important;
+    font-size: 14px;
+    line-height: 1.75;
+    color: var(--tk-text-muted) !important;
+    overflow-wrap: anywhere;
+}
+.tk-home .tk-submit-box b {
+    color: var(--tk-text-bold);
+}
+.tk-home .tk-submit-box p.tk-submit-link {
+    margin: 0 !important;
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: var(--tk-text-muted) !important;
+    overflow-wrap: anywhere;
+}
+@media screen and (max-width: 768px) {
+    .tk-home .tk-submit-box {
+        margin: 16px auto 6px;
+        padding: 14px 16px;
+    }
+    .tk-home .tk-submit-box p.tk-submit-text,
+    .tk-home .tk-submit-box p.tk-submit-link {
+        font-size: 13px;
+    }
+}
