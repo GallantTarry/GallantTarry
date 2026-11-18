@@ -1,4 +1,4 @@
-# JetBrains环境就绪指南
+# JetBrains激活脚本与风险分析
 
 
 
