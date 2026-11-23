@@ -5,13 +5,13 @@
     <link>https://xn--9myv52d.xn--udsye.art/</link>
     <description>编程、技术、笔记、艺术、生活、随笔</description>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 23 Nov 2026 01:44:48 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 23 Nov 2026 01:46:16 GMT</lastBuildDate>
     <atom:link href="https://xn--9myv52d.xn--udsye.art/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>💯Git 和 GitHub 核心概念大串讲</title>
       <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/Geek%E7%A9%BA%E9%97%B4/%F0%9F%92%AFgit%E5%92%8Cgithub%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5%E5%A4%A7%E4%B8%B2%E8%AE%B2.md</link>
       <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/Geek%E7%A9%BA%E9%97%B4/%F0%9F%92%AFgit%E5%92%8Cgithub%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5%E5%A4%A7%E4%B8%B2%E8%AE%B2.md</guid>
-      <pubDate>Mon, 23 Nov 2026 01:44:48 GMT</pubDate>
+      <pubDate>Mon, 23 Nov 2026 01:46:16 GMT</pubDate>
       <category>Geek空间</category>
       <description>Git 是运行在本地的分布式版本控制系统（底层本质是一个基于内容寻址的快照文件系统），而 GitHub 是基于 Git 构建的云端代码托管与协作平台——简单来说，Git 负责在本地记录“代码怎么变”，GitHub 负责在云端解决“多人怎么一起改”。</description>
     </item>
