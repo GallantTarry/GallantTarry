@@ -5,8 +5,40 @@
     <link>https://xn--9myv52d.xn--udsye.art/</link>
     <description>编程、技术、笔记、艺术、生活、随笔</description>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 23 Nov 2026 01:46:16 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 23 Nov 2026 06:11:38 GMT</lastBuildDate>
     <atom:link href="https://xn--9myv52d.xn--udsye.art/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>什么是美学（Aesthetics）？</title>
+      <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/Geek%E7%A9%BA%E9%97%B4/%E4%BB%80%E4%B9%88%E6%98%AF%E7%BE%8E%E5%AD%A6%EF%BC%88Aesthetics%EF%BC%89%EF%BC%9F.md</link>
+      <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/Geek%E7%A9%BA%E9%97%B4/%E4%BB%80%E4%B9%88%E6%98%AF%E7%BE%8E%E5%AD%A6%EF%BC%88Aesthetics%EF%BC%89%EF%BC%9F.md</guid>
+      <pubDate>Mon, 23 Nov 2026 06:11:38 GMT</pubDate>
+      <category>Geek空间</category>
+      <description>很多人听到“美学”，第一反应是“教人怎么配色、怎么构图、怎么把东西变漂亮”。但实际上，美的形态远比“精致好看”宽广得多。我们先看三种截然不同的审美体验：</description>
+    </item>
+    <item>
+      <title>命题逻辑与谓词逻辑核心解析</title>
+      <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/Geek%E7%A9%BA%E9%97%B4/%E5%91%BD%E9%A2%98%E9%80%BB%E8%BE%91%E4%B8%8E%E8%B0%93%E8%AF%8D%E9%80%BB%E8%BE%91%E6%A0%B8%E5%BF%83%E8%A7%A3%E6%9E%90.md</link>
+      <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/Geek%E7%A9%BA%E9%97%B4/%E5%91%BD%E9%A2%98%E9%80%BB%E8%BE%91%E4%B8%8E%E8%B0%93%E8%AF%8D%E9%80%BB%E8%BE%91%E6%A0%B8%E5%BF%83%E8%A7%A3%E6%9E%90.md</guid>
+      <pubDate>Mon, 23 Nov 2026 06:11:38 GMT</pubDate>
+      <category>Geek空间</category>
+      <description>命题逻辑(Propositional Logic)与谓词逻辑(Predicate Logic)是离散数学中逻辑学的基础。它们都是为了把人类自然语言中的描述，转化为计算机或数学能够进行严谨推导的符号。</description>
+    </item>
+    <item>
+      <title>计算机离散数学核心知识体系</title>
+      <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/Geek%E7%A9%BA%E9%97%B4/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6%E6%A0%B8%E5%BF%83%E7%9F%A5%E8%AF%86%E4%BD%93%E7%B3%BB.md</link>
+      <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/Geek%E7%A9%BA%E9%97%B4/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6%E6%A0%B8%E5%BF%83%E7%9F%A5%E8%AF%86%E4%BD%93%E7%B3%BB.md</guid>
+      <pubDate>Mon, 23 Nov 2026 06:11:38 GMT</pubDate>
+      <category>Geek空间</category>
+      <description>作为程序员或软件开发者学习离散数学，切忌像传统数学系那样陷入枯燥的定理证明。你的目标是建立计算机思维，并为数据结构与算法(DSA)服务。</description>
+    </item>
+    <item>
+      <title>黄金比例</title>
+      <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/Geek%E7%A9%BA%E9%97%B4/%E9%BB%84%E9%87%91%E6%AF%94%E4%BE%8B.md</link>
+      <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/Geek%E7%A9%BA%E9%97%B4/%E9%BB%84%E9%87%91%E6%AF%94%E4%BE%8B.md</guid>
+      <pubDate>Mon, 23 Nov 2026 06:11:38 GMT</pubDate>
+      <category>Geek空间</category>
+      <description>黄金比例在数学、建筑、艺术与现代视觉设计中有着悠久的应用传统，常被用来为版面、图形与构图建立清晰的秩序感。</description>
+    </item>
     <item>
       <title>💯Git 和 GitHub 核心概念大串讲</title>
       <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/Geek%E7%A9%BA%E9%97%B4/%F0%9F%92%AFgit%E5%92%8Cgithub%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5%E5%A4%A7%E4%B8%B2%E8%AE%B2.md</link>
@@ -80,14 +112,6 @@
       <description>如果把整个互联网比作一套庞大的邮政投递系统：单个 IP（192.168.1.5）就像是“和平路 5 号”的具体门牌，网段（192.168.1.0/24）就像是“和平路整条街”，而子网掩码与 CIDR 前缀长度，就是邮局分拣中心用来判断“这封信到底属于本街道直投，还是该转运到外省分…</description>
     </item>
     <item>
-      <title>waiting</title>
-      <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%8C%8F/waiting.md</link>
-      <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%8C%8F/waiting.md</guid>
-      <pubDate>Thu, 19 Nov 2026 10:27:47 GMT</pubDate>
-      <category>🌏</category>
-      <description>feed need</description>
-    </item>
-    <item>
       <title>Java 桌面应用如何安全调用外部 EXE：避开杀软误报的合规分发指南</title>
       <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/Geek%E7%A9%BA%E9%97%B4/Java%20%E6%A1%8C%E9%9D%A2%E5%BA%94%E7%94%A8%E5%A6%82%E4%BD%95%E5%AE%89%E5%85%A8%E8%B0%83%E7%94%A8%E5%A4%96%E9%83%A8%20EXE%EF%BC%9A%E9%81%BF%E5%BC%80%E6%9D%80%E8%BD%AF%E8%AF%AF%E6%8A%A5%E7%9A%84%E5%90%88%E8%A7%84%E5%88%86%E5%8F%91%E6%8C%87%E5%8D%97.md</link>
       <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/Geek%E7%A9%BA%E9%97%B4/Java%20%E6%A1%8C%E9%9D%A2%E5%BA%94%E7%94%A8%E5%A6%82%E4%BD%95%E5%AE%89%E5%85%A8%E8%B0%83%E7%94%A8%E5%A4%96%E9%83%A8%20EXE%EF%BC%9A%E9%81%BF%E5%BC%80%E6%9D%80%E8%BD%AF%E8%AF%AF%E6%8A%A5%E7%9A%84%E5%90%88%E8%A7%84%E5%88%86%E5%8F%91%E6%8C%87%E5%8D%97.md</guid>
@@ -134,6 +158,14 @@
       <pubDate>Thu, 19 Nov 2026 02:46:59 GMT</pubDate>
       <category>Geek空间</category>
       <description>先看软件要在哪里运行，再选和那个系统架构相符的版本。 比如，拯救者 R9000P 用的是 AMD 锐龙 9 7945HX。在它的 64 位 Windows 桌面上装软件，选 win-x64。如果要把同一个工具装进这台电脑的 Ubuntu 子系统，就要看 Linux 版了。</description>
+    </item>
+    <item>
+      <title>科学命题与可证伪性思考</title>
+      <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/Geek%E7%A9%BA%E9%97%B4/%E7%A7%91%E5%AD%A6%E5%91%BD%E9%A2%98%E4%B8%8E%E5%8F%AF%E8%AF%81%E4%BC%AA%E6%80%A7%E6%80%9D%E8%80%83.md</link>
+      <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/Geek%E7%A9%BA%E9%97%B4/%E7%A7%91%E5%AD%A6%E5%91%BD%E9%A2%98%E4%B8%8E%E5%8F%AF%E8%AF%81%E4%BC%AA%E6%80%A7%E6%80%9D%E8%80%83.md</guid>
+      <pubDate>Wed, 18 Nov 2026 15:23:46 GMT</pubDate>
+      <category>Geek空间</category>
+      <description>任何一个严肃的科学命题/解释，都必须同时满足两个方向的延展能力：</description>
     </item>
     <item>
       <title>JetBrains激活脚本与风险分析</title>
@@ -214,38 +246,6 @@
       <pubDate>Wed, 18 Nov 2026 12:04:42 GMT</pubDate>
       <category>生活空间</category>
       <description>要做到第二天上班妆面完美且自然，最核心的秘诀在于把“遮之”的使用时间提前到前一天晚上。遮盖液类产品需要时间在角质层显色固着，如果早上和底妆一起用，不仅容易花妆，颜色也上不去。</description>
-    </item>
-    <item>
-      <title>皮质醇减压与胰岛素抵抗</title>
-      <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%E7%94%9F%E6%B4%BB%E7%A9%BA%E9%97%B4/%E7%9A%AE%E8%B4%A8%E9%86%87%E5%87%8F%E5%8E%8B%E4%B8%8E%E8%83%B0%E5%B2%9B%E7%B4%A0%E6%8A%B5%E6%8A%97.md</link>
-      <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%E7%94%9F%E6%B4%BB%E7%A9%BA%E9%97%B4/%E7%9A%AE%E8%B4%A8%E9%86%87%E5%87%8F%E5%8E%8B%E4%B8%8E%E8%83%B0%E5%B2%9B%E7%B4%A0%E6%8A%B5%E6%8A%97.md</guid>
-      <pubDate>Wed, 18 Nov 2026 12:04:42 GMT</pubDate>
-      <category>生活空间</category>
-      <description>皮质醇(Cortisol)是肾上腺分泌的一种类固醇激素，通常被称为“压力荷尔蒙”。</description>
-    </item>
-    <item>
-      <title>睡眠周期计算与作息指南</title>
-      <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%E7%94%9F%E6%B4%BB%E7%A9%BA%E9%97%B4/%E7%9D%A1%E7%9C%A0%E5%91%A8%E6%9C%9F%E8%AE%A1%E7%AE%97%E4%B8%8E%E4%BD%9C%E6%81%AF%E6%8C%87%E5%8D%97.md</link>
-      <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%E7%94%9F%E6%B4%BB%E7%A9%BA%E9%97%B4/%E7%9D%A1%E7%9C%A0%E5%91%A8%E6%9C%9F%E8%AE%A1%E7%AE%97%E4%B8%8E%E4%BD%9C%E6%81%AF%E6%8C%87%E5%8D%97.md</guid>
-      <pubDate>Wed, 18 Nov 2026 12:04:42 GMT</pubDate>
-      <category>生活空间</category>
-      <description>一个完美的睡眠周期并不是固定在某一个具体的钟表时间(比如绝对的晚上10点到早晨6点)，而是取决于 你自身的生物钟(昼夜节律) 以及睡眠结构的完整性。</description>
-    </item>
-    <item>
-      <title>青年希特勒早期画作与经历</title>
-      <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%E7%94%BB%E4%BD%9C%E7%A9%BA%E9%97%B4/%E9%9D%92%E5%B9%B4%E5%B8%8C%E7%89%B9%E5%8B%92%E6%97%A9%E6%9C%9F%E7%94%BB%E4%BD%9C%E4%B8%8E%E7%BB%8F%E5%8E%86.md</link>
-      <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%E7%94%BB%E4%BD%9C%E7%A9%BA%E9%97%B4/%E9%9D%92%E5%B9%B4%E5%B8%8C%E7%89%B9%E5%8B%92%E6%97%A9%E6%9C%9F%E7%94%BB%E4%BD%9C%E4%B8%8E%E7%BB%8F%E5%8E%86.md</guid>
-      <pubDate>Wed, 18 Nov 2026 12:04:42 GMT</pubDate>
-      <category>画作空间</category>
-      <description>与其他艺术家不同的是，这位是一个大恶魔，但是他确实又是一位杰出的政治家，艺术家，演说家，军事家，设计师。我想一个人都有正反两面，虽然他给世界带来了灾厄与伤害，但是我们仍可以从他的正面获取一些超越常人的不同的收获。</description>
-    </item>
-    <item>
-      <title>科学命题与可证伪性思考</title>
-      <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%E7%A7%91%E5%AD%A6%E7%A9%BA%E9%97%B4/%E7%A7%91%E5%AD%A6%E5%91%BD%E9%A2%98%E4%B8%8E%E5%8F%AF%E8%AF%81%E4%BC%AA%E6%80%A7%E6%80%9D%E8%80%83.md</link>
-      <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%E7%A7%91%E5%AD%A6%E7%A9%BA%E9%97%B4/%E7%A7%91%E5%AD%A6%E5%91%BD%E9%A2%98%E4%B8%8E%E5%8F%AF%E8%AF%81%E4%BC%AA%E6%80%A7%E6%80%9D%E8%80%83.md</guid>
-      <pubDate>Wed, 18 Nov 2026 12:04:42 GMT</pubDate>
-      <category>科学空间</category>
-      <description>任何一个严肃的科学命题/解释，都必须同时满足两个方向的延展能力：</description>
     </item>
   </channel>
 </rss>
