@@ -5,8 +5,72 @@
     <link>https://xn--9myv52d.xn--udsye.art/</link>
     <description>编程、技术、笔记、艺术、生活、随笔</description>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 23 Nov 2026 06:11:38 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 24 Nov 2026 08:45:45 GMT</lastBuildDate>
     <atom:link href="https://xn--9myv52d.xn--udsye.art/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>热力学第二定律：熵增生命对抗</title>
+      <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/%E7%83%AD%E5%8A%9B%E5%AD%A6%E7%AC%AC%E4%BA%8C%E5%AE%9A%E5%BE%8B%EF%BC%9A%E7%86%B5%E5%A2%9E%E7%94%9F%E5%91%BD%E5%AF%B9%E6%8A%97.md</link>
+      <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/%E7%83%AD%E5%8A%9B%E5%AD%A6%E7%AC%AC%E4%BA%8C%E5%AE%9A%E5%BE%8B%EF%BC%9A%E7%86%B5%E5%A2%9E%E7%94%9F%E5%91%BD%E5%AF%B9%E6%8A%97.md</guid>
+      <pubDate>Tue, 24 Nov 2026 08:45:45 GMT</pubDate>
+      <category>🗑️</category>
+      <description>在物理学史上，热力学第二定律（Second Law of Thermodynamics）拥有近乎崇高的最高法则地位。它以不可逆的时间之矢，勾勒出宇宙最深层的演化轨迹。</description>
+    </item>
+    <item>
+      <title>Linux内核与GNU全景</title>
+      <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/Geek%E7%A9%BA%E9%97%B4/Linux%E5%86%85%E6%A0%B8%E4%B8%8EGNU%E5%85%A8%E6%99%AF.md</link>
+      <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/Geek%E7%A9%BA%E9%97%B4/Linux%E5%86%85%E6%A0%B8%E4%B8%8EGNU%E5%85%A8%E6%99%AF.md</guid>
+      <pubDate>Tue, 24 Nov 2026 08:03:02 GMT</pubDate>
+      <category>Geek空间</category>
+      <description>如果把构建与使用操作系统比作造车与开工厂，这几大核心角色的分工一目了然：</description>
+    </item>
+    <item>
+      <title>Java集合框架体系核心结构图</title>
+      <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/Geek%E7%A9%BA%E9%97%B4/Java%E9%9B%86%E5%90%88%E6%A1%86%E6%9E%B6%E4%BD%93%E7%B3%BB%E6%A0%B8%E5%BF%83%E7%BB%93%E6%9E%84%E5%9B%BE.md</link>
+      <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/Geek%E7%A9%BA%E9%97%B4/Java%E9%9B%86%E5%90%88%E6%A1%86%E6%9E%B6%E4%BD%93%E7%B3%BB%E6%A0%B8%E5%BF%83%E7%BB%93%E6%9E%84%E5%9B%BE.md</guid>
+      <pubDate>Mon, 23 Nov 2026 06:44:00 GMT</pubDate>
+      <category>Geek空间</category>
+      <description>首先要明确一个核心概念：图顶层的 Collection、List、Set 和 Map 都是接口（Interface）。接口只负责定义契约与规范（例如是否允许重复、是否有序、是否支持键值映射），接口本身是不包含物理数据结构的。</description>
+    </item>
+    <item>
+      <title>复杂系统演化本质：涌现机制</title>
+      <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/Geek%E7%A9%BA%E9%97%B4/%E5%A4%8D%E6%9D%82%E7%B3%BB%E7%BB%9F%E6%BC%94%E5%8C%96%E6%9C%AC%E8%B4%A8%EF%BC%9A%E6%B6%8C%E7%8E%B0%E6%9C%BA%E5%88%B6.md</link>
+      <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/Geek%E7%A9%BA%E9%97%B4/%E5%A4%8D%E6%9D%82%E7%B3%BB%E7%BB%9F%E6%BC%94%E5%8C%96%E6%9C%AC%E8%B4%A8%EF%BC%9A%E6%B6%8C%E7%8E%B0%E6%9C%BA%E5%88%B6.md</guid>
+      <pubDate>Mon, 23 Nov 2026 06:44:00 GMT</pubDate>
+      <category>Geek空间</category>
+      <description>简单来说，“涌现”(Emergence)是指在一个复杂系统中，大量简单的个体通过相互作用，突然产生了单独个体完全不具备的、全新的高级属性或行为。</description>
+    </item>
+    <item>
+      <title>数据结构与算法工程学习路线</title>
+      <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/Geek%E7%A9%BA%E9%97%B4/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%B7%A5%E7%A8%8B%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF.md</link>
+      <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/Geek%E7%A9%BA%E9%97%B4/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%B7%A5%E7%A8%8B%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF.md</guid>
+      <pubDate>Mon, 23 Nov 2026 06:44:00 GMT</pubDate>
+      <category>Geek空间</category>
+      <description>学习数据结构与算法(DSA)最核心的原则是：先物理后逻辑，先线性后非线性，数据结构与算法穿插交替。数据结构是盛放数据的容器，算法是处理数据的工具，两者无法割裂。</description>
+    </item>
+    <item>
+      <title>科学命题与可证伪性思考</title>
+      <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/Geek%E7%A9%BA%E9%97%B4/%E7%A7%91%E5%AD%A6%E5%91%BD%E9%A2%98%E4%B8%8E%E5%8F%AF%E8%AF%81%E4%BC%AA%E6%80%A7%E6%80%9D%E8%80%83.md</link>
+      <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/Geek%E7%A9%BA%E9%97%B4/%E7%A7%91%E5%AD%A6%E5%91%BD%E9%A2%98%E4%B8%8E%E5%8F%AF%E8%AF%81%E4%BC%AA%E6%80%A7%E6%80%9D%E8%80%83.md</guid>
+      <pubDate>Mon, 23 Nov 2026 06:44:00 GMT</pubDate>
+      <category>Geek空间</category>
+      <description>任何一个严肃的科学命题/解释，都必须同时满足两个方向的延展能力：</description>
+    </item>
+    <item>
+      <title>艾宾浩斯记忆曲线与间隔重复论</title>
+      <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/Geek%E7%A9%BA%E9%97%B4/%E8%89%BE%E5%AE%BE%E6%B5%A9%E6%96%AF%E8%AE%B0%E5%BF%86%E6%9B%B2%E7%BA%BF%E4%B8%8E%E9%97%B4%E9%9A%94%E9%87%8D%E5%A4%8D%E8%AE%BA.md</link>
+      <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/Geek%E7%A9%BA%E9%97%B4/%E8%89%BE%E5%AE%BE%E6%B5%A9%E6%96%AF%E8%AE%B0%E5%BF%86%E6%9B%B2%E7%BA%BF%E4%B8%8E%E9%97%B4%E9%9A%94%E9%87%8D%E5%A4%8D%E8%AE%BA.md</guid>
+      <pubDate>Mon, 23 Nov 2026 06:44:00 GMT</pubDate>
+      <category>Geek空间</category>
+      <description>1885年，德国心理学家赫尔曼·艾宾浩斯(Hermann Ebbinghaus)发表了实验心理学著作《关于记忆》。他通过使用自己创造的“无意义音节”(Nonsense Syllables，如 ZOF、GEX 等避免先验认知干扰的词汇)进行自我记忆测试，首次通过定量分析的方法绘制出…</description>
+    </item>
+    <item>
+      <title>计算机程序本质与数据结构算法</title>
+      <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/Geek%E7%A9%BA%E9%97%B4/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A8%8B%E5%BA%8F%E6%9C%AC%E8%B4%A8%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%AE%97%E6%B3%95.md</link>
+      <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/Geek%E7%A9%BA%E9%97%B4/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A8%8B%E5%BA%8F%E6%9C%AC%E8%B4%A8%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%AE%97%E6%B3%95.md</guid>
+      <pubDate>Mon, 23 Nov 2026 06:44:00 GMT</pubDate>
+      <category>Geek空间</category>
+      <description>如果用一个通俗的比喻来说：数据结构是“盛放数据的容器”，而算法是“处理这些数据的方法和步骤”。图灵奖得主尼克劳斯·维尔特(Niklaus Wirth)曾提出过一个著名的公式：程序 = 数据结构 + 算法。没有合适的数据结构，算法就会因为操作繁琐而效率低下；没有算法，数据结构里的数…</description>
+    </item>
     <item>
       <title>什么是美学（Aesthetics）？</title>
       <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/Geek%E7%A9%BA%E9%97%B4/%E4%BB%80%E4%B9%88%E6%98%AF%E7%BE%8E%E5%AD%A6%EF%BC%88Aesthetics%EF%BC%89%EF%BC%9F.md</link>
@@ -88,14 +152,6 @@
       <description>如果把访问网站比作给远方朋友寄信：IP 地址是精确到经纬度的门牌坐标，DNS 就是遍布全球的查号台网络；而 DNS 污染，就像是你在电话里大声问查号台“某某家住哪”，还没等远方的总台开口，旁边偷听的陌生人就抢先用变声器吼出一个假地址，而你因为只认“第一声回答”，直接挂断电话把信寄…</description>
     </item>
     <item>
-      <title>GitHub 网页端开源协作与轻量开发工作流</title>
-      <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/Geek%E7%A9%BA%E9%97%B4/GitHub%20%E7%BD%91%E9%A1%B5%E7%AB%AF%E5%BC%80%E6%BA%90%E5%8D%8F%E4%BD%9C%E4%B8%8E%E8%BD%BB%E9%87%8F%E5%BC%80%E5%8F%91%E5%B7%A5%E4%BD%9C%E6%B5%81.md</link>
-      <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/Geek%E7%A9%BA%E9%97%B4/GitHub%20%E7%BD%91%E9%A1%B5%E7%AB%AF%E5%BC%80%E6%BA%90%E5%8D%8F%E4%BD%9C%E4%B8%8E%E8%BD%BB%E9%87%8F%E5%BC%80%E5%8F%91%E5%B7%A5%E4%BD%9C%E6%B5%81.md</guid>
-      <pubDate>Fri, 20 Nov 2026 01:56:55 GMT</pubDate>
-      <category>Geek空间</category>
-      <description>如果把一个开源项目比作出版社正在连载的权威典籍：原作者的主仓库（Upstream）是出版社母版，Fork 是你领走的个人复印本，新建分支（Branch）是在复印本上夹入的独立修改便签，而 Pull Request（PR），则是你向总编辑递交的一份正式修稿申请：“我写好了这一章，请…</description>
-    </item>
-    <item>
       <title>Java 桌面应用轻量封装与分发实战</title>
       <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/Geek%E7%A9%BA%E9%97%B4/Java%20%E6%A1%8C%E9%9D%A2%E5%BA%94%E7%94%A8%E8%BD%BB%E9%87%8F%E5%B0%81%E8%A3%85%E4%B8%8E%E5%88%86%E5%8F%91%E5%AE%9E%E6%88%98.md</link>
       <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/Geek%E7%A9%BA%E9%97%B4/Java%20%E6%A1%8C%E9%9D%A2%E5%BA%94%E7%94%A8%E8%BD%BB%E9%87%8F%E5%B0%81%E8%A3%85%E4%B8%8E%E5%88%86%E5%8F%91%E5%AE%9E%E6%88%98.md</guid>
@@ -110,6 +166,14 @@
       <pubDate>Fri, 20 Nov 2026 01:56:55 GMT</pubDate>
       <category>网络空间</category>
       <description>如果把整个互联网比作一套庞大的邮政投递系统：单个 IP（192.168.1.5）就像是“和平路 5 号”的具体门牌，网段（192.168.1.0/24）就像是“和平路整条街”，而子网掩码与 CIDR 前缀长度，就是邮局分拣中心用来判断“这封信到底属于本街道直投，还是该转运到外省分…</description>
+    </item>
+    <item>
+      <title>GitHub 网页端开源协作与轻量开发工作流</title>
+      <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/GitHub%20%E7%BD%91%E9%A1%B5%E7%AB%AF%E5%BC%80%E6%BA%90%E5%8D%8F%E4%BD%9C%E4%B8%8E%E8%BD%BB%E9%87%8F%E5%BC%80%E5%8F%91%E5%B7%A5%E4%BD%9C%E6%B5%81.md</link>
+      <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/GitHub%20%E7%BD%91%E9%A1%B5%E7%AB%AF%E5%BC%80%E6%BA%90%E5%8D%8F%E4%BD%9C%E4%B8%8E%E8%BD%BB%E9%87%8F%E5%BC%80%E5%8F%91%E5%B7%A5%E4%BD%9C%E6%B5%81.md</guid>
+      <pubDate>Fri, 20 Nov 2026 01:47:19 GMT</pubDate>
+      <category>🗑️</category>
+      <description>如果把一个开源项目比作出版社正在连载的权威典籍：原作者的主仓库（Upstream）是出版社母版，Fork 是你领走的个人复印本，新建分支（Branch）是在复印本上夹入的独立修改便签，而 Pull Request（PR），则是你向总编辑递交的一份正式修稿申请：“我写好了这一章，请…</description>
     </item>
     <item>
       <title>Java 桌面应用如何安全调用外部 EXE：避开杀软误报的合规分发指南</title>
@@ -160,14 +224,6 @@
       <description>先看软件要在哪里运行，再选和那个系统架构相符的版本。 比如，拯救者 R9000P 用的是 AMD 锐龙 9 7945HX。在它的 64 位 Windows 桌面上装软件，选 win-x64。如果要把同一个工具装进这台电脑的 Ubuntu 子系统，就要看 Linux 版了。</description>
     </item>
     <item>
-      <title>科学命题与可证伪性思考</title>
-      <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/Geek%E7%A9%BA%E9%97%B4/%E7%A7%91%E5%AD%A6%E5%91%BD%E9%A2%98%E4%B8%8E%E5%8F%AF%E8%AF%81%E4%BC%AA%E6%80%A7%E6%80%9D%E8%80%83.md</link>
-      <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/Geek%E7%A9%BA%E9%97%B4/%E7%A7%91%E5%AD%A6%E5%91%BD%E9%A2%98%E4%B8%8E%E5%8F%AF%E8%AF%81%E4%BC%AA%E6%80%A7%E6%80%9D%E8%80%83.md</guid>
-      <pubDate>Wed, 18 Nov 2026 15:23:46 GMT</pubDate>
-      <category>Geek空间</category>
-      <description>任何一个严肃的科学命题/解释，都必须同时满足两个方向的延展能力：</description>
-    </item>
-    <item>
       <title>JetBrains激活脚本与风险分析</title>
       <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/Geek%E7%A9%BA%E9%97%B4/JetBrains%E6%BF%80%E6%B4%BB%E8%84%9A%E6%9C%AC%E4%B8%8E%E9%A3%8E%E9%99%A9%E5%88%86%E6%9E%90.md</link>
       <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/Geek%E7%A9%BA%E9%97%B4/JetBrains%E6%BF%80%E6%B4%BB%E8%84%9A%E6%9C%AC%E4%B8%8E%E9%A3%8E%E9%99%A9%E5%88%86%E6%9E%90.md</guid>
@@ -190,62 +246,6 @@
       <pubDate>Wed, 18 Nov 2026 12:04:42 GMT</pubDate>
       <category>乐理空间</category>
       <description></description>
-    </item>
-    <item>
-      <title>ICO图标格式与Java处理方案</title>
-      <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%E5%89%8D%E7%AB%AF%E7%A9%BA%E9%97%B4/ICO%E5%9B%BE%E6%A0%87%E6%A0%BC%E5%BC%8F%E4%B8%8EJava%E5%A4%84%E7%90%86%E6%96%B9%E6%A1%88.md</link>
-      <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%E5%89%8D%E7%AB%AF%E7%A9%BA%E9%97%B4/ICO%E5%9B%BE%E6%A0%87%E6%A0%BC%E5%BC%8F%E4%B8%8EJava%E5%A4%84%E7%90%86%E6%96%B9%E6%A1%88.md</guid>
-      <pubDate>Wed, 18 Nov 2026 12:04:42 GMT</pubDate>
-      <category>前端空间</category>
-      <description>ICO 是微软 Windows 操作系统专属的“标准计算机图标文件格式”(Icon file format)。</description>
-    </item>
-    <item>
-      <title>YouTube时间戳嵌入示例</title>
-      <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%E5%89%8D%E7%AB%AF%E7%A9%BA%E9%97%B4/YouTube%E6%97%B6%E9%97%B4%E6%88%B3%E5%B5%8C%E5%85%A5%E7%A4%BA%E4%BE%8B.md</link>
-      <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%E5%89%8D%E7%AB%AF%E7%A9%BA%E9%97%B4/YouTube%E6%97%B6%E9%97%B4%E6%88%B3%E5%B5%8C%E5%85%A5%E7%A4%BA%E4%BE%8B.md</guid>
-      <pubDate>Wed, 18 Nov 2026 12:04:42 GMT</pubDate>
-      <category>前端空间</category>
-      <description>将 YouTube 视频链接（包含 4303 秒的时间戳）适配到播放器模块中，需要进行两步处理：</description>
-    </item>
-    <item>
-      <title>Postman接口调试入门原理</title>
-      <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%E5%90%8E%E7%AB%AF%E7%A9%BA%E9%97%B4/Postman%E6%8E%A5%E5%8F%A3%E8%B0%83%E8%AF%95%E5%85%A5%E9%97%A8%E5%8E%9F%E7%90%86.md</link>
-      <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%E5%90%8E%E7%AB%AF%E7%A9%BA%E9%97%B4/Postman%E6%8E%A5%E5%8F%A3%E8%B0%83%E8%AF%95%E5%85%A5%E9%97%A8%E5%8E%9F%E7%90%86.md</guid>
-      <pubDate>Wed, 18 Nov 2026 12:04:42 GMT</pubDate>
-      <category>后端空间</category>
-      <description>我们先回想一下 HTTP 协议的核心逻辑：你要干什么，就用什么方法。</description>
-    </item>
-    <item>
-      <title>世界人权宣言双语节选</title>
-      <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%E6%96%87%E5%AD%97%E7%A9%BA%E9%97%B4/%E4%B8%96%E7%95%8C%E4%BA%BA%E6%9D%83%E5%AE%A3%E8%A8%80%E5%8F%8C%E8%AF%AD%E8%8A%82%E9%80%89.md</link>
-      <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%E6%96%87%E5%AD%97%E7%A9%BA%E9%97%B4/%E4%B8%96%E7%95%8C%E4%BA%BA%E6%9D%83%E5%AE%A3%E8%A8%80%E5%8F%8C%E8%AF%AD%E8%8A%82%E9%80%89.md</guid>
-      <pubDate>Wed, 18 Nov 2026 12:04:42 GMT</pubDate>
-      <category>文字空间</category>
-      <description>No one shall be subjected to arbitrary arrest, detention or exile.</description>
-    </item>
-    <item>
-      <title>夏季贴身衣物面料对比</title>
-      <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%E7%94%9F%E6%B4%BB%E7%A9%BA%E9%97%B4/%E5%A4%8F%E5%AD%A3%E8%B4%B4%E8%BA%AB%E8%A1%A3%E7%89%A9%E9%9D%A2%E6%96%99%E5%AF%B9%E6%AF%94.md</link>
-      <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%E7%94%9F%E6%B4%BB%E7%A9%BA%E9%97%B4/%E5%A4%8F%E5%AD%A3%E8%B4%B4%E8%BA%AB%E8%A1%A3%E7%89%A9%E9%9D%A2%E6%96%99%E5%AF%B9%E6%AF%94.md</guid>
-      <pubDate>Wed, 18 Nov 2026 12:04:42 GMT</pubDate>
-      <category>生活空间</category>
-      <description>能同时完美满足“吸汗”、“永远舒适”且“冬暖夏凉”这三个苛刻条件的材质，自然界的终极答案是美丽诺羊毛(Merino Wool)，其次是真丝(Silk)。</description>
-    </item>
-    <item>
-      <title>干烟回潮与烟嘴防潮指南</title>
-      <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%E7%94%9F%E6%B4%BB%E7%A9%BA%E9%97%B4/%E5%B9%B2%E7%83%9F%E5%9B%9E%E6%BD%AE%E4%B8%8E%E7%83%9F%E5%98%B4%E9%98%B2%E6%BD%AE%E6%8C%87%E5%8D%97.md</link>
-      <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%E7%94%9F%E6%B4%BB%E7%A9%BA%E9%97%B4/%E5%B9%B2%E7%83%9F%E5%9B%9E%E6%BD%AE%E4%B8%8E%E7%83%9F%E5%98%B4%E9%98%B2%E6%BD%AE%E6%8C%87%E5%8D%97.md</guid>
-      <pubDate>Wed, 18 Nov 2026 12:04:42 GMT</pubDate>
-      <category>生活空间</category>
-      <description>不建议把水弄在烟嘴上——这样做不仅救不了发干的烟丝，反而会让抽起来的口感变得又苦又涩，甚至抽不动。</description>
-    </item>
-    <item>
-      <title>白癜风遮盖与底妆指南</title>
-      <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%E7%94%9F%E6%B4%BB%E7%A9%BA%E9%97%B4/%E7%99%BD%E7%99%9C%E9%A3%8E%E9%81%AE%E7%9B%96%E4%B8%8E%E5%BA%95%E5%A6%86%E6%8C%87%E5%8D%97.md</link>
-      <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%E7%94%9F%E6%B4%BB%E7%A9%BA%E9%97%B4/%E7%99%BD%E7%99%9C%E9%A3%8E%E9%81%AE%E7%9B%96%E4%B8%8E%E5%BA%95%E5%A6%86%E6%8C%87%E5%8D%97.md</guid>
-      <pubDate>Wed, 18 Nov 2026 12:04:42 GMT</pubDate>
-      <category>生活空间</category>
-      <description>要做到第二天上班妆面完美且自然，最核心的秘诀在于把“遮之”的使用时间提前到前一天晚上。遮盖液类产品需要时间在角质层显色固着，如果早上和底妆一起用，不仅容易花妆，颜色也上不去。</description>
     </item>
   </channel>
 </rss>
