@@ -5,31 +5,175 @@
     <link>https://xn--9myv52d.xn--udsye.art/</link>
     <description>编程、技术、笔记、艺术、生活、随笔</description>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 25 Nov 2026 06:56:40 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 25 Nov 2026 07:09:51 GMT</lastBuildDate>
     <atom:link href="https://xn--9myv52d.xn--udsye.art/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>YouTube时间戳嵌入示例</title>
+      <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/YouTube%E6%97%B6%E9%97%B4%E6%88%B3%E5%B5%8C%E5%85%A5%E7%A4%BA%E4%BE%8B.md</link>
+      <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/YouTube%E6%97%B6%E9%97%B4%E6%88%B3%E5%B5%8C%E5%85%A5%E7%A4%BA%E4%BE%8B.md</guid>
+      <pubDate>Wed, 25 Nov 2026 07:09:51 GMT</pubDate>
+      <category>🗑️</category>
+      <description>将 YouTube 视频链接（包含 4303 秒的时间戳）适配到播放器模块中，需要进行两步处理：</description>
+    </item>
     <item>
       <title>💯Linux内核与GNU全景</title>
       <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/Geek%E7%A9%BA%E9%97%B4/%F0%9F%92%AFLinux%E5%86%85%E6%A0%B8%E4%B8%8EGNU%E5%85%A8%E6%99%AF.md</link>
       <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/Geek%E7%A9%BA%E9%97%B4/%F0%9F%92%AFLinux%E5%86%85%E6%A0%B8%E4%B8%8EGNU%E5%85%A8%E6%99%AF.md</guid>
-      <pubDate>Wed, 25 Nov 2026 06:56:40 GMT</pubDate>
+      <pubDate>Wed, 25 Nov 2026 07:03:14 GMT</pubDate>
       <category>Geek空间</category>
       <description>如果把构建与使用操作系统比作造车与开工厂，这几大核心角色的分工一目了然：</description>
+    </item>
+    <item>
+      <title>以色列与圣城耶路撒冷</title>
+      <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/%E4%BB%A5%E8%89%B2%E5%88%97%E4%B8%8E%E5%9C%A3%E5%9F%8E%E8%80%B6%E8%B7%AF%E6%92%92%E5%86%B7.md</link>
+      <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/%E4%BB%A5%E8%89%B2%E5%88%97%E4%B8%8E%E5%9C%A3%E5%9F%8E%E8%80%B6%E8%B7%AF%E6%92%92%E5%86%B7.md</guid>
+      <pubDate>Wed, 25 Nov 2026 07:03:14 GMT</pubDate>
+      <category>🗑️</category>
+      <description>以色列是一个国家，而耶路撒冷是一座城市。</description>
+    </item>
+    <item>
+      <title>先知双璧：亚伯拉罕与摩西</title>
+      <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/%E5%85%88%E7%9F%A5%E5%8F%8C%E7%92%A7%EF%BC%9A%E4%BA%9A%E4%BC%AF%E6%8B%89%E7%BD%95%E4%B8%8E%E6%91%A9%E8%A5%BF.md</link>
+      <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/%E5%85%88%E7%9F%A5%E5%8F%8C%E7%92%A7%EF%BC%9A%E4%BA%9A%E4%BC%AF%E6%8B%89%E7%BD%95%E4%B8%8E%E6%91%A9%E8%A5%BF.md</guid>
+      <pubDate>Wed, 25 Nov 2026 07:03:14 GMT</pubDate>
+      <category>🗑️</category>
+      <description>亚伯拉罕和摩西是中东三大一神教(犹太教、基督教、伊斯兰教)中最核心的两位先知。简而言之，亚伯拉罕是“信仰的起源与共同祖先”，而摩西是“民族的解放者与律法的奠基人”。</description>
+    </item>
+    <item>
+      <title>十字军东征：两百年圣地争夺</title>
+      <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/%E5%8D%81%E5%AD%97%E5%86%9B%E4%B8%9C%E5%BE%81%EF%BC%9A%E4%B8%A4%E7%99%BE%E5%B9%B4%E5%9C%A3%E5%9C%B0%E4%BA%89%E5%A4%BA.md</link>
+      <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/%E5%8D%81%E5%AD%97%E5%86%9B%E4%B8%9C%E5%BE%81%EF%BC%9A%E4%B8%A4%E7%99%BE%E5%B9%B4%E5%9C%A3%E5%9C%B0%E4%BA%89%E5%A4%BA.md</guid>
+      <pubDate>Wed, 25 Nov 2026 07:03:14 GMT</pubDate>
+      <category>🗑️</category>
+      <description>十字军东征(The Crusades)是中世纪(11 世纪末到 13 世纪)发生的一系列极其血腥和惨烈的宗教战争。</description>
+    </item>
+    <item>
+      <title>圣经新旧约与救世主之争</title>
+      <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/%E5%9C%A3%E7%BB%8F%E6%96%B0%E6%97%A7%E7%BA%A6%E4%B8%8E%E6%95%91%E4%B8%96%E4%B8%BB%E4%B9%8B%E4%BA%89.md</link>
+      <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/%E5%9C%A3%E7%BB%8F%E6%96%B0%E6%97%A7%E7%BA%A6%E4%B8%8E%E6%95%91%E4%B8%96%E4%B8%BB%E4%B9%8B%E4%BA%89.md</guid>
+      <pubDate>Wed, 25 Nov 2026 07:03:14 GMT</pubDate>
+      <category>🗑️</category>
+      <description>如果用最通俗的话来概括，确实可以大致理解为：犹太教只认“旧约”，而基督教则是在“旧约”的基础上加上了“新约”。</description>
+    </item>
+    <item>
+      <title>奥德修斯与十年归乡路</title>
+      <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/%E5%A5%A5%E5%BE%B7%E4%BF%AE%E6%96%AF%E4%B8%8E%E5%8D%81%E5%B9%B4%E5%BD%92%E4%B9%A1%E8%B7%AF.md</link>
+      <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/%E5%A5%A5%E5%BE%B7%E4%BF%AE%E6%96%AF%E4%B8%8E%E5%8D%81%E5%B9%B4%E5%BD%92%E4%B9%A1%E8%B7%AF.md</guid>
+      <pubDate>Wed, 25 Nov 2026 07:03:14 GMT</pubDate>
+      <category>🗑️</category>
+      <description>奥德修斯(Odysseus，罗马神话中称为尤利西斯 Ulysses)是古希腊神话中伊萨卡岛(Ithaca)的国王，也是特洛伊战争中的核心英雄之一，更是荷马史诗《奥德赛》(Odyssey)的绝对主角。</description>
+    </item>
+    <item>
+      <title>宙斯神法：好客之道与誓言</title>
+      <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/%E5%AE%99%E6%96%AF%E7%A5%9E%E6%B3%95%EF%BC%9A%E5%A5%BD%E5%AE%A2%E4%B9%8B%E9%81%93%E4%B8%8E%E8%AA%93%E8%A8%80.md</link>
+      <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/%E5%AE%99%E6%96%AF%E7%A5%9E%E6%B3%95%EF%BC%9A%E5%A5%BD%E5%AE%A2%E4%B9%8B%E9%81%93%E4%B8%8E%E8%AA%93%E8%A8%80.md</guid>
+      <pubDate>Wed, 25 Nov 2026 07:03:14 GMT</pubDate>
+      <category>🗑️</category>
+      <description>古希腊神话中的宙斯从来没有在石板上刻下一套明确的、逐条列出的成文法律。</description>
+    </item>
+    <item>
+      <title>弗洛伊德：本我自我与超我</title>
+      <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/%E5%BC%97%E6%B4%9B%E4%BC%8A%E5%BE%B7%EF%BC%9A%E6%9C%AC%E6%88%91%E8%87%AA%E6%88%91%E4%B8%8E%E8%B6%85%E6%88%91.md</link>
+      <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/%E5%BC%97%E6%B4%9B%E4%BC%8A%E5%BE%B7%EF%BC%9A%E6%9C%AC%E6%88%91%E8%87%AA%E6%88%91%E4%B8%8E%E8%B6%85%E6%88%91.md</guid>
+      <pubDate>Wed, 25 Nov 2026 07:03:14 GMT</pubDate>
+      <category>🗑️</category>
+      <description>“本我”(Id)、“自我”(Ego)和“超我”(Superego)是著名心理学家西格蒙德·弗洛伊德(Sigmund Freud)在精神分析理论中提出的关于人格结构的核心概念。</description>
     </item>
     <item>
       <title>忒修斯：雅典之王与迷宫斩兽</title>
       <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/%E5%BF%92%E4%BF%AE%E6%96%AF%EF%BC%9A%E9%9B%85%E5%85%B8%E4%B9%8B%E7%8E%8B%E4%B8%8E%E8%BF%B7%E5%AE%AB%E6%96%A9%E5%85%BD.md</link>
       <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/%E5%BF%92%E4%BF%AE%E6%96%AF%EF%BC%9A%E9%9B%85%E5%85%B8%E4%B9%8B%E7%8E%8B%E4%B8%8E%E8%BF%B7%E5%AE%AB%E6%96%A9%E5%85%BD.md</guid>
-      <pubDate>Wed, 25 Nov 2026 06:50:51 GMT</pubDate>
+      <pubDate>Wed, 25 Nov 2026 07:03:14 GMT</pubDate>
       <category>🗑️</category>
       <description>忒修斯(Theseus)是希腊神话中雅典的伟大建立者和国王。如果说赫拉克勒斯是全希腊的超级武力象征，那么忒修斯就是雅典的专属英雄，他不仅拥有武力，更代表着智慧、秩序和城邦制度的建立。</description>
+    </item>
+    <item>
+      <title>特洛伊前传：海伦誓约与诅咒</title>
+      <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/%E7%89%B9%E6%B4%9B%E4%BC%8A%E5%89%8D%E4%BC%A0%EF%BC%9A%E6%B5%B7%E4%BC%A6%E8%AA%93%E7%BA%A6%E4%B8%8E%E8%AF%85%E5%92%92.md</link>
+      <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/%E7%89%B9%E6%B4%9B%E4%BC%8A%E5%89%8D%E4%BC%A0%EF%BC%9A%E6%B5%B7%E4%BC%A6%E8%AA%93%E7%BA%A6%E4%B8%8E%E8%AF%85%E5%92%92.md</guid>
+      <pubDate>Wed, 25 Nov 2026 07:03:14 GMT</pubDate>
+      <category>🗑️</category>
+      <description>在爱神阿佛洛狄忒的帮助下，特洛伊王子帕里斯趁着斯巴达国王墨涅拉俄斯外出时，诱拐(或说掳走)了希腊第一美女海伦，并带走了大量的财宝。这件事成为了特洛伊战争的直接导火索。</description>
+    </item>
+    <item>
+      <title>特洛伊战争：神话与真实历史</title>
+      <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/%E7%89%B9%E6%B4%9B%E4%BC%8A%E6%88%98%E4%BA%89%EF%BC%9A%E7%A5%9E%E8%AF%9D%E4%B8%8E%E7%9C%9F%E5%AE%9E%E5%8E%86%E5%8F%B2.md</link>
+      <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/%E7%89%B9%E6%B4%9B%E4%BC%8A%E6%88%98%E4%BA%89%EF%BC%9A%E7%A5%9E%E8%AF%9D%E4%B8%8E%E7%9C%9F%E5%AE%9E%E5%8E%86%E5%8F%B2.md</guid>
+      <pubDate>Wed, 25 Nov 2026 07:03:14 GMT</pubDate>
+      <category>🗑️</category>
+      <description>特洛伊战争是一场极其特殊的战争，它正好处于神话传说与真实历史的交界处。它既是西方文学的源头，也是现代考古学上的一个重大发现。</description>
+    </item>
+    <item>
+      <title>犹太史诗：出埃及至圣殿毁灭</title>
+      <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/%E7%8A%B9%E5%A4%AA%E5%8F%B2%E8%AF%97%EF%BC%9A%E5%87%BA%E5%9F%83%E5%8F%8A%E8%87%B3%E5%9C%A3%E6%AE%BF%E6%AF%81%E7%81%AD.md</link>
+      <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/%E7%8A%B9%E5%A4%AA%E5%8F%B2%E8%AF%97%EF%BC%9A%E5%87%BA%E5%9F%83%E5%8F%8A%E8%87%B3%E5%9C%A3%E6%AE%BF%E6%AF%81%E7%81%AD.md</guid>
+      <pubDate>Wed, 25 Nov 2026 07:03:14 GMT</pubDate>
+      <category>🗑️</category>
+      <description>这三个历史事件跨越了大约 1400 年的时间。如果按照时间先后顺序来排列，它们的历史时间线是这样的：</description>
     </item>
     <item>
       <title>珀耳修斯：斩首美杜莎</title>
       <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/%E7%8F%80%E8%80%B3%E4%BF%AE%E6%96%AF%EF%BC%9A%E6%96%A9%E9%A6%96%E7%BE%8E%E6%9D%9C%E8%8E%8E.md</link>
       <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/%E7%8F%80%E8%80%B3%E4%BF%AE%E6%96%AF%EF%BC%9A%E6%96%A9%E9%A6%96%E7%BE%8E%E6%9D%9C%E8%8E%8E.md</guid>
-      <pubDate>Wed, 25 Nov 2026 06:50:51 GMT</pubDate>
+      <pubDate>Wed, 25 Nov 2026 07:03:14 GMT</pubDate>
       <category>🗑️</category>
       <description>珀耳修斯(Perseus)是希腊神话中极其著名的一位半神英雄，因斩杀蛇发女妖美杜莎(Medusa)而名震西方神话世界。与其他晚期神话中充满悲剧色彩的英雄(如赫拉克勒斯或阿喀琉斯)不同，珀耳修斯的故事是一个罕见的、充满“大圆满”结局的古典英雄冒险。</description>
+    </item>
+    <item>
+      <title>罗姆人：吉普赛千年流浪史</title>
+      <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/%E7%BD%97%E5%A7%86%E4%BA%BA%EF%BC%9A%E5%90%89%E6%99%AE%E8%B5%9B%E5%8D%83%E5%B9%B4%E6%B5%81%E6%B5%AA%E5%8F%B2.md</link>
+      <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/%E7%BD%97%E5%A7%86%E4%BA%BA%EF%BC%9A%E5%90%89%E6%99%AE%E8%B5%9B%E5%8D%83%E5%B9%B4%E6%B5%81%E6%B5%AA%E5%8F%B2.md</guid>
+      <pubDate>Wed, 25 Nov 2026 07:03:14 GMT</pubDate>
+      <category>🗑️</category>
+      <description>“吉普赛人”(Gypsies)是外界对一个传统游牧民族的俗称，而他们真正的自称和官方称呼是罗姆人(Romani / Roma)。</description>
+    </item>
+    <item>
+      <title>美杜莎：雅典娜的蛇发诅咒</title>
+      <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/%E7%BE%8E%E6%9D%9C%E8%8E%8E%EF%BC%9A%E9%9B%85%E5%85%B8%E5%A8%9C%E7%9A%84%E8%9B%87%E5%8F%91%E8%AF%85%E5%92%92.md</link>
+      <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/%E7%BE%8E%E6%9D%9C%E8%8E%8E%EF%BC%9A%E9%9B%85%E5%85%B8%E5%A8%9C%E7%9A%84%E8%9B%87%E5%8F%91%E8%AF%85%E5%92%92.md</guid>
+      <pubDate>Wed, 25 Nov 2026 07:03:14 GMT</pubDate>
+      <category>🗑️</category>
+      <description>美杜莎(Medusa)是希腊神话中最为著名的蛇发女妖(Gorgon，戈耳工)。她的形象极其经典：头上盘踞着无数条毒蛇，并且拥有一个可怕的诅咒——任何直视她双眼的人都会瞬间化为石像。</description>
+    </item>
+    <item>
+      <title>荷马史诗：伊利亚特与奥德赛</title>
+      <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/%E8%8D%B7%E9%A9%AC%E5%8F%B2%E8%AF%97%EF%BC%9A%E4%BC%8A%E5%88%A9%E4%BA%9A%E7%89%B9%E4%B8%8E%E5%A5%A5%E5%BE%B7%E8%B5%9B.md</link>
+      <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/%E8%8D%B7%E9%A9%AC%E5%8F%B2%E8%AF%97%EF%BC%9A%E4%BC%8A%E5%88%A9%E4%BA%9A%E7%89%B9%E4%B8%8E%E5%A5%A5%E5%BE%B7%E8%B5%9B.md</guid>
+      <pubDate>Wed, 25 Nov 2026 07:03:14 GMT</pubDate>
+      <category>🗑️</category>
+      <description>《荷马史诗》(Homeric Epics)是古希腊乃至整个西方文学的奠基之作，相传由古希腊盲诗人荷马(Homer)在公元前 8 世纪左右创作汇编。它并不是一部单一的作品，而是由两部宏大的长篇史诗组成：</description>
+    </item>
+    <item>
+      <title>认知阶梯：真理公理与共识</title>
+      <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/%E8%AE%A4%E7%9F%A5%E9%98%B6%E6%A2%AF%EF%BC%9A%E7%9C%9F%E7%90%86%E5%85%AC%E7%90%86%E4%B8%8E%E5%85%B1%E8%AF%86.md</link>
+      <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/%E8%AE%A4%E7%9F%A5%E9%98%B6%E6%A2%AF%EF%BC%9A%E7%9C%9F%E7%90%86%E5%85%AC%E7%90%86%E4%B8%8E%E5%85%B1%E8%AF%86.md</guid>
+      <pubDate>Wed, 25 Nov 2026 07:03:14 GMT</pubDate>
+      <category>🗑️</category>
+      <description>在认识论和人类思想体系的演进中，“客观真理、公理、共识、公约”这四个概念通常遵循一条从绝对客观规律，到逻辑抽象、群体认知，再到社会契约的层层递进或演化顺序。</description>
+    </item>
+    <item>
+      <title>诺亚方舟与大洪水溯源</title>
+      <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/%E8%AF%BA%E4%BA%9A%E6%96%B9%E8%88%9F%E4%B8%8E%E5%A4%A7%E6%B4%AA%E6%B0%B4%E6%BA%AF%E6%BA%90.md</link>
+      <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/%E8%AF%BA%E4%BA%9A%E6%96%B9%E8%88%9F%E4%B8%8E%E5%A4%A7%E6%B4%AA%E6%B0%B4%E6%BA%AF%E6%BA%90.md</guid>
+      <pubDate>Wed, 25 Nov 2026 07:03:14 GMT</pubDate>
+      <category>🗑️</category>
+      <description>诺亚方舟(Noah&apos;s Ark)的故事最核心的来源是《圣经·旧约》的第一卷书——《创世记》(Genesis)，同时它也被伊斯兰教的《古兰经》所记载。</description>
+    </item>
+    <item>
+      <title>赫拉克勒斯与十二项伟业</title>
+      <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/%E8%B5%AB%E6%8B%89%E5%85%8B%E5%8B%92%E6%96%AF%E4%B8%8E%E5%8D%81%E4%BA%8C%E9%A1%B9%E4%BC%9F%E4%B8%9A.md</link>
+      <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/%E8%B5%AB%E6%8B%89%E5%85%8B%E5%8B%92%E6%96%AF%E4%B8%8E%E5%8D%81%E4%BA%8C%E9%A1%B9%E4%BC%9F%E4%B8%9A.md</guid>
+      <pubDate>Wed, 25 Nov 2026 07:03:14 GMT</pubDate>
+      <category>🗑️</category>
+      <description>赫拉克勒斯(Heracles)是希腊神话中最伟大的半神英雄，也是力量与勇气的化身。需要厘清的一个常见误区是：赫拉克勒斯(Heracles)是他的希腊语原名，意思是“赫拉的荣耀”；而海格力斯 / 赫丘利(Hercules)是后来罗马神话中对他名字的拼写。</description>
+    </item>
+    <item>
+      <title>阿喀琉斯：战神之怒与致命之踵</title>
+      <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/%E9%98%BF%E5%96%80%E7%90%89%E6%96%AF%EF%BC%9A%E6%88%98%E7%A5%9E%E4%B9%8B%E6%80%92%E4%B8%8E%E8%87%B4%E5%91%BD%E4%B9%8B%E8%B8%B5.md</link>
+      <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/%E9%98%BF%E5%96%80%E7%90%89%E6%96%AF%EF%BC%9A%E6%88%98%E7%A5%9E%E4%B9%8B%E6%80%92%E4%B8%8E%E8%87%B4%E5%91%BD%E4%B9%8B%E8%B8%B5.md</guid>
+      <pubDate>Wed, 25 Nov 2026 07:03:14 GMT</pubDate>
+      <category>🗑️</category>
+      <description>阿喀琉斯(Achilles)，可以说是整个古希腊神话和特洛伊战争中武力值的天花板。他不仅是《荷马史诗·伊利亚特》的绝对主角，更是西方文化中“悲剧英雄”的终极代名词。</description>
     </item>
     <item>
       <title>💯从TTY到现代Shell终端</title>
@@ -102,150 +246,6 @@
       <pubDate>Wed, 25 Nov 2026 05:51:49 GMT</pubDate>
       <category>🗑️</category>
       <description></description>
-    </item>
-    <item>
-      <title>心理声学混音黄金悦耳区</title>
-      <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/%E5%BF%83%E7%90%86%E5%A3%B0%E5%AD%A6%E6%B7%B7%E9%9F%B3%E9%BB%84%E9%87%91%E6%82%A6%E8%80%B3%E5%8C%BA.md</link>
-      <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/%E5%BF%83%E7%90%86%E5%A3%B0%E5%AD%A6%E6%B7%B7%E9%9F%B3%E9%BB%84%E9%87%91%E6%82%A6%E8%80%B3%E5%8C%BA.md</guid>
-      <pubDate>Wed, 25 Nov 2026 05:51:49 GMT</pubDate>
-      <category>🗑️</category>
-      <description>在心理声学与混音工程中，“黄金悦耳区”（Golden Sweet Spot，又称核心临场感频段）通常指 1 kHz – 5 kHz 的中高音频段（核心敏感区集中在 2 kHz – 4 kHz）；若从广义的音乐表现力来看，它也常延伸至包含基音与泛音过渡的 500 Hz – 4 kH…</description>
-    </item>
-    <item>
-      <title>西洋弦乐与吉他通用乐理</title>
-      <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/%E8%A5%BF%E6%B4%8B%E5%BC%A6%E4%B9%90%E4%B8%8E%E5%90%89%E4%BB%96%E9%80%9A%E7%94%A8%E4%B9%90%E7%90%86.md</link>
-      <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/%E8%A5%BF%E6%B4%8B%E5%BC%A6%E4%B9%90%E4%B8%8E%E5%90%89%E4%BB%96%E9%80%9A%E7%94%A8%E4%B9%90%E7%90%86.md</guid>
-      <pubDate>Wed, 25 Nov 2026 05:51:49 GMT</pubDate>
-      <category>🗑️</category>
-      <description>现代音乐使用 7 个英文字母作为最基本的音级名称：</description>
-    </item>
-    <item>
-      <title>💯Ubuntu 极简入门指南</title>
-      <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/Geek%E7%A9%BA%E9%97%B4/%F0%9F%92%AFUbuntu%20%E6%9E%81%E7%AE%80%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97.md</link>
-      <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/Geek%E7%A9%BA%E9%97%B4/%F0%9F%92%AFUbuntu%20%E6%9E%81%E7%AE%80%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97.md</guid>
-      <pubDate>Wed, 25 Nov 2026 02:52:25 GMT</pubDate>
-      <category>Geek空间</category>
-      <description>Linux 命令看起来像密码，其实 90% 都是英语单词的缩写。看懂缩写原意，根本不用死记硬背。</description>
-    </item>
-    <item>
-      <title>💯影视评分</title>
-      <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/Geek%E7%A9%BA%E9%97%B4/%F0%9F%92%AF%E5%BD%B1%E8%A7%86%E8%AF%84%E5%88%86.md</link>
-      <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/Geek%E7%A9%BA%E9%97%B4/%F0%9F%92%AF%E5%BD%B1%E8%A7%86%E8%AF%84%E5%88%86.md</guid>
-      <pubDate>Wed, 25 Nov 2026 02:49:35 GMT</pubDate>
-      <category>Geek空间</category>
-      <description>这一梯队是影评人眼中的“完美之作”，在剧本、导演、摄影、思想性上几乎没有任何瑕疵。</description>
-    </item>
-    <item>
-      <title>C语言核心基础语法速查手册</title>
-      <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/C%E8%AF%AD%E8%A8%80%E6%A0%B8%E5%BF%83%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E9%80%9F%E6%9F%A5%E6%89%8B%E5%86%8C.md</link>
-      <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/C%E8%AF%AD%E8%A8%80%E6%A0%B8%E5%BF%83%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E9%80%9F%E6%9F%A5%E6%89%8B%E5%86%8C.md</guid>
-      <pubDate>Wed, 25 Nov 2026 02:49:35 GMT</pubDate>
-      <category>🗑️</category>
-      <description>C 语言是一门通用的、过程式的底层系统编程语言。它诞生于 20 世纪 70 年代，直接影响了后世的 C++、Java、Go 等几乎所有现代主流语言。与 Java 的“一切皆对象”和自动垃圾回收不同，C 语言的核心哲学是贴近硬件、信任程序员、零运行时开销——它提供了直接操作内存地址…</description>
-    </item>
-    <item>
-      <title>Go语言核心基础语法速查手册</title>
-      <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/Go%E8%AF%AD%E8%A8%80%E6%A0%B8%E5%BF%83%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E9%80%9F%E6%9F%A5%E6%89%8B%E5%86%8C.md</link>
-      <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/Go%E8%AF%AD%E8%A8%80%E6%A0%B8%E5%BF%83%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E9%80%9F%E6%9F%A5%E6%89%8B%E5%86%8C.md</guid>
-      <pubDate>Wed, 25 Nov 2026 02:49:35 GMT</pubDate>
-      <category>🗑️</category>
-      <description>Go 语言(Golang)是由 Google 设计的静态强类型、编译型系统编程语言。它融合了 C 语言的高效执行性能与现代动态语言的开发效率，彻底摒弃了头文件、复杂的类继承体系、指针算术运算以及异常抛出(try-catch)机制，围绕极简语法、组合优于继承、显式错误处理与原生 C…</description>
-    </item>
-    <item>
-      <title>HTML5核心标签基础语法手册</title>
-      <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/HTML5%E6%A0%B8%E5%BF%83%E6%A0%87%E7%AD%BE%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E6%89%8B%E5%86%8C.md</link>
-      <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/HTML5%E6%A0%B8%E5%BF%83%E6%A0%87%E7%AD%BE%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E6%89%8B%E5%86%8C.md</guid>
-      <pubDate>Wed, 25 Nov 2026 02:49:35 GMT</pubDate>
-      <category>🗑️</category>
-      <description>HTML(HyperText Markup Language，超文本标记语言，现行标准为 HTML5)是构建网页结构的基石。它不是一门具有逻辑控制流(如循环、判断)的编程语言，而是一门声明式标记语言——通过嵌套的标签(Tags)将纯文本转化为浏览器可解析的 DOM 树(文档对象模…</description>
-    </item>
-    <item>
-      <title>Java面向对象核心基础语法</title>
-      <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E6%A0%B8%E5%BF%83%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95.md</link>
-      <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E6%A0%B8%E5%BF%83%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95.md</guid>
-      <pubDate>Wed, 25 Nov 2026 02:49:35 GMT</pubDate>
-      <category>🗑️</category>
-      <description>Java 是一门强类型、面向对象的编程语言，语法风格承袭自 C 和 C++，但移除了头文件、指针运算和显式内存释放等复杂特性，强调严谨的结构与跨平台安全性。</description>
-    </item>
-    <item>
-      <title>JS语言核心基础语法速查手册</title>
-      <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/JS%E8%AF%AD%E8%A8%80%E6%A0%B8%E5%BF%83%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E9%80%9F%E6%9F%A5%E6%89%8B%E5%86%8C.md</link>
-      <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/JS%E8%AF%AD%E8%A8%80%E6%A0%B8%E5%BF%83%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E9%80%9F%E6%9F%A5%E6%89%8B%E5%86%8C.md</guid>
-      <pubDate>Wed, 25 Nov 2026 02:49:35 GMT</pubDate>
-      <category>🗑️</category>
-      <description>JavaScript(简称 JS，标准规范为 ECMAScript / ES6+)是一门动态弱类型、基于原型(Prototype-based)、支持多范式(函数式、面向对象、事件驱动)的脚本语言。它最初为浏览器交互而生，如今借助 V8 等引擎与 Node.js，已成为贯穿前端视图…</description>
-    </item>
-    <item>
-      <title>Node.js 与 npm 实战使用手册</title>
-      <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/Node.js%20%E4%B8%8E%20npm%20%E5%AE%9E%E6%88%98%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C.md</link>
-      <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/Node.js%20%E4%B8%8E%20npm%20%E5%AE%9E%E6%88%98%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C.md</guid>
-      <pubDate>Wed, 25 Nov 2026 02:49:35 GMT</pubDate>
-      <category>🗑️</category>
-      <description>如果说理解 Node.js 与 npm 的原理是“内功心法”，那么熟练掌握它们的命令行操作与工程配置就是日常开发的“随身兵器谱”。本手册涵盖从环境初始化、镜像加速、依赖管理、脚本编排到故障排查的全流程高频指令，适合作为日常开发的速查案头书。</description>
-    </item>
-    <item>
-      <title>PowerShell 高频命令速查手册</title>
-      <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/PowerShell%20%E9%AB%98%E9%A2%91%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5%E6%89%8B%E5%86%8C.md</link>
-      <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/PowerShell%20%E9%AB%98%E9%A2%91%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5%E6%89%8B%E5%86%8C.md</guid>
-      <pubDate>Wed, 25 Nov 2026 02:49:35 GMT</pubDate>
-      <category>🗑️</category>
-      <description>打开终端后，先看最左边的符号，千万别在错的地方输命令：</description>
-    </item>
-    <item>
-      <title>Python开发常用PowerShell命令</title>
-      <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/Python%E5%BC%80%E5%8F%91%E5%B8%B8%E7%94%A8PowerShell%E5%91%BD%E4%BB%A4.md</link>
-      <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/Python%E5%BC%80%E5%8F%91%E5%B8%B8%E7%94%A8PowerShell%E5%91%BD%E4%BB%A4.md</guid>
-      <pubDate>Wed, 25 Nov 2026 02:49:35 GMT</pubDate>
-      <category>🗑️</category>
-      <description>把它们想象成一个木工坊里的三个角色：</description>
-    </item>
-    <item>
-      <title>Python现代基础语法速查手册</title>
-      <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/Python%E7%8E%B0%E4%BB%A3%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E9%80%9F%E6%9F%A5%E6%89%8B%E5%86%8C.md</link>
-      <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/Python%E7%8E%B0%E4%BB%A3%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E9%80%9F%E6%9F%A5%E6%89%8B%E5%86%8C.md</guid>
-      <pubDate>Wed, 25 Nov 2026 02:49:35 GMT</pubDate>
-      <category>🗑️</category>
-      <description>本手册面向日常开发速查与零基础系统入门，基于 Python 3.10+ 现代语法标准编写，涵盖变量类型、流程控制、四大容器、函数与面向对象、异常处理以及最容易踩坑的 Pythonic 实战规范。</description>
-    </item>
-    <item>
-      <title>Vue3核心基础语法速查手册</title>
-      <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/Vue3%E6%A0%B8%E5%BF%83%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E9%80%9F%E6%9F%A5%E6%89%8B%E5%86%8C.md</link>
-      <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/Vue3%E6%A0%B8%E5%BF%83%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E9%80%9F%E6%9F%A5%E6%89%8B%E5%86%8C.md</guid>
-      <pubDate>Wed, 25 Nov 2026 02:49:35 GMT</pubDate>
-      <category>🗑️</category>
-      <description>Vue(目前主流标准为 Vue 3 组合式 API / Composition API)是一套用于构建用户界面的渐进式前端框架。它的核心设计理念是声明式渲染(Declarative Rendering)与细粒度响应式系统(Reactivity System)——开发者只需维护数据…</description>
-    </item>
-    <item>
-      <title>单纯疱疹发作机理与药物治疗</title>
-      <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/%E5%8D%95%E7%BA%AF%E7%96%B1%E7%96%B9%E5%8F%91%E4%BD%9C%E6%9C%BA%E7%90%86%E4%B8%8E%E8%8D%AF%E7%89%A9%E6%B2%BB%E7%96%97.md</link>
-      <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/%E5%8D%95%E7%BA%AF%E7%96%B1%E7%96%B9%E5%8F%91%E4%BD%9C%E6%9C%BA%E7%90%86%E4%B8%8E%E8%8D%AF%E7%89%A9%E6%B2%BB%E7%96%97.md</guid>
-      <pubDate>Wed, 25 Nov 2026 02:49:35 GMT</pubDate>
-      <category>🗑️</category>
-      <description>单纯疱疹（Herpes Simplex）是由单纯疱疹病毒（HSV）感染引起的常见黏膜皮肤病，临床中最典型、最高发的表现为嘴角、嘴唇周围发红、发热、簇集成群的针头大小水疱（俗称“上火烂嘴角”）。</description>
-    </item>
-    <item>
-      <title>咖啡史话与风味萃取科学</title>
-      <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/%E5%92%96%E5%95%A1%E5%8F%B2%E8%AF%9D%E4%B8%8E%E9%A3%8E%E5%91%B3%E8%90%83%E5%8F%96%E7%A7%91%E5%AD%A6.md</link>
-      <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/%E5%92%96%E5%95%A1%E5%8F%B2%E8%AF%9D%E4%B8%8E%E9%A3%8E%E5%91%B3%E8%90%83%E5%8F%96%E7%A7%91%E5%AD%A6.md</guid>
-      <pubDate>Wed, 25 Nov 2026 02:49:35 GMT</pubDate>
-      <category>🗑️</category>
-      <description>咖啡不仅是一种饮品，更是一部跨越千年的全球化发展史。从非洲的一颗野生红色浆果，到如今风靡全球、充满科学与艺术底蕴的现代饮品，咖啡的演变极其精彩。</description>
-    </item>
-    <item>
-      <title>夏季贴身衣物面料对比</title>
-      <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/%E5%A4%8F%E5%AD%A3%E8%B4%B4%E8%BA%AB%E8%A1%A3%E7%89%A9%E9%9D%A2%E6%96%99%E5%AF%B9%E6%AF%94.md</link>
-      <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/%E5%A4%8F%E5%AD%A3%E8%B4%B4%E8%BA%AB%E8%A1%A3%E7%89%A9%E9%9D%A2%E6%96%99%E5%AF%B9%E6%AF%94.md</guid>
-      <pubDate>Wed, 25 Nov 2026 02:49:35 GMT</pubDate>
-      <category>🗑️</category>
-      <description>能同时完美满足“吸汗”、“永远舒适”且“冬暖夏凉”这三个苛刻条件的材质，自然界的终极答案是美丽诺羊毛(Merino Wool)，其次是真丝(Silk)。</description>
-    </item>
-    <item>
-      <title>干烟回潮与烟嘴防潮指南</title>
-      <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/%E5%B9%B2%E7%83%9F%E5%9B%9E%E6%BD%AE%E4%B8%8E%E7%83%9F%E5%98%B4%E9%98%B2%E6%BD%AE%E6%8C%87%E5%8D%97.md</link>
-      <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/%E5%B9%B2%E7%83%9F%E5%9B%9E%E6%BD%AE%E4%B8%8E%E7%83%9F%E5%98%B4%E9%98%B2%E6%BD%AE%E6%8C%87%E5%8D%97.md</guid>
-      <pubDate>Wed, 25 Nov 2026 02:49:35 GMT</pubDate>
-      <category>🗑️</category>
-      <description>不建议把水弄在烟嘴上——这样做不仅救不了发干的烟丝，反而会让抽起来的口感变得又苦又涩，甚至抽不动。</description>
     </item>
   </channel>
 </rss>
