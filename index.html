@@ -859,7 +859,8 @@
             padding-left: 1.5rem;
         }
 
-        .markdown-section ul > li {
+        .markdown-section ul > li,
+        .markdown-section ol > li {
             line-height: 1.8;
             margin-bottom: 8px;
         }
@@ -875,13 +876,21 @@
         }
 
         .markdown-section code {
-            background-color: #27272a !important;
+            background-color: rgba(63, 63, 70, 0.55) !important;
             color: #fca5a5 !important;
-            padding: 4px 6px;
-            border-radius: 6px;
-            font-size: 0.9em;
+            margin: 0 1px;
+            padding: 0.12em 0.4em;
+            border-radius: 5px;
+            font-size: 0.875em !important;
+            line-height: 1.95;
             font-family: 'JetBrains Mono', Consolas, 'Courier New', monospace !important;
-            border: 1px solid rgba(255, 255, 255, 0.05) !important;
+            border: 1px solid rgba(255, 255, 255, 0.12) !important;
+            -webkit-box-decoration-break: clone;
+            box-decoration-break: clone;
+        }
+
+        .markdown-section :is(h1, h2, h3, h4, h5, h6, .mermaid-diagram) code {
+            line-height: inherit;
         }
 
         /* ====== 代码块与 IDE 级多色彩语义高亮 ====== */
@@ -906,11 +915,15 @@
         .markdown-section pre code {
             background-color: transparent !important;
             border: none !important;
+            border-radius: 0 !important;
+            margin: 0 !important;
             padding: 0 !important;
             color: #e4e4e7 !important;
             font-family: 'JetBrains Mono', Consolas, 'Courier New', monospace !important;
             font-size: 14px !important;
             line-height: 1.65 !important;
+            -webkit-box-decoration-break: slice;
+            box-decoration-break: slice;
 
             /* 核心换行控制 */
             white-space: pre-wrap !important;
@@ -1018,6 +1031,7 @@
 
         .markdown-section table th, .markdown-section table td {
             padding: 14px 20px;
+            line-height: 1.75;
             color: #d4d4d8 !important;
             border-bottom: 1px solid var(--border-color);
             border-right: 1px solid var(--border-color);
