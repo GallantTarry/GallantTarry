@@ -1,4 +1,4 @@
-# 💯WSL2 入门指南：架构原理、安装启动与避坑速查
+# WSL2 入门指南：架构原理、安装启动与避坑速查
 
 **WSL 2（Windows Subsystem for Linux 2）通过轻量级 Hyper-V 虚拟机在 Windows 内部运行完整的 Linux 内核，让你无需双系统重启或重型虚拟机，即可使用原生的 Linux 命令行与服务端环境。**
 
