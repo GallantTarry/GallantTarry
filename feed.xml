@@ -5,23 +5,31 @@
     <link>https://xn--9myv52d.xn--udsye.art/</link>
     <description>编程、技术、笔记、艺术、生活、随笔</description>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 25 Nov 2026 06:17:28 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 25 Nov 2026 06:18:19 GMT</lastBuildDate>
     <atom:link href="https://xn--9myv52d.xn--udsye.art/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
-      <title>WSL2 入门指南：架构原理、安装启动与避坑速查</title>
-      <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/Geek%E7%A9%BA%E9%97%B4/WSL2%20%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97%EF%BC%9A%E6%9E%B6%E6%9E%84%E5%8E%9F%E7%90%86%E3%80%81%E5%AE%89%E8%A3%85%E5%90%AF%E5%8A%A8%E4%B8%8E%E9%81%BF%E5%9D%91%E9%80%9F%E6%9F%A5.md</link>
-      <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/Geek%E7%A9%BA%E9%97%B4/WSL2%20%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97%EF%BC%9A%E6%9E%B6%E6%9E%84%E5%8E%9F%E7%90%86%E3%80%81%E5%AE%89%E8%A3%85%E5%90%AF%E5%8A%A8%E4%B8%8E%E9%81%BF%E5%9D%91%E9%80%9F%E6%9F%A5.md</guid>
-      <pubDate>Wed, 25 Nov 2026 06:17:28 GMT</pubDate>
-      <category>Geek空间</category>
-      <description>WSL 2（Windows Subsystem for Linux 2）通过轻量级 Hyper-V 虚拟机在 Windows 内部运行完整的 Linux 内核，让你无需双系统重启或重型虚拟机，即可使用原生的 Linux 命令行与服务端环境。</description>
+      <title>安伯尼克周哥传奇</title>
+      <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%E8%A7%86%E5%90%AC%E7%A9%BA%E9%97%B4/%E5%AE%89%E4%BC%AF%E5%B0%BC%E5%85%8B%E5%91%A8%E5%93%A5%E4%BC%A0%E5%A5%87.md</link>
+      <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%E8%A7%86%E5%90%AC%E7%A9%BA%E9%97%B4/%E5%AE%89%E4%BC%AF%E5%B0%BC%E5%85%8B%E5%91%A8%E5%93%A5%E4%BC%A0%E5%A5%87.md</guid>
+      <pubDate>Wed, 25 Nov 2026 06:18:19 GMT</pubDate>
+      <category>视听空间</category>
+      <description>url=&quot;media/music/周哥传奇.mp3&quot;</description>
     </item>
     <item>
       <title>IntelliJ IDEA 使用指南：常用快捷键、断点调试与设置同步</title>
       <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/Geek%E7%A9%BA%E9%97%B4/IntelliJ%20IDEA%20%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97%EF%BC%9A%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE%E3%80%81%E6%96%AD%E7%82%B9%E8%B0%83%E8%AF%95%E4%B8%8E%E8%AE%BE%E7%BD%AE%E5%90%8C%E6%AD%A5.md</link>
       <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/Geek%E7%A9%BA%E9%97%B4/IntelliJ%20IDEA%20%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97%EF%BC%9A%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE%E3%80%81%E6%96%AD%E7%82%B9%E8%B0%83%E8%AF%95%E4%B8%8E%E8%AE%BE%E7%BD%AE%E5%90%8C%E6%AD%A5.md</guid>
-      <pubDate>Wed, 25 Nov 2026 06:16:58 GMT</pubDate>
+      <pubDate>Wed, 25 Nov 2026 06:17:53 GMT</pubDate>
       <category>Geek空间</category>
       <description>平时写代码，先记住三个入口：双击 Shift 找东西，Alt + Enter 看当前代码能怎么改，Shift + F9 启动调试。 快捷键记不清时，按 Ctrl + Shift + A，输入动作名就能执行。下面用一个“满 100 打九折”的小程序，把找代码、改代码和定位错误连起来…</description>
+    </item>
+    <item>
+      <title>WSL2 入门指南：架构原理、安装启动与避坑速查</title>
+      <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/Geek%E7%A9%BA%E9%97%B4/WSL2%20%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97%EF%BC%9A%E6%9E%B6%E6%9E%84%E5%8E%9F%E7%90%86%E3%80%81%E5%AE%89%E8%A3%85%E5%90%AF%E5%8A%A8%E4%B8%8E%E9%81%BF%E5%9D%91%E9%80%9F%E6%9F%A5.md</link>
+      <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/Geek%E7%A9%BA%E9%97%B4/WSL2%20%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97%EF%BC%9A%E6%9E%B6%E6%9E%84%E5%8E%9F%E7%90%86%E3%80%81%E5%AE%89%E8%A3%85%E5%90%AF%E5%8A%A8%E4%B8%8E%E9%81%BF%E5%9D%91%E9%80%9F%E6%9F%A5.md</guid>
+      <pubDate>Wed, 25 Nov 2026 06:17:53 GMT</pubDate>
+      <category>Geek空间</category>
+      <description>WSL 2（Windows Subsystem for Linux 2）通过轻量级 Hyper-V 虚拟机在 Windows 内部运行完整的 Linux 内核，让你无需双系统重启或重型虚拟机，即可使用原生的 Linux 命令行与服务端环境。</description>
     </item>
     <item>
       <title>💯Emoji字符编码机制解析</title>
@@ -238,14 +246,6 @@
       <pubDate>Wed, 25 Nov 2026 02:49:35 GMT</pubDate>
       <category>🗑️</category>
       <description>细嚼慢咽不仅关乎消化系统的负担，更直接决定了餐后代谢和体重的管理：</description>
-    </item>
-    <item>
-      <title>深度睡眠法则：床榻极简断舍离</title>
-      <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/%E6%B7%B1%E5%BA%A6%E7%9D%A1%E7%9C%A0%E6%B3%95%E5%88%99%EF%BC%9A%E5%BA%8A%E6%A6%BB%E6%9E%81%E7%AE%80%E6%96%AD%E8%88%8D%E7%A6%BB.md</link>
-      <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/%E6%B7%B1%E5%BA%A6%E7%9D%A1%E7%9C%A0%E6%B3%95%E5%88%99%EF%BC%9A%E5%BA%8A%E6%A6%BB%E6%9E%81%E7%AE%80%E6%96%AD%E8%88%8D%E7%A6%BB.md</guid>
-      <pubDate>Wed, 25 Nov 2026 02:49:35 GMT</pubDate>
-      <category>🗑️</category>
-      <description>床上确实不应该放除寝具以外的任何杂物。</description>
     </item>
   </channel>
 </rss>
