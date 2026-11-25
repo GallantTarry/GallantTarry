@@ -24,77 +24,7 @@
 
 - **Shell（命令解释器）**：就像是**插在电视后面的游戏机或影碟机**。它是一个纯后台程序，负责真正解析你按下的每一个按键指令、调用操作系统内核调度进程，并将计算出的文本数据喂给电视机去显示。
 
-
-
-```mermaid
-
-flowchart LR
-
-    subgraph UserInteraction["人类用户"]
-
-        Keyboard["键盘输入击键"]
-
-        Eyes["视觉观察屏幕"]
-
-    end
-
-
-
-    subgraph TerminalLayer["终端模拟器 (Terminal Emulator)"]
-
-        direction TB
-
-        InputHandler["捕获按键 / 鼠标事件"]
-
-        VTParser["ANSI / VT100 转义码解析 (颜色/光标)"]
-
-        Renderer["DirectX / GPU 文本与字体渲染引擎"]
-
-    end
-
-
-
-    subgraph ShellLayer["命令解释器 (Shell)"]
-
-        direction TB
-
-        Lexer["词法语法解析 (Parsing)"]
-
-        Env["环境变量与别名 (Aliases)"]
-
-        ProcessExec["进程调度与管道重定向 (Pipelines)"]
-
-    end
-
-
-
-    subgraph OSKernel["操作系统内核 (Kernel)"]
-
-        SysCalls["系统调用 / 硬件驱动 / 物理硬件"]
-
-    end
-
-
-
-    Keyboard --> InputHandler
-
-    InputHandler -->|stdin 标准输入流| Lexer
-
-    Lexer --> ProcessExec
-
-    ProcessExec --> SysCalls
-
-    SysCalls --> ProcessExec
-
-    ProcessExec -->|stdout / stderr 字节流| VTParser
-
-    VTParser --> Renderer
-
-    Renderer --> Eyes
-
-```
-
-
+![终端一行命令的往返](../../media/终端一行命令的往返.png)
 
 ---
 
@@ -174,43 +104,7 @@ flowchart LR
 
 ## 四、 核心对比矩阵与选型推荐
 
-
-
-```mermaid
-
-flowchart TD
-
-    subgraph Terminals["外层：终端模拟器 (负责显示与窗口颜值)"]
-
-        WT["现代主流：Windows Terminal"]
-
-        ConHost["老旧兼容：conhost 黑色单框"]
-
-    end
-
-
-
-    subgraph Shells["内层：命令解释器 (负责业务逻辑与代码执行)"]
-
-        PS["现代化首选：PowerShell 7 / 5.1"]
-
-        CMD["远古兼容：CMD 命令提示符"]
-
-        WSL["Linux 全栈：WSL2 (Bash / Zsh)"]
-
-    end
-
-
-
-    WT ===>|随时切换标签页| PS
-
-    WT ===>|随时切换标签页| CMD
-
-    WT ===>|随时切换标签页| WSL
-
-```
-
-
+![终端核心对比矩阵与选型推荐](../../media/终端核心对比矩阵与选型推荐.png)
 
 ### 现代高效开发姿势
 
