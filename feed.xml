@@ -5,13 +5,21 @@
     <link>https://xn--9myv52d.xn--udsye.art/</link>
     <description>编程、技术、笔记、艺术、生活、随笔</description>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 26 Nov 2026 06:03:46 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 26 Nov 2026 06:22:07 GMT</lastBuildDate>
     <atom:link href="https://xn--9myv52d.xn--udsye.art/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>💯DNS域名解析与污染防护原理解析</title>
+      <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/Geek%E7%A9%BA%E9%97%B4/%F0%9F%92%AFDNS%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90%E4%B8%8E%E6%B1%A1%E6%9F%93%E9%98%B2%E6%8A%A4%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90.md</link>
+      <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/Geek%E7%A9%BA%E9%97%B4/%F0%9F%92%AFDNS%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90%E4%B8%8E%E6%B1%A1%E6%9F%93%E9%98%B2%E6%8A%A4%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90.md</guid>
+      <pubDate>Thu, 26 Nov 2026 06:22:07 GMT</pubDate>
+      <category>Geek空间</category>
+      <description>如果把访问网站比作给远方朋友寄信：IP 地址是精确到经纬度的门牌坐标，DNS 就是遍布全球的查号台网络；而 DNS 污染，就像是你在电话里大声问查号台“某某家住哪”，还没等远方的总台开口，旁边偷听的陌生人就冒充查号台、照着你刚喊出的问题抢先报出一个假地址——你一核对来电号码和所问…</description>
+    </item>
     <item>
       <title>💯TCP与UDP</title>
       <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%E7%BD%91%E7%BB%9C%E7%A9%BA%E9%97%B4/%F0%9F%92%AFTCP%E4%B8%8EUDP.md</link>
       <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%E7%BD%91%E7%BB%9C%E7%A9%BA%E9%97%B4/%F0%9F%92%AFTCP%E4%B8%8EUDP.md</guid>
-      <pubDate>Thu, 26 Nov 2026 06:03:46 GMT</pubDate>
+      <pubDate>Thu, 26 Nov 2026 06:04:26 GMT</pubDate>
       <category>网络空间</category>
       <description>这个问题问到了计算机网络的最核心。为了理清它们的关系，我们需要把这些概念放在一个“上下级”的框架里来看。</description>
     </item>
@@ -238,14 +246,6 @@
       <pubDate>Wed, 25 Nov 2026 07:03:14 GMT</pubDate>
       <category>🗑️</category>
       <description>忒修斯(Theseus)是希腊神话中雅典的伟大建立者和国王。如果说赫拉克勒斯是全希腊的超级武力象征，那么忒修斯就是雅典的专属英雄，他不仅拥有武力，更代表着智慧、秩序和城邦制度的建立。</description>
-    </item>
-    <item>
-      <title>特洛伊前传：海伦誓约与诅咒</title>
-      <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/%E7%89%B9%E6%B4%9B%E4%BC%8A%E5%89%8D%E4%BC%A0%EF%BC%9A%E6%B5%B7%E4%BC%A6%E8%AA%93%E7%BA%A6%E4%B8%8E%E8%AF%85%E5%92%92.md</link>
-      <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/%E7%89%B9%E6%B4%9B%E4%BC%8A%E5%89%8D%E4%BC%A0%EF%BC%9A%E6%B5%B7%E4%BC%A6%E8%AA%93%E7%BA%A6%E4%B8%8E%E8%AF%85%E5%92%92.md</guid>
-      <pubDate>Wed, 25 Nov 2026 07:03:14 GMT</pubDate>
-      <category>🗑️</category>
-      <description>在爱神阿佛洛狄忒的帮助下，特洛伊王子帕里斯趁着斯巴达国王墨涅拉俄斯外出时，诱拐(或说掳走)了希腊第一美女海伦，并带走了大量的财宝。这件事成为了特洛伊战争的直接导火索。</description>
     </item>
   </channel>
 </rss>
