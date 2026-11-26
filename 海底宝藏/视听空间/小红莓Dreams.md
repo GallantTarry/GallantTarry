@@ -1,4 +1,4 @@
-# 小红莓Dreams：初恋微光与永恒梦境
+# 小红莓Dreams
 
 <tukuai-player url="media/videos/Dreams.mp4" title="Dreams"></tukuai-player>
 

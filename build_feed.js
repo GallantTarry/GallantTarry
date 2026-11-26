@@ -104,6 +104,13 @@ const xml = [
     '    <language>zh-CN</language>',
     `    <lastBuildDate>${lastBuild.toUTCString()}</lastBuildDate>`,
     `    <atom:link href="${siteUrl}feed.xml" rel="self" type="application/rss+xml"/>`,
+    '    <image>',
+    `      <url>${siteUrl}favicon/favicon-96x96.png</url>`,
+    `      <title>${xmlEscape(siteTitle)}</title>`,
+    `      <link>${siteUrl}</link>`,
+    '      <width>96</width>',
+    '      <height>96</height>',
+    '    </image>',
     ...items.map(it => [
         '    <item>',
         `      <title>${xmlEscape(it.title)}</title>`,

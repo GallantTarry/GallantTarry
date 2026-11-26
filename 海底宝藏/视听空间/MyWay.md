@@ -1,4 +1,4 @@
-# 名曲MyWay：走出自己的路
+# MyWay
 
 
 <tukuai-player url="media/videos/MyWay.mp4" title="MyWay"></tukuai-player>

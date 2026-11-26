@@ -1,4 +1,4 @@
-# 酷玩Yellow：点亮漫天星辰
+# Yellow
 
 <tukuai-player url="media/videos/Yellow.mp4" title="Yellow"></tukuai-player>
 

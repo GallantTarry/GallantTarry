@@ -1,4 +1,4 @@
-# 披头士Let It Be：风暴尽头的温柔答案
+# Let It Be
 
 <tukuai-player url="media/videos/Let It Be.mp4" title="Let It Be"></tukuai-player>
 

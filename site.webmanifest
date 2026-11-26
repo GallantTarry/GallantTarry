@@ -1,0 +1,24 @@
+{
+  "name": "满载而归 · 海底宝藏",
+  "short_name": "满载而归",
+  "description": "⛵ 扬帆起航，孤舟驶入浩瀚深海 🧭。历经狂风骤雨与惊涛暗礁 ⛈️，踏破重重险阻 ⚔️，终于在未知荒原的尽头开启了无尽宝藏 🪎！",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#09090b",
+  "theme_color": "#09090b",
+  "icons": [
+    {
+      "src": "./favicon/favicon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./favicon/treasure.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
