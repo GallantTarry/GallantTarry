@@ -5,7 +5,7 @@
     <link>https://xn--9myv52d.xn--udsye.art/</link>
     <description>编程、技术、笔记、艺术、生活、随笔</description>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 27 Nov 2026 02:00:11 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 27 Nov 2026 03:43:58 GMT</lastBuildDate>
     <atom:link href="https://xn--9myv52d.xn--udsye.art/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://xn--9myv52d.xn--udsye.art/favicon/favicon-96x96.png</url>
@@ -15,84 +15,108 @@
       <height>96</height>
     </image>
     <item>
+      <title>💯系统路径、环境变量与正则</title>
+      <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/Geek%E7%A9%BA%E9%97%B4/%F0%9F%92%AF%E7%B3%BB%E7%BB%9F%E8%B7%AF%E5%BE%84%E3%80%81%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E4%B8%8E%E6%AD%A3%E5%88%99.md</link>
+      <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/Geek%E7%A9%BA%E9%97%B4/%F0%9F%92%AF%E7%B3%BB%E7%BB%9F%E8%B7%AF%E5%BE%84%E3%80%81%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E4%B8%8E%E6%AD%A3%E5%88%99.md</guid>
+      <pubDate>Fri, 27 Nov 2026 03:43:58 GMT</pubDate>
+      <category>Geek空间</category>
+      <description>这俩概念其实非常简单，咱们用最直白的说法一句话搞定：</description>
+    </item>
+    <item>
       <title>💯HTTP超文本传输协议工作原理</title>
       <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%E7%BD%91%E7%BB%9C%E7%A9%BA%E9%97%B4/%F0%9F%92%AFHTTP%E8%B6%85%E6%96%87%E6%9C%AC%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86.md</link>
       <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%E7%BD%91%E7%BB%9C%E7%A9%BA%E9%97%B4/%F0%9F%92%AFHTTP%E8%B6%85%E6%96%87%E6%9C%AC%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86.md</guid>
-      <pubDate>Fri, 27 Nov 2026 02:00:11 GMT</pubDate>
+      <pubDate>Fri, 27 Nov 2026 02:05:20 GMT</pubDate>
       <category>网络空间</category>
       <description>每天坐在电脑前，你都在不知不觉中调用成百上千次 HTTP：</description>
-    </item>
-    <item>
-      <title>齐马蓝</title>
-      <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/%E9%BD%90%E9%A9%AC%E8%93%9D.md</link>
-      <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/%E9%BD%90%E9%A9%AC%E8%93%9D.md</guid>
-      <pubDate>Thu, 26 Nov 2026 15:39:59 GMT</pubDate>
-      <category>🗑️</category>
-      <description>在《爱，死亡和机器人》第一季全 18 集琳琅满目的暴力美学与赛博朋克奇观中，第 14 集《齐马蓝》（Zima Blue）显得尤为特殊与孤高。该片改编自英国硬科幻作家阿莱斯泰尔·雷诺兹（Alastair Reynolds）同名短篇小说，以极具象征主义的极简色块和深沉的存在主义哲学，…</description>
-    </item>
-    <item>
-      <title>现场之王伍佰</title>
-      <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/%E7%8E%B0%E5%9C%BA%E4%B9%8B%E7%8E%8B%E4%BC%8D%E4%BD%B0.md</link>
-      <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/%E7%8E%B0%E5%9C%BA%E4%B9%8B%E7%8E%8B%E4%BC%8D%E4%BD%B0.md</guid>
-      <pubDate>Thu, 26 Nov 2026 15:39:59 GMT</pubDate>
-      <category>🗑️</category>
-      <description>自 1992 年成军以来，乐队历经三十余载风雨，四位核心成员始终未变，是华语流行乐坛罕见的“长青树”传奇：</description>
-    </item>
-    <item>
-      <title>王立群读孟子</title>
-      <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/%E7%8E%8B%E7%AB%8B%E7%BE%A4%E8%AF%BB%E5%AD%9F%E5%AD%90.md</link>
-      <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/%E7%8E%8B%E7%AB%8B%E7%BE%A4%E8%AF%BB%E5%AD%9F%E5%AD%90.md</guid>
-      <pubDate>Thu, 26 Nov 2026 15:39:59 GMT</pubDate>
-      <category>🗑️</category>
-      <description>在《百家讲坛》之“我读经典——强势由人”节目中，王立群为了阐释《孟子》中不怨天尤人、自强不息的思想，结合自己的真实人生，讲述了两次“高分失学”的痛苦经历以及做14年临时工的逆境求生之路，以此论证真正的力量和命运最终取决于个人的内心与拼搏。</description>
-    </item>
-    <item>
-      <title>小红莓Dreams</title>
-      <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/%E5%B0%8F%E7%BA%A2%E8%8E%93Dreams.md</link>
-      <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/%E5%B0%8F%E7%BA%A2%E8%8E%93Dreams.md</guid>
-      <pubDate>Thu, 26 Nov 2026 15:39:59 GMT</pubDate>
-      <category>🗑️</category>
-      <description>1990 年前后，刚加入乐队不久的桃乐丝·奥瑞奥丹（Dolores O&apos;Riordan）年仅十八九岁。在爱尔兰西部小城利默里克（Limerick）湿润微凉的空气里，她写下了《Dreams》的歌词；而吉他手诺埃尔·霍根（Noel Hogan）则率先构思出整首歌极具推进感与空灵质感的…</description>
-    </item>
-    <item>
-      <title>MyWay</title>
-      <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/MyWay.md</link>
-      <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/MyWay.md</guid>
-      <pubDate>Thu, 26 Nov 2026 15:39:59 GMT</pubDate>
-      <category>🗑️</category>
-      <description>英文原话 (English Transcript):</description>
-    </item>
-    <item>
-      <title>Let It Be</title>
-      <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/LetItBe.md</link>
-      <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/LetItBe.md</guid>
-      <pubDate>Thu, 26 Nov 2026 15:39:59 GMT</pubDate>
-      <category>🗑️</category>
-      <description>1969 年 1 月是披头士乐队十年历程中最寒冷、也最接近分崩离析的时刻。彼时他们正在推进名为《Get Back》（后定名《Let It Be》）的纪录片与回归现场录制计划：</description>
-    </item>
-    <item>
-      <title>软件工程前后端命名规范</title>
-      <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%89%8D%E5%90%8E%E7%AB%AF%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83.md</link>
-      <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%89%8D%E5%90%8E%E7%AB%AF%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83.md</guid>
-      <pubDate>Thu, 26 Nov 2026 15:39:59 GMT</pubDate>
-      <category>🗑️</category>
-      <description>文件夹在 Java 中被称为“包(Package)”。</description>
-    </item>
-    <item>
-      <title>资源管理器高效拖拽技巧</title>
-      <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E5%99%A8%E9%AB%98%E6%95%88%E6%8B%96%E6%8B%BD%E6%8A%80%E5%B7%A7.md</link>
-      <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E5%99%A8%E9%AB%98%E6%95%88%E6%8B%96%E6%8B%BD%E6%8A%80%E5%B7%A7.md</guid>
-      <pubDate>Thu, 26 Nov 2026 15:39:59 GMT</pubDate>
-      <category>🗑️</category>
-      <description></description>
     </item>
     <item>
       <title>donut.c字符甜甜圈数学</title>
       <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/donut.c%E5%AD%97%E7%AC%A6%E7%94%9C%E7%94%9C%E5%9C%88%E6%95%B0%E5%AD%A6.md</link>
       <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/donut.c%E5%AD%97%E7%AC%A6%E7%94%9C%E7%94%9C%E5%9C%88%E6%95%B0%E5%AD%A6.md</guid>
-      <pubDate>Thu, 26 Nov 2026 15:39:59 GMT</pubDate>
+      <pubDate>Fri, 27 Nov 2026 02:05:20 GMT</pubDate>
       <category>🗑️</category>
       <description>2006 年，程序员 Andy Sloane(网名 a1k0n)写下了一段在编程界被称为“神级操作”的 C 语言代码。这段仅有几十行的代码，没有任何外部图形库(如 OpenGL 或 DirectX)依赖，却在黑框终端里渲染出了一个带有透视、光影和深度计算的 3D 旋转甜甜圈(To…</description>
+    </item>
+    <item>
+      <title>Let It Be</title>
+      <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/LetItBe.md</link>
+      <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/LetItBe.md</guid>
+      <pubDate>Fri, 27 Nov 2026 02:05:20 GMT</pubDate>
+      <category>🗑️</category>
+      <description>1969 年 1 月是披头士乐队十年历程中最寒冷、也最接近分崩离析的时刻。彼时他们正在推进名为《Get Back》（后定名《Let It Be》）的纪录片与回归现场录制计划：</description>
+    </item>
+    <item>
+      <title>MyWay</title>
+      <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/MyWay.md</link>
+      <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/MyWay.md</guid>
+      <pubDate>Fri, 27 Nov 2026 02:05:20 GMT</pubDate>
+      <category>🗑️</category>
+      <description>英文原话 (English Transcript):</description>
+    </item>
+    <item>
+      <title>小红莓Dreams</title>
+      <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/%E5%B0%8F%E7%BA%A2%E8%8E%93Dreams.md</link>
+      <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/%E5%B0%8F%E7%BA%A2%E8%8E%93Dreams.md</guid>
+      <pubDate>Fri, 27 Nov 2026 02:05:20 GMT</pubDate>
+      <category>🗑️</category>
+      <description>1990 年前后，刚加入乐队不久的桃乐丝·奥瑞奥丹（Dolores O&apos;Riordan）年仅十八九岁。在爱尔兰西部小城利默里克（Limerick）湿润微凉的空气里，她写下了《Dreams》的歌词；而吉他手诺埃尔·霍根（Noel Hogan）则率先构思出整首歌极具推进感与空灵质感的…</description>
+    </item>
+    <item>
+      <title>王立群读孟子</title>
+      <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/%E7%8E%8B%E7%AB%8B%E7%BE%A4%E8%AF%BB%E5%AD%9F%E5%AD%90.md</link>
+      <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/%E7%8E%8B%E7%AB%8B%E7%BE%A4%E8%AF%BB%E5%AD%9F%E5%AD%90.md</guid>
+      <pubDate>Fri, 27 Nov 2026 02:05:20 GMT</pubDate>
+      <category>🗑️</category>
+      <description>在《百家讲坛》之“我读经典——强势由人”节目中，王立群为了阐释《孟子》中不怨天尤人、自强不息的思想，结合自己的真实人生，讲述了两次“高分失学”的痛苦经历以及做14年临时工的逆境求生之路，以此论证真正的力量和命运最终取决于个人的内心与拼搏。</description>
+    </item>
+    <item>
+      <title>现场之王伍佰</title>
+      <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/%E7%8E%B0%E5%9C%BA%E4%B9%8B%E7%8E%8B%E4%BC%8D%E4%BD%B0.md</link>
+      <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/%E7%8E%B0%E5%9C%BA%E4%B9%8B%E7%8E%8B%E4%BC%8D%E4%BD%B0.md</guid>
+      <pubDate>Fri, 27 Nov 2026 02:05:20 GMT</pubDate>
+      <category>🗑️</category>
+      <description>自 1992 年成军以来，乐队历经三十余载风雨，四位核心成员始终未变，是华语流行乐坛罕见的“长青树”传奇：</description>
+    </item>
+    <item>
+      <title>资源管理器高效拖拽技巧</title>
+      <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E5%99%A8%E9%AB%98%E6%95%88%E6%8B%96%E6%8B%BD%E6%8A%80%E5%B7%A7.md</link>
+      <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E5%99%A8%E9%AB%98%E6%95%88%E6%8B%96%E6%8B%BD%E6%8A%80%E5%B7%A7.md</guid>
+      <pubDate>Fri, 27 Nov 2026 02:05:20 GMT</pubDate>
+      <category>🗑️</category>
+      <description></description>
+    </item>
+    <item>
+      <title>软件工程前后端命名规范</title>
+      <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%89%8D%E5%90%8E%E7%AB%AF%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83.md</link>
+      <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%89%8D%E5%90%8E%E7%AB%AF%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83.md</guid>
+      <pubDate>Fri, 27 Nov 2026 02:05:20 GMT</pubDate>
+      <category>🗑️</category>
+      <description>文件夹在 Java 中被称为“包(Package)”。</description>
+    </item>
+    <item>
+      <title>齐马蓝</title>
+      <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/%E9%BD%90%E9%A9%AC%E8%93%9D.md</link>
+      <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/%E9%BD%90%E9%A9%AC%E8%93%9D.md</guid>
+      <pubDate>Fri, 27 Nov 2026 02:05:20 GMT</pubDate>
+      <category>🗑️</category>
+      <description>在《爱，死亡和机器人》第一季全 18 集琳琅满目的暴力美学与赛博朋克奇观中，第 14 集《齐马蓝》（Zima Blue）显得尤为特殊与孤高。该片改编自英国硬科幻作家阿莱斯泰尔·雷诺兹（Alastair Reynolds）同名短篇小说，以极具象征主义的极简色块和深沉的存在主义哲学，…</description>
+    </item>
+    <item>
+      <title>图解HTML三大核心标签与分工</title>
+      <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/%E5%9B%BE%E8%A7%A3HTML%E4%B8%89%E5%A4%A7%E6%A0%B8%E5%BF%83%E6%A0%87%E7%AD%BE%E4%B8%8E%E5%88%86%E5%B7%A5.md</link>
+      <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/%E5%9B%BE%E8%A7%A3HTML%E4%B8%89%E5%A4%A7%E6%A0%B8%E5%BF%83%E6%A0%87%E7%AD%BE%E4%B8%8E%E5%88%86%E5%B7%A5.md</guid>
+      <pubDate>Thu, 26 Nov 2026 15:39:59 GMT</pubDate>
+      <category>🗑️</category>
+      <description>在网页制作和前端开发的世界里，&lt;script&gt;、&lt;style&gt; 和 &lt;link&gt; 是最基础、最核心的三大 HTML 标签。它们各司其职，分别负责控制网页的行为逻辑、外观样式以及外部资源的引入。</description>
+    </item>
+    <item>
+      <title>浏览器CORS跨域原理与排错指南</title>
+      <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/%E6%B5%8F%E8%A7%88%E5%99%A8CORS%E8%B7%A8%E5%9F%9F%E5%8E%9F%E7%90%86%E4%B8%8E%E6%8E%92%E9%94%99%E6%8C%87%E5%8D%97.md</link>
+      <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/%E6%B5%8F%E8%A7%88%E5%99%A8CORS%E8%B7%A8%E5%9F%9F%E5%8E%9F%E7%90%86%E4%B8%8E%E6%8E%92%E9%94%99%E6%8C%87%E5%8D%97.md</guid>
+      <pubDate>Thu, 26 Nov 2026 15:39:59 GMT</pubDate>
+      <category>🗑️</category>
+      <description>很多同学第一次遇到红色 CORS error 时，常常误以为是“服务器拒绝了我”——其实恰恰相反：往往是服务器已经正常处理并回复了 200 OK，但站在门口安检的“浏览器”发现响应头里没有放行条，于是把数据扣了下来。</description>
     </item>
     <item>
       <title>💯程序进程与线程</title>
@@ -229,30 +253,6 @@
       <pubDate>Thu, 26 Nov 2026 06:04:26 GMT</pubDate>
       <category>网络空间</category>
       <description>这个问题问到了计算机网络的最核心。为了理清它们的关系，我们需要把这些概念放在一个“上下级”的框架里来看。</description>
-    </item>
-    <item>
-      <title>Java基本类型与包装类机制</title>
-      <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/Java%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B%E4%B8%8E%E5%8C%85%E8%A3%85%E7%B1%BB%E6%9C%BA%E5%88%B6.md</link>
-      <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/Java%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B%E4%B8%8E%E5%8C%85%E8%A3%85%E7%B1%BB%E6%9C%BA%E5%88%B6.md</guid>
-      <pubDate>Thu, 26 Nov 2026 06:01:47 GMT</pubDate>
-      <category>🗑️</category>
-      <description>关于 int 和 Integer 的区别，以及“对象类型”的概念，这是现代面向对象编程(以 Java 为典型代表)中非常核心的内存与类型系统基础。下面为您进行详尽的专业解析。</description>
-    </item>
-    <item>
-      <title>Java字节码与类文件机制</title>
-      <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/Java%E5%AD%97%E8%8A%82%E7%A0%81%E4%B8%8E%E7%B1%BB%E6%96%87%E4%BB%B6%E6%9C%BA%E5%88%B6.md</link>
-      <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/Java%E5%AD%97%E8%8A%82%E7%A0%81%E4%B8%8E%E7%B1%BB%E6%96%87%E4%BB%B6%E6%9C%BA%E5%88%B6.md</guid>
-      <pubDate>Thu, 26 Nov 2026 06:01:47 GMT</pubDate>
-      <category>🗑️</category>
-      <description>在 Java 的世界里，字节码文件就是 .class 文件。</description>
-    </item>
-    <item>
-      <title>Java集合框架体系核心结构图</title>
-      <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/Java%E9%9B%86%E5%90%88%E6%A1%86%E6%9E%B6%E4%BD%93%E7%B3%BB%E6%A0%B8%E5%BF%83%E7%BB%93%E6%9E%84%E5%9B%BE.md</link>
-      <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/Java%E9%9B%86%E5%90%88%E6%A1%86%E6%9E%B6%E4%BD%93%E7%B3%BB%E6%A0%B8%E5%BF%83%E7%BB%93%E6%9E%84%E5%9B%BE.md</guid>
-      <pubDate>Thu, 26 Nov 2026 06:01:47 GMT</pubDate>
-      <category>🗑️</category>
-      <description>首先要明确一个核心概念：图顶层的 Collection、List、Set 和 Map 都是接口（Interface）。接口只负责定义契约与规范（例如是否允许重复、是否有序、是否支持键值映射），接口本身是不包含物理数据结构的。</description>
     </item>
   </channel>
 </rss>
