@@ -27,6 +27,6 @@
   </div>
   <div class="tk-submit-box">
     <p class="tk-submit-text">If you would also like to write an article, feel free to send it to <a href="mailto:w1961459892@gmail.com">w1961459892@gmail.com</a>. Any topic or field is welcome — it will be placed in <b>🌍</b> or another dedicated section.</p>
-    <p class="tk-submit-link">💬 <a href="https://github.com/GallantTarry/GallantTarry/issues/11#issue-6438591184" target="_blank" rel="noopener noreferrer">Open Submissions · GitHub Issue #11 ↗</a></p>
+    <p class="tk-submit-link">💬 <a href="https://github.com/GallantTarry/gallanttarry/issues/11#issue-6438591184" target="_blank" rel="noopener noreferrer">Open Submissions · GitHub Issue #11 ↗</a></p>
   </div>
 </div>

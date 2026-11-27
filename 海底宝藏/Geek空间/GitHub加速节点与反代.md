@@ -331,7 +331,7 @@ class DownloadRouter {
 document.addEventListener('DOMContentLoaded', () => {
     new DownloadRouter(
         'btn-download',
-        'https://github.com/GallantTarry/TuKuai/releases/download/20260907/toolkit-1.9.8.msi'
+        'https://github.com/GallantTarry/tukuai-os/releases/download/20260907/toolkit-1.9.8.msi'
     );
 });
 ```
