@@ -5,7 +5,7 @@
     <link>https://xn--9myv52d.xn--udsye.art/</link>
     <description>编程、技术、笔记、艺术、生活、随笔</description>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 27 Nov 2026 03:43:58 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 27 Nov 2026 06:04:32 GMT</lastBuildDate>
     <atom:link href="https://xn--9myv52d.xn--udsye.art/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://xn--9myv52d.xn--udsye.art/favicon/favicon-96x96.png</url>
@@ -15,12 +15,36 @@
       <height>96</height>
     </image>
     <item>
+      <title>💯网线更换与DHCP租约分配机制</title>
+      <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%E7%BD%91%E7%BB%9C%E7%A9%BA%E9%97%B4/%F0%9F%92%AF%E7%BD%91%E7%BA%BF%E6%9B%B4%E6%8D%A2%E4%B8%8EDHCP%E7%A7%9F%E7%BA%A6%E5%88%86%E9%85%8D%E6%9C%BA%E5%88%B6.md</link>
+      <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%E7%BD%91%E7%BB%9C%E7%A9%BA%E9%97%B4/%F0%9F%92%AF%E7%BD%91%E7%BA%BF%E6%9B%B4%E6%8D%A2%E4%B8%8EDHCP%E7%A7%9F%E7%BA%A6%E5%88%86%E9%85%8D%E6%9C%BA%E5%88%B6.md</guid>
+      <pubDate>Fri, 27 Nov 2026 06:04:32 GMT</pubDate>
+      <category>网络空间</category>
+      <description>在日常网络排障中，流传着一句耳熟能详的经验法则：“仅仅更换一根网线，电脑的内网 IP 地址不会发生改变。”</description>
+    </item>
+    <item>
       <title>💯系统路径、环境变量与正则</title>
       <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/Geek%E7%A9%BA%E9%97%B4/%F0%9F%92%AF%E7%B3%BB%E7%BB%9F%E8%B7%AF%E5%BE%84%E3%80%81%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E4%B8%8E%E6%AD%A3%E5%88%99.md</link>
       <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/Geek%E7%A9%BA%E9%97%B4/%F0%9F%92%AF%E7%B3%BB%E7%BB%9F%E8%B7%AF%E5%BE%84%E3%80%81%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E4%B8%8E%E6%AD%A3%E5%88%99.md</guid>
-      <pubDate>Fri, 27 Nov 2026 03:43:58 GMT</pubDate>
+      <pubDate>Fri, 27 Nov 2026 03:44:39 GMT</pubDate>
       <category>Geek空间</category>
       <description>这俩概念其实非常简单，咱们用最直白的说法一句话搞定：</description>
+    </item>
+    <item>
+      <title>图解HTML三大核心标签与分工</title>
+      <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/%E5%9B%BE%E8%A7%A3HTML%E4%B8%89%E5%A4%A7%E6%A0%B8%E5%BF%83%E6%A0%87%E7%AD%BE%E4%B8%8E%E5%88%86%E5%B7%A5.md</link>
+      <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/%E5%9B%BE%E8%A7%A3HTML%E4%B8%89%E5%A4%A7%E6%A0%B8%E5%BF%83%E6%A0%87%E7%AD%BE%E4%B8%8E%E5%88%86%E5%B7%A5.md</guid>
+      <pubDate>Fri, 27 Nov 2026 03:44:39 GMT</pubDate>
+      <category>🗑️</category>
+      <description>在网页制作和前端开发的世界里，&lt;script&gt;、&lt;style&gt; 和 &lt;link&gt; 是最基础、最核心的三大 HTML 标签。它们各司其职，分别负责控制网页的行为逻辑、外观样式以及外部资源的引入。</description>
+    </item>
+    <item>
+      <title>浏览器CORS跨域原理与排错指南</title>
+      <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/%E6%B5%8F%E8%A7%88%E5%99%A8CORS%E8%B7%A8%E5%9F%9F%E5%8E%9F%E7%90%86%E4%B8%8E%E6%8E%92%E9%94%99%E6%8C%87%E5%8D%97.md</link>
+      <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/%E6%B5%8F%E8%A7%88%E5%99%A8CORS%E8%B7%A8%E5%9F%9F%E5%8E%9F%E7%90%86%E4%B8%8E%E6%8E%92%E9%94%99%E6%8C%87%E5%8D%97.md</guid>
+      <pubDate>Fri, 27 Nov 2026 03:44:39 GMT</pubDate>
+      <category>🗑️</category>
+      <description>很多同学第一次遇到红色 CORS error 时，常常误以为是“服务器拒绝了我”——其实恰恰相反：往往是服务器已经正常处理并回复了 200 OK，但站在门口安检的“浏览器”发现响应头里没有放行条，于是把数据扣了下来。</description>
     </item>
     <item>
       <title>💯HTTP超文本传输协议工作原理</title>
@@ -101,22 +125,6 @@
       <pubDate>Fri, 27 Nov 2026 02:05:20 GMT</pubDate>
       <category>🗑️</category>
       <description>在《爱，死亡和机器人》第一季全 18 集琳琅满目的暴力美学与赛博朋克奇观中，第 14 集《齐马蓝》（Zima Blue）显得尤为特殊与孤高。该片改编自英国硬科幻作家阿莱斯泰尔·雷诺兹（Alastair Reynolds）同名短篇小说，以极具象征主义的极简色块和深沉的存在主义哲学，…</description>
-    </item>
-    <item>
-      <title>图解HTML三大核心标签与分工</title>
-      <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/%E5%9B%BE%E8%A7%A3HTML%E4%B8%89%E5%A4%A7%E6%A0%B8%E5%BF%83%E6%A0%87%E7%AD%BE%E4%B8%8E%E5%88%86%E5%B7%A5.md</link>
-      <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/%E5%9B%BE%E8%A7%A3HTML%E4%B8%89%E5%A4%A7%E6%A0%B8%E5%BF%83%E6%A0%87%E7%AD%BE%E4%B8%8E%E5%88%86%E5%B7%A5.md</guid>
-      <pubDate>Thu, 26 Nov 2026 15:39:59 GMT</pubDate>
-      <category>🗑️</category>
-      <description>在网页制作和前端开发的世界里，&lt;script&gt;、&lt;style&gt; 和 &lt;link&gt; 是最基础、最核心的三大 HTML 标签。它们各司其职，分别负责控制网页的行为逻辑、外观样式以及外部资源的引入。</description>
-    </item>
-    <item>
-      <title>浏览器CORS跨域原理与排错指南</title>
-      <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/%E6%B5%8F%E8%A7%88%E5%99%A8CORS%E8%B7%A8%E5%9F%9F%E5%8E%9F%E7%90%86%E4%B8%8E%E6%8E%92%E9%94%99%E6%8C%87%E5%8D%97.md</link>
-      <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%F0%9F%97%91%EF%B8%8F/%E6%B5%8F%E8%A7%88%E5%99%A8CORS%E8%B7%A8%E5%9F%9F%E5%8E%9F%E7%90%86%E4%B8%8E%E6%8E%92%E9%94%99%E6%8C%87%E5%8D%97.md</guid>
-      <pubDate>Thu, 26 Nov 2026 15:39:59 GMT</pubDate>
-      <category>🗑️</category>
-      <description>很多同学第一次遇到红色 CORS error 时，常常误以为是“服务器拒绝了我”——其实恰恰相反：往往是服务器已经正常处理并回复了 200 OK，但站在门口安检的“浏览器”发现响应头里没有放行条，于是把数据扣了下来。</description>
     </item>
     <item>
       <title>💯程序进程与线程</title>
@@ -245,14 +253,6 @@
       <pubDate>Thu, 26 Nov 2026 06:22:54 GMT</pubDate>
       <category>Geek空间</category>
       <description>如果把访问网站比作给远方朋友寄信：IP 地址是精确到经纬度的门牌坐标，DNS 就是遍布全球的查号台网络；而 DNS 污染，就像是你在电话里大声问查号台“某某家住哪”，还没等远方的总台开口，旁边偷听的陌生人就冒充查号台、照着你刚喊出的问题抢先报出一个假地址——你一核对来电号码和所问…</description>
-    </item>
-    <item>
-      <title>💯TCP与UDP</title>
-      <link>https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%E7%BD%91%E7%BB%9C%E7%A9%BA%E9%97%B4/%F0%9F%92%AFTCP%E4%B8%8EUDP.md</link>
-      <guid isPermaLink="true">https://xn--9myv52d.xn--udsye.art/#/%E6%B5%B7%E5%BA%95%E5%AE%9D%E8%97%8F/%E7%BD%91%E7%BB%9C%E7%A9%BA%E9%97%B4/%F0%9F%92%AFTCP%E4%B8%8EUDP.md</guid>
-      <pubDate>Thu, 26 Nov 2026 06:04:26 GMT</pubDate>
-      <category>网络空间</category>
-      <description>这个问题问到了计算机网络的最核心。为了理清它们的关系，我们需要把这些概念放在一个“上下级”的框架里来看。</description>
     </item>
   </channel>
 </rss>
